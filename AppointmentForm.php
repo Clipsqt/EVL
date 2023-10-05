@@ -72,42 +72,37 @@
                 <select name="selectOffice" id="selectOffice" required>
                     <option value=""disabled selected>Select Office</option>
                     <option value="School Governance Operations Division">SGOD</option>
-                    <option value="Information Communication Technology Services">ICT Services</option>
+                    <option value="ICT' Services">ICT</option>
                     <option value="Office of the Schools Division Superintendent">OSDS</option>
-                    <option value="Office of the Assistant Schools Division Superintendent Administrative Services">ASDS</option>
-                    <option value="Personnel Section">Personal Section</option>
-                    <option value="Records Section">Records Section</option>
-                    <option value="Cash Section">Cash Section</option>
-                    <option value="Payroll Section">Payroll Section</option>
-                    <option value="Support Staff">Support Staff</option>
-                    <option value="Property and Supply Section">Property & Supply Section</option>
-                    <option value="General Services">General Services</option>
-                    <option value="OSDS Proper">OSDS Proper</option>
-                    <option value="Legal Services">Legal Services</option>
-                    <option value="Accounting Section">Accounting Section</option>
-                    <option value="Bugdet Section">Bugdet Section</option>
-                   
-                
+                    <option value="Office of the Assistant Schools Division SuperintendentAdministrative Services">ASDS</option>
+                    <option value="Personnel Section">HR</option>
+                    <option value="Records Section">Record Section</option>
+                    <option value="Cash Section">Property and Supply</option>
+                    <option value="Section">Section</option>
+                    <option value="Accounting">Accounting</option>
+                 
                 </select>
-                <form> 
-                    <div> 
+                <form>
     <label for="gender"> </label>
     <select name="gender" id="gender">
         <option value="Male">Male</option>
         <option value="Female">Female</option>
-</select>
-</div>
-        <div> 
+
+    </select>
+    
+
     <label for="priorityLane">Priority Lane</label>
     <select name="priorityLane" id="priorityLane">
-        <option value="">Select Lane</option>
+        <option value=""disabled selected>Select Lane</option>
         <option value="Senior Citizen">Senior Citizen</option>
         <option value="Pregnant">Pregnant</option>
         <option value="Disable">Disable</option>
     </select>
-</div>
+
     <input type="hidden" name="timeIn" id="timeIn" value="">
 
+ 
+               
         </div>
         </div>  
                  <div class="submit-btn">
@@ -275,6 +270,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const contentType = response.headers.get('content-type');
             if (contentType && contentType.includes('application/json')) {
                 const data = await response.json();
+                console.log(contentType);
 
                 // Check if the reference number exists in the response data
                 if (data.reference_no) {
@@ -287,24 +283,30 @@ document.addEventListener("DOMContentLoaded", function () {
                             icon: 'success',
                             confirmButtonText: 'OK'
                         });
-
+                        
                         // Reset the form or perform any other necessary actions
+                        form.reset();
+                    } else {
+                        // Do not show SweetAlert for Walk-in
                         form.reset();
                     }
                 } else {
                     // Handle the case where no reference number is returned
                     console.error('No reference number found in the response.');
                 }
-            } else {
-                // Handle non-JSON responses here (e.g., show a success message or reset the form)
-                console.log('Response is not in JSON format. Proceeding with form reset or other actions.');
-                form.reset();
-            }
+                        } else {
+                    // Handle non-JSON responses here (e.g., show a success message or reset the form)
+                    console.log('Response is not in JSON format. Proceeding with form reset or other actions.');
+                    form.reset();
+                }
+                
+            
+            } catch (error) {
+    console.error('Error fetching reference number:', error.message);
+    console.log('Full response:', error.response);  // Use error.response instead of response
+}
 
-        } catch (error) {
-            console.error('Error fetching reference number:', error.message);
-            console.log('Full response:', error.response);  // Use error.response instead of response
-        }
+
     });
 });
 
