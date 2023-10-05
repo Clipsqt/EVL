@@ -91,7 +91,7 @@
     <button id="showAllButton" onclick="showAllRows()">Show All</button>
 </div>
     <div class="scroll">    
-        <table id="monitoringTable">
+        <table id="monitoringTable" border="1">
         <thead> 
         <tr>
             <th id="colNo">No.</th>
@@ -120,7 +120,7 @@
 
         while ($row = mysqli_fetch_assoc($result)) {
             // Start a new table row for each record
-            echo "<tr>";
+            echo "<tr class='highlight-row'>"; // Apply the CSS class
             echo "<td>" . $rowNumber . "</td>";
             echo "<td class='fullname'>" . $row['fullname'] . "</td>";
             echo "<td class='sex'>" . $row['sex'] . "</td>";

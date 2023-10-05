@@ -11,7 +11,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 $userOffice = $_SESSION['userOffice'];
 
 // Modify the SQL query to filter data based on userdepartment in e_logshistory table
-$sql = "SELECT * FROM e_logshistory WHERE department = '$userOffice' AND reference_no NOT IN (SELECT reference_no FROM e_logshistory WHERE department = '$userOffice')";
+$sql = "SELECT * FROM e_logshistory WHERE department = '$userOffice'"; 
 $result = mysqli_query($conn, $sql);
 
 $rowNumber = 1;
@@ -25,10 +25,11 @@ $rowNumber = 1;
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bookman+Old+Style">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="admin_webpage.css">
+    <link rel="stylesheet" href="admins_History.css">
     <title>Monitoring Visitor's Logbook</title>
 
     <header>
+    <button id="Back" class="back-button" onclick="location.href='admin_webpage.php';">Back</button>
         <img src="monitoring logbook logo.jpeg.png" alt="">
         <h1>HISTORY LOGS <br> <?php
             if (isset($_SESSION['userOffice'])) {

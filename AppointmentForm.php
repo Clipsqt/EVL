@@ -72,7 +72,7 @@
                 <select name="selectOffice" id="selectOffice" required>
                     <option value=""disabled selected>Select Office</option>
                     <option value="School Governance Operations Division">SGOD</option>
-                    <option value="Information Communication Technology Services">ICT Services</option>
+                    <option value="Information Communication Technology">ICT Services</option>
                     <option value="Office of the Schools Division Superintendent">OSDS</option>
                     <option value="Office of the Assistant Schools Division Superintendent Administrative Services">ASDS</option>
                     <option value="Personnel Section">Personal Section</option>
