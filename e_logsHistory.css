@@ -99,11 +99,11 @@ td {
     position: absolute;
     padding: 5px;
     border: 1px solid #ccc;
-    top: 18%;
+    top: 20%;
     border-radius: 4px;
-    margin-left: 32%; /* Remove the margin-left property */
+    margin-left: 31%; /* Remove the margin-left property */
     font-size: 12px;
-    width: 13%; /* Adjust the width as needed */
+    width: 200px; /* Adjust the width as needed */
 }
 
 /* Style the placeholder text */
@@ -116,14 +116,6 @@ td {
     outline: none; /* Remove the default outline */
     border-color: #162fa0; /* Change the border color when focused */
     box-shadow: 0 0 5px rgba(22, 47, 160, 0.5); /* Add a subtle shadow when focused */
-}
-/* Media query for screens with a maximum width of 768px */
-@media (max-width: 800px) {
-    #search {
-        width: 100%; /* Make the search bar full-width */
-        margin-left: 0; /* Remove left margin */
-         
-    }
 }
 /* Container for filter elements */
 .filter-container {
@@ -174,7 +166,7 @@ td {
 /* Position the "Convert to Excel" button at the bottom right */
 #downloadexcel {
     position: absolute; /* Adjust the distance from the bottom as needed */
-    top: 1550%;
+    top: 1600%;
     right: 50px; /* Adjust the distance from the right as needed */
     padding: 10px 10px;
     background-color: #3498db;
@@ -182,16 +174,10 @@ td {
     border: none;
     cursor: pointer;
 }
-/* Media query for Convert Excel */
+
 #downloadexcel:hover {
     background-color: black;
 }
-@media (max-width: 800px) {
-    #downloadexcel {
-        width: 100%; /* Make the search bar full-width */
-    }
-}
-
 
 .container{
     top: 20%;
@@ -256,8 +242,8 @@ input{
     color: #162fa0;
     letter-spacing: 5px;
  }
- /*HIDE MENU BAR*/
- span {
+ 
+ span{
     position: absolute;
     right: -46px;
     font-size: 28px;
@@ -265,42 +251,25 @@ input{
     color: white;
     padding: 3px 8px;
     background: black;
-    top: -2%;
-}
+ }
 
-#bars {
+ #bars{
     background: #162fa0;
-}
-
-#check:checked ~ .container {
+ }
+ #check:checked ~ .container{
     transform: translate(0);
-}
+ }
+ #check:checked ~ .container #bars{
+  display: none;
+ }
 
-#check:checked ~ .container #bars {
-    display: none;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 1008px) {
-    span {
-        right: -20px; /* Adjust the right position */
-        font-size: 20px; /* Adjust the font size */
-        padding: 3px 5px; /* Adjust padding */
-        top: -15%; /* Adjust the top position */
-    }
-}   
-
- /* Default styles */
-.pagination {
+ .pagination {
     position: absolute;
     text-align: center;
-    bottom: -20%; /* Increase the bottom margin as needed */
+    bottom: 2px; /* Adjust the bottom margin as needed */
     left: 0;
     right: 0;
-    top: 80%;
-    cursor: pointer;
-    width: 100%;
-}
+ }
 
 .pagination button {
     background-color: whitesmoke;
@@ -313,7 +282,7 @@ input{
 }
 
 .pagination button:hover {
-    background-color: #162fa0;
+    background-color:#162fa0;
 }
 
 #paginationContainer {
@@ -329,7 +298,6 @@ input{
     margin: 0 5px;
     cursor: pointer;
     border-radius: 5px;
-    top: 20px; /* Increase the top position as needed */
 }
 
 .page-numbers button:hover {
@@ -338,7 +306,7 @@ input{
 
 #showAllButton {
     display: block;
-    margin: 40px auto; /* Increase the margin as needed */
+    margin: 20px   auto; /* Adjust the margin as needed */
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -350,7 +318,6 @@ input{
 #showAllButton:hover {
     background-color: black;
 }
-
 .page-numbers button.active {
     background-color: #162fa0;
     color: white;
