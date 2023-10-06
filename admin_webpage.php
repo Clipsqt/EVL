@@ -13,6 +13,7 @@ $sql = "SELECT * FROM e_monitoringlogsheet WHERE department = '$userOffice' AND 
 $result = mysqli_query($conn, $sql);
 
 $rowNumber = 1;
+
 ?>
 
 <!DOCTYPE html>
@@ -50,9 +51,9 @@ $rowNumber = 1;
         <th id="colPurpose">Purpose of visit</th>
         <th id="colDepartment">Department</th>
         <th id="colreference_no">Reference No.</th>
-        <th id="colTime in">Time In</th>
-        <th id="colTime ">Time In</th>
-        <th>Action</th>
+        <th id="colTime_in">Time In</th>
+        <th id="colTime_out">Time Out</th>
+         
     </tr>
     <?php
     while ($row = mysqli_fetch_assoc($result)) {
@@ -71,6 +72,7 @@ $rowNumber = 1;
         <td><?php echo $row["time_in"]; ?></td>
         <td><button id="timeout_button_<?php echo $rowNumber; ?>" class="timeout-button" data-reference="<?php echo $row["reference_no"]; ?>">Time Out</button></td>
     </tr>
+    
     <?php
     $rowNumber++;
     }
@@ -123,6 +125,7 @@ $rowNumber = 1;
   }
   ?>
 });
+
   
 </script>
 </body>

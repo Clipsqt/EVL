@@ -107,7 +107,8 @@ $rowNumber = 1;
             <th id="colPurpose">Purpose of visit</th>
             <th id="colDepartment">Department</th>
             <th id="colReference_no">Reference No.</th> 
-            <th id="colTimein">Time In</th> 
+            <th id="colTime_in">Time In</th>
+            <th id="colTime_out">Time Out</th>
             
         <?php
 
