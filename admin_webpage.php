@@ -51,7 +51,6 @@ $rowNumber = 1;
         <th id="colDepartment">Department</th>
         <th id="colreference_no">Reference No.</th>
         <th id="colTime in">Time In</th>
-        <th id="colTime ">Time In</th>
         <th>Action</th>
     </tr>
     <?php
@@ -68,7 +67,6 @@ $rowNumber = 1;
         <td><?php echo $row["purpose_of_visit"]; ?></td>
         <td><?php echo $row["department"]; ?></td>
         <td><?php echo $row["reference_no"]; ?></td>
-        <td><?php echo $row["time_in"]; ?></td>
         <td><button id="timeout_button_<?php echo $rowNumber; ?>" class="timeout-button" data-reference="<?php echo $row["reference_no"]; ?>">Time Out</button></td>
     </tr>
     <?php
@@ -78,7 +76,7 @@ $rowNumber = 1;
     </table>
 </div>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
   <?php
   $rowNumber = 1; // Reset row number for JavaScript
   mysqli_data_seek($result, 0); // Reset the result pointer
@@ -86,8 +84,11 @@ $rowNumber = 1;
   ?>
   document.getElementById("timeout_button_<?php echo $rowNumber; ?>").addEventListener("click", function () {
     var reference_no = this.getAttribute("data-reference");
+
+    // Get the current time in HH:MM:SS format
+    var currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'});
     
-    // Make an AJAX request to transfer the row to another page
+    // Make an AJAX request to transfer the row and update the time_out column
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "transfer_row.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -115,15 +116,14 @@ $rowNumber = 1;
       }
     };
     
-    // Send the reference_no as POST data
-    xhr.send("reference_no=" + reference_no);
+    // Send the reference_no and current time as POST data
+    xhr.send("reference_no=" + reference_no + "&time_out=" + currentTime);
   });
   <?php
   $rowNumber++;
   }
   ?>
 });
-  
 </script>
 </body>
 </html>

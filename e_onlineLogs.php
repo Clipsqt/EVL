@@ -22,14 +22,14 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bookman+Old+Style">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <script src="table2excel.js"></script>
-        <link rel="stylesheet" href="e_walkinLogs.css">
+        <link rel="stylesheet" href="e_onlineLogs.css">
         <title>E-LOGS HISTORY</title>
        
 
     </head>
     <header>
         <img src="monitoring logbook logo.jpeg.png" alt="">
-        <h1>  WALK-IN LOGS</h1>
+        <h1> ONLINE LOGS</h1>
         <input type autocomplete="off" id="search" placeholder="Search">
     </header>
 <body>
@@ -50,7 +50,7 @@
      <div class="head">MENU</div>
      <ol>
      <li> <a href="e_logsHistory.php"><i class='bx bx-history'></i>E-LOG'S HISTORY</a></li>
-<li> <a href="#"><i class='bx bxs-notepad'></i></i>ONLINE LOG'S</a></li>
+<li> <a href="e_onlineLogs.php"><i class='bx bxs-notepad'></i></i>ONLINE LOG'S</a></li>
 <li> <a href="e_walkinLogs.php"><i class='bx bx-walk'></i></i>WALK-IN LOG'S</a></li>
      </ol>
  </div>   
@@ -81,7 +81,7 @@
         <?php
         
         
-        $query = "SELECT * FROM e_logsHistory WHERE appointment = 'Walk-in' ORDER BY id DESC, scheduledate DESC, time_out DESC";
+        $query = "SELECT * FROM e_logsHistory WHERE appointment = 'Online' ORDER BY id DESC, scheduledate DESC, time_out DESC";
         $result = mysqli_query($conn, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {

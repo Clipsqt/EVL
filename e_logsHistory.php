@@ -39,10 +39,10 @@
         $query .= " AND scheduledate BETWEEN '$fromDate' AND '$toDate'";
     }
 
+    $query .= " AND (appointment = 'Walk-in' OR appointment = 'Online')"; // Filter for 'walkin' and 'online' appointments
     $query .= " ORDER BY id DESC, scheduledate DESC";
 
     $result = mysqli_query($conn, $query);
-    
     $rowNumber = 1; // Initialize row number
     ?>
     <!DOCTYPE html>
@@ -81,9 +81,9 @@
      </label>
      <div class="head">MENU</div>
      <ol>
-     <li> <a href="#"><i class='bx bx-history'></i>E-LOG'S HISTORY</a></li>
-     <li> <a href="#"><i class='bx bxs-notepad'></i></i>ONLINE LOG'S</a></li>
-     <li> <a href="#"><i class='bx bx-walk'></i></i>WALK-IN LOG'S</a></li>
+     <li> <a href="e_logsHistory.php"><i class='bx bx-history'></i>E-LOG'S HISTORY</a></li>
+     <li> <a href="e_onlineLogs.php"><i class='bx bxs-notepad'></i></i>ONLINE LOG'S</a></li>
+     <li> <a href="e_walkinLogs.php"><i class='bx bx-walk'></i></i>WALK-IN LOG'S</a></li>
      </ol>
  </div>   
  <div class="pagination">
@@ -113,7 +113,7 @@
         <?php
         
         
-    $query = "SELECT * FROM e_logsHistory ORDER BY id DESC, scheduledate DESC";
+    $query = "SELECT * FROM e_logsHistory ORDER BY id DESC, scheduledate DESC, time_out DESC";
     $result = mysqli_query($conn, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {

@@ -322,3 +322,11 @@ input{
     background-color: #162fa0;
     color: white;
 }
+
+tr:nth-child(even) {
+    background-color: lightgray; /* Set the background color for even rows */
+}
+
+tr:nth-child(odd) {
+    background-color: white; /* Set the background color for odd rows */
+}
