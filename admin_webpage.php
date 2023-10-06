@@ -13,7 +13,6 @@ $sql = "SELECT * FROM e_monitoringlogsheet WHERE department = '$userOffice' AND 
 $result = mysqli_query($conn, $sql);
 
 $rowNumber = 1;
-
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +51,6 @@ $rowNumber = 1;
         <th id="colDepartment">Department</th>
         <th id="colreference_no">Reference No.</th>
         <th id="colTime in">Time In</th>
-        <th id="colTime ">Time In</th>
         <th>Action</th>
     </tr>
     <?php
@@ -69,9 +67,9 @@ $rowNumber = 1;
         <td><?php echo $row["purpose_of_visit"]; ?></td>
         <td><?php echo $row["department"]; ?></td>
         <td><?php echo $row["reference_no"]; ?></td>
+        <td><?php echo $row["appointment"] === 'Online' ? '&nbsp;' : date("h:i A", strtotime($row["time_in"])); ?></td>
         <td><button id="timeout_button_<?php echo $rowNumber; ?>" class="timeout-button" data-reference="<?php echo $row["reference_no"]; ?>">Time Out</button></td>
     </tr>
-    
     <?php
     $rowNumber++;
     }
