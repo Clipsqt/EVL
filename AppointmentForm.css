@@ -9,17 +9,17 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  
 }
 /*Fillup Form*/
 .container{
   display: grid;
-  margin-top: 200px;
+  margin-top: 75%;
   place-items: center;
 
   font-family: 'Bookman Old Style, serif'; 
   color: rgb(255, 255, 255);
+  
   
    
   
@@ -46,6 +46,8 @@ body {
   box-sizing: border-box;
   backface-visibility: hidden; 
   background: #dedede;
+  background: -webkit-linear-gradient(247deg, #dedede 0%, #1e61fe 100%);
+  background: linear-gradient(247deg, #dedede 20%, #1e61fe 190%);
   border-radius: 20px;
   opacity: 93%;
 }
@@ -62,7 +64,7 @@ body {
 .input-box{
   width: 98%;
   background: rgba(0, 0, 0, 0.089);
-  border: 2px solid #fff;
+  border: 1px solid #020202;
   margin: 5px 5;
   height:  20px;
   padding: 0 5px;
@@ -70,6 +72,7 @@ body {
   outline: none;
   background: #ffffff;
 }
+ 
 ::placeholder{
   color: black;
   font-size: 15px;
@@ -120,6 +123,107 @@ margin-bottom: 10px;
 font-size: 20px;
 top: 10px;
 }
+/*For 4k-2560px BigScreen*/
+@media screen and (min-width: 2560px) {
+  body {
+      background-size: 50%; /* Adjust the value to control the zoom effect */
+      margin-top: -45%;
+  }
+  .container {
+    margin-top: 50%;
+}
+
+.card {
+    width: 80%;
+}
+
+.card-front {
+    padding: 40px;
+    
+}
+body{
+  background-size: 150%;
+}
+
+}
+
+/* Media query for tablet devices */
+@media screen and (max-width: 768px) {
+  body {
+      background-size: 150%; /* Adjust the value to control the zoom effect */
+      margin-top: -60%;
+  }
+}
+
+/* Media query for smaller screens, like phones */
+@media screen and (max-width: 320px) {
+  .container {
+      margin-top: 50%;
+  }
+
+  .card {
+      width: 80%;
+  }
+
+  .card-front {
+      padding: 40px;
+      
+  }
+  body{
+    background-size: 150%;
+  }
+
+  /* ... (add more styles for smaller screens) ... */
+}
+ /* ... LAPTOP LARGE 1440 ... */
+@media screen and (max-width: 1440px) {
+  body {
+       
+      margin-top: -45%;
+  }
+  .container {
+    margin-top: 55%;
+}
+
+.card {
+    width: 48%;
+}
+
+.card-front {
+    padding: 40px;
+    
+}
+body{
+  background-size: 150%;
+}
+
+}
+ /* ... mobile L 425 ... */
+ @media screen and (max-width: 425px) {
+  body {
+       
+      margin-top: -45%;
+  }
+  .container {
+    margin-top: 80%;
+}
+
+.card {
+    width: 80%;
+}
+
+.card-front {
+    padding: 40px;
+    
+}
+body{
+  background-size: 150%;
+}
+
+}
+
+
+
 
  
  

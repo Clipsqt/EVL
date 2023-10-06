@@ -11,7 +11,7 @@
     
 <head> 
    <meta charset="UTF-8">
-   
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
- 
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>Fillup Form</title>
 
@@ -65,6 +65,7 @@
                     <div class="inner-box">
                     <input type="text" class="input-box" name="Purpose" placeholder="What is your purpose?" required autocomplete="off">  
                     </div> 
+                    
                  </div>  
                  <div class="selecOffice">
                     <!-- ... (select input) ... -->
