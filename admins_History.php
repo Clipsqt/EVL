@@ -57,6 +57,10 @@ $rowNumber = 1;
        
     </tr>
     <?php
+        
+        $query = "SELECT * FROM e_logsHistory ORDER BY id DESC, scheduledate DESC, time_out DESC";
+        $result = mysqli_query($conn, $query);
+    
     while ($row = mysqli_fetch_assoc($result)) {
     ?>
     <tr id="row_<?php echo $rowNumber; ?>" class="clickable-row">
