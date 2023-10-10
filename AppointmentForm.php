@@ -13,6 +13,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1" />
    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -33,6 +34,7 @@
             <div class="card-front">
                 <h1> APPOINTMENT</h1>
         <form action="Appointment.php" method="post">
+        <div class="spinner"></div>
             <!-- ... (your form inputs) ... -->
 <div class="appointment-type">
     <label>
@@ -47,7 +49,7 @@
     <input type="text" class="currentDate" name="currentDate" id="currentDate" placeholder="MM/DD/YY" readonly required autocomplete="OFF">
 </div>
   <!-- ... (your form inputs) ... -->
- <input type="text" class="input-box" name="Fullname" placeholder="Enter your name" required autocomplete="off" pattern="[A-Za-z\s]+">
+ <input type="text" class="input-box" name="Fullname" placeholder="Enter your name" required autocomplete="off" pattern="[A-Za-z.\s]+">
                     <input type="tel" class="input-box" name="phonenumber" placeholder="Enter your number" required autocomplete="OFF" pattern="[0-9]{11}" maxlength="11">
                     <script>
                        var quantityInput = document.querySelector('.qu');
@@ -64,24 +66,29 @@
                  <div class="PurposeBox">  
                     <div class="inner-box">
                     <input type="text" class="input-box" name="Purpose" placeholder="What is your purpose?" required autocomplete="off">  
-                    </div> 
-                    
-                 </div>  
+  </div>
+ </div>  
                  <div class="selecOffice">
-                    <!-- ... (select input) ... -->
+
             <div class="Selectoffice">
                 <select name="selectOffice" id="selectOffice" required>
                     <option value=""disabled selected>Select Office</option>
                     <option value="School Governance Operations Division">SGOD</option>
                     <option value="Information Communication Technology">ICT Services</option>
                     <option value="Office of the Schools Division Superintendent">OSDS</option>
-                    <option value="Office of the Assistant Schools Division SuperintendentAdministrative Services">ASDS</option>
-                    <option value="Personnel Section">HR</option>
+                    <option value="Office of the Schools Division Superintendent Proper">OSDS PROPER</option>
+                    <option value="The  Commission on Audit">COA</option>
+                    <option value="Office of the Assistant Schools Division Superintendent">ASDS</option>
+                    <option value="Personnel Section">Personnel Section</option>
                     <option value="Records Section">Record Section</option>
-                    <option value="Cash Section">Property and Supply</option>
-                    <option value="Section">Section</option>
-                    <option value="Accounting">Accounting</option>
-                 
+                    <option value="Property and Supply">Property and Supply</option>
+                    <option value="Payroll Section">Payroll Section</option>
+                    <option value="Accounting Section">Accounting Section</option>
+                    <option value="Budget Section">Budget Section</option>
+                    <option value="Cash Section">Cash Section</option>
+                    <option value="Support Staff">Support Staff</option>
+                    <option value="Cash Section">Cash Section</option>
+                    <option value="General Services">General Services</option>
                 </select>
                 <form>
     <label for="gender"> </label>
@@ -94,7 +101,7 @@
 
     <label for="priorityLane">Priority Lane</label>
     <select name="priorityLane" id="priorityLane">
-        <option value=""disabled selected>Select Lane</option>
+        <option value=""Defaultvalue>Select Lane</option>
         <option value="Senior Citizen">Senior Citizen</option>
         <option value="Pregnant">Pregnant</option>
         <option value="Disable">Disable</option>
@@ -165,38 +172,64 @@
 
 
 });
+// Get the appointment type radio buttons and the date input box container
+const radioOnline = document.querySelector('.radioOnline');
+const radioWalkIn = document.querySelector('.radioWalkIn');
+const dateBoxContainer = document.getElementById('dateBoxContainer');
+const currentDateInput = document.querySelector('.currentDate');
 
-    
-    // Get the appointment type radio buttons and the date input box container
-    const radioOnline = document.querySelector('.radioOnline');
-    const radioWalkIn = document.querySelector('.radioWalkIn');
-    const dateBoxContainer = document.getElementById('dateBoxContainer');
-    const currentDateInput = document.querySelector('.currentDate');
-
-    // Add an event listener to the radio buttons
-    radioOnline.addEventListener('change', function () {
-        if (this.checked) {
-            // If "Online" is selected, show the date input box and make it editable
-            dateBoxContainer.style.display = 'block';
-            currentDateInput.readOnly = false;
-        }
-    });
-
-    radioWalkIn.addEventListener('change', function () {
-        if (this.checked) {
-            // If "Walk-in" is selected, hide the date input box and set its value to the current date
-            dateBoxContainer.style.display = 'none';
-            currentDateInput.value = getFormattedDate(new Date());
-        }
-    });
-
-    // Function to get formatted date (similar to your existing code)
-    function getFormattedDate(date) {
-        const day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
-        const month = (date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1);
-        const year = date.getFullYear();
-        return `${month}/${day}/${year}`;
+// Add an event listener to the radio buttons
+radioOnline.addEventListener('change', function () {
+    if (this.checked) {
+        // If "Online" is selected, show the date input box with a placeholder and make it readonly
+        dateBoxContainer.style.display = 'block';
+        currentDateInput.value = ''; // Clear the date value
+        currentDateInput.placeholder = 'MM/DD/YY';
+        currentDateInput.readOnly = false;
     }
+});
+
+radioWalkIn.addEventListener('change', function () {
+    if (this.checked) {
+        // If "Walk-in" is selected, hide the date input box and set its value to the current date
+        dateBoxContainer.style.display = 'none';
+        currentDateInput.value = getFormattedDate(new Date());
+        currentDateInput.placeholder = ''; // Remove the placeholder
+        currentDateInput.readOnly = true;
+    }
+});
+
+// Function to get formatted date (similar to your existing code)
+function getFormattedDate(date) {
+    const day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    const month = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1);
+    const year = date.getFullYear();
+    return `${month}/${day}/${year}`;
+}
+ 
+
+currentDateInput.addEventListener('input', function (e) {
+    let cleanedValue = this.value.replace(/[^0-9/]/g, '');
+
+    // Handle backspace or delete key press
+    if (e.inputType === 'deleteContentBackward' || e.inputType === 'deleteContentForward') {
+        cleanedValue = cleanedValue.slice(0, -1);
+    }
+
+    if (cleanedValue.length > 10) {
+        cleanedValue = cleanedValue.slice(0, 10);
+    }
+
+    if (cleanedValue.length >= 2 && cleanedValue.charAt(2) !== '/') {
+        cleanedValue = cleanedValue.slice(0, 2) + '/' + cleanedValue.slice(2);
+    }
+    if (cleanedValue.length >= 5 && cleanedValue.charAt(5) !== '/') {
+        cleanedValue = cleanedValue.slice(0, 5) + '/' + cleanedValue.slice(5);
+    }
+
+    this.value = cleanedValue;
+});
+
     
 </script>
     </script>
@@ -234,20 +267,17 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-    // Get the input element by its name
-    const fullnameInput = document.querySelector('input[name="Fullname"]');
+  // Get the input element by its name
+  const fullnameInput = document.querySelector('input[name="Fullname"]');
 
-    // Add an input event listener to validate and format the name
-    fullnameInput.addEventListener('input', function (e) {
-        // Remove non-alphabetic characters using a regular expression
-        const alphabeticValue = this.value.replace(/[^A-Za-z\s]/g, '');
+// Add an input event listener to validate and format the name
+fullnameInput.addEventListener('input', function (e) {
+    // Remove non-alphabetic characters using a regular expression
+    const alphabeticValue = this.value.replace(/[^A-Za-z.\s]/g, '');
 
-        // Update the input value with the alphabetic characters
-        this.value = alphabeticValue;
-    });
-    // Assuming you have included the SweetAlert library in your HTML
-
-// Add an event listener to the form for submission
+    // Update the input value with the alphabetic characters
+    this.value = alphabeticValue;
+});
 // Add an event listener to the form for submission
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector('form');
@@ -314,20 +344,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
 </script>
-
- 
-
-
-
-
-
-   
-
-   
-
 </body>
 </html>

@@ -13,8 +13,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Retrieve the selected appointment type
     $appointment = mysqli_real_escape_string($conn, $_POST["appointment_type"]);
+     // Split the full name into parts (assuming first name, middle name, last name)
+     $nameParts = explode(" ", $fullName);
 
-    // Retrieve the selected sex value
+     // Manipulate the middle name to have a dot if it exists
+     if (count($nameParts) == 3) {
+         $nameParts[1] = $nameParts[1][0] . '.'; // Assuming the middle name is the second part
+     }
+ 
+     // Reconstruct the full name with a dot in the middle name
+     $fullName = implode(" ", $nameParts);
+
+    // Retrieve the selected sex value  
     $sex = mysqli_real_escape_string($conn, $_POST["gender"]);
 
     // Retrieve the selected priority lane value

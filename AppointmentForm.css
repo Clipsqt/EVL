@@ -5,10 +5,11 @@ padding: 0;
 }
 body {
   font-family:  sans-serif;
-  background-image: url(deped.logo.jpg);
+  background-image: url(blur\ logo.jpeg.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
+  overflow: hidden;
   
 }
 /*Fillup Form*/
@@ -45,9 +46,9 @@ body {
   padding: 55px;
   box-sizing: border-box;
   backface-visibility: hidden; 
-  background: #dedede;
-  background: -webkit-linear-gradient(247deg, #dedede 0%, #1e61fe 100%);
-  background: linear-gradient(247deg, #dedede 20%, #1e61fe 190%);
+  background: #9aaaea;
+  background: -webkit-linear-gradient(89deg, #9aaaea 0%, #cbd9ff 50%, #f6f7ff 100%);
+  background: linear-gradient(89deg, #9aaaea 0%, #cbd9ff 50%, #f6f7ff 100%);
   border-radius: 20px;
   opacity: 93%;
 }
@@ -81,7 +82,8 @@ body {
 button{
   position: absolute;
   width: 100%;
-  background: rgba(66, 66, 169, 0.089);
+  box-shadow: 0 0 5px cyan,
+  0 0 25px cyan;
   border: 1px solid #fff;
   margin: 6px 0;
   height: 32px;
@@ -92,6 +94,11 @@ button{
   text-align: right;
   color: #131111;
   cursor: pointer;
+}
+button:hover{
+  box-shadow: 0 0 5px cyan,
+  0 0 25px cyan, 0 0 50px cyan,
+  0 0 100px cyan, 0 0 200px cyan;
 }
 .Select-office {
   position: absolute;
@@ -123,6 +130,10 @@ margin-bottom: 10px;
 font-size: 20px;
 top: 10px;
 }
+.currentDate{
+  width: 35%;
+}
+
 /*For 4k-2560px BigScreen*/
 @media screen and (min-width: 2560px) {
   body {
@@ -134,7 +145,7 @@ top: 10px;
 }
 
 .card {
-    width: 80%;
+    width: 12%;
 }
 
 .card-front {
@@ -144,21 +155,80 @@ top: 10px;
 body{
   background-size: 150%;
 }
+.submit-btn{
+
+   
+  margin-left: -0%;
+  width: 52%;
+
+}
+}
+
+
+ /* ... LAPTOP LARGE 1440 ... */
+@media screen and (max-width: 1440px) {
+  
+  .container {
+    margin-top: 100px;
+}
+
+.card {
+    width: 23%;
+    height: 520px;
+}
+
+.card-front {
+    padding: 40px;
+    
+}
+body{
+  background-size: 105%;
+}
 
 }
 
+@media screen and (max-width: 1024px) {
+   
+  .container {
+    margin-top: 3%;
+}
+
+.card {
+    width: 30%;
+}
+
+.card-front {
+    padding: 50%px;
+    
+}
+}
 /* Media query for tablet devices */
 @media screen and (max-width: 768px) {
   body {
-      background-size: 150%; /* Adjust the value to control the zoom effect */
-      margin-top: -60%;
+      background-size: 160%; /* Adjust the value to control the zoom effect */
+      margin-top: -6%;
   }
+  .container {
+    margin-top: 10%;
 }
 
+.card {
+    width: 40%;
+}
+
+.card-front {
+    padding: 40px;
+    
+}
+}
+ 
 /* Media query for smaller screens, like phones */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
+  body{
+    background-size: 300%;
+  }
   .container {
-      margin-top: 50%;
+      margin-top: 45%;
   }
 
   .card {
@@ -169,64 +239,37 @@ body{
       padding: 40px;
       
   }
-  body{
-    background-size: 150%;
-  }
-
-  /* ... (add more styles for smaller screens) ... */
-}
- /* ... LAPTOP LARGE 1440 ... */
-@media screen and (max-width: 1440px) {
-  body {
-       
-      margin-top: -45%;
-  }
-  .container {
-    margin-top: 55%;
-}
-
-.card {
-    width: 48%;
-}
-
-.card-front {
-    padding: 40px;
-    
-}
-body{
-  background-size: 150%;
-}
 
 }
- /* ... mobile L 425 ... */
- @media screen and (max-width: 425px) {
-  body {
-       
-      margin-top: -45%;
-  }
-  .container {
-    margin-top: 80%;
-}
-
-.card {
-    width: 80%;
-}
-
-.card-front {
-    padding: 40px;
-    
-}
-body{
-  background-size: 150%;
-}
-
-}
-
-
-
-
  
- 
+  /* CSS for the spinner */
+.spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: none; /* Initially hide the spinner */
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border: 5px solid #3f3f3f;
+  border-top-color: #1a1a1a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+      transform: rotate(360deg);
+  }
+}
 
 
 /*Fillup Form end*/
