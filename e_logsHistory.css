@@ -95,7 +95,7 @@ td {
     background-color: white;
     z-index: 1;
 }
-#search {
+#searchInput{
     position: absolute;
     padding: 5px;
     border: 1px solid #ccc;
@@ -119,7 +119,7 @@ td {
 }
 /* Container for filter elements */
 .filter-container {
-    position: sticky;
+    
     z-index: 2;
     margin-top: 10px;
     margin-left: 69%; /* Adjust the right position as needed */
@@ -322,11 +322,128 @@ input{
     background-color: #162fa0;
     color: white;
 }
-
-tr:nth-child(even) {
-    background-color: lightgray; /* Set the background color for even rows */
+@media screen and (min-width: 2560px){
+    header{
+        width: 2548px;
+    }
+    #monitoringTable{
+        width: 2400px;
+        margin-left: 80px;
+    }
+    #search{
+        margin-left: 87%;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+    }
+    span{
+        top: -89px;
+    }
+    .filter-container{
+        position: relative;
+        margin-left: 82%;
+    }
+    #downloadexcel{
+        margin-right: 5%;
+        position: absolute;
+    }
+    .pagination{
+        top: 51%;
+    }
 }
+@media screen and (max-width: 1440px) {
+    header {
+        width: 99%;
+    }
 
-tr:nth-child(odd) {
-    background-color: white; /* Set the background color for odd rows */
+    header img {
+        width: 110px;
+        margin-top: 20px;
+    }
+
+    #search {
+        width: 178px;
+        margin-left: 1100px;
+    }
+    #downloadexcel{
+        margin-right: 5%;
+        position: absolute;
+    }
+    #monitoringTable{
+        width: 88%;
+        margin-left: 100px;
+    }
+    span{
+        top: 57px;
+    }
+    .pagination{
+        top: 101%;
+    }
+}
+@media screen and (max-width: 1024px){
+    header{
+        width: 105%;
+    }
+    header img {
+        width: 100px;
+        margin-top: 0px;
+    }
+    #monitoringTable{
+        width: 920px;
+        margin-left: 100px;
+    }
+    #search {
+        
+        margin-left: 760px;
+    }
+    #monitoringTable{
+        width: 90%;
+        margin-left: 100px;
+    }
+    span{
+        top: 47px;
+    }
+    .pagination{
+        top: 108%;
+    }
+    .filter-container{
+         
+        margin-left: 63%;
+    }
+    #downloadexcel{
+        margin-left: 100;
+        position: absolute;
+    }
+}
+@media screen and (max-width: 768px){
+    header{
+        width: 1010px;
+    }
+    header img {
+        width: 100px;
+        margin-bottom: -10px;
+    }
+    #search{
+        margin-left: 730px;
+    }
+    #monitoringTable{
+        width: 120%;
+        margin-left: 50px;
+        position: absolute;
+    }
+    span{
+        top: 27px;
+    }
+    .pagination{
+        top: 108%;
+    }
+    .filter-container{
+        display: flex;
+        margin-left: 80%;
+    }
+    #downloadexcel{
+        margin-left: 100;
+        position: absolute;
+    }
 }

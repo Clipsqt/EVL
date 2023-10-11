@@ -22,16 +22,6 @@ header h1 {
     margin-top: 10px;
 }
 
-/* Add a media query for screens with a maximum width of 768px */
-@media (max-width: 768px) {
-    header img {
-        width: 80px; /* Adjust the size as needed for smaller screens */
-    }
-
-    header h1 {
-        font-size: 24px; /* Adjust the font size for smaller screens */
-    }
-}
 
 /* Table */
 table {
@@ -72,6 +62,8 @@ td {
     padding: 4px;
     font-family: 'Bookman Old Style', serif;
     font-size: 12px;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden;
 }
 #monitoringTable th {
     position: sticky;
@@ -90,7 +82,7 @@ td {
 
 /* Ensure the table takes 100% width */
 #monitoringTable {
-    width: 95%;
+    width: 100%;
 }
 
 
@@ -120,4 +112,73 @@ td {
     font-size: 12px;
     width: 200px; /* Adjust the width as needed */
     
+}
+@media screen and (min-width: 2560px){
+    header{
+        width: 2478px;
+    }
+    #monitoringTable{
+        width: 2350px;
+        margin-left: 80px;
+    }
+    #search{
+        margin-right: -160px;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+    }
+}
+@media screen and (max-width: 1440px) {
+    header {
+        width: 1260px;
+    }
+
+    header img {
+        width: 110px;
+        margin-top: 0px;
+    }
+
+    #search {
+        width: 178px;
+        margin-left: 930px;
+    }
+    #monitoringTable{
+        width: 1100px;
+        margin-left: 100px;
+    }
+}
+@media screen and (max-width: 1024px){
+    header{
+        width: 105%;
+    }
+    header img {
+        width: 100px;
+        margin-top: 0px;
+    }
+    #monitoringTable{
+        width: 920px;
+        margin-left: 100px;
+    }
+    #search {
+        
+        margin-left: 750px;
+    }
+}
+@media screen and (max-width: 768px){
+    header{
+        width: 1010px;
+    }
+    header img {
+        width: 100px;
+        margin-bottom: -10px;
+    }
+    #search{
+        margin-left: 800px;
+    }
+    #monitoringTable{
+        width: 0%; /* Set it to a percentage or appropriate width */
+        margin-right: -10; /* Remove the margin if not needed */
+        position: absolute;
+    }
 }
