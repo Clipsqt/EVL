@@ -202,28 +202,46 @@ body{
     
 }
 }
-/* Media query for tablet devices */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px)  {
   body {
-      background-size: 160%; /* Adjust the value to control the zoom effect */
+      background-size: 190%; /* Adjust the value to control the zoom effect */
       margin-top: -6%;
   }
   .container {
-    margin-top: 10%;
+    margin-top: 25px;
 }
 
 .card {
-    width: 40%;
+    width: 55%;
 }
 
 .card-front {
-    padding: 40px;
+    padding: 50px;
+    
+}
+}
+/* Media query for tablet devices */
+@media screen and (min-width: 555px) and (max-width: 768px)  {
+  body {
+      background-size: 190%; /* Adjust the value to control the zoom effect */
+      margin-top: -6%;
+  }
+  .container {
+    margin-top: 25%;
+}
+
+.card {
+    width: 55%;
+}
+
+.card-front {
+    padding: 50px;
     
 }
 }
  
 /* Media query for smaller screens, like phones */
-@media screen and (max-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 425px){
   body{
     background-size: 300%;
   }
@@ -236,40 +254,24 @@ body{
   }
 
   .card-front {
-      padding: 40px;
+      padding: px;
       
   }
 
 }
- 
-  /* CSS for the spinner */
-.spinner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.8);
-  display: none; /* Initially hide the spinner */
-  justify-content: center;
-  align-items: center;
+@media screen and(max-width: 375px){
+  .container {
+    margin-top: 100%;
 }
 
-.spinner::after {
-  content: '';
-  width: 50px;
-  height: 50px;
-  border: 5px solid #3f3f3f;
-  border-top-color: #1a1a1a;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+.card {
+    width: 100px;
 }
 
-@keyframes spin {
-  to {
-      transform: rotate(360deg);
-  }
+.card-front {
+    padding: 100px;
+    
 }
-
+}
 
 /*Fillup Form end*/

@@ -119,7 +119,7 @@ td {
 }
 /* Container for filter elements */
 .filter-container {
-    position: sticky;
+    
     z-index: 2;
     margin-top: 10px;
     margin-left: 69%; /* Adjust the right position as needed */
@@ -321,4 +321,12 @@ input{
 .page-numbers button.active {
     background-color: #162fa0;
     color: white;
+}
+
+tr:nth-child(even) {
+    background-color: lightgray; /* Set the background color for even rows */
+}
+
+tr:nth-child(odd) {
+    background-color: white; /* Set the background color for odd rows */
 }
