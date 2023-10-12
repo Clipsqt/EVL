@@ -50,7 +50,7 @@
      <div class="head">MENU</div>
      <ol>
      <li> <a href="e_logsHistory.php"><i class='bx bx-history'></i>E-LOG'S HISTORY</a></li>
-<li> <a href="#"><i class='bx bxs-notepad'></i></i>ONLINE LOG'S</a></li>
+<li> <a href="e_onlineLogs.php"><i class='bx bxs-notepad'></i></i>ONLINE LOG'S</a></li>
 <li> <a href="e_walkinLogs.php"><i class='bx bx-walk'></i></i>WALK-IN LOG'S</a></li>
      </ol>
  </div>   
