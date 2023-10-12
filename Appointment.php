@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 // Get the current time in the desired format
-$time_in = ($appointment == "Online") ? null : date("h:i A");
+ 
 
 
 // Validate and sanitize data as needed (you can add more validation here)

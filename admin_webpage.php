@@ -9,7 +9,8 @@ $dbname = "e-logsheet";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 $userOffice = $_SESSION['userOffice'];
-$sql = "SELECT * FROM e_monitoringlogsheet WHERE department = '$userOffice' AND scheduledate  AND reference_no NOT IN (SELECT reference_no FROM e_logshistory)";
+$sql = "SELECT *, IF(appointment = 'Online', 1, 0) AS is_online FROM e_monitoringlogsheet WHERE department = '$userOffice' AND scheduledate  AND reference_no NOT IN (SELECT reference_no FROM e_logshistory)";
+
 $result = mysqli_query($conn, $sql);
 
 $rowNumber = 1;
@@ -52,9 +53,12 @@ $rowNumber = 1;
         <th id="colreference_no">Reference No.</th>
         <th id="colTime in">Time In</th>
         <th>Action</th>
+        <th>Time out</th>
+     
     </tr>
     <?php
-    while ($row = mysqli_fetch_assoc($result)) {
+   while ($row = mysqli_fetch_assoc($result)) {
+    $isOnlineAppointment = $row["is_online"] == 1;
     ?>
     <tr id="row_<?php echo $rowNumber; ?>" class="clickable-row">
         <td><?php echo $rowNumber; ?></td>
@@ -67,7 +71,8 @@ $rowNumber = 1;
         <td><?php echo $row["purpose_of_visit"]; ?></td>
         <td><?php echo $row["department"]; ?></td>
         <td><?php echo $row["reference_no"]; ?></td>
-        <td><?php echo $row["appointment"] === 'Online' ? '&nbsp;' : date("h:i A", strtotime($row["time_in"])); ?></td>
+        <td class="time-in"></td>
+        <td><button class="time-in-button">Time In</button></td>
         <td><button id="timeout_button_<?php echo $rowNumber; ?>" class="timeout-button" data-reference="<?php echo $row["reference_no"]; ?>">Time Out</button></td>
     </tr>
     <?php
@@ -87,7 +92,7 @@ $rowNumber = 1;
     var reference_no = this.getAttribute("data-reference");
 
     // Get the current time in HH:MM:SS format
-    var currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'});
+    var currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit',});
     
     // Make an AJAX request to transfer the row and update the time_out column
     var xhr = new XMLHttpRequest();
@@ -125,7 +130,86 @@ $rowNumber = 1;
   }
   ?>
 });
-  
 </script>
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const timeInButtons = document.querySelectorAll(".time-in-button");
+
+    timeInButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const row = this.closest("tr");
+            const timeInCell = row.querySelector("td:nth-child(11)");
+            const currentTime = new Date().toLocaleTimeString();
+
+            // Update the "Time In" cell with the current time
+            timeInCell.textContent = currentTime;
+
+            // Store the current time in a variable
+            const time_in = currentTime;
+
+            // Disable the button
+            button.classList.add("disabled");
+            button.disabled = true;
+
+            // Get other necessary data
+            const scheduledate = row.querySelector(".sched").textContent;
+            const fullname = row.querySelector(".fullname").textContent;
+            const reference_no = row.querySelector("td:nth-child(10)").textContent;
+
+            // Send the data to the server to update the database
+            updateDatabase(scheduledate, fullname, time_in, reference_no);
+        });
+    });
+});
+
+function updateDatabase(scheduledate, fullname, time_in, reference_no) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "update_time_in.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Handle the response from the server if needed
+            if (xhr.responseText === "success") {
+                // Time In data saved successfully
+            } else {
+                // Handle any errors here
+            }
+        }
+    };
+    const data = `scheduledate=${scheduledate}&fullname=${fullname}&time_in=${time_in}&reference_no=${reference_no}`;
+    xhr.send(data);
+}
+ </script>
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const timeInButtons = document.querySelectorAll(".time-in-button");
+
+    timeInButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const row = this.closest("tr");
+            const timeInCell = row.querySelector("td:nth-child(11)");
+            const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            // Update the "Time In" cell with the current time (without seconds)
+            timeInCell.textContent = currentTime;
+
+            // Store the current time in a variable (with seconds)
+            const time_in_with_seconds = new Date().toLocaleTimeString();
+
+            // Disable the button
+            button.classList.add("disabled");
+            button.disabled = true;
+
+            // Get other necessary data
+            const scheduledate = row.querySelector(".sched").textContent;
+            const fullname = row.querySelector(".fullname").textContent;
+            const reference_no = row.querySelector("td:nth-child(10)").textContent;
+
+            // Send the data to the server to update the database
+            updateDatabase(scheduledate, fullname, time_in_with_seconds, reference_no);
+        });
+    });
+});
+ </script>
 </body>
 </html>

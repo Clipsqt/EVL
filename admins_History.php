@@ -10,12 +10,11 @@ $dbname = "e-logsheet";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 $userOffice = $_SESSION['userOffice'];
 
-// Modify the SQL query to filter data based on userdepartment in e_logshistory table
-$sql = "SELECT * FROM e_logshistory WHERE department = '$userOffice'"; 
+// Modify the SQL query to filter data based on user department in e_logshistory table
+$sql = "SELECT * FROM e_logshistory WHERE department = '$userOffice'";
 $result = mysqli_query($conn, $sql);
 
 $rowNumber = 1;
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
