@@ -9,7 +9,9 @@ $dbname = "e-logsheet";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 $userOffice = $_SESSION['userOffice'];
-$sql = "SELECT *, IF(appointment = 'Online', 1, 0) AS is_online FROM e_monitoringlogsheet WHERE department = '$userOffice' AND scheduledate  AND reference_no NOT IN (SELECT reference_no FROM e_logshistory)";
+$currentDate = date("m/d/Y");
+
+$sql = "SELECT *, IF(appointment = 'Online', 1, 0) AS is_online FROM e_monitoringlogsheet WHERE department = '$userOffice' AND scheduledate = '$currentDate' AND reference_no NOT IN (SELECT reference_no FROM e_logshistory)";
 
 $result = mysqli_query($conn, $sql);
 
@@ -73,7 +75,7 @@ $rowNumber = 1;
         <td><?php echo $row["reference_no"]; ?></td>
         <td class="time-in"></td>
         <td><button class="time-in-button">Time In</button></td>
-        <td><button id="timeout_button_<?php echo $rowNumber; ?>" class="timeout-button" data-reference="<?php echo $row["reference_no"]; ?>">Time Out</button></td>
+        <td><button id="timeout_button_<?php echo $rowNumber; ?>" class="timeout-button" data-reference="<?php echo $row["reference_no"]; ?>" disabled>Time Out</button></td>
     </tr>
     <?php
     $rowNumber++;
@@ -88,6 +90,7 @@ $rowNumber = 1;
   mysqli_data_seek($result, 0); // Reset the result pointer
   while ($row = mysqli_fetch_assoc($result)) {
   ?>
+  
   document.getElementById("timeout_button_<?php echo $rowNumber; ?>").addEventListener("click", function () {
     var reference_no = this.getAttribute("data-reference");
 
@@ -192,9 +195,63 @@ function updateDatabase(scheduledate, fullname, time_in, reference_no) {
 
             // Update the "Time In" cell with the current time (without seconds)
             timeInCell.textContent = currentTime;
+            // Disable the button
+            button.classList.add("disabled");
+            button.disabled = true;
+
+            // Get other necessary data
+            const scheduledate = row.querySelector(".sched").textContent;
+            const fullname = row.querySelector(".fullname").textContent;
+            const reference_no = row.querySelector("td:nth-child(10)").textContent;
+
+            // Send the data to the server to update the database
+            updateDatabase(scheduledate, fullname, time_in_, reference_no);
+        });
+    });
+});
+ </script>
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const timeInButtons = document.querySelectorAll(".time-in-button");
+
+    timeInButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const row = this.closest("tr");
+            const timeInCell = row.querySelector("td:nth-child(11)");
+            const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            // Update the "Time In" cell with the current time
+            timeInCell.textContent = currentTime;
+
+            // Store the current time in a variable
+            const time_in = currentTime;
+
+            // Disable the "Time In" button
+            button.classList.add("disabled");
+            button.disabled = true;
+
+            // Enable the "Time Out" button
+            const timeoutButton = row.querySelector(".timeout-button");
+            timeoutButton.disabled = false;
+        });
+    });
+});
+ </script>
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const timeInButtons = document.querySelectorAll(".time-in-button");
+
+    timeInButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const row = this.closest("tr");
+            const timeInCell = row.querySelector("td:nth-child(11)");
+            const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); // Format time without seconds
+
+            // Update the "Time In" cell with the current time (without seconds)
+            timeInCell.textContent = currentTime;
 
             // Store the current time in a variable (with seconds)
-            const time_in_with_seconds = new Date().toLocaleTimeString();
+          
 
             // Disable the button
             button.classList.add("disabled");
@@ -206,10 +263,9 @@ function updateDatabase(scheduledate, fullname, time_in, reference_no) {
             const reference_no = row.querySelector("td:nth-child(10)").textContent;
 
             // Send the data to the server to update the database
-            updateDatabase(scheduledate, fullname, time_in_with_seconds, reference_no);
+            updateDatabase(scheduledate, fullname, time_in, reference_no);
         });
     });
 });
- </script>
 </body>
 </html>

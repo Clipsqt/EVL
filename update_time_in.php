@@ -12,11 +12,13 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $scheduledate = $_POST["scheduledate"];
     $fullname = $_POST["fullname"];
-    $timeIn = $_POST["time_in"];
+    
+    // Format the time as "hh:ia" (hours, minutes, AM/PM)
+    $timeIn = date("h:ia", strtotime($_POST["time_in"]));
+    
     $reference_no = $_POST["reference_no"];
 
     // Update the "Time In" column in your database
@@ -28,6 +30,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "error"; // Return an error message if the update failed
     }
 }
-
-mysqli_close($conn);
-?>

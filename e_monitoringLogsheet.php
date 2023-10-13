@@ -81,6 +81,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bookman+Old+Style">
             <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <link rel="stylesheet" href="e_monitoringLogsheet.css">
             <title>Monitoring Visitor's Logbook</title>
         </head>
@@ -234,51 +235,21 @@
             
             });
         </script>
-        <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const timeInButtons = document.querySelectorAll(".time-in-button");
+ 
+ <script>
+// COLOR ALTERNATING FUNCTION
+function applyAlternateRowColors() {
+    $('tbody tr:visible:odd').css('background-color', 'lightgrey');
+    $('tbody tr:visible:even').css('background-color', 'white');
+  }
+  // Initial application of alternate row colors
+  applyAlternateRowColors();
 
-    timeInButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            const row = this.closest("tr"); // Get the parent row of the clicked button
-            const timeInCell = row.querySelector(".time-in"); // Get the "Time In" cell
-            const currentTime = new Date().toLocaleTimeString(); // Get the current time
-
-            // Update the "Time In" cell with the current time
-            timeInCell.textContent = currentTime;
-
-            // Store the current time in a variable
-            const timeIn = currentTime;
-
-            // Disable the button
-            button.classList.add("disabled"); // Add the "disabled" class
-            button.disabled = true; // Disable the button element
-
-            // Remove the click event listener to prevent further clicks
-            button.removeEventListener("click", clickHandler);
-
-            // Get other necessary data
-            const scheduledate = row.querySelector(".sched").textContent;
-            const fullname = row.querySelector(".fullname").textContent;
-
-            // Send the data to the server to update the database
-            updateDatabase(scheduledate, fullname, time_in);
-        });
-    });
-});
-        function updateDatabase(scheduledate, fullname, timeIn) {
-            const xhr = new XMLHttpRequest();
-            xhr.open("POST", "update_time_in.php", true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Handle the response from the server if needed
-                }
-            };
-            const data = `scheduledate=${scheduledate}&fullname=${fullname}&time_in=${timeIn}`;
-            xhr.send(data);
-        }
-        </script>
-        
+  // Event listener for the search input
+  $('#searchInput').on('input', function () {
+    // Reapply alternate row colors after filtering
+    applyAlternateRowColors();
+  });
+  </script>
         </body>
         </html>

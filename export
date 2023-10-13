@@ -1,0 +1,3 @@
+   $query = "SELECT * FROM e_logsHistory ORDER BY timeStamp desc";
+    $result = mysqli_query($conn, $query);
+    $rowNumber = 1; 

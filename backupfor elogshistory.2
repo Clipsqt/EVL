@@ -1,18 +1,12 @@
-    <?php
-    session_start();
-    require_once("connect.php");
+// Initialize filter variables
+    $searchTerm = "";
+    $fromDate = "";
+    $toDate = "";
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
-    $dbname = "e-logsheet";
-
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
+    // Check if the search term is provided
+    if (isset($_POST['search'])) {
+        $searchTerm = $_POST['search'];
     }
-
 
     // Check if the "From" and "To" dates have been provided
     if (isset($_POST['fromDate']) && isset($_POST['toDate'])) {

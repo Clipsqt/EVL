@@ -10,10 +10,6 @@ $dbname = "e-logsheet";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 $userOffice = $_SESSION['userOffice'];
 
-// Modify the SQL query to filter data based on user department in e_logshistory table
-$sql = "SELECT * FROM e_logshistory WHERE department = '$userOffice'";
-$result = mysqli_query($conn, $sql);
-
 $rowNumber = 1;
 ?>
 <!DOCTYPE html>
@@ -24,6 +20,7 @@ $rowNumber = 1;
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bookman+Old+Style">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="admins_History.css">
     <title>Monitoring Visitor's Logbook</title>
 
@@ -57,7 +54,7 @@ $rowNumber = 1;
     </tr>
     <?php
         
-        $query = "SELECT * FROM e_logsHistory ORDER BY id DESC, scheduledate DESC, time_out DESC";
+        $query = "SELECT * FROM e_logsHistory WHERE department = '$userOffice' ORDER BY id DESC, scheduledate DESC, time_out DESC";
         $result = mysqli_query($conn, $query);
     
     while ($row = mysqli_fetch_assoc($result)) {
@@ -81,6 +78,7 @@ $rowNumber = 1;
     }
     ?>
     </table>
+    
 </div>
 </body>
 </html>

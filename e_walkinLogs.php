@@ -30,7 +30,7 @@
     <header>
         <img src="monitoring logbook logo.jpeg.png" alt="">
         <h1>  WALK-IN LOGS</h1>
-        <input type autocomplete="off" id="search" placeholder="Search">
+        <input type="text" id="search" placeholder="Search" oninput="searchTable()">
     </header>
 <body>
     <div class="filter-container">
@@ -50,8 +50,8 @@
      <div class="head">MENU</div>
      <ol>
      <li> <a href="e_logsHistory.php"><i class='bx bx-history'></i>E-LOG'S HISTORY</a></li>
-<li> <a href="e_onlineLogs.php"><i class='bx bxs-notepad'></i></i>ONLINE LOG'S</a></li>
-<li> <a href="e_walkinLogs.php"><i class='bx bx-walk'></i></i>WALK-IN LOG'S</a></li>
+     <li> <a href="e_onlineLogs.php"><i class='bx bxs-notepad'></i></i>ONLINE LOG'S</a></li>
+     <li> <a href="e_walkinLogs.php"><i class='bx bx-walk'></i></i>WALK-IN LOG'S</a></li>
      </ol>
  </div>   
  <div class="pagination">
@@ -82,7 +82,7 @@
         
         
         $query = "SELECT * FROM e_logsHistory WHERE appointment = 'Walk-in' ORDER BY id DESC, scheduledate DESC, time_out DESC";
-        $result = mysqli_query($conn, $query);
+        $result = mysqli_query($conn, $query);   
 
     if ($result && mysqli_num_rows($result) > 0) {
         $totalRows = mysqli_num_rows($result); // Get the total number of rows
@@ -113,35 +113,44 @@
         
     </table>
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-        const searchInput = document.getElementById("search");
-        const table = document.getElementById("monitoringTable");
-        const rows = Array.from(table.querySelectorAll("tbody tr"));
+           function searchTable() {
+    var input, filter, table, tr, td1, td2, td3, td4, td5, td6, td7, td8, i, txtValue1, txtValue2, txtValue3 ,txtValue4 ,txtValue5, txtValue6, txtValue7, txtValue8;
+    input = document.getElementById("searchInput");
+    filter = input.value.toLowerCase();
+    table = document.querySelector("table");
+    tr = table.getElementsByTagName("tr");
 
-        function filterRows() {
-            const searchTerm = searchInput.value.trim().toLowerCase();
+    for (i = 0; i < tr.length; i++) {
+        td1 = tr[i].getElementsByTagName("td")[0]; // RIS No. column
+        td2 = tr[i].getElementsByTagName("td")[1]; // Account Name column
+        td3 = tr[i].getElementsByTagName("td")[2]; // User Office column
+        td4 = tr[i].getElementsByTagName("td")[3]; // Stock No. column
+        td5 = tr[i].getElementsByTagName("td")[4]; // Item Description column
+        td7 = tr[i].getElementsByTagName("td")[5]; // Date column
+        td8 = tr[i].getElementsByTagName("td")[6]; // Date column
+        td6 = tr[i].getElementsByTagName("td")[7]; // Date column
+        
+        
 
-            rows.forEach(function(row) {
-                let rowMatch = false;
+    if (td1 && td2 && td3 && td4 && td5 && td6 && td7 && td8) {
+        txtValue1 = td1.textContent || td1.innerText;
+                txtValue2 = td2.textContent || td2.innerText;
+                txtValue3 = td3.textContent || td3.innerText;
+                txtValue4 = td4.textContent || td4.innerText;
+                txtValue5 = td5.textContent || td5.innerText;
+                txtValue6 = td6.textContent || td6.innerText;
+                txtValue7 = td7.textContent || td7.innerText;
+                txtValue8 = td8.textContent || td8.innerText;
 
-                row.querySelectorAll("td").forEach(function(cell) {
-                    const cellValue = cell.textContent.trim().toLowerCase();
-                    if (cellValue.includes(searchTerm)) {
-                        rowMatch = true;
-                    }
-                });
-
-                // Check if the row matches the search term or if no search term is provided (show all rows)
-                if (searchTerm === "" || rowMatch) {
-                    row.style.display = "";
-                } else {
-                    row.style.display = "none";
-                }
-            });
+        if (txtValue1.toLowerCase().indexOf(filter) > -1 || txtValue2.toLowerCase().indexOf(filter) > -1 || txtValue3.toLowerCase().indexOf(filter) > -1 || txtValue4.toLowerCase().indexOf(filter) > -1 || txtValue5.toLowerCase().indexOf(filter) > -1 || txtValue6.toLowerCase().indexOf(filter) > -1 || txtValue7.toLowerCase().indexOf(filter) > -1 || txtValue8.toLowerCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+        } else {
+            tr[i].style.display = "none";
         }
-
-        searchInput.addEventListener("input", filterRows);
-    });
+    }
+            
+    }
+}
     </script>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -341,6 +350,18 @@
     // ...
 });
 </script>
-    </div>
-    </body>
-    </html>
+<script>
+// COLOR ALTERNATING FUNCTION
+function applyAlternateRowColors() {
+    $('tbody tr:visible:odd').css('background-color', 'lightgrey');
+    $('tbody tr:visible:even').css('background-color', 'white');
+  }
+  // Initial application of alternate row colors
+  applyAlternateRowColors();
+
+  // Event listener for the search input
+  $('#searchInput').on('input', function () {
+    // Reapply alternate row colors after filtering
+    applyAlternateRowColors();
+  });
+  </script>

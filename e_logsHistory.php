@@ -12,38 +12,7 @@
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    // Initialize filter variables
-    $searchTerm = "";
-    $fromDate = "";
-    $toDate = "";
-
-    // Check if the search term is provided
-    if (isset($_POST['search'])) {
-        $searchTerm = $_POST['search'];
-    }
-
-    // Check if the "From" and "To" dates have been provided
-    if (isset($_POST['fromDate']) && isset($_POST['toDate'])) {
-        $fromDate = $_POST['fromDate'];
-        $toDate = $_POST['toDate'];
-    }
-
-    // Modify the SQL query to include the filters
-    $query = "SELECT * FROM e_logsHistory WHERE 1=1"; // Start with a true condition
-
-    if (!empty($searchTerm)) {
-        $query .= " AND (fullname LIKE '%$searchTerm%' OR scheduledate LIKE '%$searchTerm%')";
-    }
-
-    if (!empty($fromDate) && !empty($toDate)) {
-        $query .= " AND scheduledate BETWEEN '$fromDate' AND '$toDate'";
-    }
-
-    $query .= " AND (appointment = 'Walk-in' OR appointment = 'Online')"; // Filter for 'walkin' and 'online' appointments
-    $query .= " ORDER BY id DESC, scheduledate DESC";
-
-    $result = mysqli_query($conn, $query);
-    $rowNumber = 1; // Initialize row number
+    
     ?>
     <!DOCTYPE html>
     <html lang="en">

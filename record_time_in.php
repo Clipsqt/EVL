@@ -7,7 +7,7 @@ if (isset($_POST['appointment_id'])) {
     require_once("connect.php"); // Include your database connection code
 
     $appointmentId = $_POST['appointment_id'];
-    $currentTime = date('Y-m-d H:i:s');
+    $currentTime = date('Y-m-d H:i');
 
     // Update the database with the current time for the specified appointment
     $sql = "UPDATE e_monitoringlogsheet SET time_in = ? WHERE appointment_id = ?";
