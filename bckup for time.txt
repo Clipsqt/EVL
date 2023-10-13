@@ -1,0 +1,85 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const timeInButtons = document.querySelectorAll(".time-in-button");
+
+    timeInButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const row = this.closest("tr");
+            const timeInCell = row.querySelector("td:nth-child(11)");
+            const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            // Update the "Time In" cell with the current time (without seconds)
+            timeInCell.textContent = currentTime;
+            // Disable the button
+            button.classList.add("disabled");
+            button.disabled = true;
+
+            // Get other necessary data
+            const scheduledate = row.querySelector(".sched").textContent;
+            const fullname = row.querySelector(".fullname").textContent;
+            const reference_no = row.querySelector("td:nth-child(10)").textContent;
+
+            // Send the data to the server to update the database
+            updateDatabase(scheduledate, fullname, time_in_, reference_no);
+        });
+    });
+});
+ </script>
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const timeInButtons = document.querySelectorAll(".time-in-button");
+
+    timeInButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const row = this.closest("tr");
+            const timeInCell = row.querySelector("td:nth-child(11)");
+            const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            // Update the "Time In" cell with the current time
+            timeInCell.textContent = currentTime;
+
+            // Store the current time in a variable
+            const time_in = currentTime;
+
+            // Disable the "Time In" button
+            button.classList.add("disabled");
+            button.disabled = true;
+
+            // Enable the "Time Out" button
+            const timeoutButton = row.querySelector(".timeout-button");
+            timeoutButton.disabled = false;
+        });
+    });
+});
+ </script>
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const timeInButtons = document.querySelectorAll(".time-in-button");
+
+    timeInButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const row = this.closest("tr");
+            const timeInCell = row.querySelector("td:nth-child(11)");
+            const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); // Format time without seconds
+
+            // Update the "Time In" cell with the current time (without seconds)
+            timeInCell.textContent = currentTime;
+
+            // Store the current time in a variable (with seconds)
+          
+
+            // Disable the button
+            button.classList.add("disabled");
+            button.disabled = true;
+
+            // Get other necessary data
+            const scheduledate = row.querySelector(".sched").textContent;
+            const fullname = row.querySelector(".fullname").textContent;
+            const reference_no = row.querySelector("td:nth-child(10)").textContent;
+
+            // Send the data to the server to update the database
+            updateDatabase(scheduledate, fullname, time_in, reference_no);
+        });
+    });
+});
+</script>
