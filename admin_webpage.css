@@ -114,38 +114,34 @@ td {
 
 @media screen and (min-width: 2560px){
     header{
-        width: 2478px;
+        width: 2548px;
     }
     #monitoringTable{
-        width: 2350px;
+        width: 2400px;
         margin-left: 80px;
-    }
-    #search{
-        margin-right: -160px;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
+    #history_logs_button{
+        top: 14%;
+    }
 }
 @media screen and (max-width: 1440px) {
     header {
-        width: 1260px;
+        width: 99%;
     }
 
     header img {
         width: 110px;
-        margin-top: 0px;
+        margin-top: 20px;
     }
 
-    #search {
-        width: 178px;
-        margin-left: 930px;
-    }
-    #monitoringTable{
-        width: 1100px;
-        margin-left: 100px;
-    }
+    #history_logs_button{
+        margin-left: 30%;
+        top: 30%;
+    } 
 }
 @media screen and (max-width: 1024px){
     header{
@@ -159,25 +155,48 @@ td {
         width: 920px;
         margin-left: 100px;
     }
-    #search {
-        
-        margin-left: 750px;
-    }
+    #history_logs_button{
+        width: 14%;
+        top: 30%;
+        left: 56%;
+    } 
 }
 @media screen and (max-width: 768px){
-    header{
+     header{
         width: 1010px;
     }
     header img {
         width: 100px;
         margin-bottom: -10px;
     }
-    #search{
-        margin-left: 800px;
+    #monitoringTable{
+        width: 120%;
+        margin-left: 50px;
+        position: absolute;
+    }
+    #history_logs_button{
+        width: 16%;
+        top: 28%;
+        left: 80%;
+    } 
+}
+@media screen and (min-width: 1600px){
+    header{
+        width: 130%;
+    }
+    header img {
+        width: 100px;
+        margin-bottom: -10px;
     }
     #monitoringTable{
-        width: 100%; /* Set it to a percentage or appropriate width */
-        margin-left: 0; /* Remove the margin if not needed */
-        
+        width: 120%;
+        margin-left: 05%;
+    
     }
+    #history_logs_button{
+        width: 16%;
+        top: 22%;
+        left: 109%;
+    } 
+    
 }

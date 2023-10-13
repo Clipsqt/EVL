@@ -21,18 +21,6 @@ header h1 {
     color: white;
     margin-top: 10px;
 }
-
-/* Add a media query for screens with a maximum width of 768px */
-@media (max-width: 768px) {
-    header img {
-        width: 80px; /* Adjust the size as needed for smaller screens */
-    }
-
-    header h1 {
-        font-size: 24px; /* Adjust the font size for smaller screens */
-    }
-}
-
 /* Table */
 table {
     width: 95%;
@@ -121,4 +109,99 @@ td {
 /* Hover effect (optional) */
 .back-button:hover {
     background-color: black; /* Change the background color on hover */
+}
+@media screen and (min-width: 2560px){
+    header{
+        width: 2548px;
+    }
+    #monitoringTable{
+        width: 2400px;
+        margin-left: 80px;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+    }
+    .back-button{
+        width: 5%;
+        top: 30%;
+        left: 92%;
+    }
+}
+@media screen and (max-width: 1440px) {
+    header {
+        width: 99%;
+    }
+
+    header img {
+        width: 110px;
+        margin-top: 20px;
+    }
+
+    .back-button{
+        width: 8%;
+        top: 30%;
+        left: 89%;
+    }
+}
+@media screen and (max-width: 1024px){
+    header{
+        width: 105%;
+    }
+    header img {
+        width: 100px;
+        margin-top: 0px;
+    }
+    #monitoringTable{
+        width: 920px;
+        margin-left: 100px;
+    }
+    #monitoringTable{
+        width: 90%;
+        margin-left: 100px;
+    }
+    .back-button{
+        width: 7%;
+        top: 30%;
+        left: 94%;
+    }
+}
+@media screen and (max-width: 768px){
+     header{
+        width: 130%;
+    }
+    header img {
+        width: 100px;
+        margin-bottom: -10px;
+    }
+    #monitoringTable{
+        width: 10%;
+        margin-left: 05%;
+    
+    }
+    .back-button{
+        width: 16%;
+        top: 28%;
+        left: 110%;
+    } 
+}
+@media screen and (min-width: 1600px){
+    header{
+        width: 130%;
+    }
+    header img {
+        width: 100px;
+        margin-bottom: -10px;
+    }
+    #monitoringTable{
+        width: 120%;
+        margin-left: 05%;
+    
+    }
+    .back-button{
+        width: 16%;
+        top: 22%;
+        left: 109%;
+    } 
+    
 }
