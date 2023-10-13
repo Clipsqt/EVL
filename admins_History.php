@@ -54,7 +54,7 @@ $rowNumber = 1;
     </tr>
     <?php
         
-        $query = "SELECT * FROM e_logsHistory WHERE department = '$userOffice' ORDER BY id DESC, scheduledate DESC, time_out DESC";
+        $query = "SELECT * FROM e_logsHistory WHERE department = '$userOffice' ORDER BY  timeStamp desc";
         $result = mysqli_query($conn, $query);
     
     while ($row = mysqli_fetch_assoc($result)) {

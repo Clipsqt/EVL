@@ -281,6 +281,64 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+<script>
+    function transferData(reference_no) {
+    // Get the current time
+    const currentTime = new Date();
 
+    // Check if the current time has passed midnight (00:00:00)
+    if (currentTime.getHours() === 0 && currentTime.getMinutes() === 0 && currentTime.getSeconds() === 0) {
+        // Make an AJAX request to transfer the row data
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "transfer_unsuccessful.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    // Handle the response from the server
+                    const response = xhr.responseText;
+                    if (response === "success") {
+                        // The row was successfully transferred
+                        // You can add further actions here if needed
+                    } else {
+                        // Handle any errors or display an error message
+                        console.log("Transfer error:", response);
+                    }
+                } else {
+                    // Handle any errors or display an error message
+                    console.log("AJAX request failed");
+                }
+            }
+        };
+
+        // Send the reference_no as POST data
+        xhr.send("reference_no=" + reference_no);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const timeOutButtons = document.querySelectorAll(".timeout-button");
+
+    timeOutButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const row = this.closest("tr");
+            const timeOutCell = row.querySelector("td:nth-child(12)");
+
+            if (!timeOutCell.textContent) {
+                // If the "Time Out" cell is empty, automatically transfer the row
+                const reference_no = row.querySelector("td:nth-child(10)").textContent;
+                transferData(reference_no);
+                
+                // You can add further actions here, e.g., hide the row or display a message
+                row.style.display = "none"; // Hide the row
+            } else {
+                // The row has already timed out, display a message or take other action
+                console.log("This row has already timed out.");
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>

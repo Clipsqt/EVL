@@ -90,7 +90,7 @@
         <header>
             <img src="monitoring logbook logo.jpeg.png" alt="">
             <h1>  E- MONITORING LOG SHEET</h1>
-            <input type="text" id="search" placeholder="Search">
+            <input type="text" id="search" placeholder="Search" autocomplete="off">
         </div>
         </header>
         <div class="scroll-container">

@@ -52,6 +52,7 @@
      <li> <a href="e_logsHistory.php"><i class='bx bx-history'></i>E-LOG'S HISTORY</a></li>
      <li> <a href="e_onlineLogs.php"><i class='bx bxs-notepad'></i></i>ONLINE LOG'S</a></li>
      <li> <a href="e_walkinLogs.php"><i class='bx bx-walk'></i></i>WALK-IN LOG'S</a></li>
+     <li> <a href="unsuccessful_appointment.php"><i class='bx bx-clipboard'></i></i></i>UNSUCCESSFUL APPOINTMENT</a></li>
      </ol>
  </div>   
  <div class="pagination">
@@ -81,7 +82,7 @@
         <?php
         
         
-        $query = "SELECT * FROM e_logsHistory WHERE appointment = 'Walk-in' ORDER BY id DESC, scheduledate DESC, time_out DESC";
+        $query = "SELECT * FROM e_logsHistory WHERE appointment = 'Walk-in' ORDER BY  timeStamp desc";
         $result = mysqli_query($conn, $query);   
 
     if ($result && mysqli_num_rows($result) > 0) {

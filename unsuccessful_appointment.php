@@ -23,14 +23,14 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bookman+Old+Style">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <script src="table2excel.js"></script>
-        <link rel="stylesheet" href="e_onlineLogs.css">
-        <title>E-LOGS HISTORY</title>
+        <link rel="stylesheet" href="unsuccessful_appointment.css">
+        <title>UNSUCCESSFUL APPOINTENT</title>
        
 
     </head>
     <header>
         <img src="monitoring logbook logo.jpeg.png" alt="">
-        <h1> ONLINE LOGS</h1>
+        <h1>UNSUCCESSFUL APPOINTMENT</h1>
        <input type="text" id="searchInput" placeholder="Search" oninput="searchTable()">
     </header>
 <body>
@@ -82,7 +82,7 @@
     </thead>   
         <?php
         
-      $query = "SELECT * FROM e_logsHistory WHERE appointment = 'Online' ORDER BY timeStamp desc";
+      $query = "SELECT * FROM unsuccessful_appointment ORDER BY timeStamp desc";
       $result = mysqli_query($conn, $query);   
   
  
