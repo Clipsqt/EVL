@@ -242,11 +242,11 @@
 }
     </script>
     <script>
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const table = document.getElementById("monitoringTable");
     const rows = Array.from(table.querySelectorAll("tbody tr"));
     const rowsPerPage = 10;
-    const totalPages = Math.ceil(rows.length / rowsPerPage);
+    let totalPages = Math.ceil(rows.length / rowsPerPage);
     let currentPage = 1;
 
     function updateTableDisplay() {
@@ -263,7 +263,7 @@
         if (currentPage < totalPages) {
             currentPage++;
             updateTableDisplay();
-            updatePageNumber();
+            updatePageNumbers();
         }
     }
 
@@ -271,7 +271,7 @@
         if (currentPage > 1) {
             currentPage--;
             updateTableDisplay();
-            updatePageNumber();
+            updatePageNumbers();
         }
     }
 
@@ -279,45 +279,60 @@
         if (pageNumber >= 1 && pageNumber <= totalPages) {
             currentPage = pageNumber;
             updateTableDisplay();
-            updatePageNumber();
+            updatePageNumbers();
         }
     }
 
-    function updatePageNumber() {
-        // Get all page number buttons
-        const pageButtons = document.querySelectorAll(".page-numbers button");
+    function updatePageNumbers() {
+        const paginationContainer = document.getElementById("paginationContainer");
+        paginationContainer.innerHTML = ""; // Clear existing page number buttons
 
-        // Loop through all page number buttons and remove the "active" class
-        pageButtons.forEach(function (button) {
-            button.classList.remove("active");
-        });
+        // Calculate total pages and add ellipsis if there are too many pages
+        totalPages = Math.ceil(rows.length / rowsPerPage);
+        const maxVisiblePages = 5; // Maximum number of visible page number buttons
 
-        // Add the "active" class to the current page number button
-        const currentPageButton = pageButtons[currentPage - 1];
-        currentPageButton.classList.add("active");
+        let startPage = Math.max(currentPage - Math.floor(maxVisiblePages / 2), 1);
+        let endPage = startPage + maxVisiblePages - 1;
 
-        document.getElementById("currentPage").textContent = `Page ${currentPage}`;
+        if (endPage > totalPages) {
+            endPage = totalPages;
+            startPage = Math.max(endPage - maxVisiblePages + 1, 1);
+        }
+
+        if (startPage > 1) {
+            const ellipsisButton = document.createElement("button");
+            ellipsisButton.textContent = "...";
+            ellipsisButton.disabled = true;
+            paginationContainer.appendChild(ellipsisButton);
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            const pageButton = document.createElement("button");
+            pageButton.textContent = i;
+            pageButton.addEventListener("click", function () {
+                goToPage(i);
+            });
+            if (i === currentPage) {
+                pageButton.classList.add("active");
+            }
+            paginationContainer.appendChild(pageButton);
+        }
+
+        if (endPage < totalPages) {
+            const ellipsisButton = document.createElement("button");
+            ellipsisButton.textContent = "...";
+            ellipsisButton.disabled = true;
+            paginationContainer.appendChild(ellipsisButton);
+        }
     }
 
     document.getElementById("nextButton").addEventListener("click", goToNextPage);
     document.getElementById("previousButton").addEventListener("click", goToPreviousPage);
 
-    // Create page number buttons
-    const paginationContainer = document.getElementById("paginationContainer");
-    for (let i = 1; i <= totalPages; i++) {
-        const pageButton = document.createElement("button");
-        pageButton.textContent = i;
-        pageButton.addEventListener("click", function () {
-            goToPage(i);
-        });
-        paginationContainer.appendChild(pageButton);
-    }
-
-    // Initialize table display and page number
+    // Initialize table display and page numbers
     updateTableDisplay();
-    updatePageNumber();
+    updatePageNumbers();
 });
-  
 </script>
 <script>
   function showAllRows() {
