@@ -78,7 +78,7 @@ td {
     border: 2px solid black;
     padding: 2px;
     font-family: 'Bookman Old Style', serif;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 /* Scrollable content */
@@ -564,14 +564,14 @@ input{
     }
     #searchInput{
         margin-left: 27%;
-        top: 20%;
+        top: 23%;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
     span{
-        top: -1%;
+        top: 2%;
     }
     .filter-container{
         position: relative;

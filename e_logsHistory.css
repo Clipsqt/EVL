@@ -65,7 +65,7 @@ th {
     background-color: #162fa0;
     color: white;
     font-family: 'Bookman Old Style', serif;
-    font-size: 12px;
+    font-size: 10px;
     position: sticky;
     top: 0;
     z-index: 1; /* Ensure the header appears above the table content */
@@ -78,7 +78,7 @@ td {
     border: 2px solid black;
     padding: 2px;
     font-family: 'Bookman Old Style', serif;
-    font-size: 10px;
+    font-size: 11px;
 }
 
 /* Scrollable content */
