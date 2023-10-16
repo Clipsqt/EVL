@@ -23,11 +23,18 @@ header h1 {
 }
 /* Table */
 table {
-    width: 95%;
-    margin: 20px auto; /* Center the table horizontally */
-    max-height: 100%;
+    margin-left: 67px;
+    width: 100%;
     border-collapse: collapse; /* Combine border spacing into one */
     border: 2px solid black;
+}
+
+table tr:nth-child(even) {
+    background-color: lightgray; 
+}
+
+ table tr:nth-child(odd) {
+    background-color: #ffffff; 
 }
 
 /* Individual column widths */
@@ -67,11 +74,12 @@ td {
     background-color: #162fa0;
     
 }
-.scroll-container {
+.scroll{
     overflow-y: scroll;
     margin-top: 30px;
-    max-height: 50%; 
-    
+    margin-left: 35px;
+    width: 92%;
+    height: 450px; 
 }
 
 /* Remove the scroll from the table */
@@ -103,7 +111,7 @@ td {
     cursor: pointer;
     position: absolute;
     right: 3%;
-    top: 24%;
+    top: 22%;
 }
 
 /* Hover effect (optional) */
