@@ -34,43 +34,6 @@
             echo "Failed to fetch data from the API.";
         }
 
-        $filterFullName = '';
-        $filterDepartment = '';
-
-        if (isset($_GET['filterFullName'])) {
-            $filterFullName = mysqli_real_escape_string($conn, $_GET['filterFullName']);
-        }
-
-        if (isset($_GET['filterDepartment'])) {
-            $filterDepartment = mysqli_real_escape_string($conn, $_GET['filterDepartment']);
-        }
-
-        $query = "SELECT * FROM e_monitoringlogsheet WHERE scheduledate = ?";
-
-        if (!empty($filterFullName)) {
-            $query .= " AND fullname LIKE ?";
-        }
-
-        if (!empty($filterDepartment)) {
-            $query .= " AND department LIKE ?";
-        }
-
-        $stmt = mysqli_prepare($conn, $query);
-
-        if ($stmt) {
-            if (!empty($filterFullName)) {
-                $filterFullName = "%" . $filterFullName . "%";
-                mysqli_stmt_bind_param($stmt, "ss", $scheduledate, $filterFullName);
-            } elseif (!empty($filterDepartment)) {
-                $filterDepartment = "%" . $filterDepartment . "%";
-                mysqli_stmt_bind_param($stmt, "ss", $scheduledate, $filterDepartment);
-            } else {
-                mysqli_stmt_bind_param($stmt, "s", $scheduledate);
-            }
-
-            mysqli_stmt_execute($stmt);
-            $result = mysqli_stmt_get_result($stmt);
-        }
 
         $rowNumber = 1;
         ?>
@@ -90,7 +53,7 @@
         <header>
             <img src="monitoring logbook logo.jpeg.png" alt="">
             <h1>  E- MONITORING LOG SHEET</h1>
-            <input type="text" id="search" placeholder="Search" autocomplete="off">
+            <input type="text" id="searchInput" placeholder="Search" oninput="searchTable()">
         </div>
         </header>
         <div class="scroll-container">
@@ -132,41 +95,9 @@
             $rowNumber++;
                 }
                 ?>
-            </table>
-            </div> 
-        </div>
-        <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const searchInput = document.getElementById("search");
-            const table = document.getElementById("monitoringTable");
-            const rows = table.querySelectorAll("tbody tr");
-
-            function filterRows() {
-                const searchTerm = searchInput.value.trim().toLowerCase();
-
-                rows.forEach(function(row) {
-                    let rowMatch = false;
-
-                    row.querySelectorAll("td").forEach(function(cell) {
-                        const cellValue = cell.textContent.trim().toLowerCase();
-                        if (cellValue.includes(searchTerm)) {
-                            rowMatch = true;
-                        }
-                    });
-
-                    // Check if the row matches the search term or if no search term is provided (show all rows)
-                    if (searchTerm === "" || rowMatch) {
-                        row.style.display = "";
-                    } else {
-                        row.style.display = "none";
-                    }
-                });
-            }
-
-            searchInput.addEventListener("input", filterRows);
-        });
-        </script>
-        <script>
+ </table>
+    
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             function sortTable(columnIndex, ascending) {
                     let table, rows, switching, i, x, y, shouldSwitch;
@@ -234,13 +165,52 @@
                 });
             
             });
-        </script>
- 
- <script>
+ </script>
+       <script>
+           function searchTable() {
+    var input, filter, table, tr, td1, td2, td3, td4, td5, td6, td7, td8, i, txtValue1, txtValue2, txtValue3 ,txtValue4 ,txtValue5, txtValue6, txtValue7, txtValue8;
+    input = document.getElementById("searchInput");
+    filter = input.value.toLowerCase();
+    table = document.querySelector("table");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+        td1 = tr[i].getElementsByTagName("td")[0]; // RIS No. column
+        td2 = tr[i].getElementsByTagName("td")[1]; // Account Name column
+        td3 = tr[i].getElementsByTagName("td")[2]; // User Office column
+        td4 = tr[i].getElementsByTagName("td")[3]; // Stock No. column
+        td5 = tr[i].getElementsByTagName("td")[4]; // Item Description column
+        td7 = tr[i].getElementsByTagName("td")[5]; // Date column
+        td8 = tr[i].getElementsByTagName("td")[6]; // Date column
+        td6 = tr[i].getElementsByTagName("td")[7]; // Date column
+        
+        
+
+    if (td1 && td2 && td3 && td4 && td5 && td6 && td7 && td8) {
+        txtValue1 = td1.textContent || td1.innerText;
+                txtValue2 = td2.textContent || td2.innerText;
+                txtValue3 = td3.textContent || td3.innerText;
+                txtValue4 = td4.textContent || td4.innerText;
+                txtValue5 = td5.textContent || td5.innerText;
+                txtValue6 = td6.textContent || td6.innerText;
+                txtValue7 = td7.textContent || td7.innerText;
+                txtValue8 = td8.textContent || td8.innerText;
+
+        if (txtValue1.toLowerCase().indexOf(filter) > -1 || txtValue2.toLowerCase().indexOf(filter) > -1 || txtValue3.toLowerCase().indexOf(filter) > -1 || txtValue4.toLowerCase().indexOf(filter) > -1 || txtValue5.toLowerCase().indexOf(filter) > -1 || txtValue6.toLowerCase().indexOf(filter) > -1 || txtValue7.toLowerCase().indexOf(filter) > -1 || txtValue8.toLowerCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+        } else {
+            tr[i].style.display = "none";
+        }
+    }
+            
+    }
+}
+    </script> 
+    <script>
 // COLOR ALTERNATING FUNCTION
 function applyAlternateRowColors() {
     $('tbody tr:visible:odd').css('background-color', 'lightgrey');
-    $('tbody tr:visible:even').css('background-color', 'white');
+    $('tbody tr:visible:even').css('background-color', 'gray');
   }
   // Initial application of alternate row colors
   applyAlternateRowColors();
@@ -251,5 +221,3 @@ function applyAlternateRowColors() {
     applyAlternateRowColors();
   });
   </script>
-        </body>
-        </html>

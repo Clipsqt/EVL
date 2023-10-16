@@ -60,6 +60,7 @@ $rowNumber = 1;
     </header>
 </head>
 <button id="history_logs_button" onclick="location.href='admins_History.php';">History Logs</button>
+<li><a href="log_out.php">LOGOUT</a></li>
 <body>
 <div class="scroll">
     <table id="monitoringTable">
@@ -99,6 +100,7 @@ $rowNumber = 1;
         <td class="time-in"></td>
         <td><button class="time-in-button">Time In</button></td>
         <td><button id="timeout_button_<?php echo $rowNumber; ?>" class="timeout-button" data-reference="<?php echo $row["reference_no"]; ?>" disabled>Time Out</button></td>
+      
     </tr>
     <?php
     $rowNumber++;

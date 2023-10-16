@@ -157,7 +157,7 @@
     </script>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const searchInput = document.getElementById("search");
+        const searchInput = document.getElementById("searchInput");
         const fromDateInput = document.getElementById("fromDate");
         const toDateInput = document.getElementById("toDate");
         const table = document.getElementById("monitoringTable");
@@ -218,7 +218,7 @@
     var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
     
     // Specify file name
-    filename = filename?filename+'.xls':'e_logshistory.xls';
+    filename = filename?filename+'e-logshistory':'.excel';
     
     // Create download link element
     downloadLink = document.createElement("a");
