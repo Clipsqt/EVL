@@ -60,6 +60,7 @@ $rowNumber = 1;
     </header>
 </head>
 <button id="history_logs_button" onclick="location.href='admins_History.php';">History Logs</button>
+<li><a href="change_password.php">CHANGE PASSWORD</a></li>
 <li><a href="log_out.php">LOGOUT</a></li>
 <body>
 <div class="scroll">

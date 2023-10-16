@@ -25,6 +25,8 @@
             $_SESSION['accountName'] = $row['accountName'];
             $_SESSION['userPosition'] = $row['userPosition'];
             $_SESSION['userOffice'] = $row['userOffice'];
+            $_SESSION['depedEmail'] = $row['depedEmail'];
+            $_SESSION['accountPass'] = $row['accountPass'];
             
             // check account type so user will access webpage based on their account type
             $accountType = $row['accountType'];
@@ -35,7 +37,7 @@
             } elseif ($accountType == 'Security') {
                 header("Location: e_monitoringLogsheet.php"); //change location page, sample.php only for testing
             } elseif ($accountType == 'Super Admin') {
-                header("Location: superadmin_inventory.php");// Handle superAdmin redirection here, change location page
+                header("Location: e_logsHistory.php");// Handle superAdmin redirection here, change location page
             } else {
                 echo '<script>
                 alert("Login failed. Invalid DepEd E-mail or password.")
