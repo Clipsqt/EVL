@@ -48,6 +48,7 @@ $rowNumber = 1;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bookman+Old+Style">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="admin_webpage.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Monitoring Visitor's Logbook </title>
 
     <header>
@@ -102,13 +103,62 @@ $rowNumber = 1;
                 <td class="time-in"></td>
                 <td><button class="time-in-button">Time In</button></td>
                 <td><button id="timeout_button_<?php echo $rowNumber; ?>" class="timeout-button" data-reference="<?php echo $row["reference_no"]; ?>" disabled>Time Out</button></td>
-            </tr>
+              </tr>
         <?php
             $rowNumber++;
             }
         ?>
     </table>
+ 
 </div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Define a function to transfer the data
+    function transferData(reference_no, currentTime) {
+      // Make an AJAX request to transfer the row and update the time_out column
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "check_time_out.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            // Handle the response from the server (e.g., display a success sweet alert)
+          } 
+        }
+      };
+      
+      // Send the reference_no and current time as POST data
+      xhr.send("reference_no=" + reference_no + "&time_out=" + currentTime);
+    }
+
+    // Define a function to periodically check for rows and transfer data
+    function checkAndTransferData() {
+      <?php
+      $rowNumber = 1; // Reset row number for JavaScript
+      mysqli_data_seek($result, 0); // Reset the result pointer
+      while ($row = mysqli_fetch_assoc($result)) {
+      ?>
+        var reference_no = "<?php echo $row['reference_no']; ?>";
+        var currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        transferData(reference_no, currentTime);
+      <?php
+      $rowNumber++;
+      }
+      ?>
+    }
+
+    // Call the data transfer function every 10 seconds
+    setInterval(function () {
+      checkAndTransferData();
+      location.reload(); // Reload the page
+    },  13 * 60 * 60 * 1000); // 10000 milliseconds = 10 seconds
+  });
+</script>
+
+
 
 
 <script>
@@ -162,6 +212,7 @@ $rowNumber = 1;
   ?>
 });
 </script>
+
 
 
  <script src="admin_webpage.js"></script>
