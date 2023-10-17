@@ -51,10 +51,12 @@
         </label>
         <div class="head">MENU</div>
         <ol>
-            <li> <a href="e_logsHistory.php"><i class='bx bx-history'></i>E-LOG'S HISTORY</a></li>
+        <li> <a href="e_logsHistory.php"><i class='bx bx-history'></i>E-LOG'S HISTORY</a></li>
             <li> <a href="e_onlineLogs.php"><i class='bx bxs-notepad'></i></i>ONLINE LOG'S</a></li>
             <li> <a href="e_walkinLogs.php"><i class='bx bx-walk'></i></i>WALK-IN LOG'S</a></li>
-            <li> <a href="unsuccessful_appointment.php"><i class='bx bx-clipboard'></i></i></i>UNSUCCESSFUL APPOINTMENT</a></li>
+            <li> <a href="unsuccessful_appointment.php"><i class='bx bx-clipboard'></i></i></i>UNSUCCESSFUL APPOINTMENTS</a></li>
+            <li> <a href="change_password.php"><i class='bx bx-lock-alt'></i>CHANGE PASSWORD</a></li>
+            <li> <a href="log_out.php"><i class='bx bx-log-out'></i>LOGOUT</a></li>
         </ol>
     </div>   
     <div class="pagination">
