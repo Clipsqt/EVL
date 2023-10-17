@@ -21,7 +21,7 @@
             <div class="passfont">Password</div>
             <input type="password" name="password" placeholder="Enter your password" required>
             <button type="submit" name="login" id="loginButton">Login</button> <!-- Change "type" attribute to "submit" -->
-            <li><a href="ForgotPassword.php">Forgot Password</a></a></li>
+            <li><a href="ForgotPassword.php"class="forgotpassword">Forgot Password</a></li>
         </form>
     </div>
     <script src="login.js"></script> 
