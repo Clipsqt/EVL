@@ -95,6 +95,7 @@
             $rowNumber++;
                 }
                 ?>
+    </div>
  </table>
     
     <script>
@@ -221,3 +222,7 @@ function applyAlternateRowColors() {
     applyAlternateRowColors();
   });
   </script>
+  
+</script>
+</body>
+</html>
