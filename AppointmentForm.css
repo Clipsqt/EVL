@@ -5,7 +5,7 @@ padding: 0;
 }
 body {
   font-family:  sans-serif;
-  background-image: url(blur\ logo.jpeg.jpg);
+  background-image: url(depedblurlogo.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -135,7 +135,7 @@ top: 10px;
 }
 
 /*For 4k-2560px BigScreen*/
-@media screen and (min-width: 2560px) {
+@media screen and (max-width: 2560px) {
   body {
       background-size: 50%; /* Adjust the value to control the zoom effect */
       margin-top: -45%;
@@ -166,112 +166,424 @@ body{
 
 
  /* ... LAPTOP LARGE 1440 ... */
-@media screen and (max-width: 1440px) {
-  
-  .container {
-    margin-top: 100px;
+ @media screen and (min-width: 2560px){
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card {
-    width: 23%;
-    height: 520px;
+  width: 12%;
 }
 
 .card-front {
-    padding: 40px;
-    
+  padding: 40px;
+  
 }
 body{
-  background-size: 105%;
+background-size: 150%;
+}
+.submit-btn{
+margin-left: auto;
+margin-right: auto;
+width: 54%;
+}
+}
+@media screen and (max-width: 1920px){
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.card {
+  width: 16%;
 }
 
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: auto;
+margin-right: auto;
+width: 54%;
+}
+}
+@media screen and (max-width: 1680px){
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  width: 18%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 55%;
+}
+}
+@media screen and (max-width: 1600px){
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  width: 20%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+  margin-left: -3%;
+  margin-right: auto;
+  width: 55%;
+  }
+}
+@media screen and (max-width: 1440px){
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  width: 22%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%;
+}
+}
+@media screen and (max-width: 1366px) {
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  width: 22%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%;
+}
+}
+@media screen and (max-width: 1360px){
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  width: 22%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%;
+}
+}
+@media screen and (max-width: 1280px) {
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  width: 24%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%;
+}
+}
+@media screen and (max-width: 1152px) {
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  width: 26%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%;
+}
+}
 @media screen and (max-width: 1024px) {
-   
-  .container {
-    margin-top: 3%;
-}
-
-.card {
-    width: 30%;
-}
-
-.card-front {
-    padding: 50%px;
-    
-}
-}
-@media screen and (max-width: 768px)  {
   body {
-      background-size: 190%; /* Adjust the value to control the zoom effect */
-      margin-top: -6%;
-  }
-  .container {
-    margin-top: 25px;
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card {
-    width: 55%;
+  width: 30%;
 }
 
 .card-front {
-    padding: 50px;
-    
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%;
 }
 }
-/* Media query for tablet devices */
-@media screen and (min-width: 555px) and (max-width: 768px)  {
+@media screen and (max-width: 800px) {
   body {
-      background-size: 190%; /* Adjust the value to control the zoom effect */
-      margin-top: -6%;
-  }
-  .container {
-    margin-top: 25%;
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card {
-    width: 55%;
+  width: 38%;
 }
 
 .card-front {
-    padding: 50px;
-    
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%;
 }
 }
- 
-/* Media query for smaller screens, like phones */
-@media screen and (min-width: 320px) and (max-width: 425px){
-  body{
-    background-size: 300%;
-  }
-  .container {
-      margin-top: 45%;
-  }
-
-  .card {
-      width: 80%;
-  }
-
-  .card-front {
-      padding: px;
-      
-  }
-
+@media screen and (max-width: 768px) {
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
 }
-@media screen and(max-width: 375px){
-  .container {
-    margin-top: 100%;
+.container {
+  margin-top: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card {
-    width: 100px;
+  width: 40%;
 }
 
 .card-front {
-    padding: 100px;
-    
+  padding: 40px;
+  
 }
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%
+}
+}
+@media screen and (max-width: 426px){
+  body {
+    background-size: 10%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 70%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/*Fillup Form end*/
+.card {
+  width: 75%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%
+}
+}
+@media screen and (max-width: 376px){
+  body {
+    background-size: 100%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  width: 80%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%
+}
+}
+@media screen and (max-width: 320px){
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 78%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  width: 100%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%
+}
+
+}
