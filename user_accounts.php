@@ -38,9 +38,8 @@ $conn->close();
             <h1>USER ACCOUNTS</h1>
         </div>
         </header>
-        <table id="monitoringTable">
-        <div class="scroll-container">
-            <div class="scroll"></div>
+        <div class="scroll">
+    <table id="monitoringTable">
     <thead>
         <tr>
             <th id="colNo">No.</th>
