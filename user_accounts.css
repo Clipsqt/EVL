@@ -76,7 +76,7 @@ td {
 /* NAV DROPDOWN LIST*/
 nav{
     float: right;
-    margin-right: 100%;
+    margin-left: 74%;
     padding-top: 120px;
     position: absolute;
     top: -1%;
@@ -116,7 +116,7 @@ ul li ul.dropdown{
     display: none;
 }
 ul li a:hover{
-    background: grey;
+    background: rgb(0, 0, 0);
 }
 ul li:hover ul.dropdown{
     display:block;
@@ -168,90 +168,92 @@ ul li:hover ul.dropdown{
     margin-left: 20px;
     margin-top: 30px;
 }
-.dropdownaccountType{
-    position: relative;
+.dropdownaccountType {
+    width: 50%; 
+    height: 40px; 
+    margin-top: 30px; 
     margin-left: 30px;
-    margin-top: 8px;
     border: 2px solid black;
-    font-size: 14px;
-    width: 50%;
+    font-size: 16px; 
+    border-radius: 5px; 
+    text-align: left; 
+    padding: 5px;
 }
-
 .accountname label{
     font-size: 20px;
     position: absolute;
     margin-left: 20px;
-    margin-top: 53px;
+    margin-top: 5%;
 }
 .accountname input{
     position: absolute;
     margin-left: 150px;
-    margin-top: 52px;
+    margin-top: 4%;
     font-size: 20px;
     border: 2px solid black;
-    width: 50%;
+    width: 47%;
 }
 
 .userposition label{
     font-size: 20px;
     position: absolute;
     margin-left: 20px;
-    margin-top: 73px;
+    margin-top: 9%;
 }
 .userposition input{
     position: absolute;
     margin-left: 150px;
-    margin-top: 73px;
+    margin-top: 8%;
     font-size: 20px;
     border: 2px solid black;
-    width: 50%;
+    width: 47%;
 }
 
 .useroffice label{
     font-size: 20px;
     position: absolute;
-    margin-left: 20px;
-    margin-top: 98px;
+    margin-left: 22px;
+    margin-top: 13%;
 }
 .useroffice select{
     position: absolute;
     margin-left: 150px;
-    margin-top: 100px;
+    margin-top: 12%;
     border: 2px solid black;
     font-size: 17px;
-    width: 50%;
+    width: 48%;
 }
 
 .depedemail label{
     font-size: 20px;
     position: absolute;
-    margin-left: 20px;
-    margin-top: 190px;
+    margin-left: 1%;
+    margin-top: 30%;
 }
 
 .depedemail input{
     position: absolute;
-    margin-left: 160px;
-    margin-top: 190px;
+    margin-left: 150px;
+    margin-top: 30%;
     font-size: 20px;
     border: 2px solid black;
-    width: 50%;
+    width: 47%;
 }
 
 .accountpass label{
     font-size: 20px;
     position: absolute;
-    margin-left: 20px;
-    margin-top: 235px;
+    margin-left: 1%;
+    margin-top: 38%;
 }
 
 .accountpass input{
     position: absolute;
-    margin-left: 160px;
-    margin-top: 235px;
+    margin-left: 150px;
+    margin-top: 38%;
     font-size: 20px;
     border: 2px solid black;
-    width: 50%;
+    width: 47%;
 }
 
 
@@ -262,7 +264,7 @@ ul li:hover ul.dropdown{
 }
 
 .Register{
-    margin-top: 200px;
+    margin-top: 47%;
     margin-left: 40px;
     width: 25%;
     height: 30px;
@@ -270,7 +272,7 @@ ul li:hover ul.dropdown{
     cursor: pointer;
 }
 .Close{
-    margin-top: 200px;
+    margin-top: 47%;
     margin-right: 20px;
     width: 25%;
     height: 30px;
@@ -355,6 +357,12 @@ ul li:hover ul.dropdown{
     margin-left: 75px;
     margin-top: 55px;
 
+}
+#OfficeSelect{
+    border: 2px solid black;
+    margin-left: 10%;
+    width: 40%;
+    padding: 1%;
 }
 
 .User_Office input{
