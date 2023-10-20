@@ -1,6 +1,6 @@
 <?php
 // Connect to the database
-require("databaseConnection.php");
+require("connect.php");
 
 // Check if the form has been deletion
 if (isset($_POST["delete_account"])) {
@@ -8,11 +8,11 @@ if (isset($_POST["delete_account"])) {
      $selectedItem = $_POST["selected_item_delete"];
 
     // Perform the deletion query
-    $sql = "DELETE FROM ris_accounts WHERE depedEmail = '$selectedItem'";
+    $sql = "DELETE FROM e_logsheetaccounts WHERE depedEmail = '$selectedItem'";
 
     if (mysqli_query($conn, $sql)) {
         mysqli_close($conn);
-        header("Location: Accounts_inventory.php");   
+        header("Location: user_accounts.php");   
     }                             
 }
 ?>
