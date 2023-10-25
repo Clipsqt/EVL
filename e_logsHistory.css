@@ -181,7 +181,7 @@ td {
 
 .container{
     top: 20%;
-    height: 85%;
+    height: 100%;
     width: 300px;
     position: absolute;
     background:#162fa0;
@@ -194,7 +194,7 @@ td {
 
    .container .head{
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     padding: 5px;
     text-transform: uppercase;

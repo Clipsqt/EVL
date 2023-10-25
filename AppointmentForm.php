@@ -49,8 +49,8 @@
     <input type="text" class="currentDate" name="currentDate" id="currentDate" placeholder="MM/DD/YY" readonly required autocomplete="OFF">
 </div>
   <!-- ... (your form inputs) ... -->
- <input type="text" class="input-box" name="Fullname" placeholder="Enter your name" required autocomplete="off" pattern="[A-Za-z.\s]+">
-                    <input type="tel" class="input-box" name="phonenumber" placeholder="Enter your number" required autocomplete="OFF" pattern="[0-9]{11}" maxlength="11">
+ <input type="text" class="input-box" name="Fullname" placeholder="Fullname" required autocomplete="off" pattern="[A-Za-z.\s]+">
+                    <input type="tel" class="input-box" name="phonenumber" placeholder="Phone number" required autocomplete="OFF" pattern="[0-9]{11}" maxlength="11">
                     <script>
                        var quantityInput = document.querySelector('.qu');
                         var quantityInputs = document.querySelectorAll('.quantityInputUser');
@@ -65,19 +65,19 @@
                     </script>
                  <div class="PurposeBox">  
                     <div class="inner-box">
-                    <input type="text" class="input-box" name="Purpose" placeholder="What is your purpose?" required autocomplete="off">  
+                    <input type="text" class="input-box" name="Purpose" placeholder="Purpose" required autocomplete="off">  
   </div>
  </div>  
                  <div class="selecOffice">
 
             <div class="Selectoffice">
                 <select name="selectOffice" id="selectOffice" required>
-                    <option value=""disabled selected>Select Office</option>
+                    <option value="">Office to Visit</option>
                     <option value="School Governance Operations Division">SGOD</option>
                     <option value="Information Communication Technology">ICT Services</option>
                     <option value="Office of the Schools Division Superintendent">OSDS</option>
                     <option value="Office of the Schools Division Superintendent Proper">OSDS PROPER</option>
-                    <option value="The  Commission on Audit">COA</option>
+                    <option value="The Commission on Audit">COA</option>
                     <option value="Office of the Assistant Schools Division Superintendent">ASDS</option>
                     <option value="Personnel Section">Personnel Section</option>
                     <option value="Records Section">Record Section</option>
@@ -93,6 +93,7 @@
                 <form>
     <label for="gender"> </label>
     <select name="gender" id="gender">
+        <option value="">SEX</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
 

@@ -1,36 +1,37 @@
 <?php
-    session_start();
-    require_once("connect.php");
+session_start();
+require_once("connect.php");
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
-    $dbname = "e-logsheet";
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "e-logsheet";
 
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-    ?>
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bookman+Old+Style">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <script src="table2excel.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <link rel="stylesheet" href="e_walkinLogs.css">
-        <title>E-LOGS HISTORY</title>
-    </head>
-    <header>
-        <img src="monitoring logbook logo.jpeg.png" alt="">
-        <h1>WALK-IN LOGS</h1>
-        <input type="text" id="searchInput" placeholder="Search" oninput="searchTable()">
-    </header>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bookman+Old+Style">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="table2excel.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="ActivityLog.css">
+    <title>ACTIVITYLOG</title>
+</head>
+<header>
+    <img src="monitoring logbook logo.jpeg.png" alt="">
+    <h1> ACTIVITY LOG</h1>
+    <input type="text" id="searchInput" placeholder="Search" oninput="searchTable()">
+</header>
 <body>
     <div class="filter-container">
         <label for="fromDate">From:</label>
@@ -79,18 +80,17 @@
                     <th id="colTime in">Time In</th>
                     <th id="colTime out">Time Out</th>
                 </tr>
-            </thead>   
+            </thead> 
+     
             <?php
-        
-        
-                $query = "SELECT * FROM e_logsHistory WHERE appointment = 'Walk-in' ORDER BY  timeStamp desc";
-                $result = mysqli_query($conn, $query);   
+                $query = "SELECT * FROM e_logsHistory ORDER BY timeStamp desc";
+                $result = mysqli_query($conn, $query);
 
                 if ($result && mysqli_num_rows($result) > 0) {
-                    $totalRows = mysqli_num_rows($result); // Get the total number of rows
-                    $rowNumber = $totalRows; // Initialize row number to the total number of rows
+                $totalRows = mysqli_num_rows($result); // Get the total number of rows
+                $rowNumber = $totalRows; // Initialize row number to the total number of rows
 
-                 while ($row = mysqli_fetch_assoc($result)) {
+                while ($row = mysqli_fetch_assoc($result)) {
                     // Start a new table row for each record
                     echo "<tr class='highlight-row'>"; // Apply the CSS class
                     echo "<td>" . $rowNumber . "</td>";
@@ -114,7 +114,7 @@
             ?>
         
         </table>
+    </div>
 </body>
-<script src="e_walkinLogs.js"></script>
+<script src="ActivityLog.js"></script>
 </html>
-    
