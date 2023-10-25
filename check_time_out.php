@@ -23,10 +23,10 @@ if (isset($_POST['reference_no']) && isset($_POST['time_out'])) {
             $row = mysqli_fetch_assoc($result);
 
             // Insert the row data into the second table (e_logsHistory)
-            $insertQuery = "INSERT INTO unsuccessful_appointment (fullname, sex, priority, phonenumber, scheduledate, appointment, purpose_of_visit, department, reference_no, time_in, time_out) 
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $insertQuery = "INSERT INTO unsuccessful_appointment (fullname, sex, priority, phonenumber, scheduledate, appointment, purpose_of_visit, department, reference_no, time_in) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = mysqli_prepare($conn, $insertQuery);
-            mysqli_stmt_bind_param($stmt, "sssssssssss", $row['fullname'], $row['sex'], $row['priority'], $row['phonenumber'], $row['scheduledate'], $row['appointment'], $row['purpose_of_visit'], $row['department'], $row['reference_no'], $row['time_in'], $row['time_out']);
+            mysqli_stmt_bind_param($stmt, "ssssssssss", $row['fullname'], $row['sex'], $row['priority'], $row['phonenumber'], $row['scheduledate'], $row['appointment'], $row['purpose_of_visit'], $row['department'], $row['reference_no'], $row['time_in']);
 
             if (mysqli_stmt_execute($stmt)) {
                 // Delete the row from the first table
