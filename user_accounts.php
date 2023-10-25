@@ -100,9 +100,9 @@ $result = $conn->query($sql);
     <label for="accountTypeSelect">Account Type:</label>
     <select name="account_Type[]" class="dropdownaccountType" id="accountTypeSelect">
                     <option value="">Select Account Type</option>
-                    <option value="End User">End User</option>
-                    <option value="Admin">Super Admin</option>
-                    <option value="User Manager">User Manager</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Super Admin">Super Admin</option>
+                    <option value="Security Guard">Security Guard</option>
                 </select>
             </div>
             <div class="accountname">
