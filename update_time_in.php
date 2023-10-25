@@ -17,8 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fullname = $_POST["fullname"];
     
     // Format the time as "hh:ia" (hours, minutes, AM/PM)
-    $timeIn = date("h:ia", strtotime($_POST["time_in"]));
-    
+    $timeIn = date("h:i a", strtotime($_POST["time_in"]));
+    $timeIn = strtoupper($timeIn); // Convert $timeIn to uppercase
     $reference_no = $_POST["reference_no"];
 
     // Update the "Time In" column in your database
