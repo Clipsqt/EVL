@@ -83,6 +83,7 @@ $rowNumber = 1;
             <th id="colTime in">Time In</th>
             <th>Action</th>
             <th>Time out</th>
+            <th>Que</th>
         </tr>
         <?php
             while ($row = mysqli_fetch_assoc($result)) {
@@ -105,6 +106,7 @@ $rowNumber = 1;
                 <td class="time-in"><?php echo $TimeInRecorded ? $row["time_in"] : ''; ?></td>
                 <td><button class="time-in-button" <?php echo $TimeInRecorded ? 'disabled' : ''; ?>>Time In</button></td>
                 <td><button id="timeout_button_<?php echo $rowNumber; ?>" class="timeout-button" data-reference="<?php echo $row["reference_no"]; ?>" <?php echo $TimeInRecorded ? '' : 'disabled'; ?>>Time Out</button></td>
+                <td><button class="next-button">Next</button></td>
               </tr>
         <?php
             $rowNumber++;

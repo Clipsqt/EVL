@@ -73,7 +73,7 @@ td {
     position: absolute;
     background:#162fa0;
     border: black;
-    z-index: 2;
+    z-index: 3;
     transition: 0.2 ease;
     transform: translate(-330px);
     opacity: 95%;
