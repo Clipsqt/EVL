@@ -3,6 +3,14 @@ session_start();
 
 require_once("connect.php");
 date_default_timezone_set('Asia/Manila');
+function generateRandomReference($length) {
+    $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $reference = '';
+    for ($i = 0; $i < $length; $i++) {
+        $reference .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    return $reference;
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $fullName = mysqli_real_escape_string($conn, $_POST["Fullname"]);
@@ -34,9 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($appointment == "walk-in") {
         $reference_no = null; // Set the reference number to null for walk-in appointments
     } else {
-        $reference_no = uniqid(); // Generate a random reference number for scheduled appointments
-    }
-
+        $reference_no = generateRandomReference(8); // Generate an 8-character reference number for scheduled appointments
+}
 // Get the current time in the desired format
  
 

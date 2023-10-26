@@ -21,7 +21,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>Fillup Form</title>
@@ -46,7 +46,7 @@
 </div>
 <div id="dateBoxContainer">
     <h2>Prefer Date</h2>
-    <input type="text" class="currentDate" name="currentDate" id="currentDate" placeholder="MM/DD/YY" readonly required autocomplete="OFF">
+    <input type="text" class="currentDate" name="currentDate" id="currentDate" placeholder="Select a date" readonly required autocomplete="OFF">
 </div>
   <!-- ... (your form inputs) ... -->
  <input type="text" class="input-box" name="Fullname" placeholder="Fullname" required autocomplete="off" pattern="[A-Za-z.\s]+">
@@ -74,9 +74,8 @@
                 <select name="selectOffice" id="selectOffice" required>
                     <option value="">Office to Visit</option>
                     <option value="School Governance Operations Division">SGOD</option>
+                    <option value="Curriculum Implementation Division">CID</option>
                     <option value="Information Communication Technology">ICT Services</option>
-                    <option value="Office of the Schools Division Superintendent">OSDS</option>
-                    <option value="Office of the Schools Division Superintendent Proper">OSDS PROPER</option>
                     <option value="The Commission on Audit">COA</option>
                     <option value="Office of the Assistant Schools Division Superintendent">ASDS</option>
                     <option value="Personnel Section">Personnel Section</option>
@@ -85,8 +84,6 @@
                     <option value="Payroll Section">Payroll Section</option>
                     <option value="Accounting Section">Accounting Section</option>
                     <option value="Budget Section">Budget Section</option>
-                    <option value="Cash Section">Cash Section</option>
-                    <option value="Support Staff">Support Staff</option>
                     <option value="Cash Section">Cash Section</option>
                     <option value="General Services">General Services</option>
                 </select>
@@ -264,6 +261,9 @@ currentDateInput.addEventListener('input', function (e) {
             this.value = numericValue;
         }
     });
+</script>
+<script>
+    
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
