@@ -89,6 +89,9 @@ td {
     overflow-y: scroll;
     
 }
+#colDepartment{
+width: 20%;
+}
 #monitoringTable thead {
     position: sticky;
     top: 0;

@@ -295,4 +295,10 @@ function applyAlternateRowColors() {
     applyAlternateRowColors();
   });
 
- 
+  //FOR COA//
+  function openCoaForm() {
+    // Add code to open the CoA form or redirect to the CoA page
+    window.location.href = 'certificate_of_appearance.php';
+}
+
+//Transfering data to control number//

@@ -14,6 +14,7 @@ if (!$conn) {
 }
     
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +34,7 @@ if (!$conn) {
     <input type="text" id="searchInput" placeholder="Search" oninput="searchTable()">
 </header>
 <body> 
+    
 <div class="priority_filter">
     <label for="priorityFilter">Priority:</label>
     <select id="priorityFilter" onchange="filterData()">
@@ -57,6 +59,7 @@ if (!$conn) {
         <input type="text" id="toDate" placeholder="MM/DD/YYYY">
         <button onclick="filterData()">Find</button>
         <button id="downloadexcel" onclick="exportTableToExcel('monitoringTable')">Convert to Excel</button>
+        
     </div>
     <input type="checkbox" name="" id="check">
     <div class="container">
@@ -80,57 +83,66 @@ if (!$conn) {
         <button id="nextButton">Next</button>
         <button id="showAllButton" onclick="showAllRows()">Show All</button>
     </div>
-    <div class="scroll">    
-        <table id="monitoringTable" border="1">
-            <thead> 
-                <tr>
-                    <th id="colNo">No.</th>
-                    <th id="colFullName">Full Name</th>
-                    <th id="colSex">Sex</th>
-                    <th id="colpriority">Priority</th>
-                    <th id="colPhoneNumber">Phone Number</th>
-                    <th id="colScheduleDate">Schedule Date</th>
-                    <th id="colAppointment">Appointment</th>
-                    <th id="colPurpose">Purpose of visit</th>
-                    <th id="colDepartment">Department</th>
-                    <th id="colreference_no">Reference No.</th>
-                    <th id="colTime in">Time In</th>
-                    <th id="colTime out">Time Out</th>
-                </tr>
-            </thead> 
-     
-            <?php
-                $query = "SELECT * FROM e_logsHistory ORDER BY timeStamp desc";
-                $result = mysqli_query($conn, $query);
+    <div class="scroll">  
+     <form action="" method="post">
+    <table id="monitoringTable" border="1">
+    <thead> 
+        <tr>
+            <th id="colNo">No.</th>
+            <th id="colFullName">Full Name</th>
+            <th id="colSex">Sex</th>
+            <th id="colpriority">Priority</th>
+            <th id="colPhoneNumber">Phone Number</th>
+            <th id="colScheduleDate">Schedule Date</th>
+            <th id="colAppointment">Appointment</th>
+            <th id="colPurpose">Purpose of visit</th>
+            <th id="colDepartment">Department</th>
+            <th id="colreference_no">Reference No.</th>
+            <th id="colTime in">Time In</th>
+            <th id="colTime out">Time Out</th>
+            <th id="colCoa">Coa</th>
+        </tr>
+        
+    </thead> 
 
-                if ($result && mysqli_num_rows($result) > 0) {
-                $totalRows = mysqli_num_rows($result); // Get the total number of rows
-                $rowNumber = $totalRows; // Initialize row number to the total number of rows
+    <?php
+    $query = "SELECT * FROM e_logsHistory ORDER BY timeStamp desc";
+    $result = mysqli_query($conn, $query);
 
-                while ($row = mysqli_fetch_assoc($result)) {
-                    // Start a new table row for each record
-                    echo "<tr class='highlight-row'>"; // Apply the CSS class
-                    echo "<td>" . $rowNumber . "</td>";
-                    echo "<td class='fullname'>" . $row['fullname'] . "</td>";
-                    echo "<td class='sex'>" . $row['sex'] . "</td>";
-                    echo "<td class='priority'>" . $row['priority'] . "</td>";
-                    echo "<td>" . $row['phonenumber'] . "</td>";
-                    echo "<td class='sched'>" . $row['scheduledate'] . "</td>";
-                    echo "<td>" . $row['appointment'] . "</td>";
-                    echo "<td>" . $row['purpose_of_visit'] . "</td>";
-                    echo "<td>" . $row['department'] . "</td>";
-                    echo "<td>" . $row['reference_no'] . "</td>";
-                    echo "<td>" . $row['time_in'] . "</td>";
-                    echo "<td>" . $row['time_out'] . "</td>";
-                    echo "</tr>";
-                    $rowNumber--; // Decrease row number for the next row
-                }
-                } else {
-                    echo "No transferred row data found.";
-                }
+    if ($result && mysqli_num_rows($result) > 0) {
+        $totalRows = mysqli_num_rows($result); // Get the total number of rows
+        $rowNumber = $totalRows; // Initialize row number to the total number of rows
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $referencecode = $row["reference_no"];
+            // Start a new table row for each record
+            echo "<tr class='highlight-row'>"; // Apply the CSS class
+            echo "<td>" . $rowNumber . "</td>";
+            echo "<td class='fullname'>" . $row['fullname'] . "</td>";
+            echo "<td class='sex'>" . $row['sex'] . "</td>";
+            echo "<td class='priority'>" . $row['priority'] . "</td>";
+            echo "<td>" . $row['phonenumber'] . "</td>";
+            echo "<td class='sched'>" . $row['scheduledate'] . "</td>";
+            echo "<td>" . $row['appointment'] . "</td>";
+            echo "<td>" . $row['purpose_of_visit'] . "</td>";
+            echo "<td>" . $row['department'] . "</td>";
+            echo "<td>" . $row['reference_no'] . "</td>";
+            echo "<td>" . $row['time_in'] . "</td>";
+            echo "<td>" . $row['time_out'] . "</td>";
             ?>
+      <td><a href="certificate_of_appearance.php?reference_no=<?php echo $referencecode; ?>" class="certificate" onclick="sendToControlNumber('<?php echo $referencecode; ?>')">COA</a></td>
+            <?php
+            echo "</tr>";
+            
+            $rowNumber--; // Decrease row number for the next row
+        }
+    } else {
+        echo "No transferred row data found.";
+    }
+    ?>
         
         </table>
+        </form>  
     </div>
 </body>
 <script src="e_logsHistory.js"></script>
