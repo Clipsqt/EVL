@@ -1,3 +1,9 @@
+<?php 
+session_start();
+require_once("queuing_system_display.php")
+ ?>
+
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,86 +11,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="queuing_system.css">
     <title>QUEUING SYSTEM</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="datetime">
         <div class="time"></div>
         <div class="date"></div>
+        <img src="monitoring logbook logo.jpeg.png" alt="deped">
+        <div class="headerTitles">
+            <h3>Republic of the Philippines</h3> <br>
+            <h2>Department of Education</h2> <br>
+            <h3>Region III</h3> <br>
+            <h1>SCHOOLS DIVISION OF CITY OF SAN JOSE DEL MONTE</h1>
+        </div>
     </div>
 
-    <video width="320" height="240" autoplay loop muted>
+
+    <audio id="notification">
+        <source src="queuing_system_announcement.mp3" type="audio/mp3"> 
+    </audio>
+
+
+    <video width="730" height="450" autoplay muted>
         <source src="DEPED HYMN 2023.mp4" type="video/mp4">
         <source src="DEPED HYMN 2023.webm" type="video/webm">
         Your browser does not support the video tag.
     </video>
+
     
     <div class="OSDS">
-        <h3>OSDS</h3>
-        <table>
+        <h3>Office of the Schools Division Superintendent</h3>
+        <table id="visitor_table">
             <tr>
                 <th class="name_of_visitors">VISITORS:</th>
-                <th class="proceed">Proceed:</th>
-                <th class="office">OFFICE:</th>
+                <th class="department">DEPARTMENT:</th>
             </tr>
-                <tr>
-                    <td class="name">Ivan Policarpio</td>
-                    <td>Proceed To:</td>
-                    <td class="department">ICT SERVICES</td>
-                </tr>
-                <tr>
-                    <td class="name">Reymi Angelo Dela Cruz</td>
-                    <td>Proceed To:</td>
-                    <td class="department">PERSONNEL SECTION</td>
-                </tr>
-                <tr>
-                    <td class="name">asd</td>
-                    <td>Proceed To:</td>
-                    <td class="department">RECORD SECTION</td>
-                </tr>
-                <tr>
-                    <td class="name">asd</td>
-                    <td>Proceed To:</td>
-                    <td class="department">PROPERTY AND SUPPLY</td>
-                </tr>
-                <tr>
-                    <td class="name">asd</td>
-                    <td>Proceed To:</td>
-                    <td class="department">PAYROLL SECTION</td>
-                </tr>
-                <tr>
-                    <td class="name">asd</td>
-                    <td>Proceed To:</td>
-                    <td class="department">ACCOUNTING SECTION</td>
-                </tr>
-                <tr>
-                    <td class="name">asd</td>
-                    <td>Proceed To:</td>
-                    <td class="department">BUDGET SECTION</td>
-                </tr>
-                <tr>
-                    <td class="name">asd</td>
-                    <td>Proceed To:</td>
-                    <td class="department">CASH SECTION</td>
-                </tr> 
-        </table> 
+        </table>
     </div>
 
 
     <div class="CID">
-        <h3>CID</h3>
-               
+        <h3>Curriculum Implementation Division</h3>
+        <table class="table-cid">
+            <tr>
+                <th class="name_of_visitors">VISITORS:</th>
+            </tr>
+        </table>
     </div>
+
 
     <div class="SGOD">
-        <h3>SGOD</h3>
-        
-    </div>
-
-    <div class="PRIORITY">
-        <h3>PRIORITY</h3>
+        <h3>School Governance Operations Division</h3>
+        <table class="table-sgod">
+            <tr>
+                <th class="name_of_visitors">VISITORS:</th>
+            </tr>
+        </table>
     </div>
 
 
 </body>
-<script src="queuing_system.js" defer></script>
+<script src="queuing_system.js"></script>
 </html>

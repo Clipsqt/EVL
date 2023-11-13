@@ -12,6 +12,9 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+
+// Get the current user's accountName and store it in a variable
+$assistedBy = (isset($_SESSION['accountName']) ? $_SESSION['accountName'] : '');
     
 ?>
 <!DOCTYPE html>
@@ -24,12 +27,12 @@ if (!$conn) {
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="table2excel.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="ActivityLog.css">
-    <title>ACTIVITYLOG</title>
+    <link rel="stylesheet" href="e_logsHistory.css">
+    <title>Activity Logs</title>
 </head>
 <header>
     <img src="monitoring logbook logo.jpeg.png" alt="">
-    <h1> ACTIVITY LOG</h1>
+    <h1>Activity Logs</h1>
     <input type="text" id="searchInput" placeholder="Search" oninput="searchTable()">
 </header>
 <body>
@@ -67,23 +70,19 @@ if (!$conn) {
         <table id="monitoringTable" border="1">
             <thead> 
                 <tr>
-                    <th id="colNo">No.</th>
                     <th id="colFullName">Full Name</th>
-                    <th id="colSex">Sex</th>
-                    <th id="colpriority">Priority</th>
-                    <th id="colPhoneNumber">Phone Number</th>
                     <th id="colScheduleDate">Schedule Date</th>
                     <th id="colAppointment">Appointment</th>
-                    <th id="colPurpose">Purpose of visit</th>
                     <th id="colDepartment">Department</th>
-                    <th id="colreference_no">Reference No.</th>
                     <th id="colTime in">Time In</th>
                     <th id="colTime out">Time Out</th>
+                    <th id="colAssistedBy">Assisted by</th>
                 </tr>
             </thead> 
      
             <?php
-                $query = "SELECT * FROM e_logsHistory ORDER BY timeStamp desc";
+               
+                $query = "SELECT * FROM e_logshistory ORDER BY timeStamp desc";
                 $result = mysqli_query($conn, $query);
 
                 if ($result && mysqli_num_rows($result) > 0) {
@@ -93,18 +92,13 @@ if (!$conn) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     // Start a new table row for each record
                     echo "<tr class='highlight-row'>"; // Apply the CSS class
-                    echo "<td>" . $rowNumber . "</td>";
                     echo "<td class='fullname'>" . $row['fullname'] . "</td>";
-                    echo "<td class='sex'>" . $row['sex'] . "</td>";
-                    echo "<td class='priority'>" . $row['priority'] . "</td>";
-                    echo "<td>" . $row['phonenumber'] . "</td>";
                     echo "<td class='sched'>" . $row['scheduledate'] . "</td>";
                     echo "<td>" . $row['appointment'] . "</td>";
-                    echo "<td>" . $row['purpose_of_visit'] . "</td>";
                     echo "<td>" . $row['department'] . "</td>";
-                    echo "<td>" . $row['reference_no'] . "</td>";
                     echo "<td>" . $row['time_in'] . "</td>";
                     echo "<td>" . $row['time_out'] . "</td>";
+                    echo "<td>" . $row['assisted_by'] . "</td>";
                     echo "</tr>";
                     $rowNumber--; // Decrease row number for the next row
                 }

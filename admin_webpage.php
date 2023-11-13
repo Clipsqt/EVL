@@ -51,14 +51,25 @@ $rowNumber = 1;
     <link rel="stylesheet" href="admin_webpage.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Monitoring Visitor's Logbook </title>
-
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <header>
         <img src="monitoring logbook logo.jpeg.png" alt="">
-        <h1>APPOINTMENT LIST <br> <?php
-            if (isset($_SESSION['userOffice'])) {
-                echo $_SESSION['userOffice'];
-            }
-            ?> </h1>
+        <h1>APPOINTMENT LIST <br>
+        <?php
+        if (isset($_SESSION['userOffice'])) {
+            echo $_SESSION['userOffice'];
+        }
+        ?>
+        <br>
+        <div class="adminBox">
+                <i class='bx bx-user-check'></i>
+            </div>
+            <div class="adminText">
+                <span>Admin:</span> <?php echo $_SESSION['accountName']; ?>
+            </div>
+    </h1>
+ 
+  
     </header>
 </head>
 <button id="history_logs_button" class ="historylogs" onclick="location.href='admins_History.php';">History Logs</button>
@@ -101,12 +112,12 @@ $rowNumber = 1;
                 <td class="sched"><?php echo $row["scheduledate"]; ?></td>
                 <td><?php echo $row["appointment"]; ?></td>
                 <td><?php echo $row["purpose_of_visit"]; ?></td>  
-                <td><?php echo $row["department"]; ?></td>
+                <td class="department"><?php echo $row["department"]; ?></td>
                 <td><?php echo $row["reference_no"]; ?></td>
                 <td class="time-in"><?php echo $TimeInRecorded ? $row["time_in"] : ''; ?></td>
                 <td><button class="time-in-button" <?php echo $TimeInRecorded ? 'disabled' : ''; ?>>Time In</button></td>
                 <td><button id="timeout_button_<?php echo $rowNumber; ?>" class="timeout-button" data-reference="<?php echo $row["reference_no"]; ?>" <?php echo $TimeInRecorded ? '' : 'disabled'; ?>>Time Out</button></td>
-                <td><button class="next-button">Next</button></td>
+                <td><button class="next-button" data-fullname="<?php echo $row["fullname"]; ?>" data-department="<?php echo $row["department"]; ?>">Next</button></td>
               </tr>
         <?php
             $rowNumber++;
@@ -114,7 +125,25 @@ $rowNumber = 1;
         ?>
     </table>
 </div>
-
+<style>
+       .adminBox {
+            display: inline-block;
+        }
+        .adminBox i {
+            color: #3498db;
+            margin-left: -2310px;
+            font-size: 70%;
+        }
+        .adminText {
+            display: inline-block;
+            vertical-align: left;
+            margin-left: -83%;
+            font-size: 50%;
+        }
+        .adminText span {
+            font-weight: bold; /* Optionally make the text bold */
+        }
+    </style>
 
 <!--FUNCTION FOR USER FORGOT TO TIME IN OR TIMEOUT THE VISITOR THE DATA WILL GO TO UNSUCCESSFUL APPOINTMENT-->
 <script>
@@ -177,9 +206,9 @@ function transferDataTimeOut(reference_no, currentTime) {
       }
     }
   };
-
   xhr.send("reference_no=" + reference_no + "&time_out=" + currentTime);
 }
+
 
     // Define a function to periodically check for rows and transfer data
     function checkAndTransferData() {
@@ -220,9 +249,6 @@ function transferDataTimeOut(reference_no, currentTime) {
 </script>
 
 <!--FUNCTION FOR USER FORGOT TO TIME IN OR TIMEOUT THE VISITOR THE DATA WILL GO TO UNSUCCESSFUL APPOINTMENT-->
-
-
-
 
 
 <!--FUNCTION FOR TIMEOUT BUTTON-->
