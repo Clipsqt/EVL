@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("connect.php");
+require_once ("connect.php");
 
 $servername = "localhost";
 $username = "root";
@@ -32,7 +32,24 @@ if (!$conn) {
     <h1>  E- LOG'S HISTORY</h1>
     <input type="text" id="searchInput" placeholder="Search" oninput="searchTable()">
 </header>
-<body>
+<body> 
+<div class="priority_filter">
+    <label for="priorityFilter">Priority:</label>
+    <select id="priorityFilter" onchange="filterData()">
+        <option value="all">All</option>
+        <option value="Senior Citizen">Senior Citizen</option>
+        <option value="Pregnant">Pregnant</option>
+        <option value="Disability">Disability</option>
+    </select>
+</div>
+    <div class="walkin_online_filter">
+        <label for="appointmentFilter">Appointment</label>
+        <select id="appointmentFilter" onchange="filterData()">
+            <option value="all">All</option>
+            <option value="walk-in">Walk-In</option>
+            <option value="online">Online</option>
+        </select>
+    </div>
     <div class="filter-container">
         <label for="fromDate">From:</label>
         <input type="text" id="fromDate" placeholder="MM/DD/YYYY">

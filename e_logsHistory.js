@@ -1,7 +1,7 @@
 // SEARCH BAR FUNCTIOn
 
 function searchTable() {
-var input, filter, table, tr, td1, td2, td3, td4, td5, td6, td7, td8, i, txtValue1, txtValue2, txtValue3 ,txtValue4 ,txtValue5, txtValue6, txtValue7, txtValue8;
+var input, filter, table, tr, td1, td2, td3, td4, td5, td6, td7, td8, td9, txtValue1, txtValue2, txtValue3 ,txtValue4 ,txtValue5, txtValue6, txtValue7, txtValue8, txtValue9;
 input = document.getElementById("searchInput");
 filter = input.value.toLowerCase();
 table = document.querySelector("table");
@@ -14,12 +14,12 @@ td3 = tr[i].getElementsByTagName("td")[2];
 td4 = tr[i].getElementsByTagName("td")[3]; 
 td5 = tr[i].getElementsByTagName("td")[4]; 
 td7 = tr[i].getElementsByTagName("td")[5]; 
-td8 = tr[i].getElementsByTagName("td")[6]; 
-td6 = tr[i].getElementsByTagName("td")[7]; 
+td8 = tr[i].getElementsByTagName("td")[8]; 
+td6 = tr[i].getElementsByTagName("td")[6]; 
+td9 = tr[i].getElementsByTagName("td")[9]; 
 
 
-
-if (td1 && td2 && td3 && td4 && td5 && td6 && td7 && td8) {
+if (td1 && td2 && td3 && td4 && td5 && td6 && td7 && td8 && td9) {
 txtValue1 = td1.textContent || td1.innerText;
      txtValue2 = td2.textContent || td2.innerText;
      txtValue3 = td3.textContent || td3.innerText;
@@ -28,8 +28,9 @@ txtValue1 = td1.textContent || td1.innerText;
      txtValue6 = td6.textContent || td6.innerText;
      txtValue7 = td7.textContent || td7.innerText;
      txtValue8 = td8.textContent || td8.innerText;
+     txtValue9 = td9.textContent || td9.innerText;
 
-if (txtValue1.toLowerCase().indexOf(filter) > -1 || txtValue2.toLowerCase().indexOf(filter) > -1 || txtValue3.toLowerCase().indexOf(filter) > -1 || txtValue4.toLowerCase().indexOf(filter) > -1 || txtValue5.toLowerCase().indexOf(filter) > -1 || txtValue6.toLowerCase().indexOf(filter) > -1 || txtValue7.toLowerCase().indexOf(filter) > -1 || txtValue8.toLowerCase().indexOf(filter) > -1) {
+if (txtValue1.toLowerCase().indexOf(filter) > -1 || txtValue2.toLowerCase().indexOf(filter) > -1 || txtValue3.toLowerCase().indexOf(filter) > -1 || txtValue4.toLowerCase().indexOf(filter) > -1 || txtValue5.toLowerCase().indexOf(filter) > -1 || txtValue6.toLowerCase().indexOf(filter) > -1 || txtValue7.toLowerCase().indexOf(filter) > -1 || txtValue8.toLowerCase().indexOf(filter) > -1|| txtValue9.toLowerCase().indexOf(filter) > -1) {
  tr[i].style.display = "";
 } else {
  tr[i].style.display = "none";
@@ -41,19 +42,21 @@ if (txtValue1.toLowerCase().indexOf(filter) > -1 || txtValue2.toLowerCase().inde
 
 
 //FUNCTION FOR FROM AND TO FILTER DATE:
-
 document.addEventListener("DOMContentLoaded", function() {
     const fromDateInput = document.getElementById("fromDate");
     const toDateInput = document.getElementById("toDate");
+    const appointmentFilter = document.getElementById("appointmentFilter");
+    const priorityFilter = document.getElementById("priorityFilter");
     const table = document.getElementById("monitoringTable");
     const rows = Array.from(table.querySelectorAll("tbody tr"));
+    let visibleRows = []; // Keep track of visible rows
 
     function formatDateToMMDDYYYY(dateString) {
-        const parts = dateString.split('/'); // Split MM/DD/YYYY into an array
+        const parts = dateString.split('/');
         const month = parts[0];
         const day = parts[1];
         const year = parts[2];
-        return `${month}/${day}/${year}`; // Convert to MM/DD/YYYY
+        return `${month}/${day}/${year}`;
     }
 
     function filterRows() {
@@ -61,33 +64,62 @@ document.addEventListener("DOMContentLoaded", function() {
         const toDate = toDateInput.value.trim();
         const formattedFromDate = formatDateToMMDDYYYY(fromDate);
         const formattedToDate = formatDateToMMDDYYYY(toDate);
+        const selectedAppointmentType = appointmentFilter.value;
+        const selectedPriority = priorityFilter.value;
+
+        visibleRows = []; // Clear the list of visible rows
 
         rows.forEach(function(row) {
             let rowMatch = true;
 
-            // Check if the row matches the date range filter or if no dates are selected
-            const scheduleDateCell = row.cells[5]; // Assuming the scheduledate is in the 6th cell
+            // Check if the row matches the filters
+            const scheduleDateCell = row.cells[5];
             const scheduleDate = scheduleDateCell.textContent.trim();
+            const appointmentTypeCell = row.cells[6];
+            const appointmentType = appointmentTypeCell.textContent.trim().toLowerCase();
+            const priorityCell = row.cells[3];
+            const priority = priorityCell.textContent.trim().toLowerCase();
 
-            if (fromDate !== "" && toDate !== "") {
-                if (scheduleDate < formattedFromDate || scheduleDate > formattedToDate) {
-                    rowMatch = false;
-                }
+            if ((fromDate !== "" && toDate !== "") && (scheduleDate < formattedFromDate || scheduleDate > formattedToDate)) {
+                rowMatch = false;
+            }
+
+            if (selectedAppointmentType === "walk-in" && appointmentType !== "walk-in") {
+                rowMatch = false;
+            } else if (selectedAppointmentType === "online" && appointmentType !== "online") {
+                rowMatch = false;
+            }
+
+            if (selectedPriority !== "all" && priority !== selectedPriority.toLowerCase()) {
+                rowMatch = false;
             }
 
             if (rowMatch) {
-                row.style.display = ""; // Display the row if it's within the range or no dates selected
+                visibleRows.push(row);
+                row.style.display = ""; // Display the row if it's within the range and matches the appointment type and priority
             } else {
-                row.style.display = "none"; // Hide the row if it's outside the range
+                row.style.display = "none"; // Hide the row if it's outside the range or doesn't match the appointment type or priority
             }
+        });
+
+        applyAlternatingRowColors();
+    }
+
+    function applyAlternatingRowColors() {
+        visibleRows.forEach(function(row, index) {
+            row.classList.toggle("odd-row", index % 2 === 0);
         });
     }
 
     fromDateInput.addEventListener("input", filterRows);
     toDateInput.addEventListener("input", filterRows);
+    appointmentFilter.addEventListener("change", filterRows);
+    priorityFilter.addEventListener("change", filterRows);
+
+    // Initial application of alternating row colors
+    applyAlternatingRowColors();
 });
 
-   
 
 // FUNCTION FOR CONVERT TO EXCEL
 
@@ -263,4 +295,4 @@ function applyAlternateRowColors() {
     applyAlternateRowColors();
   });
 
-  
+ 

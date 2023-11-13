@@ -102,7 +102,7 @@
         <option value=""Defaultvalue>Select Lane</option>
         <option value="Senior Citizen">Senior Citizen</option>
         <option value="Pregnant">Pregnant</option>
-        <option value="Disable">Disable</option>
+        <option value="Disability">Disability</option>
     </select>
 
     <input type="hidden" name="timeIn" id="timeIn" value="">

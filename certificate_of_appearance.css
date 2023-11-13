@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+
+}
+h1 {
+    
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+.whom {
+    margin-left: 242px;
+    font-size: 18px;
+}
+input {
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 60%;
+    font-size: 18px;
+ 
+    margin-left: 20px;
+}
+p:last-child {
+    margin-top: 20px;
+}
+.certify{
+    margin-left: 28%;
+    width: 65.5%;
+}
+.purpose{
+    margin-left: 17.5%;
+}
+.position_designation{
+margin-left: 18%;
+}
+.appear{
+    margin-left: 17.5%;
+}
+.school_office{
+    margin-left: 50%;
+    margin-top: -2.7%;
+}
+.issued{
+    margin-left: 17.5%;
+}
+.control_no{
+    margin-left: 17.5%;
+}
+.overline {
+    text-align: center;
+    display: inline-block;
+    border-top: 1px solid #000; /* You can adjust the width by changing the border-top property */
+    width: 34%; /* You can adjust the width by changing this value */
+    margin-top: -6px; /* Adjust this to control the vertical position of the overline */
+}
+.line {
+    text-align: center;
+    display: inline-block;
+    border-top: 1px solid #000; /* You can adjust the width by changing the border-top property */
+    width: 60%; /* You can adjust the width by changing this value */
+    margin-top: -10px; /* Adjust this to control the vertical position of the overline */
+}

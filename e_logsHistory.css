@@ -320,6 +320,31 @@ input{
     background-color: #162fa0;
     color: white;
 }
+ .walkin_online_filter{
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 300px;
+    position: absolute;
+ }
+ .priority_filter {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 600px;
+    position: absolute;
+    
+ 
+}
+
+label {
+    font-weight: bold;
+}
+
+select {
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 @media screen and (max-width: 2560px){
     header{
         width: 100%;
