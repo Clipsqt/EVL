@@ -145,8 +145,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
     
 
+//FUNCTION FOR NEXT BUTTON
+$(".next-button").on("click", function() {
+    var visitorName = $(this).closest("tr").find(".fullname").text();
+    var department = $(this).data("department");
+    $.ajax({
+        type: "POST",
+        url: "queuing_system_display.php.",
+        data: { visitorName: visitorName, department: department },
+        success: function(response) {
+            console.log(response);
+        }
+    });
+});
 
 
-
-
+  
 

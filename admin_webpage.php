@@ -101,12 +101,12 @@ $rowNumber = 1;
                 <td class="sched"><?php echo $row["scheduledate"]; ?></td>
                 <td><?php echo $row["appointment"]; ?></td>
                 <td><?php echo $row["purpose_of_visit"]; ?></td>  
-                <td><?php echo $row["department"]; ?></td>
+                <td class="department"><?php echo $row["department"]; ?></td>
                 <td><?php echo $row["reference_no"]; ?></td>
                 <td class="time-in"><?php echo $TimeInRecorded ? $row["time_in"] : ''; ?></td>
                 <td><button class="time-in-button" <?php echo $TimeInRecorded ? 'disabled' : ''; ?>>Time In</button></td>
                 <td><button id="timeout_button_<?php echo $rowNumber; ?>" class="timeout-button" data-reference="<?php echo $row["reference_no"]; ?>" <?php echo $TimeInRecorded ? '' : 'disabled'; ?>>Time Out</button></td>
-                <td><button class="next-button">Next</button></td>
+                <td><button class="next-button" data-fullname="<?php echo $row["fullname"]; ?>" data-department="<?php echo $row["department"]; ?>">Next</button></td>
               </tr>
         <?php
             $rowNumber++;
@@ -114,7 +114,6 @@ $rowNumber = 1;
         ?>
     </table>
 </div>
-
 
 <!--FUNCTION FOR USER FORGOT TO TIME IN OR TIMEOUT THE VISITOR THE DATA WILL GO TO UNSUCCESSFUL APPOINTMENT-->
 <script>
@@ -177,9 +176,9 @@ function transferDataTimeOut(reference_no, currentTime) {
       }
     }
   };
-
   xhr.send("reference_no=" + reference_no + "&time_out=" + currentTime);
 }
+
 
     // Define a function to periodically check for rows and transfer data
     function checkAndTransferData() {
@@ -220,9 +219,6 @@ function transferDataTimeOut(reference_no, currentTime) {
 </script>
 
 <!--FUNCTION FOR USER FORGOT TO TIME IN OR TIMEOUT THE VISITOR THE DATA WILL GO TO UNSUCCESSFUL APPOINTMENT-->
-
-
-
 
 
 <!--FUNCTION FOR TIMEOUT BUTTON-->

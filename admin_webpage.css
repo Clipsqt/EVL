@@ -41,6 +41,9 @@ table {
     width: 8%;
 }
 
+.next-button{
+    cursor: pointer;
+}
 /* Table header */
 th {
     height: 2px;
@@ -139,6 +142,7 @@ td {
 .settings a:hover{
     background-color: black;
 }
+
 
 
 @media screen and (min-width: 2560px){
