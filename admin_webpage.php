@@ -51,14 +51,20 @@ $rowNumber = 1;
     <link rel="stylesheet" href="admin_webpage.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Monitoring Visitor's Logbook </title>
-
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <header>
         <img src="monitoring logbook logo.jpeg.png" alt="">
-        <h1>APPOINTMENT LIST <br> <?php
-            if (isset($_SESSION['userOffice'])) {
-                echo $_SESSION['userOffice'];
-            }
-            ?> </h1>
+        <h1>APPOINTMENT LIST <br>
+        <?php
+        if (isset($_SESSION['userOffice'])) {
+            echo $_SESSION['userOffice'];
+        }
+        ?>
+        <br>
+ <box-icon name='user-check'>Admin: <?php echo $_SESSION['accountName']; ?></box-icon> <!-- Display admin user's accountName here -->
+    </h1>
+ 
+  
     </header>
 </head>
 <button id="history_logs_button" class ="historylogs" onclick="location.href='admins_History.php';">History Logs</button>
