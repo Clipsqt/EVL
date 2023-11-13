@@ -61,7 +61,12 @@ $rowNumber = 1;
         }
         ?>
         <br>
- <box-icon name='user-check'>Admin: <?php echo $_SESSION['accountName']; ?></box-icon> <!-- Display admin user's accountName here -->
+        <div class="adminBox">
+                <i class='bx bx-user-check'></i>
+            </div>
+            <div class="adminText">
+                <span>Admin:</span> <?php echo $_SESSION['accountName']; ?>
+            </div>
     </h1>
  
   
@@ -120,6 +125,25 @@ $rowNumber = 1;
         ?>
     </table>
 </div>
+<style>
+       .adminBox {
+            display: inline-block;
+        }
+        .adminBox i {
+            color: #3498db;
+            margin-left: -2310px;
+            font-size: 70%;
+        }
+        .adminText {
+            display: inline-block;
+            vertical-align: left;
+            margin-left: -83%;
+            font-size: 50%;
+        }
+        .adminText span {
+            font-weight: bold; /* Optionally make the text bold */
+        }
+    </style>
 
 <!--FUNCTION FOR USER FORGOT TO TIME IN OR TIMEOUT THE VISITOR THE DATA WILL GO TO UNSUCCESSFUL APPOINTMENT-->
 <script>
