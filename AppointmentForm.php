@@ -50,8 +50,8 @@
 </div>
  <input type="text" class="input-box" name="Fullname" placeholder="Fullname" required autocomplete="off" pattern="[A-Za-z.\s]+">
  <input type="tel" class="input-box" name="phonenumber" placeholder="Phone number" required autocomplete="OFF" pattern="[0-9]{11}" maxlength="11">
- <input type="text" class="input-box" name="position_designation" placeholder="Position / Designation" required autocomplete="off" pattern="[A-Za-z.\s]+">
- <input type="text" class="input-box" name="agency_school_office" placeholder="Agency / School / Office" required autocomplete="off" pattern="[A-Za-z.\s]+">
+ <input type="text" class="input-box" name="position_designation" placeholder="Position / Designation" required autocomplete="off" pattern="[A-Za-z.0-9\s]+">
+ <input type="text" class="input-box" name="agency_school_office" placeholder="Agency / School / Office" required autocomplete="off" pattern="[A-Za-z.0-9\s]+">
                     <script>
                        var quantityInput = document.querySelector('.qu');
                         var quantityInputs = document.querySelectorAll('.quantityInputUser');
@@ -88,7 +88,7 @@
                     <option value="General Services">General Services</option>
                 </select>
                 <label for="gender"> </label>
-    <select name="gender" id="gender">
+    <select name="gender" id="gender" required>
         <option value="">SEX</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
