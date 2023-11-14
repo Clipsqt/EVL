@@ -67,6 +67,8 @@
                     <th id="colPriority">Priority</th>
                     <th id="colPhoneNumber">Phone Number</th>
                     <th id="colScheduleDate">Schedule Date</th>
+                    <th id="colposition_designation">Position/Designation</th>
+                    <th id="colagency_school_office">Agency/School/Office</th>
                     <th id="colAppointment">Appointment</th>
                     <th id="colPurpose">Purpose of visit</th>
                     <th id="colDepartment">Department</th>
@@ -84,6 +86,8 @@
                 <td class="priority"><?php echo $row["priority"]; ?></td>
                 <td><?php echo $row["phonenumber"]; ?></td>
                 <td class="sched"><?php echo $row["scheduledate"]; ?></td>
+                <td class="position"><?php echo $row["position_designation"]; ?></td>
+                <td class="office"><?php echo $row["agency_school_office"]; ?></td>
                 <td class="appointment"><?php echo $row["appointment"]; ?></td>     
                 <td><?php echo $row["purpose_of_visit"]; ?></td>
                 <td><?php echo $row["department"]; ?></td>
@@ -149,20 +153,26 @@
                 document.getElementById("colScheduleDate").addEventListener("click", function () {
                     sortTable(5, true);
                 });
-                document.getElementById("colAppointment").addEventListener("click", function () {
+                document.getElementById("colPosition_designation").addEventListener("click", function () {
                     sortTable(6, true);
                 });
-                document.getElementById("colPurpose").addEventListener("click", function () {
+                document.getElementById("colAgency_school_office").addEventListener("click", function () {
                     sortTable(7, true);
                 });
-                document.getElementById("colDepartment").addEventListener("click", function () {
+                document.getElementById("colAppointment").addEventListener("click", function () {
                     sortTable(8, true);
                 });
-                document.getElementById("colReference_no").addEventListener("click", function () {
+                document.getElementById("colPurpose").addEventListener("click", function () {
                     sortTable(9, true);
                 });
-                document.getElementById("colTimein").addEventListener("click", function () {
+                document.getElementById("colDepartment").addEventListener("click", function () {
                     sortTable(10, true);
+                });
+                document.getElementById("colReference_no").addEventListener("click", function () {
+                    sortTable(11, true);
+                });
+                document.getElementById("colTimein").addEventListener("click", function () {
+                    sortTable(12, true);
                 });
             
             });

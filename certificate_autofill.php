@@ -24,6 +24,7 @@ if (isset($_GET['reference_no'])) {
         foreach ($data as $row) {
             $fullname = $row['fullname'];
             $purpose = $row['purpose_of_visit'];
+            $scheduledate = $row['scheduledate'];
            
         }
 

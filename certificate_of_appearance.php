@@ -21,12 +21,14 @@
         </header>
         <hr>
         <h2>CERTIFICATE OF APPEARANCE</h2>
-        <p class="certify">This is to certify that <input type="text" id="personName" value="<?php echo isset($fullname) ? $fullname : ''; ?>" disabled > </p>
+        <p class="certify">This is to certify that <span class="bold-text"><?php echo isset($fullname) ? $fullname : ''; ?></span> </p>
+
         <br> <br>
-        <p class="position_designation"><span class="overline">Position/Designation</span></p>
-        <p class="school_office"><span class="line">School/Office</span></p>
-        <p class="appear">Appeared on<input type="" id="date">at EcoPark Barangay Muzon City of San Jose Del Monte Bulacan. </p>
-        <p class="purpose">Purpose: <br> <input type="text" id="purpose" value="<?php echo isset($purpose) ? $purpose : ''; ?>" disabled > <br> <br> This certification is being issued for whatever legal purposes it may serve her/him best. </p>
+        <p class="position_designation"><span class="position_designation">Agency/Position/Designation</span></p>
+        <p class="school_office"><span class="school_office">School/Office</span></p>
+         <p class="appear">Appeared on <span class="bold-text"><?php echo isset($scheduledate) ? $scheduledate : ''; ?></span>  at EcoPark Barangay Muzon City of San Jose Del Monte Bulacan. </p>
+        <!-- ... (your existing form content) ... -->
+        <p class="purpose">Purpose: <br> <span class="bold-text"><?php echo isset($purpose) ? $purpose : ''; ?></span> <br> <br> This certification is being issued for whatever legal purposes it may serve her/him best. </p>
         <br>
         <p class="control_no">Control No: <input type="text" class="control_no_value" readonly></p>
         <p class="issued">Date Issued: November 11, 2023 </p>

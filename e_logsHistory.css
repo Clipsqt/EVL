@@ -58,6 +58,10 @@ table {
     width: 11%;    
 }
 
+.sex{
+    width: 10%;
+}
+
 /* Table header */
 th {
 
@@ -79,6 +83,7 @@ td {
     padding: 2px;
     font-family: 'Bookman Old Style', serif;
     font-size: 11px;
+    line-height: 20px;
 }
 
 /* Scrollable content */
