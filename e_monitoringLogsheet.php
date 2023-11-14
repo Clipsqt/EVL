@@ -67,8 +67,8 @@
                     <th id="colPriority">Priority</th>
                     <th id="colPhoneNumber">Phone Number</th>
                     <th id="colScheduleDate">Schedule Date</th>
-                    <th id="colposition_designation">Position/Designation</th>
-                    <th id="colagency_school_office">Agency/School/Office</th>
+                    <th id="colPosition_designation">Position/Designation</th>
+                    <th id="colAgency_school_office">Agency/School/Office</th>
                     <th id="colAppointment">Appointment</th>
                     <th id="colPurpose">Purpose of visit</th>
                     <th id="colDepartment">Department</th>
@@ -171,9 +171,7 @@
                 document.getElementById("colReference_no").addEventListener("click", function () {
                     sortTable(11, true);
                 });
-                document.getElementById("colTimein").addEventListener("click", function () {
-                    sortTable(12, true);
-                });
+               
             
             });
  </script>

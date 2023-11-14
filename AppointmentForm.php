@@ -48,9 +48,10 @@
     <h2>Prefer Date</h2>
     <input type="text" class="currentDate" name="currentDate" id="currentDate" placeholder="Select a date" readonly required autocomplete="OFF">
 </div>
-  <!-- ... (your form inputs) ... -->
  <input type="text" class="input-box" name="Fullname" placeholder="Fullname" required autocomplete="off" pattern="[A-Za-z.\s]+">
-                    <input type="tel" class="input-box" name="phonenumber" placeholder="Phone number" required autocomplete="OFF" pattern="[0-9]{11}" maxlength="11">
+ <input type="tel" class="input-box" name="phonenumber" placeholder="Phone number" required autocomplete="OFF" pattern="[0-9]{11}" maxlength="11">
+ <input type="text" class="input-box" name="position_designation" placeholder="Position / Designation" required autocomplete="off" pattern="[A-Za-z.\s]+">
+ <input type="text" class="input-box" name="agency_school_office" placeholder="Agency / School / Office" required autocomplete="off" pattern="[A-Za-z.\s]+">
                     <script>
                        var quantityInput = document.querySelector('.qu');
                         var quantityInputs = document.querySelectorAll('.quantityInputUser');
@@ -65,14 +66,13 @@
                     </script>
                  <div class="PurposeBox">  
                     <div class="inner-box">
-                    <input type="text" class="input-box" name="Purpose" placeholder="Purpose" required autocomplete="off">  
-  </div>
- </div>  
+                    <input type="text" class="inputPurpose" name="Purpose" placeholder="Please purpose should clearly stated" required autocomplete="off">  
+ 
                  <div class="selecOffice">
 
             <div class="Selectoffice">
                 <select name="selectOffice" id="selectOffice" required>
-                    <option value="">Office to Visit</option>
+                    <option value="">Office Visit</option>
                     <option value="School Governance Operations Division">SGOD</option>
                     <option value="Curriculum Implementation Division">CID</option>
                     <option value="Information Communication Technology">ICT Services</option>
@@ -87,8 +87,7 @@
                     <option value="Cash Section">Cash Section</option>
                     <option value="General Services">General Services</option>
                 </select>
-                <form>
-    <label for="gender"> </label>
+                <label for="gender"> </label>
     <select name="gender" id="gender">
         <option value="">SEX</option>
         <option value="Male">Male</option>
@@ -97,26 +96,27 @@
     </select>
         
 
-    <label for="priorityLane">Priority Lane</label>
+    <label for="priorityLane"></label>
     <select name="priorityLane" id="priorityLane">
-        <option value=""Defaultvalue>Select Lane</option>
+        <option value=""Defaultvalue>Priority Lane</option>
         <option value="Senior Citizen">Senior Citizen</option>
         <option value="Pregnant">Pregnant</option>
         <option value="Disability">Disability</option>
     </select>
+ </div>
+  </div>  
+  </div>
+ </div>           
+  
 
     <input type="hidden" name="timeIn" id="timeIn" value="">
-
+       
  
-               
-        </div>
-        </div>  
                  <div class="submit-btn">
                  <button type="submit" class="submit-btn">SUBMIT</button>
 
                  <input type="hidden" class="reference_no" name="reference_no" readonly>
                  </div>
-             
  
  <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -283,17 +283,17 @@ fullnameInput.addEventListener('input', function (e) {
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector('form');
 
-    form.addEventListener('submit', async function (e) {
-        e.preventDefault(); // Prevent the default form submission behavior
+form.addEventListener('submit', async function (e) {
+    e.preventDefault(); // Prevent the default form submission behavior
 
-        try {
-            const response = await fetch('Appointment.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded', // Change to 'application/json' if sending JSON data
-                },
-                body: new URLSearchParams(new FormData(form)),
-            });
+    try {
+        const response = await fetch('Appointment.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded', // Change to 'application/json' if sending JSON data
+            },
+            body: new URLSearchParams(new FormData(form)),
+        });
 
             if (!response.ok) {
                 throw new Error(`Network response was not ok. Status: ${response.status}`);
@@ -344,5 +344,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
 </script>
+  
 </body>
 </html>

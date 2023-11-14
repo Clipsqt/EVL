@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $purpose = mysqli_real_escape_string($conn, $_POST["Purpose"]);
     $selectedOffice = mysqli_real_escape_string($conn, $_POST["selectOffice"]);
     $scheduleDate = mysqli_real_escape_string($conn, $_POST["currentDate"]);
-
+ 
     // Retrieve the selected appointment type
     $appointment = mysqli_real_escape_string($conn, $_POST["appointment_type"]);
      // Split the full name into parts (assuming first name, middle name, last name)
@@ -38,6 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve the selected priority lane value
     $priorityLane = isset($_POST["priorityLane"]) ? mysqli_real_escape_string($conn, $_POST["priorityLane"]) : '';
     $appointment = mysqli_real_escape_string($conn, $_POST["appointment_type"]);
+    $position_designation = mysqli_real_escape_string($conn, $_POST["position_designation"]);
+    $agency_school_office = mysqli_real_escape_string($conn, $_POST["agency_school_office"]);
 
     if ($appointment == "walk-in") {
         $reference_no = null; // Set the reference number to null for walk-in appointments
@@ -51,11 +53,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Validate and sanitize data as needed (you can add more validation here)
 
 // Prepare and execute an SQL INSERT statement
-$sql = "INSERT INTO e_monitoringlogsheet (appointment, fullname, phonenumber, purpose_of_visit, department, scheduledate, reference_no, sex, priority, time_in) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO e_monitoringlogsheet (appointment, fullname, phonenumber, purpose_of_visit, department, scheduledate, position_designation, agency_school_office, reference_no, sex, priority, time_in) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = mysqli_prepare($conn, $sql);
 
 if ($stmt) {
-    mysqli_stmt_bind_param($stmt, "ssssssssss", $appointment, $fullName, $phoneNumber, $purpose, $selectedOffice, $scheduleDate, $reference_no, $sex, $priorityLane, $time_in);
+    mysqli_stmt_bind_param($stmt, "ssssssssssss", $appointment, $fullName, $phoneNumber, $purpose, $selectedOffice, $scheduleDate, $position_designation, $agency_school_office, $reference_no, $sex, $priorityLane, $time_in);
 
     if (mysqli_stmt_execute($stmt)) {
         // Data inserted successfully, now show the reference number for online appointments
