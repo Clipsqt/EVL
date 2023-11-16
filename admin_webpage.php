@@ -12,7 +12,6 @@ $userOffice = $_SESSION['userOffice'];
 $currentDate = date("m/d/Y");
 $yesterdayDate = date("m/d/Y", strtotime("-1 day"));
 
-// Function to retrieve "Time In" from local storage
 function getTimeInFromLocalStorage($reference_no) {
     // Initialize an empty value
     $timeIn = '';

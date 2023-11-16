@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             button.classList.add("disabled");
             button.disabled = true;
 
-            // Get other necessary data
+          
             const scheduledate = row.querySelector(".sched").textContent;
             const fullname = row.querySelector(".fullname").textContent;
             const reference_no = row.querySelector("td:nth-child(10)").textContent;
