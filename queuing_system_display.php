@@ -40,5 +40,16 @@ if (mysqli_query($conn, $sqlDelete)) {
     echo "Error deleting rows: " . $sqlDelete . "<br>" . mysqli_error($conn);
 }
 
+$sql = "SELECT * FROM videos WHERE id = 1"; // Adjust the query based on your needs
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $videoFilePath = $row['location'];
+} else {
+    echo "";
+}
+
 mysqli_close($conn);
 ?>
