@@ -9,7 +9,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "SELECT DISTINCT visitor_name, department FROM visitor_data ORDER BY id DESC LIMIT 20";
+$sql = "SELECT visitor_name, department FROM visitor_data ORDER BY id DESC LIMIT 20";
 $result = mysqli_query($conn, $sql);
 
 $data = array();

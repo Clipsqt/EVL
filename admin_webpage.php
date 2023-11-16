@@ -12,6 +12,7 @@ $userOffice = $_SESSION['userOffice'];
 $currentDate = date("m/d/Y");
 $yesterdayDate = date("m/d/Y", strtotime("-1 day"));
 
+// Function to retrieve "Time In" from local storage
 function getTimeInFromLocalStorage($reference_no) {
     // Initialize an empty value
     $timeIn = '';
@@ -51,26 +52,20 @@ $rowNumber = 1;
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Monitoring Visitor's Logbook </title>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <header>
-        <img src="monitoring logbook logo.jpeg.png" alt="">
-        <h1>APPOINTMENT LIST <br>
-        <?php
-        if (isset($_SESSION['userOffice'])) {
-            echo $_SESSION['userOffice'];
-        }
-        ?>
-        <br>
-        <div class="adminBox">
-                <i class='bx bx-user-check'></i>
-            </div>
-            <div class="adminText">
-                <span>Admin:</span> <?php echo $_SESSION['accountName']; ?>
-            </div>
-    </h1>
- 
-  
-    </header>
 </head>
+  <header>
+    <img src="monitoring logbook logo.jpeg.png" alt="">
+    <h1>APPOINTMENT LIST <br>
+      <?php
+        if (isset($_SESSION['userOffice'])) {
+          echo $_SESSION['userOffice'];
+        }
+      ?>
+      <br>
+      <i><box-icon name='user-check'>Admin: <?php echo $_SESSION['accountName']; ?></i>
+        
+    </h1>
+  </header>
 <button id="history_logs_button" class ="historylogs" onclick="location.href='admins_History.php';">History Logs</button>
 <div class="settings">
     <a href="change_password.php">CHANGE PASSWORD</a>
@@ -90,10 +85,11 @@ $rowNumber = 1;
             <th id="colPurpose">Purpose of visit</th>
             <th id="colDepartment">Department</th>
             <th id="colreference_no">Reference No.</th>
+            <th>Que</th>
             <th id="colTime in">Time In</th>
             <th>Action</th>
             <th>Time out</th>
-            <th>Que</th>
+            
         </tr>
         <?php
             while ($row = mysqli_fetch_assoc($result)) {
@@ -113,10 +109,10 @@ $rowNumber = 1;
                 <td><?php echo $row["purpose_of_visit"]; ?></td>  
                 <td class="department"><?php echo $row["department"]; ?></td>
                 <td><?php echo $row["reference_no"]; ?></td>
+                <td><button class="next-button" data-fullname="<?php echo $row["fullname"]; ?>" data-department="<?php echo $row["department"]; ?>" onclick="enableTimeInButton(this)">Next</button></td>
                 <td class="time-in"><?php echo $TimeInRecorded ? $row["time_in"] : ''; ?></td>
-                <td><button class="time-in-button" <?php echo $TimeInRecorded ? 'disabled' : ''; ?>>Time In</button></td>
+                <td><button class="time-in-button" <?php echo $TimeInRecorded ? 'disabled' : ''; ?> disabled>Time In</button></td>
                 <td><button id="timeout_button_<?php echo $rowNumber; ?>" class="timeout-button" data-reference="<?php echo $row["reference_no"]; ?>" <?php echo $TimeInRecorded ? '' : 'disabled'; ?>>Time Out</button></td>
-                <td><button class="next-button" data-fullname="<?php echo $row["fullname"]; ?>" data-department="<?php echo $row["department"]; ?>">Next</button></td>
               </tr>
         <?php
             $rowNumber++;
@@ -124,25 +120,6 @@ $rowNumber = 1;
         ?>
     </table>
 </div>
-<style>
-       .adminBox {
-            display: inline-block;
-        }
-        .adminBox i {
-            color: #3498db;
-            margin-left: -2310px;
-            font-size: 70%;
-        }
-        .adminText {
-            display: inline-block;
-            vertical-align: left;
-            margin-left: -83%;
-            font-size: 50%;
-        }
-        .adminText span {
-            font-weight: bold; /* Optionally make the text bold */
-        }
-    </style>
 
 <!--FUNCTION FOR USER FORGOT TO TIME IN OR TIMEOUT THE VISITOR THE DATA WILL GO TO UNSUCCESSFUL APPOINTMENT-->
 <script>
