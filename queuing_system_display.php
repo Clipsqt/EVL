@@ -40,8 +40,9 @@ if (mysqli_query($conn, $sqlDelete)) {
     echo "Error deleting rows: " . $sqlDelete . "<br>" . mysqli_error($conn);
 }
 
-$sql = "SELECT * FROM videos WHERE id = 1"; // Adjust the query based on your needs
 
+//FETCH VIDEO 
+$sql = "SELECT * FROM videos_displayer WHERE id = 1"; // Adjust the query based on your needs
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

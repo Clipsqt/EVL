@@ -24,6 +24,7 @@
                     mysqli_query($conn,$query);
 
                     echo "Upload Successfully";
+                    
                 }
             }
            
