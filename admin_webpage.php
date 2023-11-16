@@ -91,10 +91,11 @@ $rowNumber = 1;
             <th id="colPurpose">Purpose of visit</th>
             <th id="colDepartment">Department</th>
             <th id="colreference_no">Reference No.</th>
+            <th>Que</th>
             <th id="colTime in">Time In</th>
             <th>Action</th>
             <th>Time out</th>
-            <th>Que</th>
+            
         </tr>
         <?php
             while ($row = mysqli_fetch_assoc($result)) {
@@ -114,10 +115,10 @@ $rowNumber = 1;
                 <td><?php echo $row["purpose_of_visit"]; ?></td>  
                 <td class="department"><?php echo $row["department"]; ?></td>
                 <td><?php echo $row["reference_no"]; ?></td>
+                <td><button class="next-button" data-fullname="<?php echo $row["fullname"]; ?>" data-department="<?php echo $row["department"]; ?>" onclick="enableTimeInButton(this)">Next</button></td>
                 <td class="time-in"><?php echo $TimeInRecorded ? $row["time_in"] : ''; ?></td>
-                <td><button class="time-in-button" <?php echo $TimeInRecorded ? 'disabled' : ''; ?>>Time In</button></td>
+                <td><button class="time-in-button" <?php echo $TimeInRecorded ? 'disabled' : ''; ?> disabled>Time In</button></td>
                 <td><button id="timeout_button_<?php echo $rowNumber; ?>" class="timeout-button" data-reference="<?php echo $row["reference_no"]; ?>" <?php echo $TimeInRecorded ? '' : 'disabled'; ?>>Time Out</button></td>
-                <td><button class="next-button" data-fullname="<?php echo $row["fullname"]; ?>" data-department="<?php echo $row["department"]; ?>">Next</button></td>
               </tr>
         <?php
             $rowNumber++;
@@ -125,25 +126,6 @@ $rowNumber = 1;
         ?>
     </table>
 </div>
-<style>
-       .adminBox {
-            display: inline-block;
-        }
-        .adminBox i {
-            color: #3498db;
-            margin-left: -2310px;
-            font-size: 70%;
-        }
-        .adminText {
-            display: inline-block;
-            vertical-align: left;
-            margin-left: -83%;
-            font-size: 50%;
-        }
-        .adminText span {
-            font-weight: bold; /* Optionally make the text bold */
-        }
-    </style>
 
 <!--FUNCTION FOR USER FORGOT TO TIME IN OR TIMEOUT THE VISITOR THE DATA WILL GO TO UNSUCCESSFUL APPOINTMENT-->
 <script>
