@@ -195,40 +195,40 @@ $rowNumber = 1;
 
   // Send the reference_no and current time as POST data
   xhr.send("reference_no=" + reference_no + "&time_out=" + currentTime);
-}
+  }
 
   // Define a function to periodically check for rows and transfer data
   function checkAndTransferData() {
-  <?php
-  $rowNumber = 1; // Reset row number for JavaScript
-  mysqli_data_seek($result, 0); // Reset the result pointer
-  while ($row = mysqli_fetch_assoc($result)) {
-    ?>
-    var reference_no = "<?php echo $row['reference_no']; ?>";
-    var nextButton = document.querySelector('#row_<?php echo $rowNumber; ?> .next-button');
-    var timeOutButton = document.querySelector('#row_<?php echo $rowNumber; ?> .timeout-button'); 
-    var currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    var scheduledDate = new Date("<?php echo $row['scheduledate']; ?>"); 
-    // Calculate the date for yesterday
-    var yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-
-    // Check if the scheduled date is in the past (before yesterday)
-    if (scheduledDate < yesterday) {
-      // Check if the "Time In" button is not disabled
-      if (nextButton && !nextButton.disabled) {
-        transferDataTimeIn(reference_no, currentTime);
-      }
-        transferDataTimeOut(reference_no, currentTime);
-      }
     <?php
-    $rowNumber++;
+    $rowNumber = 1; // Reset row number for JavaScript
+    mysqli_data_seek($result, 0); // Reset the result pointer
+    while ($row = mysqli_fetch_assoc($result)) {
+      ?>
+      var reference_no = "<?php echo $row['reference_no']; ?>";
+      var nextButton = document.querySelector('#row_<?php echo $rowNumber; ?> .next-button');
+      var timeOutButton = document.querySelector('#row_<?php echo $rowNumber; ?> .timeout-button'); 
+      var currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      var scheduledDate = new Date("<?php echo $row['scheduledate']; ?>"); 
+      // Calculate the date for yesterday
+      var yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+
+      // Check if the scheduled date is in the past (before yesterday)
+      if (scheduledDate < yesterday) {
+        // Check if the "Time In" button is not disabled
+        if (nextButton && !nextButton.disabled) {
+          transferDataTimeIn(reference_no, currentTime);
+        }
+          transferDataTimeOut(reference_no, currentTime);
+        }
+      <?php
+      $rowNumber++;
+    }
+    ?>
   }
-  ?>
-}
   setInterval(function () {
     checkAndTransferData();
-  }, 5000); // 5000 milliseconds = 5 seconds
+  }, 1000);
 });
 </script>
 
