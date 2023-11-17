@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+body{
+    background: white;
+}
+
 header {
     background-color: #162fa0;
     padding: 10px;
@@ -45,9 +49,9 @@ form{
     border-radius: 5px;
 }
 
-.container .main-video title{
+.container .main-video .title{
     color: #333;
-    font-size: 23px;
+    font-size: 25px;
     padding-top: 15px;
     padding-bottom: 15px;
 }

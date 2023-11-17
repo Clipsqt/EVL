@@ -50,9 +50,11 @@ $rowNumber = 1;
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="admin_webpage.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <title>Monitoring Visitor's Logbook </title>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <header>
+</head>
+<header>
         <img src="monitoring logbook logo.jpeg.png" alt="">
         <h1>APPOINTMENT LIST <br>
         <?php
@@ -71,7 +73,6 @@ $rowNumber = 1;
  
   
     </header>
-</head>
 <button id="history_logs_button" class ="historylogs" onclick="location.href='admins_History.php';">History Logs</button>
 <div class="settings">
     <a href="change_password.php">CHANGE PASSWORD</a>
@@ -117,7 +118,7 @@ $rowNumber = 1;
                 <td><?php echo $row["reference_no"]; ?></td>
                 <td><button class="next-button" data-fullname="<?php echo $row["fullname"]; ?>" data-department="<?php echo $row["department"]; ?>" onclick="enableTimeInButton(this)">Next</button></td>
                 <td class="time-in"><?php echo $TimeInRecorded ? $row["time_in"] : ''; ?></td>
-                <td><button class="time-in-button" <?php echo $TimeInRecorded ? 'disabled' : ''; ?> disabled>Time In</button></td>
+                <td><button class="time-in-button" <?php echo $TimeInRecorded ? 'disabled' : ''; ?>disabled>Time In</button></td>
                 <td><button id="timeout_button_<?php echo $rowNumber; ?>" class="timeout-button" data-reference="<?php echo $row["reference_no"]; ?>" <?php echo $TimeInRecorded ? '' : 'disabled'; ?>>Time Out</button></td>
               </tr>
         <?php
@@ -129,13 +130,45 @@ $rowNumber = 1;
 
 <!--FUNCTION FOR USER FORGOT TO TIME IN OR TIMEOUT THE VISITOR THE DATA WILL GO TO UNSUCCESSFUL APPOINTMENT-->
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var sweetAlertShown = false;
+ document.addEventListener("DOMContentLoaded", function () {
+  var sweetAlertShown = false;
 
-function transferDataTimeIn(reference_no, currentTime) {
-  // Make an AJAX request to transfer the row and update the time_in column
+  function transferDataTimeIn(reference_no, currentTime) {
+    // Make an AJAX request to transfer the row and update the time_in column
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "time_in.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          // Check if the SweetAlert has already been shown
+          if (!sweetAlertShown) {
+            // Handle the response from the server
+            Swal.fire({
+              icon: 'info',
+              title: 'PLEASE WAIT WHILE!',
+              text: 'Reloading the page...',
+              timer: 2000, // Set the timer to automatically close the alert in 2 seconds
+              showConfirmButton: false
+            }).then(() => {
+              // Reload the page after the SweetAlert is closed
+              location.reload();
+            });
+            sweetAlertShown = true; // Set the flag to true to prevent further alerts
+          }
+        }
+      }
+    };
+
+    // Send the reference_no and current time as POST data
+    xhr.send("reference_no=" + reference_no + "&time_in=" + currentTime);
+  }
+
+  function transferDataTimeOut(reference_no, currentTime) {
+  // Make an AJAX request to transfer the row and update the time_out column
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "time_in.php", true);
+  xhr.open("POST", "check_time_out.php", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   xhr.onreadystatechange = function () {
@@ -161,74 +194,44 @@ function transferDataTimeIn(reference_no, currentTime) {
   };
 
   // Send the reference_no and current time as POST data
-  xhr.send("reference_no=" + reference_no + "&time_in=" + currentTime);
-}
-
-// Do the same for the transferDataTimeOut function
-function transferDataTimeOut(reference_no, currentTime) {
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "check_time_out.php", true);
-  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        if (!sweetAlertShown) {
-          Swal.fire({
-            icon: 'info',
-            title: 'PLEASE WAIT WHILE!',
-            text: 'Reloading the page...',
-            timer: 2000,
-            showConfirmButton: false
-          }).then(() => {
-            location.reload();
-          });
-          sweetAlertShown = true;
-        }
-      }
-    }
-  };
   xhr.send("reference_no=" + reference_no + "&time_out=" + currentTime);
 }
 
+  // Define a function to periodically check for rows and transfer data
+  function checkAndTransferData() {
+  <?php
+  $rowNumber = 1; // Reset row number for JavaScript
+  mysqli_data_seek($result, 0); // Reset the result pointer
+  while ($row = mysqli_fetch_assoc($result)) {
+    ?>
+    var reference_no = "<?php echo $row['reference_no']; ?>";
+    var nextButton = document.querySelector('#row_<?php echo $rowNumber; ?> .next-button');
+    var timeOutButton = document.querySelector('#row_<?php echo $rowNumber; ?> .timeout-button'); 
+    var currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    var scheduledDate = new Date("<?php echo $row['scheduledate']; ?>"); 
+    // Calculate the date for yesterday
+    var yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
 
-    // Define a function to periodically check for rows and transfer data
-    function checkAndTransferData() {
-      <?php
-      $rowNumber = 1; // Reset row number for JavaScript
-      mysqli_data_seek($result, 0); // Reset the result pointer
-      while ($row = mysqli_fetch_assoc($result)) {
-      ?>
-        var reference_no = "<?php echo $row['reference_no']; ?>";
-        var timeInButton = document.querySelector('#row_<?php echo $rowNumber; ?> .time-in-button');
-        var currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        var scheduledDate = new Date("<?php echo $row['scheduledate']; ?>"); // Parse scheduled date from PHP
-
-        // Calculate the date for yesterday
-        var yesterday = new Date();
-        yesterday.setDate(yesterday.getDate() - 1);
-
-        // Check if the scheduled date is in the past (before yesterday)
-        if (scheduledDate < yesterday) {
-          // Check if the "Time In" button is not disabled
-          if (timeInButton && !timeInButton.disabled) {
-            transferDataTimeIn(reference_no, currentTime);
-          }
-
-          // Always transfer data for forgotten time-out
-          transferDataTimeOut(reference_no, currentTime);
-        }
-
-        <?php
-        $rowNumber++;
-        }
-      ?>
-    }
-    setInterval(function () {
-      checkAndTransferData();
-    }, 1000); // 1000 milliseconds = 1 second
-  });
+    // Check if the scheduled date is in the past (before yesterday)
+    if (scheduledDate < yesterday) {
+      // Check if the "Time In" button is not disabled
+      if (nextButton && !nextButton.disabled) {
+        transferDataTimeIn(reference_no, currentTime);
+      }
+        transferDataTimeOut(reference_no, currentTime);
+      }
+    <?php
+    $rowNumber++;
+  }
+  ?>
+}
+  setInterval(function () {
+    checkAndTransferData();
+  }, 5000); // 5000 milliseconds = 5 seconds
+});
 </script>
+
 
 <!--FUNCTION FOR USER FORGOT TO TIME IN OR TIMEOUT THE VISITOR THE DATA WILL GO TO UNSUCCESSFUL APPOINTMENT-->
 

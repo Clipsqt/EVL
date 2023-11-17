@@ -35,7 +35,6 @@ require_once("queuing_system_display.php")
 
     <video id="video" width="730" height="450" autoplay muted loop>
         <source src="<?php echo $videoFilePath; ?>" type="video/mp4">
-        Your browser does not support the video tag.
     </video>
 
     

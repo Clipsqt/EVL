@@ -16,15 +16,13 @@ let listVideo = document.querySelectorAll('.video-list .vid');
             };
         });
 
-//FUNCTION TO INSERT NAME AND LOCATION OF MAIN VIDEO TO VIDEO'S DISPLAYER
+//FUNCTION TO PLAY VIDEO IN QUEUING SYSTEM WHEN THE USER CLICK THE PLAY BUTTON
 $(document).ready(function() {
     $("#playButton").on("click", function() {
         var mainVideoName = $(".main-video .title").text();
         var mainVideoLocation = $(".main-video video").attr("src");
-
-        // Send an AJAX request to your server to update the database
         $.ajax({
-            url: "display_vid_queuingsystem.php", // Replace with the actual path to your server-side script
+            url: "display_vid_queuingsystem.php", 
             method: "POST",
             data: { name: mainVideoName, location: mainVideoLocation },
             success: function(response) {
