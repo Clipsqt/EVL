@@ -3,7 +3,6 @@
 
     if (isset($_POST['btn_upload'])) {
         $maxsize = 1073741824; //104857600 = 50MB
-
         $name = $_FILES['file']['name'];
         $target_dir = "videos/";
         $target_file = $target_dir . $_FILES["file"]["name"];
@@ -27,7 +26,6 @@
                     
                 }
             }
-           
         }
         else {
             echo "Invalid File Extension";
