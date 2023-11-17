@@ -34,3 +34,25 @@ $(document).ready(function() {
         });
     });
 });
+
+$(document).ready(function() {
+    $("#deletebutton").on("click", function() {
+        var mainVideoName = $(".main-video .title").text();
+        var mainVideoLocation = $(".main-video video").attr("src");
+        $.ajax({
+            url: "delete_video.php", 
+            method: "POST",
+            data: { name: mainVideoName, location: mainVideoLocation },
+            success: function(response) {
+                console.log("Data successfully sent to the server");
+                location.reload();
+            },
+            error: function(error) {
+                console.error("Error sending data to the server", error);
+            }
+        });
+    });
+});
+
+
+
