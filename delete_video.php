@@ -5,10 +5,8 @@ include("connect.php");
 $name = $_POST['name'];
 $location = $_POST['location'];
 
-// Get the file path
-$filePath =  "videos/".$location; // Assuming $location contains the full path to the file
+$filePath =  $location; 
 
-// Delete record from the 'videos' table
 $deleteDataSql = "DELETE FROM videos WHERE name = '$name' AND location = '$location'";
 if ($conn->query($deleteDataSql) === TRUE) {
     // Delete the file from storage
@@ -24,7 +22,5 @@ if ($conn->query($deleteDataSql) === TRUE) {
 } else {
     echo "Error Deleting: " . $deleteDataSql . "<br>" . $conn->error;
 }
-
-// Close the database connection
 $conn->close();
 ?>

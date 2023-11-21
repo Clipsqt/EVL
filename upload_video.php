@@ -1,7 +1,7 @@
 <?php
     include("connect.php");
 
-    if (isset($_POST['btn_upload'])) {
+    if(!empty($_FILES['file'])){ 
         $maxsize = 1073741824; //104857600 = 50MB
         $name = $_FILES['file']['name'];
         $target_dir = "videos/";
@@ -23,6 +23,8 @@
                     mysqli_query($conn,$query);
 
                     echo "Upload Successfully";
+                    header("Location: queuing_system_videouploader.php");
+                    exit(); 
                     
                 }
             }

@@ -36,13 +36,34 @@
     <div class="buttons">
         <button id="playButton" class="playbutton">Play</button>
         <button class="deletebutton" id="deletebutton">Delete</button>
-        <form class="uploader" action="upload_video.php" method="post" enctype="multipart/form-data">
-            <button type = "button" class = "upload-file">
-                <i class = "fa fa-upload"></i> Upload File<input type="file" name="file" class="input">
-            </button>
-            <input type="submit" value="Upload" name="btn_upload">
-        </form>
+        <button type="button" class="upload-file" onclick="openAdd()"><i class = "fa fa-upload"></i> Upload File</button>
     </div>
+</div>
+
+
+<div class="popup" id="popup">
+    <h2>UPLOAD FILE</h2> 
+    <form action="" id="uploadForm" method="post" enctype="multipart/form-data">
+        <div class="files">
+            <input type="file" id="file" class="hidden" name="file">
+            <label for="file" class="selectfiles">Select Files</label>
+        </div>
+        <div class="pr">
+            <strong>
+                <h4 class="ex">PDF</h4>
+                <h5 class="size">2.5kb</h5>
+            </strong>
+        </div>
+        <span id="percent" class="percent">0%</span>
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+        <span id="dataTransferred" class="total">Loaded/Total</span>
+        <span id="Mbps" class="mbps">Mbps</span>
+        <span id="timeLeft" class="timeleft">Time Left</span>
+        <input type="submit" value="Upload" id="upload"class="uploadbtn" name="btn_upload">
+        <button id="cancel" class="cancel" disabled>Cancel</button>
+    </form>
 </div>
 </body>
 <script src="queuing_system_videouploader.js"></script>
