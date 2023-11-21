@@ -25,6 +25,90 @@ header h1 {
     color: white;
     margin-top: 9px;
 }
+.container1 {
+    top: 17%;
+    height: 91%;
+    width: 300px;
+    position: absolute;
+    background: #162fa0;
+    border: 1px solid black;
+    z-index: 999;
+    transition: 0.5s ease;
+    transform: translate(-300px);
+    opacity: 0.95; 
+}
+
+.container1 .head {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+ol {
+    width: 100%;
+    list-style: none;
+    text-align: left;
+}
+
+ol li {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+ol li a {
+    color: white;
+    padding: 15px 5px 35px;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+    position: relative;
+    transition: 0.2s;
+    overflow: hidden;
+    text-transform: capitalize;
+}
+
+ol li a i {
+    width: 45px;
+    font-size: 30px;
+    padding-left: 5px;
+}
+
+ol li:hover a {
+    background: #162fa0;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.menubar {
+    position: absolute;
+    right: -46px;
+    font-size: 28px;
+    border-radius: 3px;
+    color: white;
+    padding: 3px 8px;
+    background: #162fa0;
+}
+
+#check {
+    display: none;
+}
+
+#check:checked ~ .container1 {
+    transform: translate(0);
+}
+
+#check:checked ~ .container1 #bars {
+    display: none;
+}
+
+#check:checked ~ .container {
+    transform: translate(300px);
+}
 
 form{
     display: flex;
@@ -205,13 +289,13 @@ form{
     color: white;
     cursor: pointer;
 }
-.popup h2 span{
+.popup h2 .close{
     float: right;
 }
-.popup h2 span i{
+.popup h2 .close i{
     font-size: 30px;
 }
-.popup h2 span i:hover{
+.popup h2 .close i:hover{
     color: black;
 }
 

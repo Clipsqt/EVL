@@ -126,7 +126,7 @@ file.oninput = () =>{
     if(filesize == 1000000000 || filesize <=1000000000000){
         filesize = (filesize/1000000000).toFixed(2) + 'gb';
     }
-    document.querySelector('label').innerText = filename;
+    document.querySelector('.selectfiles').innerText = filename;
     document.querySelector('.ex').innerText = extension;
     document.querySelector('.size').innerText = filesize;
     getFile(filename);
@@ -138,11 +138,16 @@ function getFile(fileName){
 }
 
 
+
 //FUNCTION FOR UPLOADING
 $("#upload").on("click", function() {
     if ($('#file').val()) {
         getprogress(true);
     }
+});
+
+$("#cancel").on("click", function() {
+    cancelbtn(true);
 });
 
 $("#uploadForm").on('submit', function (e) {
@@ -231,6 +236,11 @@ function getprogress(progress){
     }
 }
 
+function cancelbtn(cancel){
+    if(cancel){
+        document.querySelector('.uploading').style.display = "none";
+    }
+}
 
   
 

@@ -18,8 +18,27 @@
 <body>
 <header>
     <img src="monitoring logbook logo.jpeg.png" alt="">
-    <h1>  QUEUING SYSTEM VIDEO UPLOADER</h1>
+    <h1>  QUEUING SYSTEM VIDEO UPLOADER</h1> 
 </header>
+<input type="checkbox" name="" id="check">
+    <div class="container1">
+        <label for="check">
+            <div class="menubar">
+            <span class="bx bx-x" id="cross"></span>
+            <span class="bx bx-menu" id="bars"></span>
+            </div>
+        </label>
+        <div class="head">MENU</div>
+        <ol>
+            <li> <a href="e_logsHistory.php"><i class='bx bx-history'></i>E-LOG'S HISTORY</a></li>
+            <li> <a href="unsuccessful_appointment.php"><i class='bx bx-clipboard'></i></i></i>UNSUCCESSFUL APPOINTMENTS</a></li>
+            <li> <a href="user_accounts.php"><i class='bx bxs-user-account' ></i></i>USER ACCOUNTS</a></li>
+            <li> <a href="ActivityLogs.php"><i class='bx bx-list-ul'></i>ACTIVITY LOG</a></li>
+            <li> <a href="queuing_system_videouploader.php"><i class='bx bx-cloud-upload'></i>UPLOADER</a></li>
+            <li> <a href="change_password.php"><i class='bx bx-lock-alt'></i>CHANGE PASSWORD</a></li>
+            <li> <a href="log_out.php"><i class='bx bx-log-out'></i>LOGOUT</a></li>
+        </ol>
+    </div>     
 <div class="container">
     <div class="main-video">
         <video src="<?php echo $videos[0]['location']; ?>" controls muted autoplay></video>
@@ -44,7 +63,7 @@
 
 
 <div class="popup" id="popup">
-    <h2>UPLOAD FILE <span><i class='bx bx-x bx-tada' onclick="closeAdd()"></i></span></h2>  
+    <h2>UPLOAD FILE <span class="close"><i class='bx bx-x bx-tada' onclick="closeAdd()"></i></span></h2>  
     <form action="" id="uploadForm" method="post" enctype="multipart/form-data">
         <div class="files">
             <input type="file" id="file" class="hidden" name="file" required>
