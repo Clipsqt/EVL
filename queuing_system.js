@@ -126,5 +126,30 @@ function update_visitor_data() {
     }
   });
 }
-
 setInterval(update_visitor_data, 1000);
+
+//FUNCTION FOR REALTIME DISPLAYING THE VIDEO
+$(document).ready(function() {
+  setInterval(function() {
+    $.ajax({
+      url: "queuing_system_realtime_video.php",
+      dataType: "json",
+      success: function(data) {
+        // Check if the video file path has changed
+        var currentSrc = $("#video source").attr("src");
+        if (data.videoFilePath && currentSrc !== data.videoFilePath) {
+          // Update the video player source with the latest video file path
+          $("#video source").attr("src", data.videoFilePath);
+
+          // Load the new video file
+          $("#video")[0].load();
+
+          // Play the video if it was playing before
+          if (!$("#video")[0].paused) {
+            $("#video")[0].play();
+          }
+        }
+      }
+    });
+  }, 1000); // Send AJAX request every 5 seconds
+});

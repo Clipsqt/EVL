@@ -16,7 +16,7 @@
             );
         }
     } else {
-        echo "No videos found.";
+        echo "";
     }
 
     mysqli_close($conn);

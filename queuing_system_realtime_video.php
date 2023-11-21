@@ -8,10 +8,10 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $videoFilePath = $row['location'];
-    echo $videoFilePath;
+    echo json_encode(['videoFilePath' => $videoFilePath]);
 } else {
     // Default video file path if no data is available
-    echo "default_video.mp4";
+    echo json_encode(['videoFilePath' => 'default_video.mp4']);
 }
 
 // Close the database connection
