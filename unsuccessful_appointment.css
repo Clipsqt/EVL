@@ -331,14 +331,14 @@ input{
     }
     #searchInput{
         margin-left: 38%;
-        top: 22%;
+        top: 13%;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
     span{
-        top: 2%;
+        top: -8%;
     }
     .filter-container{
         position: relative;
@@ -428,20 +428,20 @@ input{
         margin-right: auto;
     }
     #searchInput{
-        margin-left: 30%;
-        top: 19%;
+        margin-left: 31%;
+        top: 18%;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
     span{
-        top: -2%;
+        top: -3%;
         
     }
     .filter-container{
         position: relative;
-        margin-left: 70%;
+        margin-left: 72%;
     }
     #downloadexcel{
         margin-right: 5%;
