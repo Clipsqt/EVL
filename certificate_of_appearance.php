@@ -1,15 +1,30 @@
-<?php session_start(); require_once("certificate_autofill.php"); ?>
+<?php
+session_start();
+require_once("certificate_autofill.php");
+function breakDownWords($text) {
+    $words = explode(' ', $text);
+    $maxWordsPerLine = 15;
+    $lines = [];
+    for ($i = 0; $i < count($words); $i += $maxWordsPerLine) {
+        $lines[] = '<strong>' . implode(' ', array_slice($words, $i, $maxWordsPerLine)) . '</strong>';
+    }
+    return implode('<br>', $lines);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="certificate_of_appearance.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.0/html2pdf.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <title>CERTIFICATE OF APPEARANCE</title>
 </head>
 <body>
-    <form id="coaForm">
+
+    <div id="certificateBody">
+
         <header>
             <img src="monitoring logbook logo.jpeg.png" alt="">
         </header>
@@ -24,62 +39,28 @@
         <p class="certify">This is to certify that <span class="bold-text"><?php echo isset($fullname) ? $fullname : ''; ?></span> </p>
 
         <br> <br>
-        <p class="position_designation"><span class="position_designation">Agency/Position/Designation</span></p>
-        <p class="school_office"><span class="school_office">School/Office</span></p>
-         <p class="appear">Appeared on <span class="bold-text"><?php echo isset($scheduledate) ? $scheduledate : ''; ?></span>  at EcoPark Barangay Muzon City of San Jose Del Monte Bulacan. </p>
-        <!-- ... (your existing form content) ... -->
-        <p class="purpose">Purpose: <br> <span class="bold-text"><?php echo isset($purpose) ? $purpose : ''; ?></span> <br> <br> This certification is being issued for whatever legal purposes it may serve her/him best. </p>
-        <br>
-        <p class="control_no">Control No: <input type="text" class="control_no_value" readonly></p>
+        <p class="position_designation"> <span class="bold-text"><?php echo isset($position_designation) ? $position_designation : ''; ?></span> <br>Position/Designation</p>
+        <p class="school_office"> <span class="bold-text"><?php echo isset($agency_school_office) ? $agency_school_office : ''; ?></span> <br>Agency/School/Office</p>
+        <p class="appear">Appeared on <span class="bold-text"><?php echo isset($scheduledate) ? $scheduledate : ''; ?></span>  at EcoPark Barangay Muzon City of San Jose Del Monte Bulacan. </p>
+        <p class="purpose">Purpose: <br>
+            <?php
+            $purposeText = isset($purpose) ? $purpose : '';
+            echo breakDownWords($purposeText);
+            ?>
+            <br> <br> This certification is being issued for whatever legal purposes it may serve her/him best.
+        </p>
+        <p class="seriesnumber">Control No. <?php echo isset($seriesnumber) ? $seriesnumber : ''; ?></p>
         <p class="issued">Date Issued: November 11, 2023 </p>
-    </form>
-    <script>
-        $(document).ready(function() {
-            // Fetch the last series number and year from the server
-            $.ajax({
-                url: 'get_last_series_year.php',
-                method: 'GET',
-                success: function(response) {
-                    const data = JSON.parse(response);
-                    let lastSeriesNumber = parseInt(data.lastSeriesNumber);
-                    let lastYear = parseInt(data.lastYear);
-                    if (isNaN(lastSeriesNumber)) {
-                        lastSeriesNumber = 0;
-                    }
-                    if (isNaN(lastYear)) {
-                        lastYear = 0;
-                    }
-                    // Get the year and month from worldtimeapi
-                    $.ajax({
-                        url: 'https://worldtimeapi.org/api/ip',
-                        dataType: 'json',
-                        success: function(data) {
-                            const onlineDate = new Date(data.utc_datetime);
-                            const currentYear = onlineDate.getUTCFullYear();
-                            const month = (onlineDate.getUTCMonth() + 1).toString().padStart(2, '0');
-                            if (lastYear !== currentYear) {
-                                lastSeriesNumber = 1; // Reset the series number to 1 for a new year
-                                lastYear = currentYear; // Update the last year
-                            } else {
-                                lastSeriesNumber++; // Increment the series number within the same year
-                            }
-                            // Format the series number
-                            const formattedSeriesNumber = String(lastSeriesNumber).padStart(6, '0');
-                            // Combine the year, month, and series number
-                            const controlNo = 'CA-' + currentYear + '-' + month + '-' + formattedSeriesNumber;
-                            // Set the control number as the value of the input element
-                            $(".control_no_value").val(controlNo);
-                        },
-                        error: function(error) {
-                            console.error('Error fetching online date:', error);
-                        }
-                    });
-                },
-                error: function() {
-                    console.error("Error fetching last series number and year.");
-                }
-            });
-        });
-    </script>
+
+        <img src="sign.jpeg.png" alt="" class="sign"> <br>
+        <p class="cadiz">MA. JIMA T. CADIZ <br> <span>Administrative Office V</span></p>
+
+        <!---Button for Print--->
+        <button id="downloadPdf" onclick="exportToPdf()">PRINT</button>
+
+        <button id="backButton" onclick="goToLogsHistory()">BACK</button>
+
+    </div>
+    <script src="cert.js"></script>
 </body>
 </html>
