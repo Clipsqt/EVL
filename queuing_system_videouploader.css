@@ -121,7 +121,7 @@ form{
     display: flex;
     margin-left: 55vh;
     margin-top: -3%;
-    justify-content: space-evenly;
+    padding-bottom: 10px;
 }
 
 .playbutton{
@@ -160,13 +160,14 @@ form{
 
 .upload-file{
     position: relative;
-    padding: 11px 16px;
+    width: 22%;
+    height: 35px;
+    margin-left: 10px;
     font-size: 15px;
     border-radius: 10px;
     color: #fff;
     background-color: #162fa0;
     cursor: pointer;
-    transform: 0.5s;
 }
   
 .upload-file:hover{
@@ -203,6 +204,15 @@ form{
     background-color: #162fa0;
     color: white;
     cursor: pointer;
+}
+.popup h2 span{
+    float: right;
+}
+.popup h2 span i{
+    font-size: 30px;
+}
+.popup h2 span i:hover{
+    color: black;
 }
 
 .files{
@@ -265,7 +275,7 @@ form{
     cursor: pointer;
     transition: 0.5s;
     font-size: 15px;
-    /*display: none;*/
+    display: none;
 }
 
 .cancel:hover{
@@ -306,6 +316,7 @@ strong .size{
     height: 15px;
     border-radius: 3px;
     padding: 4px;
+    display: none;
 }
 .progress-bar{
     width: 0%;
@@ -319,21 +330,39 @@ strong .size{
     margin-top: 5px;
     z-index: 999;
     font-size: 15px;
+    display: none;
 }
 .total{
     position: absolute;
     margin-right: 48%;
     margin-top: 5%;
+    display: none;
 }
 .mbps{
     position: absolute;
     margin-left: 53%;
     margin-top: 4.5%;
+    display: none;
 }
 .timeleft{
     position: absolute;
     margin-left: 73%;
     margin-top: 0.6%;
+    display: none;
+}
+
+.uploading{
+    background: #162fa0;
+    color: white;
+    position: absolute;
+    height: 40px;
+    width: 15%;
+    top: 80%;
+    text-align: center;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+    display: none;
 }
 @media (max-width:991px){
     .container{

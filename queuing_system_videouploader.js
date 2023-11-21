@@ -55,7 +55,8 @@ $(document).ready(function() {
     });
 });
 
-//FUNCTION FOR UPLOAD
+
+//FUNCTION FOR POPUP UPLOAD
 //Add Popup animation
 let popup = document.getElementById("popup");
 
@@ -66,12 +67,8 @@ function openAdd(){
 function closeAdd(){
     popup.classList.remove("open-popup");
 }
-//Add Popup animation//
 
-
-
-
-// Draggable Div Element for add inventory
+// Draggable Div Element for upload videos
 const popup1 = document.querySelector(".popup");
 const h2 = popup1.querySelector("h2");
 let isDragging = false;
@@ -109,9 +106,10 @@ function onDragEnd() {
 h2.addEventListener("mousedown", onDragStart);
 document.addEventListener("mousemove", onDrag);
 document.addEventListener("mouseup", onDragEnd);
-// Draggable Div Element END
 
-//FUNCTION FOR filetype and size 
+
+
+//FUNCTION FOR DISPLAY THE FILE TYPE AND FILE SIZE AND ALSO THE NAME OF THE FILE
 let file = document.getElementById('file');
 
 file.oninput = () =>{
@@ -139,7 +137,14 @@ function getFile(fileName){
     }
 }
 
-//Function for uploading
+
+//FUNCTION FOR UPLOADING
+$("#upload").on("click", function() {
+    if ($('#file').val()) {
+        getprogress(true);
+    }
+});
+
 $("#uploadForm").on('submit', function (e) {
     e.preventDefault();
     // get start time
@@ -204,7 +209,8 @@ $("#uploadForm").on('submit', function (e) {
         }
     });
     // for cancel file transfer
-    $('#cancel').on("click", () => {
+    $('#cancel').on("click", (event) => {
+        event.preventDefault();
         xhr.abort().then(
             $("#percent").html('Canceled'),
             $(".progress-bar").width('0%')
@@ -213,3 +219,18 @@ $("#uploadForm").on('submit', function (e) {
     // remove value form input button
     $('#file').prop('value', '')
 });
+function getprogress(progress){
+    if (progress){
+        document.querySelector('.cancel').style.display = "block";
+        document.querySelector('.progress').style.display = "block";
+        document.querySelector('.percent').style.display = "block";
+        document.querySelector('.total').style.display = "block";
+        document.querySelector('.mbps').style.display = "block";
+        document.querySelector('.timeleft').style.display = "block";
+        document.querySelector('.uploading').style.display = "block";
+    }
+}
+
+
+  
+

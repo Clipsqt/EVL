@@ -11,7 +11,9 @@
     <title>QUEUING VIDEO UPLOADER</title>
     <link rel="stylesheet" href="queuing_system_videouploader.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://kit.fontawesome.com/355342439a.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -42,10 +44,10 @@
 
 
 <div class="popup" id="popup">
-    <h2>UPLOAD FILE</h2> 
+    <h2>UPLOAD FILE <span><i class='bx bx-x bx-tada' onclick="closeAdd()"></i></span></h2>  
     <form action="" id="uploadForm" method="post" enctype="multipart/form-data">
         <div class="files">
-            <input type="file" id="file" class="hidden" name="file">
+            <input type="file" id="file" class="hidden" name="file" required>
             <label for="file" class="selectfiles">Select Files</label>
         </div>
         <div class="pr">
@@ -62,6 +64,7 @@
         <span id="Mbps" class="mbps">Mbps</span>
         <span id="timeLeft" class="timeleft">Time Left</span>
         <input type="submit" value="Upload" id="upload"class="uploadbtn" name="btn_upload">
+        <span class="uploading">Uploading...<br><i class="fa-solid fa-circle-notch fa-spin"></i></span>
         <button id="cancel" class="cancel" disabled>Cancel</button>
     </form>
 </div>
