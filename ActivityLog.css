@@ -422,12 +422,12 @@ input{
         width: 100%;
     }
     #monitoringTable{
-        width: 90%;
+        width: 80%;
         margin-left: auto;
         margin-right: auto;
     }
     #searchInput{
-        margin-left: 30%;
+        margin-left: 24%;
         top: 19%;
     }
     header img {
@@ -435,15 +435,15 @@ input{
         margin-top: 5px;
     }
     span{
-        top: -2%;
+        top: -3%;
         
     }
     .filter-container{
         position: relative;
-        margin-left: 70%;
+        margin-left: 65%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        margin-right: 24%;
         position: absolute;
     }
     .pagination{
