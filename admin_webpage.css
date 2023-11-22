@@ -159,7 +159,23 @@ td {
     background-color: black;
 }
 
-
+.adminBox {
+    display: inline-block;
+}
+.adminBox i {
+    color: #3498db;
+    margin-left: -2310px;
+    font-size: 70%;
+}
+.adminText {
+    display: inline-block;
+    vertical-align: left;
+    margin-left: -83%;
+    font-size: 50%;
+}
+.adminText span {
+    font-weight: bold; /* Optionally make the text bold */
+}
 
 @media screen and (min-width: 2558px){
     header{

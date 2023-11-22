@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 require_once ("connect.php");
@@ -73,6 +74,7 @@ if (!$conn) {
             <li> <a href="unsuccessful_appointment.php"><i class='bx bx-clipboard'></i></i></i>UNSUCCESSFUL APPOINTMENTS</a></li>
             <li> <a href="user_accounts.php"><i class='bx bxs-user-account' ></i></i>USER ACCOUNTS</a></li>
             <li> <a href="ActivityLogs.php"><i class='bx bx-list-ul'></i>ACTIVITY LOG</a></li>
+            <li> <a href="queuing_system_videouploader.php"><i class='bx bx-cloud-upload'></i>UPLOADER</a></li>
             <li> <a href="change_password.php"><i class='bx bx-lock-alt'></i>CHANGE PASSWORD</a></li>
             <li> <a href="log_out.php"><i class='bx bx-log-out'></i>LOGOUT</a></li>
         </ol>
@@ -94,15 +96,13 @@ if (!$conn) {
             <th id="colpriority">Priority</th>
             <th id="colPhoneNumber">Phone Number</th>
             <th id="colScheduleDate">Schedule Date</th>
-            <th id="colPosition_Designation">Position/Designation</th>
-            <th id="colAgency_School_Office">Agency/School/Office</th>
             <th id="colAppointment">Appointment</th>
             <th id="colPurpose">Purpose of visit</th>
             <th id="colDepartment">Department</th>
             <th id="colreference_no">Reference No.</th>
             <th id="colTime in">Time In</th>
             <th id="colTime out">Time Out</th>
-            <th id="colCoa">Coa</th>
+            <th id="colCertificate">Certificate</th>
         </tr>
         
     </thead> 
@@ -125,16 +125,15 @@ if (!$conn) {
             echo "<td class='priority'>" . $row['priority'] . "</td>";
             echo "<td>" . $row['phonenumber'] . "</td>";
             echo "<td class='sched'>" . $row['scheduledate'] . "</td>";
-            echo "<td>" . $row['position_designation'] . "</td>";
-            echo "<td>" . $row['agency_school_office'] . "</td>";
             echo "<td>" . $row['appointment'] . "</td>";
             echo "<td>" . $row['purpose_of_visit'] . "</td>";
             echo "<td>" . $row['department'] . "</td>";
             echo "<td>" . $row['reference_no'] . "</td>";
             echo "<td>" . $row['time_in'] . "</td>";
             echo "<td>" . $row['time_out'] . "</td>";
+            
             ?>
-      <td><a href="certificate_of_appearance.php?reference_no=<?php echo $referencecode; ?>" class="certificate" onclick="sendToControlNumber('<?php echo $referencecode; ?>')">COA</a></td>
+        <td> <a href="certificate_of_appearance.php?reference_no=<?php echo $referencecode; ?>" class="certificate" data-referencecode="<?php echo $referencecode; ?>">Certificate</a></td>
             <?php
             echo "</tr>";
             

@@ -16,9 +16,6 @@ h2 {
     margin-bottom: 40px;
    
 }
-
-
- 
 p:last-child {
     margin-top: 20px;
 }
@@ -39,25 +36,27 @@ margin-left: 18%;
     margin-top: 3%;
     
 }
-.school_office{
-    margin-left: 50%;
-    margin-top: -2.7%;
-}
+
 .issued{
     margin-left: 17.5%;
+    margin-bottom: 4%;
 }
 .control_no{
+    margin-bottom: -1%;
     margin-left: 17.5%;
 }
 
 .school_office{
-    margin-left: 38%;
-    margin-bottom: 2%;
-    
+    text-align: center;
+    margin-left: 21%;
+    margin-bottom: 3%;
+    margin-top: -7%;
 }
 .position_designation {
-    margin-left: 15%; /* Adjusted margin */
-    margin-bottom: 1.4%;
+    margin-left: -35%; /* Adjusted margin */
+    margin-bottom: 4%;
+    margin-top: -1%;
+    text-align: center;
 }
 .bold-text{
     font-weight: bold;
@@ -68,12 +67,53 @@ margin-left: 18%;
     text-align: center;
     display: inline-block; /* Add this property */
 }
-#date{
-    width: 15%;
-    
-}
 header img {
    
     width: 70px;
     height: auto;
+}
+
+.sign{
+    margin-left: 62%;
+    margin-top: -11%;
+    position: absolute;
+}
+
+.cadiz{
+    text-align: center;
+    margin-left: 60%;
+    top: 76%;
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+.cadiz span{
+    font-weight: lighter;
+
+}
+#downloadPdf {
+    position: absolute; /* Adjust the distance from the bottom as needed */
+    top: 90%;
+    right: 48%; /* Adjust the distance from the right as needed */
+    padding: 10px 10px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+#backButton{
+    position: absolute; /* Adjust the distance from the bottom as needed */
+    top: 90%;
+    right: 52.5%; /* Adjust the distance from the right as needed */
+    padding: 10px 10px;
+    background-color: #162fa0;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+
+.seriesnumber{
+    margin-left: 17.5%;
 }

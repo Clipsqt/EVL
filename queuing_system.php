@@ -24,6 +24,7 @@ require_once("queuing_system_display.php")
             <h3>Region III</h3> <br>
             <h1>SCHOOLS DIVISION OF CITY OF SAN JOSE DEL MONTE</h1>
         </div>
+        
     </div>
 
 
@@ -32,10 +33,8 @@ require_once("queuing_system_display.php")
     </audio>
 
 
-    <video width="730" height="450" autoplay muted>
-        <source src="DEPED HYMN 2023.mp4" type="video/mp4">
-        <source src="DEPED HYMN 2023.webm" type="video/webm">
-        Your browser does not support the video tag.
+    <video id="video" width="730" height="450" autoplay muted loop>
+        <source src="<?php echo $videoFilePath; ?>" type="video/mp4">
     </video>
 
     
@@ -68,8 +67,6 @@ require_once("queuing_system_display.php")
             </tr>
         </table>
     </div>
-
-
 </body>
 <script src="queuing_system.js"></script>
 </html>

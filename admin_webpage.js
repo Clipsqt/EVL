@@ -5,8 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     timeInButtons.forEach(function (button) {
         button.addEventListener("click", function () {
             const row = this.closest("tr");
-            const timeInCell = row.querySelector("td:nth-child(11)");
+            const timeInCell = row.querySelector("td:nth-child(12)");
             const currentTime = new Date().toLocaleTimeString();
+            
 
             // Update the "Time In" cell with the current time
             timeInCell.textContent = currentTime;
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Disable the button
             button.classList.add("disabled");
             button.disabled = true;
+
 
             // Get other necessary data
             const scheduledate = row.querySelector(".sched").textContent;
@@ -53,7 +55,7 @@ function updateDatabase(scheduledate, fullname, time_in, reference_no) {
     timeInButtons.forEach(function (button) {
         button.addEventListener("click", function () {
             const row = this.closest("tr");
-            const timeInCell = row.querySelector("td:nth-child(11)");
+            const timeInCell = row.querySelector("td:nth-child(12)");
             const currentTime = new Date();
             const formattedTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
@@ -70,7 +72,9 @@ function updateDatabase(scheduledate, fullname, time_in, reference_no) {
 
             // Enable the corresponding "Time Out" button
             const timeoutButton = row.querySelector(".timeout-button");
+            const nextButton = row.querySelector(".next-button")
             timeoutButton.disabled = false;
+            nextButton.disabled = true;
         });
     });
 
@@ -88,7 +92,9 @@ function updateDatabase(scheduledate, fullname, time_in, reference_no) {
 
             // Enable the corresponding "Time Out" button
             const timeoutButton = row.querySelector(".timeout-button");
+            const nextButton = row.querySelector(".next-button")
             timeoutButton.disabled = false;
+            nextButton.disabled = true;
         }
     });
 });
@@ -145,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
     
 
-//FUNCTION FOR NEXT BUTTON
+//FUNCTION FOR NEXT BUTTON TO TRRANSFER THE VISITOR NAME AND DEPARTMENT
 $(".next-button").on("click", function() {
     var visitorName = $(this).closest("tr").find(".fullname").text();
     var department = $(this).data("department");
@@ -158,6 +164,31 @@ $(".next-button").on("click", function() {
         }
     });
 });
+
+//FUNCTION TO ENABLE TIME IN BUTTON IN THE SAME ROW WHEN THE USER CLICK THE NEXT BUTTON
+function enableTimeInButton(button) {
+    var timeInButton = button.closest('tr').querySelector('.time-in-button');
+    timeInButton.removeAttribute('disabled');
+}
+
+
+
+// HIGHLIGHT THE ROW WHEN THE NEXT BUTTON IS CLICKED
+const nextButtons = document.querySelectorAll('.next-button');
+let highlightedRow;
+nextButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    if (highlightedRow) {
+      highlightedRow.style.backgroundColor = '';
+    }
+
+    // Apply highlight to the clicked row
+    const row = this.closest('tr');
+    row.style.backgroundColor = 'lightgray';
+    highlightedRow = row;
+  });
+});
+
 
 
   
