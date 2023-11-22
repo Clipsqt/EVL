@@ -211,8 +211,8 @@ radioWithAppointment.addEventListener('change', function () {
         // If "Walk-in" is selected, hide the date input box and set its value to the current date
         dateBoxContainer.style.display = 'none';
         currentDateInput.value = getFormattedDate(new Date());
-        currentDateInput.placeholder = ''; // Remove the placeholder
-        currentDateInput.readOnly = true;
+        currentDateInput.placeholder = ''; // Remove the placeholde
+        currentDateInput.readOnly = true; 
     }
     });
 // Function to get formatted date (similar to your existing code)
