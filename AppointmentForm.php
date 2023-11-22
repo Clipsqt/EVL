@@ -207,11 +207,13 @@ radioWalkIn.addEventListener('change', function () {
 });
 
 radioWithAppointment.addEventListener('change', function () {
-        if (this.checked) {
-            dateBoxContainer.style.display = 'none'; // Hide the date box
-        } else {
-            dateBoxContainer.style.display = 'block'; // Show the date box
-        }
+    if (this.checked) {
+        // If "Walk-in" is selected, hide the date input box and set its value to the current date
+        dateBoxContainer.style.display = 'none';
+        currentDateInput.value = getFormattedDate(new Date());
+        currentDateInput.placeholder = ''; // Remove the placeholder
+        currentDateInput.readOnly = true;
+    }
     });
 // Function to get formatted date (similar to your existing code)
 function getFormattedDate(date) {
