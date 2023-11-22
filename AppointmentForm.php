@@ -23,7 +23,9 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 <title>Fillup Form</title>
+
 </head>
 <body> 
 <div class="container">
@@ -33,6 +35,7 @@
                 <h1>DEPED CSJDM FRONT DESK</h1>
         <form action="Appointment.php" method="post">
         <div class="spinner"></div>
+
 <div class="appointment-type">
     <label>
         <input type="radio" class="radioOnline" name="appointment_type" value="Online" required> Online
@@ -178,6 +181,7 @@
 // Get the appointment type radio buttons and the date input box container
 const radioOnline = document.querySelector('.radioOnline');
 const radioWalkIn = document.querySelector('.radioWalkIn');
+const radioWithAppointment = document.querySelector('.radiowWithappointment');
 const dateBoxContainer = document.getElementById('dateBoxContainer');
 const currentDateInput = document.querySelector('.currentDate');
 
@@ -202,6 +206,13 @@ radioWalkIn.addEventListener('change', function () {
     }
 });
 
+radioWithAppointment.addEventListener('change', function () {
+        if (this.checked) {
+            dateBoxContainer.style.display = 'none'; // Hide the date box
+        } else {
+            dateBoxContainer.style.display = 'block'; // Show the date box
+        }
+    });
 // Function to get formatted date (similar to your existing code)
 function getFormattedDate(date) {
     const day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
