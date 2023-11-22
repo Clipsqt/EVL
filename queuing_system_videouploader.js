@@ -16,42 +16,91 @@ let listVideo = document.querySelectorAll('.video-list .vid');
             };
         });
 
+
 //FUNCTION TO PLAY VIDEO IN QUEUING SYSTEM WHEN THE USER CLICK THE PLAY BUTTON
 $(document).ready(function() {
     $("#playButton").on("click", function() {
         var mainVideoName = $(".main-video .title").text();
         var mainVideoLocation = $(".main-video video").attr("src");
-        $.ajax({
-            url: "display_vid_queuingsystem.php", 
-            method: "POST",
-            data: { name: mainVideoName, location: mainVideoLocation },
-            success: function(response) {
-                console.log("Data successfully sent to the server");
-            },
-            error: function(error) {
-                console.error("Error sending data to the server", error);
-            }
-        });
+
+        if (mainVideoName !="Default"){
+            $.ajax({
+                url: "display_vid_queuingsystem.php", 
+                method: "POST",
+                data: { name: mainVideoName, location: mainVideoLocation },
+                success: function() {
+                    console.log("Data successfully sent to the server");
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'The video is now playing in Queuing System',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    })
+                },
+                error: function(error) {
+                    console.error("Error sending data to the server", error);
+                }
+            });
+        }
+        else{
+            Swal.fire({
+                title: 'Error Playing Video',
+                text: 'Please Select A Video First',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        }
     });
 });
+
 
 //FUNCTION TO DELETE VIDEO
 $(document).ready(function() {
     $("#deletebutton").on("click", function() {
         var mainVideoName = $(".main-video .title").text();
         var mainVideoLocation = $(".main-video video").attr("src");
-        $.ajax({
-            url: "delete_video.php", 
-            method: "POST",
-            data: { name: mainVideoName, location: mainVideoLocation },
-            success: function(response) {
-                console.log("Data successfully sent to the server");
-                location.reload();
-            },
-            error: function(error) {
-                console.error("Error sending data to the server", error);
+        
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed && mainVideoName !="Default") {
+                $.ajax({
+                    url: "delete_video.php", 
+                    method: "POST",
+                    data: { name: mainVideoName, location: mainVideoLocation },
+                    success: function() {
+                        console.log("Data successfully sent to the server");
+                    },
+                    error: function(error) {
+                        console.error("Error sending data to the server", error);
+                    }
+                });
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success",
+                    confirmButtonText: 'OK'
+                }).then((result)=>{
+                    if(result.isConfirmed){
+                        location.reload();
+                    }
+                });
+              
             }
-        });
+            else if (result.dismiss !== Swal.DismissReason.cancel) {
+                Swal.fire({
+                    title: "Error Deleting Video",
+                    text: "Please Select A Video First!",
+                    icon: "error",
+                });
+            }
+          });
     });
 });
 
@@ -116,6 +165,7 @@ file.oninput = () =>{
     let filename = file.files[0].name;
     let extension = filename.split('.').pop();
     let filesize = file.files[0].size;
+    let maximum = "LARGE"
 
     if(filesize <=1000000){
         filesize = (filesize/1000).toFixed(2) + 'kb';
@@ -125,6 +175,9 @@ file.oninput = () =>{
     }
     if(filesize == 1000000000 || filesize <=1000000000000){
         filesize = (filesize/1000000000).toFixed(2) + 'gb';
+    }
+    if (filesize == 1073741824){
+        document.querySelector('.size').innerText = maximum;
     }
     document.querySelector('.selectfiles').innerText = filename;
     document.querySelector('.ex').innerText = extension;
@@ -139,9 +192,18 @@ function getFile(fileName){
 
 
 
-//FUNCTION FOR UPLOADING
+//FUNCTION FOR UPLOADING PROGRESS BAR
 $("#upload").on("click", function() {
-    if ($('#file').val()) {
+    var filesize =  $('#file')[0].files[0].size;
+    if(filesize > 1000000000){
+        Swal.fire({
+            title: "FILE TOO LARGE!",
+            icon: "error",
+            text: "The maximum file size is 1GB",
+            confirmButtonText:"OK"
+        });
+    }
+    else if($('#file').val()) {
         getprogress(true);
     }
 });

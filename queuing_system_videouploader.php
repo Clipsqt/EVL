@@ -14,6 +14,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://kit.fontawesome.com/355342439a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <header>
@@ -24,8 +25,8 @@
     <div class="container1">
         <label for="check">
             <div class="menubar">
-            <span class="bx bx-x" id="cross"></span>
-            <span class="bx bx-menu" id="bars"></span>
+                <span class="bx bx-x" id="cross"></span>
+                <span class="bx bx-menu" id="bars"></span>
             </div>
         </label>
         <div class="head">MENU</div>
@@ -42,7 +43,7 @@
 <div class="container">
     <div class="main-video">
         <video src="<?php echo $videos[0]['location']; ?>" controls muted autoplay></video>
-        <h3 class="title">01. VIDEO</h3>
+        <h3 class="title">Default</h3>
     </div>
 
     <div class="video-list">

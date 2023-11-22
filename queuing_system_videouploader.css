@@ -92,6 +92,7 @@ ol li:hover a {
     color: white;
     padding: 3px 8px;
     background: #162fa0;
+    cursor: pointer;
 }
 
 #check {
