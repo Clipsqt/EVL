@@ -17,7 +17,7 @@ function breakDownWords($text) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="certificate_of_appearance.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.0/html2pdf.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <title>CERTIFICATE OF APPEARANCE</title>
 </head>
@@ -50,7 +50,7 @@ function breakDownWords($text) {
             <br> <br> This certification is being issued for whatever legal purposes it may serve her/him best.
         </p>
         <p class="seriesnumber">Control No. <?php echo isset($seriesnumber) ? $seriesnumber : ''; ?></p>
-        <p class="issued">Date Issued: November 11, 2023 </p>
+        <p class="issued">Date Issued: <?php echo date('F d, Y'); ?></p>
 
         <img src="sign.jpeg.png" alt="" class="sign"> <br>
         <p class="cadiz">MA. JIMA T. CADIZ <br> <span>Administrative Office V</span></p>
