@@ -99,7 +99,7 @@ $rowNumber = 1;
             
         </tr>
         <?php
-            while ($row = mysqli_fetch_assoc($result)) {
+          while ($row = mysqli_fetch_assoc($result)) {
                 $isOnlineAppointment = $row["is_online"];
                 $reference_no = $row["reference_no"];
                 $timeIn = getTimeInFromLocalStorage($reference_no);
@@ -127,6 +127,25 @@ $rowNumber = 1;
         ?>
     </table>
 </div>
+<style>
+       .adminBox {
+            display: inline-block;
+        }
+        .adminBox i {
+            color: #3498db;
+            margin-left: -2310px;
+            font-size: 70%;
+        }
+        .adminText {
+            display: inline-block;
+            vertical-align: left;
+            margin-left: -83%;
+            font-size: 50%;
+        }
+        .adminText span {
+            font-weight: bold; /* Optionally make the text bold */
+        }
+    </style>
 
 <!--FUNCTION FOR USER FORGOT TO TIME IN OR TIMEOUT THE VISITOR THE DATA WILL GO TO UNSUCCESSFUL APPOINTMENT-->
 <script>

@@ -96,6 +96,7 @@ if (!$conn) {
             <th id="colpriority">Priority</th>
             <th id="colPhoneNumber">Phone Number</th>
             <th id="colScheduleDate">Schedule Date</th>
+            <th id="colAgency_School_Office">Agency/School/Office</th>
             <th id="colAppointment">Appointment</th>
             <th id="colPurpose">Purpose of visit</th>
             <th id="colDepartment">Department</th>
@@ -123,12 +124,13 @@ if (!$conn) {
             echo "<td class='fullname'>" . $row['fullname'] . "</td>";
             echo "<td class='sex'>" . $row['sex'] . "</td>";
             echo "<td class='priority'>" . $row['priority'] . "</td>";
-            echo "<td>" . $row['phonenumber'] . "</td>";
+            echo "<td class='phoneno'>" . $row['phonenumber'] . "</td>";
             echo "<td class='sched'>" . $row['scheduledate'] . "</td>";
+            echo "<td>" . $row['agency_school_office'] . "</td>";
             echo "<td>" . $row['appointment'] . "</td>";
             echo "<td>" . $row['purpose_of_visit'] . "</td>";
             echo "<td>" . $row['department'] . "</td>";
-            echo "<td>" . $row['reference_no'] . "</td>";
+            echo "<td class='refere'>" . $row['reference_no'] . "</td>";
             echo "<td>" . $row['time_in'] . "</td>";
             echo "<td>" . $row['time_out'] . "</td>";
             

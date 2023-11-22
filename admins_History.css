@@ -134,6 +134,7 @@ td {
         top: 14%;
     }
 }
+
 @media screen and (max-width: 1440px) {
     header {
         width: 99%;
@@ -184,4 +185,22 @@ td {
         top: 28%;
         left: 97%;
     } 
+}
+@media screen and (max-width: 1600px){
+    header{
+        width: 99%;
+    }
+    #monitoringTable{
+        width: 98%;
+        margin-left: 25px;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+    }
+    .back-button{
+        top: 22%;
+        left: 88%;
+        width: 5%;
+    }
 }

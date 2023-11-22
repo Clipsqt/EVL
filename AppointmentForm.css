@@ -39,7 +39,7 @@ body {
 .card-front{
   position: absolute;
   width: 110%;
-  height: 110%;
+  height: 115%;
   background-position: center;
   background-size: cover;
   background-image: linear-gradient(rgba(0,0,100,0.8)),url(blur\ logo.jpeg.jpg);
@@ -51,6 +51,7 @@ body {
   background: linear-gradient(89deg, #9aaaea 0%, #cbd9ff 50%, #f6f7ff 100%);
   border-radius: 20px;
   opacity: 93%;
+  
 }
 
 .card{
@@ -73,6 +74,7 @@ body {
   margin-top: 2%;
   overflow-y: auto;
   top: 0px;
+  line-height: 40px;
 }
 
 .inputPurpose::placeholder {
@@ -144,7 +146,7 @@ button:hover{
 }
 .submit-btn{
   position: absolute;
-  margin-top: 40px;
+  margin-top: 28px;
   margin-left: 10px;
   width: 100px;
   justify-content: center;

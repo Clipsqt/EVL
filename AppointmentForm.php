@@ -32,10 +32,10 @@
     <div class="card">
         <div class="inner-box">
             <div class="card-front">
-                <h1> APPOINTMENT</h1>
+                <h1>DEPED CSJDM FRONT DESK</h1>
         <form action="Appointment.php" method="post">
         <div class="spinner"></div>
-            <!-- ... (your form inputs) ... -->
+
 <div class="appointment-type">
     <label>
         <input type="radio" class="radioOnline" name="appointment_type" value="Online" required> Online
@@ -43,13 +43,17 @@
     <label>
         <input type="radio" class="radioWalkIn" name="appointment_type" value="Walk-in" required> Walk-in
     </label>
+    <br>
+    <label>
+        <input type="radio" class="radiowWithappointment" name="appointment_type" value="with Appointment" required> w/ Appointment
+    </label>
 </div>
 <div id="dateBoxContainer">
     <h2>Prefer Date</h2>
     <input type="text" class="currentDate" name="currentDate" id="currentDate" placeholder="Select a date" readonly required autocomplete="OFF">
 </div>
  <input type="text" class="input-box" name="Fullname" placeholder="Fullname" required autocomplete="off" pattern="[A-Za-z.\s]+">
- <input type="tel" class="input-box" name="phonenumber" placeholder="Phone number" required autocomplete="OFF" pattern="[0-9]{11}" maxlength="11">
+ <input type="tel" class="input-box" name="phonenumber" placeholder="Contact Number" required autocomplete="OFF" pattern="[0-9]{11}" maxlength="11">
  <input type="text" class="input-box" name="position_designation" placeholder="Position / Designation" required autocomplete="off" pattern="[A-Za-z.0-9\s]+">
  <input type="text" class="input-box" name="agency_school_office" placeholder="Agency / School / Office" required autocomplete="off" pattern="[A-Za-z.0-9\s]+">
                     <script>
@@ -66,13 +70,15 @@
                     </script>
                  <div class="PurposeBox">  
                     <div class="inner-box">
-                    <input type="text" class="inputPurpose" name="Purpose" placeholder="Please purpose should clearly stated" required autocomplete="off">  
+                    <input type="text" class="inputPurpose" name="Purpose" placeholder="The purpose should be clearly stated." required autocomplete="off">  
  
                  <div class="selecOffice">
 
             <div class="Selectoffice">
                 <select name="selectOffice" id="selectOffice" required>
                     <option value="">Office Visit</option>
+                    <option value="Office of the School Division Superintendent">SDS</option>
+                    <option value="Office of AO5">General Services AO5</option>
                     <option value="School Governance Operations Division">SGOD</option>
                     <option value="Curriculum Implementation Division">CID</option>
                     <option value="Information Communication Technology">ICT Services</option>
@@ -86,10 +92,12 @@
                     <option value="Budget Section">Budget Section</option>
                     <option value="Cash Section">Cash Section</option>
                     <option value="General Services">General Services</option>
+                    <option value="Legal Services">Legal Services</option>
+                    <option value="SDO Clinic & Nursing room">SDO Clinic & Nursing room</option>
                 </select>
                 <label for="gender"> </label>
     <select name="gender" id="gender" required>
-        <option value="">SEX</option>
+        <option value="">Sex</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
 
@@ -101,7 +109,7 @@
         <option value=""Defaultvalue>Priority Lane</option>
         <option value="Senior Citizen">Senior Citizen</option>
         <option value="Pregnant">Pregnant</option>
-        <option value="Disability">Disability</option>
+        <option value="Disability">Person with Disability</option>
     </select>
  </div>
   </div>  
@@ -173,6 +181,7 @@
 // Get the appointment type radio buttons and the date input box container
 const radioOnline = document.querySelector('.radioOnline');
 const radioWalkIn = document.querySelector('.radioWalkIn');
+const radioWithAppointment = document.querySelector('.radiowWithappointment');
 const dateBoxContainer = document.getElementById('dateBoxContainer');
 const currentDateInput = document.querySelector('.currentDate');
 
@@ -197,6 +206,13 @@ radioWalkIn.addEventListener('change', function () {
     }
 });
 
+radioWithAppointment.addEventListener('change', function () {
+        if (this.checked) {
+            dateBoxContainer.style.display = 'none'; // Hide the date box
+        } else {
+            dateBoxContainer.style.display = 'block'; // Show the date box
+        }
+    });
 // Function to get formatted date (similar to your existing code)
 function getFormattedDate(date) {
     const day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();

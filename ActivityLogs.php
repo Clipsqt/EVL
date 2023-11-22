@@ -27,7 +27,7 @@ $assistedBy = (isset($_SESSION['accountName']) ? $_SESSION['accountName'] : '');
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="table2excel.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="e_logsHistory.css">
+    <link rel="stylesheet" href="Activitylog.css">
     <title>Activity Logs</title>
 </head>
 <header>
