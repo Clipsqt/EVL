@@ -286,17 +286,7 @@ currentDateInput.addEventListener('input', function (e) {
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-  // Get the input element by its name
-  const fullnameInput = document.querySelector('input[name="Fullname"]');
 
-// Add an input event listener to validate and format the name
-fullnameInput.addEventListener('input', function (e) {
-    // Remove non-alphabetic characters using a regular expression
-    const alphabeticValue = this.value.replace(/[^A-Za-z.\s]/g, '');
-
-    // Update the input value with the alphabetic characters
-    this.value = alphabeticValue;
-});
 // Add an event listener to the form for submission
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector('form');
