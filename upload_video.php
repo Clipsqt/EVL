@@ -33,4 +33,6 @@
             echo "Invalid File Extension";
         }
     }
+    //TO MAKE THE FILE SIZE WORK YOU NEED TO CHANGE THE post_max_size=1G and upload_max_filesize=1G in Apache config > PHP(php.ini)
 ?>
+
