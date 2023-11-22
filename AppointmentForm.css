@@ -39,7 +39,7 @@ body {
 .card-front{
   position: absolute;
   width: 110%;
-  height: 110%;
+  height: 115%;
   background-position: center;
   background-size: cover;
   background-image: linear-gradient(rgba(0,0,100,0.8)),url(blur\ logo.jpeg.jpg);

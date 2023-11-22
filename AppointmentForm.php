@@ -23,9 +23,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
 <title>Fillup Form</title>
-
 </head>
 <body> 
 <div class="container">
@@ -35,7 +33,6 @@
                 <h1>DEPED CSJDM FRONT DESK</h1>
         <form action="Appointment.php" method="post">
         <div class="spinner"></div>
-            <!-- ... (your form inputs) ... -->
 <div class="appointment-type">
     <label>
         <input type="radio" class="radioOnline" name="appointment_type" value="Online" required> Online
@@ -43,8 +40,9 @@
     <label>
         <input type="radio" class="radioWalkIn" name="appointment_type" value="Walk-in" required> Walk-in
     </label>
+    <br>
     <label>
-        <input type="radio" class="radioVIP" name="appointment_type" value="VIP" required> VIP
+        <input type="radio" class="radiowWithappointment" name="appointment_type" value="with Appointment" required> w/ Appointment
     </label>
 </div>
 <div id="dateBoxContainer">
