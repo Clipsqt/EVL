@@ -34,6 +34,9 @@
             <div class="card-front">
                 <h1>DEPED CSJDM FRONT DESK</h1>
         <form action="Appointment.php" method="post">
+        <input type="hidden" name="yearRequested" class="yearRequested">
+        <script src="getYearRequested.js"></script>
+        <input type="hidden" name="risNoDate" class="risNoDate" readonly>
         <div class="spinner"></div>
 
 <div class="appointment-type">

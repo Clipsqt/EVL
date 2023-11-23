@@ -19,12 +19,17 @@ function breakDownWords($text) {
     <link rel="stylesheet" href="certificate_of_appearance.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>CERTIFICATE OF APPEARANCE</title>
 </head>
 <body>
 
     <div id="certificateBody">
-
+        <form action="insert_data.php" method="post" class="controlForm">
+            <input type="hidden" name="reference_no"value="<?php echo isset($referencecode) ? $referencecode : ''; ?>">
+            <input type="hidden" name="yearRequested" value="<?php echo $yearRequested ?>">
         <header>
             <img src="monitoring logbook logo.jpeg.png" alt="">
         </header>
@@ -49,18 +54,27 @@ function breakDownWords($text) {
             ?>
             <br> <br> This certification is being issued for whatever legal purposes it may serve her/him best.
         </p>
-        <p class="seriesnumber">Control No. <?php echo isset($seriesnumber) ? $seriesnumber : ''; ?></p>
+        <div class="seriesnumber">
+            Contro No: ECA-
+            <input readonly type="text" name="risNoDate" class="risNoDate" readonly >
+            <script src="getControlNo.js"></script>
+        </div>
+
         <p class="issued">Date Issued: <?php echo date('F d, Y'); ?></p>
 
         <img src="sign.jpeg.png" alt="" class="sign"> <br>
         <p class="cadiz">MA. JIMA T. CADIZ <br> <span>Administrative Office V</span></p>
 
         <!---Button for Print--->
-        <button id="downloadPdf" onclick="exportToPdf()">PRINT</button>
+        <input type="submit" value="Generate PDF" id="btnPrint" name="btnPrint">
 
+        
         <button id="backButton" onclick="goToLogsHistory()">BACK</button>
-
+        </form>
+        <button id="generatePDF">GENERATE PDF</button>
     </div>
     <script src="cert.js"></script>
+    <script src="generatePdf.js"></script>
+    
 </body>
 </html>

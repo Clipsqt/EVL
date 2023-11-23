@@ -6,7 +6,7 @@ if (isset($_GET['reference_no'])) {
     $referencecode = $_GET['reference_no'];
 
     // Query your database to fetch the data based on the referenceCode
-    $sql = "SELECT * FROM control_number WHERE reference_no = '$referencecode'";
+    $sql = "SELECT * FROM e_logshistory WHERE reference_no = '$referencecode'";
     $result = mysqli_query($conn, $sql);
 
     // Check if any rows are found
@@ -20,13 +20,13 @@ if (isset($_GET['reference_no'])) {
             $data[] = $row;
         }
         foreach ($data as $row) {
+            $referencecode = $row['reference_no'];
+            $yearRequested = $row['yearRequested'];
             $fullname = $row['fullname'];
             $purpose = $row['purpose_of_visit'];
             $scheduledate = date('F d, Y', strtotime($row['scheduledate']));
             $position_designation = $row['position_designation'];
             $agency_school_office = $row['agency_school_office'];
-            $seriesnumber = $row['seriesnumber'];
-            
         }
 
         // Close the table or perform any other necessary actions

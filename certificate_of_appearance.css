@@ -92,15 +92,16 @@ header img {
     font-weight: lighter;
 
 }
-#downloadPdf {
+#btnPrint {
     position: absolute; /* Adjust the distance from the bottom as needed */
     top: 90%;
-    right: 48%; /* Adjust the distance from the right as needed */
+    right: 45%; /* Adjust the distance from the right as needed */
     padding: 10px 10px;
     background-color: red;
     color: #fff;
     border: none;
     cursor: pointer;
+    display: none;
 }
 #backButton{
     position: absolute; /* Adjust the distance from the bottom as needed */
