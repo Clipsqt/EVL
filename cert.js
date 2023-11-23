@@ -48,50 +48,53 @@ $(document).ready(function () {
 
     $("button#backButton").click(function () {
         goToLogsHistory();
-    });
-
-    // Handle browser back button
-    window.onpopstate = function (event) {
+      });
+    
+      // Handle browser back button
+      window.onpopstate = function (event) {
         if (event.state && event.state.page) {
-            // The user navigated back to a certain page
-            if (event.state.page === 'certificate') {
-                // Handle the back button for the certificate page
-                goToLogsHistory();
-            }
-            // Add more conditions for other pages if needed
+          if (event.state.page === 'certificate') {
+            goToLogsHistory();
+          }
+          // Add more conditions for other pages if needed
         }
-    };
-
-    function goToLogsHistory() {
+      };
+    
+   
+      function goToLogsHistory() {
         const referencecode = getParameterByName('reference_no');
-
         $.ajax({
             url: 'delete_from_database.php',
             method: 'POST',
-            data: {
-                referencecode: referencecode
-            },
+            data: { referencecode: referencecode },
             success: function (response) {
                 console.log(response);
-                // Do not redirect, stay on the certificate page
-                // Optionally, you can show a message to the user
+                if (response === 'Record deleted successfully') {
+                    // Redirect to the e_logsHistory.php page
+                    window.location.href = 'e_logsHistory.php';
+                } else {
+                    // Show an error message
+                    alert('Error deleting data: ' + response);
+                    // Optionally, handle the error or perform other actions
+                }
             },
             error: function (error) {
                 console.error(error);
+                // Show an error message
+                alert('Error deleting data. Please try again.');
+                // Optionally, handle the error or perform other actions
             }
         });
     }
-
-    function getParameterByName(name, url) {
+      function getParameterByName(name, url) {
         if (!url) url = window.location.href;
         name = name.replace(/[\[\]]/g, "\\$&");
         var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
+          results = regex.exec(url);
         if (!results) return null;
         if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
-
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
     function generateSeriesNumber(counter) {
         const currentYear = new Date().getFullYear();
         const formattedCounter = ('00000' + counter).slice(-6);

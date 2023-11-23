@@ -20,42 +20,41 @@ p:last-child {
     margin-top: 20px;
 }
 .certify{
-    margin-top: 4%;
+    margin-top: -2%;
     margin-left: 28%;
     width: 65.5%;
 }
 .purpose{
-    margin-top: 2%;
-    margin-left: 17.5%;
+    margin-top: -1%;
+    margin-left: 20.5%;
 }
 .position_designation{
 margin-left: 18%;
 }
 .appear{
-    margin-left: 17.5%;
-    margin-top: 3%;
+    margin-left: 20.5%;
+    margin-top: -3%;
     
 }
 
-.issued{
-    margin-left: 17.5%;
-    margin-bottom: 4%;
-}
-.control_no{
-    margin-bottom: -1%;
-    margin-left: 17.5%;
+.seriesnumber{
+    margin-left: 20.5%;
 }
 
+.issued{
+    margin-left: 20.5%;
+    margin-bottom: 4%;
+}
 .school_office{
     text-align: center;
     margin-left: 21%;
-    margin-bottom: 3%;
-    margin-top: -7%;
+    margin-bottom: 5%;
+    margin-top: -6.8%;
 }
 .position_designation {
     margin-left: -35%; /* Adjusted margin */
     margin-bottom: 4%;
-    margin-top: -1%;
+    margin-top: -2%;
     text-align: center;
 }
 .bold-text{
@@ -74,17 +73,18 @@ header img {
 }
 
 .sign{
+    width: 7%;
     margin-left: 62%;
-    margin-top: -11%;
+    margin-top: -8%;
     position: absolute;
 }
 
 .cadiz{
     text-align: center;
     margin-left: 60%;
-    top: 76%;
+    top: 78%;
     position: absolute;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
 
 }
@@ -114,6 +114,3 @@ header img {
 }
 
 
-.seriesnumber{
-    margin-left: 17.5%;
-}

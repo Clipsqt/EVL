@@ -26,6 +26,7 @@ if (isset($_GET['reference_no'])) {
             $position_designation = $row['position_designation'];
             $agency_school_office = $row['agency_school_office'];
             $seriesnumber = $row['seriesnumber'];
+            
         }
 
         // Close the table or perform any other necessary actions
