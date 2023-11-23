@@ -177,7 +177,7 @@ td {
     font-weight: bold; /* Optionally make the text bold */
 }
 
-@media screen and (min-width: 2558px){
+@media screen and (min-width: 2560px){
     header{
         width: 2548px;
     }
@@ -198,13 +198,13 @@ td {
     }
     .adminBox i {
         position: absolute;
-        right: 95%;
-        top: 19%;
+        right: 99%;
+        top: 18%;
         font-size: 70%;
     }
     .adminText {
         vertical-align: left;
-        margin-left: -86%;
+        margin-left: -90%;
         font-size: 50%;
     }
     .settings a{
@@ -235,7 +235,7 @@ td {
     }
     .adminBox i {
         position: absolute;
-        right: 95%;
+        right: 97%;
         top: 28%;
         font-size: 70%;
     }
@@ -273,8 +273,8 @@ td {
     }
     .adminBox i {
         position: absolute;
-        right: 94%;
-        top: 21%;
+        right: 97%;
+        top: 27%;
         font-size: 70%;
     }
     .adminText {
@@ -292,46 +292,7 @@ td {
         
     }
 }
-@media screen and (max-width: 1024px){
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        position: absolute;
-        width: 88%;
-        margin-left: 70px;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    .historylogs{
-        position: absolute;
-        right: 2%;
-        margin-top: -4%;
-        
-    }
-    .adminBox i {
-        position: absolute;
-        right: 96%;
-        top: 21%;
-        font-size: 70%;
-    }
-    .adminText {
-        vertical-align: left;
-        margin-left: -75%;
-        font-size: 50%;
-    }
-  
-    .settings{
-        position: absolute;
-        text-decoration: none;
-        margin-left: 68%;
-        margin-top: 500px;
-        
-        
-    }
-}
+
 @media screen and (max-width: 768px){
     header{
         width: 100%;
@@ -373,3 +334,81 @@ td {
     }
 }
 
+@media screen and (max-width: 1024px){
+    header{
+        width: 100%;
+    }
+    #monitoringTable{
+        position: absolute;
+        width: 88%;
+        margin-left: 55px;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+    }
+    .historylogs{
+        position: absolute;
+        right: 2%;
+        margin-top: -4%;
+        
+    }
+    .adminBox i {
+        position: absolute;
+        right: 99%;
+        top: 28%;
+        font-size: 70%;
+    }
+    .adminText {
+        margin-left: 80%;
+        font-size: 50%;
+    }
+  
+    .settings{
+        position: absolute;
+        text-decoration: none;
+        margin-left: 68%;
+        margin-top: 500px;
+        
+        
+    }
+}
+@media screen and (max-width: 1422.22px){
+    header{
+        width: 100%;
+    }
+    #monitoringTable{
+        position: absolute;
+        width: 88%;
+        margin-left: 55px;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+    }
+    .historylogs{
+        position: absolute;
+        right: 2%;
+        margin-top: -4%;
+        
+    }
+    .adminBox i {
+        position: absolute;
+        right: 98%;
+        top: 31%;
+        font-size: 70%;
+    }
+    .adminText {
+        margin-left: 100%;
+        font-size: 50%;
+    }
+  
+    .settings{
+        position: absolute;
+        text-decoration: none;
+        margin-left: 68%;
+        margin-top: 500px;
+        
+        
+    }
+}

@@ -131,7 +131,7 @@ td {
         margin-top: 5px;
     }
     .back-button{
-        top: 14%;
+        top: 21%;
     }
 }
 
@@ -146,7 +146,7 @@ td {
     }
 
     .back-button{
-        margin-left: 30%;
+        margin-left: 1%;
         top: 30%;
     } 
 }
@@ -163,9 +163,9 @@ td {
         margin-left: 5%;
     }
     .back-button{
-        width: 12%;
+        width: 14%;
         top: 30%;
-        left: 68%;
+        left: 65%;
     } 
 }
 @media screen and (max-width: 768px){
