@@ -92,7 +92,7 @@ header img {
     font-weight: lighter;
 
 }
-#btnPrint {
+#generatePDF {
     position: absolute; /* Adjust the distance from the bottom as needed */
     top: 90%;
     right: 45%; /* Adjust the distance from the right as needed */
@@ -101,6 +101,9 @@ header img {
     color: #fff;
     border: none;
     cursor: pointer;
+}
+
+#btnPrint{
     display: none;
 }
 #backButton{

@@ -64,17 +64,14 @@ function breakDownWords($text) {
 
         <img src="sign.jpeg.png" alt="" class="sign"> <br>
         <p class="cadiz">MA. JIMA T. CADIZ <br> <span>Administrative Office V</span></p>
-
-        <!---Button for Print--->
         <input type="submit" value="Generate PDF" id="btnPrint" name="btnPrint">
-
-        
-        <button id="backButton" onclick="goToLogsHistory()">BACK</button>
         </form>
-        <button id="generatePDF">GENERATE PDF</button>
+       
     </div>
+    <button id="backButton" onclick="goToLogsHistory()">BACK</button>
+    <button id="generatePDF"  onclick="generatePDF()">GENERATE PDF</button>
     <script src="cert.js"></script>
-    <script src="generatePdf.js"></script>
+
     
 </body>
 </html>
