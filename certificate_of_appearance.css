@@ -1,10 +1,14 @@
 body {
-    font-family: Arial, sans-serif;
-
-}
+    font-family: 'Bookman Old Style', serif;
+    position: relative; 
+    margin: 0;
+    padding: 0;
+    
+    }
 header{
+ font-weight: bold;
  text-align: center;
- 
+ font-size: 15px;
 }
 hr{
     border: 0;
@@ -12,109 +16,131 @@ hr{
 }
 h2 {
     text-align: center;
-    font-size: 30px;
-    margin-bottom: 40px;
+    font-size: 18px;
+ 
    
 }
+
+#certificateBody {
+    width: 18cm; /* A4 width */
+    height: 25cm; /* A4 height */
+    margin:  auto;
+    padding: 10;
+    box-sizing: border-box;
+}
+
 p:last-child {
     margin-top: 20px;
 }
+.name{
+    font-size: 14px;
+    font-weight: bolder;
+}
 .certify{
-    margin-top: -2%;
-    margin-left: 28%;
-    width: 65.5%;
+    margin-top: 5%;
+    text-align: center;
+    font-size: 15px;
+
 }
 .purpose{
+    font-size: 12px;
     margin-top: -1%;
-    margin-left: 20.5%;
+    margin-left: 2.5%;
 }
 .position_designation{
-margin-left: 18%;
+    text-align: center;
 }
 .appear{
-    margin-left: 20.5%;
-    margin-top: -3%;
+    font-size: 15px;
+    margin-left: 2.5%;
+    margin-top: -22%;
     
 }
 
+.scheduledate{
+    font-size: 15x;
+    font-weight: bolder;
+
+}
 .seriesnumber{
-    margin-left: 20.5%;
+    margin-left: 2%;
+    font-size: 15px;
+}
+.risNoDate{
+    border: none;
+    font-size: 15px;
+}
+.issued{
+    font-size: 15px;
+    margin-left: 2.1%;
+}
+.position_office{
+    
+    display: inline-flex;
+    text-align: center;
+    margin-left: 18.7%;
+    font-size: 15px;
+    
+}
+.position_office p{
+    margin-top: -50%;
+   
+    position: relative;
 }
 
-.issued{
-    margin-left: 20.5%;
-    margin-bottom: 4%;
+.position_office .school_office{
+    margin-left: 100px;
+    font-size: 15px;
 }
-.school_office{
-    text-align: center;
-    margin-left: 21%;
-    margin-bottom: 5%;
-    margin-top: -6.8%;
-}
-.position_designation {
-    margin-left: -35%; /* Adjusted margin */
-    margin-bottom: 4%;
-    margin-top: -2%;
-    text-align: center;
+.best{
+    font-size: 15px;
 }
 .bold-text{
-    font-weight: bold;
+    font-weight: 600;
     border: none;
     border-bottom: 1px solid #000;
     width: auto; /* Change to auto to adjust the width automatically */
-    font-size: 21px;
+    font-size: 15px;
     text-align: center;
     display: inline-block; /* Add this property */
 }
 header img {
    
-    width: 70px;
+    width: 50px;
     height: auto;
 }
 
 .sign{
-    width: 7%;
-    margin-left: 62%;
-    margin-top: -8%;
+    width: 220px;
+    margin-left: 8%;
+    margin-top: -1%;
     position: absolute;
 }
 
-.cadiz{
-    text-align: center;
-    margin-left: 60%;
-    top: 78%;
-    position: absolute;
-    font-size: 15px;
-    font-weight: bold;
-
-}
-.cadiz span{
-    font-weight: lighter;
-
-}
-#generatePDF {
-    position: absolute; /* Adjust the distance from the bottom as needed */
-    top: 90%;
-    right: 45%; /* Adjust the distance from the right as needed */
-    padding: 10px 10px;
-    background-color: red;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
 
 #btnPrint{
     display: none;
 }
-#backButton{
-    position: absolute; /* Adjust the distance from the bottom as needed */
-    top: 90%;
-    right: 52.5%; /* Adjust the distance from the right as needed */
-    padding: 10px 10px;
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+#backButton,
+#generatePDF {
+    padding: 10px 20px;
     background-color: #162fa0;
     color: #fff;
     border: none;
     cursor: pointer;
+    margin: 5px;
 }
 
-
+#generatePDF {
+    background-color: red;
+}

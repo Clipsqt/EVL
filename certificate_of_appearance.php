@@ -41,35 +41,38 @@ function breakDownWords($text) {
         </header>
         <hr>
         <h2>CERTIFICATE OF APPEARANCE</h2>
-        <p class="certify">This is to certify that <span class="bold-text"><?php echo isset($fullname) ? $fullname : ''; ?></span> </p>
+        <p class="certify">This is to certify that <span class="name"><?php echo isset($fullname) ? $fullname : ''; ?></span> </p>
 
         <br> <br>
+        <div class="position_office">
         <p class="position_designation"> <span class="bold-text"><?php echo isset($position_designation) ? $position_designation : ''; ?></span> <br>Position/Designation</p>
         <p class="school_office"> <span class="bold-text"><?php echo isset($agency_school_office) ? $agency_school_office : ''; ?></span> <br>Agency/School/Office</p>
-        <p class="appear">Appeared on <span class="bold-text"><?php echo isset($scheduledate) ? $scheduledate : ''; ?></span>  at EcoPark Barangay Muzon City of San Jose Del Monte Bulacan. </p>
+        </div>
+        <p class="appear">Appeared on <span class="scheduledate"><?php echo isset($scheduledate) ? $scheduledate : ''; ?></span>  at EcoPark Barangay Muzon City of San Jose Del Monte Bulacan. </p>
         <p class="purpose">Purpose: <br>
             <?php
             $purposeText = isset($purpose) ? $purpose : '';
             echo breakDownWords($purposeText);
             ?>
-            <br> <br> This certification is being issued for whatever legal purposes it may serve her/him best.
+            <br> <br> <span class="best">This certification is being issued for whatever legal purposes it may serve her/him best.</span>
         </p>
         <div class="seriesnumber">
             Contro No: ECA-
             <input readonly type="text" name="risNoDate" class="risNoDate" readonly >
             <script src="getControlNo.js"></script>
+     
+        <img src="e_sign.png" alt="" class="sign"> <br>
         </div>
-
         <p class="issued">Date Issued: <?php echo date('F d, Y'); ?></p>
 
-        <img src="sign.jpeg.png" alt="" class="sign"> <br>
-        <p class="cadiz">MA. JIMA T. CADIZ <br> <span>Administrative Office V</span></p>
         <input type="submit" value="Generate PDF" id="btnPrint" name="btnPrint">
         </form>
        
     </div>
+    <footer>
     <button id="backButton" onclick="goToLogsHistory()">BACK</button>
-    <button id="generatePDF"  onclick="generatePDF()">GENERATE PDF</button>
+    <button id="generatePDF"  onclick="generatePDF()">PRINT</button>
+    </footer>
     <script src="cert.js"></script>
 
     
