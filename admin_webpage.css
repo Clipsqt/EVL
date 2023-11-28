@@ -182,7 +182,7 @@ td {
     }
     #monitoringTable{
         position: absolute;
-        width: 88%;
+        width: 95%;
         margin-left: 55px;
     }
     header img {
@@ -191,9 +191,9 @@ td {
     }
     .historylogs{
         position: absolute;
-        right: 2%;
-        margin-top: -4%;
-        
+        left: 90%;
+        width: 5%;
+        top: 40%;
     }
     .adminBox i {
         position: absolute;
@@ -209,10 +209,8 @@ td {
     .settings{
         position: absolute;
         text-decoration: none;
-        margin-left: 68%;
+        margin-left: 85%;
         margin-top: 500px;
-        
-        
     }
 }
 @media screen and (max-width: 1920px){
@@ -250,8 +248,12 @@ td {
         text-decoration: none;
         margin-left: 68%;
         margin-top: 500px;
-        
-        
+    }
+    .historylogs{
+        position: absolute;
+        left: 85%;
+        width: 7%;
+        top: 39%;
     }
 }
 @media screen and (max-width: 1680px){
@@ -298,32 +300,42 @@ td {
         width: 100%;
     }
     #monitoringTable{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 35%;
-        top: 18%;
+        position: absolute;
+        width: 88%;
+        margin-left: 55px;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
-    span{
-        top: -2%;
+    .historylogs{
+        position: absolute;
+        right: 2%;
+        margin-top: -4%;
         
     }
-    .filter-container{
-        position: relative;
-        margin-left: 76%;
-    }
-    #downloadexcel{
-        margin-right: 5%;
+    .adminBox i {
         position: absolute;
+        right: 97%;
+        top: 31%;
+        font-size: 70%;
     }
-    .pagination{
-        top: 80%;
+    .adminText {
+        margin-left: 100%;
+        font-size: 50%;
+    }
+  
+    .settings{
+        position: absolute;
+        text-decoration: none;
+        margin-left: 68%;
+        margin-top: 500px;
+    }
+    .historylogs{
+        position: absolute;
+        left: 85%;
+        width: 8%;
+        top: 39%;
     }
     
 }
@@ -362,8 +374,12 @@ td {
         text-decoration: none;
         margin-left: 68%;
         margin-top: 500px;
-        
-        
+    }
+    .historylogs{
+        position: absolute;
+        left: 85%;
+        width: 9%;
+        top: 38%;
     }
 }
 @media screen and (max-width: 1366px) {
@@ -401,8 +417,12 @@ td {
         text-decoration: none;
         margin-left: 68%;
         margin-top: 500px;
-        
-        
+    }
+    .historylogs{
+        position: absolute;
+        left: 85%;
+        width: 9%;
+        top: 38%;
     }
 }
 @media screen and (max-width: 1360px){
@@ -479,8 +499,12 @@ td {
         text-decoration: none;
         margin-left: 68%;
         margin-top: 500px;
-        
-        
+    }
+    .historylogs{
+        position: absolute;
+        left: 85%;
+        width: 10%;
+        top: 37%;
     }
 }
 @media screen and (max-width: 1152px) {
@@ -509,7 +533,7 @@ td {
         font-size: 70%;
     }
     .adminText {
-        margin-left: 98%;
+        margin-left: 96%;
         font-size: 50%;
     }
   
@@ -518,8 +542,12 @@ td {
         text-decoration: none;
         margin-left: 68%;
         margin-top: 500px;
-        
-        
+    }
+    .historylogs{
+        position: absolute;
+        left: 85%;
+        width: 11%;
+        top: 37%;
     }
     
 }
@@ -528,34 +556,42 @@ td {
         width: 100%;
     }
     #monitoringTable{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 32%;
-        top: 18%;
-        width: 15%;
+        position: absolute;
+        width: 88%;
+        margin-left: 55px;
     }
     header img {
         width: 100px;
         margin-top: 5px;
-        
     }
-    span{
-        top: -2%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 63%;
-    }
-    #downloadexcel{
-        margin-right: 5%;
+    .historylogs{
         position: absolute;
+        right: 2%;
+        margin-top: -4%;
+        
     }
-    .pagination{
-        top: 85%;
+    .adminBox i {
+        position: absolute;
+        right: 98%;
+        top: 31%;
+        font-size: 70%;
+    }
+    .adminText {
+        margin-left: 96%;
+        font-size: 50%;
+    }
+  
+    .settings{
+        position: absolute;
+        text-decoration: none;
+        margin-left: 68%;
+        margin-top: 500px;
+    }
+    .historylogs{
+        position: absolute;
+        left: 85%;
+        width: 12%;
+        top: 36%;
     }
 }
 @media screen and (max-width: 800px) {
