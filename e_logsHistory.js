@@ -73,7 +73,7 @@ function searchTable() {
                 // Check if the row matches the filters
                 const scheduleDateCell = row.cells[5];
                 const scheduleDate = scheduleDateCell.textContent.trim();
-                const appointmentTypeCell = row.cells[6];
+                const appointmentTypeCell = row.cells[7];
                 const appointmentType = appointmentTypeCell.textContent.trim().toLowerCase();
                 const priorityCell = row.cells[3];
                 const priority = priorityCell.textContent.trim().toLowerCase();
