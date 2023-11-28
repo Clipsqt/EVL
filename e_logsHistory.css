@@ -493,7 +493,7 @@ select {
         width: 100%;
     }
     #monitoringTable{
-        width: 10%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -526,7 +526,7 @@ select {
         width: 100%;
     }
     #monitoringTable{
-        width: 90%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
