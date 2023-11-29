@@ -197,7 +197,26 @@ body{
   width: 52%;
 
 }
+li{
+  text-decoration: none;
+  display: flex;
+}
+li a {
+  left: 87%;
+  position: relative;
+  display: inline-block;
+  display: inline-flex;
+  font-size: 20px;
+  text-decoration: none;
+}
 
+li a i {
+  font-size: 3rem;
+  position: absolute;
+  top: -200%;
+  left: 50%; /* Adjust the left position as needed */
+  transform: translateX(-50%); /* Center the icon horizontally */
+}
  /* ... LAPTOP LARGE 1440 ... */
  @media screen and (min-width: 2560px){
   body {

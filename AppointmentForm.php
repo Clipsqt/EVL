@@ -16,6 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/7d8e1e46c6.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="AppointmentForm.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -355,6 +356,6 @@ form.addEventListener('submit', async function (e) {
 
     
 </script>
-  
+<li> <a href="adminLogin.php"><i class="fa-solid fa-user-tie"></i>ADMIN LOG-IN</a></li>
 </body>
 </html>
