@@ -358,7 +358,12 @@ select {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
+.priority_filter {
+    margin-left: 30%;
+}
+.walkin_online_filter{
+    margin-left: 5%;
+}
 @media screen and (max-width: 2560px){
     header{
         width: 100%;
@@ -382,7 +387,7 @@ select {
         margin-left: 84%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        margin-right: -10%;
         position: absolute;
     }
     .pagination{
@@ -414,7 +419,7 @@ select {
         margin-left: 80%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        margin-right: -11%;
         position: absolute;
     }
     .pagination{
@@ -447,7 +452,7 @@ select {
         margin-left: 77%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        margin-right: -12%;
         position: absolute;
     }
     .pagination{
@@ -480,7 +485,7 @@ select {
         margin-left: 76%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        margin-right: -12%;
         position: absolute;
     }
     .pagination{
@@ -514,7 +519,7 @@ select {
         margin-left: 73%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        margin-right: -12%;
         position: absolute;
     }
     .pagination{
@@ -531,7 +536,7 @@ select {
         margin-right: auto;
     }
     #searchInput{
-        margin-left: 27%;
+        margin-left: 33%;
         top: 21%;
     }
     header img {
@@ -544,10 +549,10 @@ select {
     }
     .filter-container{
         position: relative;
-        margin-left: 66%;
+        margin-left: 72%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        margin-right: -12%;
         position: absolute;
     }
     .pagination{
@@ -580,7 +585,7 @@ select {
         margin-left: 72%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        margin-right: -13%;
         position: absolute;
     }
     .pagination{
@@ -612,7 +617,7 @@ select {
         margin-left: 70%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        margin-right: -16%;
         position: absolute;
     }
     .pagination{
@@ -646,7 +651,7 @@ select {
         margin-left: 67%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        margin-right: -14%;
         position: absolute;
     }
     .pagination{
@@ -682,12 +687,47 @@ select {
         margin-left: 63%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        margin-right: -12%;
         position: absolute;
     }
     .pagination{
         top: 85%;
     }
+}
+@media screen and (max-width: 934px) {
+    header{
+        width: 100%;
+    }
+    #monitoringTable{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #searchInput{
+        margin-left: 31%;
+        top: 19%;
+        width: 16%
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+        
+    }
+    span{
+        top: -2%;
+        
+    }
+    .filter-container{
+        position: relative;
+        margin-left: 59%;
+    }
+    #downloadexcel{
+        margin-right: -14%;
+        position: absolute;
+    }
+    .pagination{
+        top: 85%;
+    }    
 }
 @media screen and (max-width: 800px) {
     header{
