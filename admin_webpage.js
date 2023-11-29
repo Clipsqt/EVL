@@ -169,6 +169,7 @@ $(".next-button").on("click", function() {
 function enableTimeInButton(button) {
     var timeInButton = button.closest('tr').querySelector('.time-in-button');
     timeInButton.removeAttribute('disabled');
+
 }
 
 
@@ -176,18 +177,36 @@ function enableTimeInButton(button) {
 // HIGHLIGHT THE ROW WHEN THE NEXT BUTTON IS CLICKED
 const nextButtons = document.querySelectorAll('.next-button');
 let highlightedRow;
+const storedRowId = localStorage.getItem('highlightedRowId');
+
+if (storedRowId) {
+  const storedRow = document.getElementById(storedRowId);
+  if (storedRow) {
+    storedRow.style.backgroundColor = 'lightgray';
+    highlightedRow = storedRow;
+  }
+}
+
 nextButtons.forEach(button => {
   button.addEventListener('click', function() {
     if (highlightedRow) {
       highlightedRow.style.backgroundColor = '';
     }
-
-    // Apply highlight to the clicked row
     const row = this.closest('tr');
     row.style.backgroundColor = 'lightgray';
     highlightedRow = row;
+    localStorage.setItem('highlightedRowId', row.id);
   });
 });
+
+
+
+
+setInterval(() => {
+    location.reload();
+}, 120000);
+  
+
 
 
 

@@ -201,7 +201,9 @@ $("#upload").on("click", function() {
             icon: "error",
             text: "The maximum file size is 1GB",
             confirmButtonText:"OK"
-        });
+        }).then(function(){
+            location.reload();
+        })
     }
     else if($('#file').val()) {
         getprogress(true);

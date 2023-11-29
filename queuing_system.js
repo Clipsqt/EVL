@@ -56,6 +56,7 @@ setInterval(() => {
 }, 200);
 
 
+
 //---------------FUNCTION FOR REALTIME FETCHING AND DISPLAYING IN THE ASSIGN TABLE---------------//
 
 var lastData = []; // initialize lastData to null

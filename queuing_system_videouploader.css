@@ -449,6 +449,7 @@ strong .size{
     font-size: 15px;
     display: none;
 }
+
 @media (max-width:991px){
     .container{
         grid-template-columns: 1.5fr 1fr;

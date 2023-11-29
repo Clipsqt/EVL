@@ -14,30 +14,31 @@ require_once("queuing_system_display.php")
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div class="datetime">
-        <div class="time"></div>
-        <div class="date"></div>
+    <header>
+        <div class="datetime">
+            <div class="time"></div>
+            <div class="date"></div>
+        </div>
         <img src="monitoring logbook logo.jpeg.png" alt="deped">
         <div class="headerTitles">
             <h3>Republic of the Philippines</h3> <br>
             <h2>Department of Education</h2> <br>
             <h3>Region III</h3> <br>
             <h1>SCHOOLS DIVISION OF CITY OF SAN JOSE DEL MONTE</h1>
-        </div>
-        
-    </div>
-
+        </div>  
+    </header>
 
     <audio id="notification">
         <source src="queuing_system_announcement.mp3" type="audio/mp3"> 
     </audio>
-
-
-    <video id="video" width="730" height="450" autoplay muted loop>
-        <source src="<?php echo $videoFilePath; ?>" type="video/mp4">
-    </video>
-
     
+<div class="container">
+    <div class="video">
+        <video id="video" autoplay muted loop>
+            <source src="<?php echo $videoFilePath; ?>" type="video/mp4">
+        </video>
+    </div>
+
     <div class="OSDS">
         <h3>Office of the Schools Division Superintendent</h3>
         <table id="visitor_table">
@@ -48,7 +49,6 @@ require_once("queuing_system_display.php")
         </table>
     </div>
 
-
     <div class="CID">
         <h3>Curriculum Implementation Division</h3>
         <table class="table-cid">
@@ -58,7 +58,6 @@ require_once("queuing_system_display.php")
         </table>
     </div>
 
-
     <div class="SGOD">
         <h3>School Governance Operations Division</h3>
         <table class="table-sgod">
@@ -66,6 +65,7 @@ require_once("queuing_system_display.php")
                 <th class="name_of_visitors">VISITORS:</th>
             </tr>
         </table>
+    </div>
     </div>
 </body>
 <script src="queuing_system.js"></script>
