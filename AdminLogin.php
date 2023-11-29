@@ -7,13 +7,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bookman+Old+Style">
+    <script src="https://kit.fontawesome.com/7d8e1e46c6.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="Adminlogin.css">
     <title>Admin Log in</title>
 </head>
 <body>
     <div class="container">
-        <label for="email"><i class='bx bxs-user'></i></label> <!-- Add "for" attribute with a valid input "id" -->
+        <label for="email"><i class="fa-solid fa-user-tie"></i></label> <!-- Add "for" attribute with a valid input "id" -->
         <h1 class="label">LOGIN</h1>
         <form class="login_form" method="post" name="form" onsubmit="return validated()">
             <div class="emailfont">Email</div>
