@@ -135,7 +135,7 @@ if (!$conn) {
             echo "<td>" . $row['time_out'] . "</td>";
             
             ?>
-        <td> <a href="certificate_of_appearance.php?reference_no=<?php echo $referencecode; ?>" class="certificate" data-referencecode="<?php echo $referencecode; ?>">Certificate</a></td>
+     <td><a href="certificate_of_appearance.php?reference_no=<?php echo $referencecode; ?>" class="certificate" id="certificateLink" data-referencecode="<?php echo $referencecode; ?>">Certificate</a></td> 
             <?php
             echo "</tr>";
             
