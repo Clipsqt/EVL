@@ -10,7 +10,7 @@
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
         <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
-        
+        <link rel="website icon" type="png" href="monitoring logbook logo.jpeg.png">
     </head>
 
     <body>

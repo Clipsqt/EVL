@@ -28,6 +28,7 @@ if (!$conn) {
     <script src="table2excel.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="e_logsHistory.css">
+    <link rel="website icon" type="png" href="monitoring logbook logo.jpeg.png">
     <title>E-LOGS HISTORY</title>
 </head>
 <header>

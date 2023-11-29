@@ -25,6 +25,7 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <script src="table2excel.js"></script>
         <link rel="stylesheet" href="unsuccessful_appointment.css">
+        <link rel="website icon" type="png" href="monitoring logbook logo.jpeg.png">
         <title>UNSUCCESSFUL APPOINTENT</title>
        
 

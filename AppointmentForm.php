@@ -23,6 +23,7 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
+<link rel="website icon" type="png" href="monitoring logbook logo.jpeg.png">
  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>Fillup Form</title>

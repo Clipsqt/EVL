@@ -30,6 +30,7 @@ $assistedBy = (isset($_SESSION['accountName']) ? $_SESSION['accountName'] : '');
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="Activitylog.css">
     <title>Activity Logs</title>
+    <link rel="website icon" type="png" href="monitoring logbook logo.jpeg.png">
 </head>
 <header>
     <img src="monitoring logbook logo.jpeg.png" alt="">

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="change_password.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="website icon" type="png" href="monitoring logbook logo.jpeg.png">
   </head>
   <body>
     <div class="login_form">

@@ -88,6 +88,7 @@ $rowNumber = 1;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bookman+Old+Style">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="super_admin.css">
+    <link rel="website icon" type="png" href="monitoring logbook logo.jpeg.png">
     <title></title>
 </head>
 <body>
