@@ -140,6 +140,7 @@ input{
  }
  
  span{
+    top: 4%;
     position: absolute;
     right: -46px;
     font-size: 28px;

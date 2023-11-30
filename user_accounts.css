@@ -65,15 +65,6 @@ td {
     width: 92%;
     height: 450px; 
 }
-
-.purpose{
-    max-width: 200px; 
-    overflow: hidden; 
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-
 .container{
     top: 16%;
     height: 84%;
@@ -136,6 +127,7 @@ input{
  }
  
  span{
+    top: 4%;
     position: absolute;
     right: -46px;
     font-size: 28px;
