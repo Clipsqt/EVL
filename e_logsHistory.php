@@ -131,7 +131,7 @@ if (!$conn) {
             echo "<td class='sched'>" . $row['scheduledate'] . "</td>";
             echo "<td>" . $row['agency_school_office'] . "</td>";
             echo "<td>" . $row['appointment'] . "</td>";
-            echo "<td>" . $row['purpose_of_visit'] . "</td>";
+            echo "<td class='purpose'>" . $row['purpose_of_visit'] . "</td>";
             echo "<td>" . $row['department'] . "</td>";
             echo "<td class='refere'>" . $row['reference_no'] . "</td>";
             echo "<td>" . $row['time_in'] . "</td>";

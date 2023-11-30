@@ -37,6 +37,12 @@ table {
 }
 
 /* Individual column widths */
+.purpose{
+    max-width: 200px; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
 .fullname {
     width: 10%;
@@ -537,7 +543,7 @@ select {
         margin-top: 5px;
     }
     span{
-        top: 1%;
+        top: -0%;
         
     }
     .filter-container{
