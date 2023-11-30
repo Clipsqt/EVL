@@ -28,7 +28,7 @@ header h1 {
 
 /* Table */
 table {
-
+  
     width: 95%;
     margin: 6px auto; /* Center the table horizontally */
     max-height: 10px;
@@ -37,6 +37,7 @@ table {
 }
 
 /* Individual column widths */
+
 .fullname {
     width: 10%;
 }

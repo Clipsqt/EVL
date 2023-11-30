@@ -32,6 +32,7 @@ $result = $conn->query($sql);
             <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <link rel="stylesheet" href="user_accounts.css">
+            <link rel="website icon" type="png" href="monitoring logbook logo.jpeg.png">
             <title>User Accounts</title>
         </head>
         <body>

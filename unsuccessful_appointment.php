@@ -25,6 +25,7 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <script src="table2excel.js"></script>
         <link rel="stylesheet" href="unsuccessful_appointment.css">
+        <link rel="website icon" type="png" href="monitoring logbook logo.jpeg.png">
         <title>UNSUCCESSFUL APPOINTENT</title>
        
 
@@ -50,10 +51,10 @@
          <span class="bx bx-menu" id="bars"></span>
      </label>
      <div class="head">MENU</div>
-     <ol>
-           <li> <a href="e_logsHistory.php"><i class='bx bx-history'></i>E-LOG'S HISTORY</a></li>
+     <ol>  
+             <li> <a href="e_logsHistory.php"><i class='bx bx-history'></i>E-LOG'S HISTORY</a></li>
             <li> <a href="unsuccessful_appointment.php"><i class='bx bx-clipboard'></i></i></i>UNSUCCESSFUL APPOINTMENTS</a></li>
-            <li> <a href="appearance.php"><i class="fa-regular fa-file-lines" style="color: #f4f7fa;"></i>CERTIFICATE LIST</a></li>
+            <li> <a href="appearance.php"><i class="fa-regular fa-file-lines" style="color: #f4f7fa;"></i>CERTIFICATE OF APPEARANCE</a></li>
             <li> <a href="user_accounts.php"><i class='bx bxs-user-account' ></i></i>USER ACCOUNTS</a></li>
             <li> <a href="ActivityLogs.php"><i class='bx bx-list-ul'></i>ACTIVITY LOG</a></li>
             <li> <a href="queuing_system_videouploader.php"><i class='bx bx-cloud-upload'></i>UPLOADER</a></li>
@@ -373,21 +374,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // ...
 });
 </script>
-<script>
-// COLOR ALTERNATING FUNCTION
-function applyAlternateRowColors() {
-    $('tbody tr:visible:odd').css('background-color', 'lightgrey');
-    $('tbody tr:visible:even').css('background-color', 'white');
-  }
-  // Initial application of alternate row colors
-  applyAlternateRowColors();
-
-  // Event listener for the search input
-  $('#searchInput').on('input', function () {
-    // Reapply alternate row colors after filtering
-    applyAlternateRowColors();
-  });
-  </script>
     </div>
     </body>
     </html>

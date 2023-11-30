@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/7d8e1e46c6.js" crossorigin="anonymous"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="Adminlogin.css">
+    <link rel="website icon" type="png" href="monitoring logbook logo.jpeg.png">
     <title>Admin Log in</title>
 </head>
 <body>

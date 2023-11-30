@@ -50,7 +50,7 @@ $rowNumber = 1;
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="admin_webpage.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+    <link rel="website icon" type="png" href="monitoring logbook logo.jpeg.png">
     <title>Monitoring Visitor's Logbook </title>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
