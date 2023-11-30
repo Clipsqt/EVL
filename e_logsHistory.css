@@ -374,19 +374,19 @@ select {
         width: 100%;
     }
     #searchInput{
-        margin-left: 40%;
-        top: 18%;
+        margin-left: 41%;
+        top: 21%;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
     span{
-        top: -2%;
+        top: 5%;
     }
     .filter-container{
         position: relative;
-        margin-left: 84%;
+        margin-left: 85%;
     }
     #downloadexcel{
         margin-right: -10%;
@@ -406,14 +406,14 @@ select {
     }
     #searchInput{
         margin-left: 38%;
-        top: 18%;
+        top: 21%;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
     span{
-        top: -2%;
+        top: 4%;
         
     }
     .filter-container{
@@ -446,7 +446,7 @@ select {
         margin-top: 5px;
     }
     span{
-        top: -2%;
+        top: 4%;
         
     }
     .filter-container{
@@ -472,14 +472,14 @@ select {
     }
     #searchInput{
         margin-left: 35%;
-        top: 18%;
+        top: 21%;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
     span{
-        top: -2%;
+        top: 4%;
         
     }
     .filter-container{
@@ -506,14 +506,14 @@ select {
     }
     #searchInput{
         margin-left: 34%;
-        top: 19%;
+        top: 21%;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
     span{
-        top: -2%;
+        top: 4%;
         
     }
     .filter-container{
@@ -572,14 +572,14 @@ select {
     }
     #searchInput{
         margin-left: 33%;
-        top: 18%;
+        top: 21%;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
     span{
-        top: -2%;
+        top: 4%;
         
     }
     .filter-container{
@@ -591,7 +591,7 @@ select {
         position: absolute;
     }
     .pagination{
-        top: 85%;
+        top: 83%;
     }
 }
 @media screen and (max-width: 1280px) {
@@ -605,14 +605,14 @@ select {
     }
     #searchInput{
         margin-left: 32%;
-        top: 18%;
+        top: 21%;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
     span{
-        top: -2%;
+        top: 4%;
     }
     .filter-container{
         position: relative;
@@ -623,7 +623,7 @@ select {
         position: absolute;
     }
     .pagination{
-        top: 90%;
+        top: 85%;
     }
 }
 @media screen and (max-width: 1152px) {
@@ -637,7 +637,7 @@ select {
     }
     #searchInput{
         margin-left: 30%;
-        top: 18%;
+        top: 21%;
     }
     header img {
         width: 100px;
@@ -645,7 +645,7 @@ select {
         
     }
     span{
-        top: -2%;
+        top: 4%;
         
     }
     .filter-container{
@@ -657,7 +657,7 @@ select {
         position: absolute;
     }
     .pagination{
-        top: 85%;
+        top: 83%;
     }
     
 }
@@ -672,7 +672,7 @@ select {
     }
     #searchInput{
         margin-left: 32%;
-        top: 18%;
+        top: 21%;
         width: 15%;
     }
     header img {
@@ -681,7 +681,7 @@ select {
         
     }
     span{
-        top: -2%;
+        top: 4%;
         
     }
     .filter-container{
@@ -693,7 +693,7 @@ select {
         position: absolute;
     }
     .pagination{
-        top: 85%;
+        top: 83%;
     }
 }
 @media screen and (max-width: 934px) {
@@ -707,7 +707,7 @@ select {
     }
     #searchInput{
         margin-left: 31%;
-        top: 19%;
+        top: 21%;
         width: 16%
     }
     header img {
@@ -716,7 +716,7 @@ select {
         
     }
     span{
-        top: -2%;
+        top: 4%;
         
     }
     .filter-container{
@@ -742,7 +742,7 @@ select {
     }
     #searchInput{
         margin-left: 32%;
-        top: 20%;
+        top: 21%;
         width: 16%
     }
     header img {
@@ -751,7 +751,7 @@ select {
         
     }
     span{
-        top: -1%;
+        top: 4%;
         
     }
     .filter-container{
