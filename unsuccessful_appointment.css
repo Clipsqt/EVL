@@ -328,7 +328,7 @@ input{
         width: 100%;
     }
     #searchInput{
-        margin-left: 39%;
+        margin-left: 41%;
         top: 20%;
     }
     header img {
@@ -340,7 +340,7 @@ input{
     }
     .filter-container{
         position: relative;
-        margin-left: 81%;
+        margin-left: 85%;
     }
     #downloadexcel{
         margin-right: -10%;
