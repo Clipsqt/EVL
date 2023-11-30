@@ -512,7 +512,7 @@ input{
         position: absolute;
     }
     .pagination{
-        top: 90%;
+        top: 82%;
     }
 }
 @media screen and (max-width: 1360px){
@@ -754,4 +754,20 @@ input{
     .pagination{
         top: 84%;
     }
+}
+body {
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+
+
+.scroll {
+    scrollbar-width: none;
 }
