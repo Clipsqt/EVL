@@ -36,13 +36,7 @@ table {
     border: 2px solid black;
 }
 
-/* Individual column widths */
-.purpose{
-    max-width: 200px; 
-    overflow: hidden; 
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
+
 
 .fullname {
     width: 10%;
@@ -191,10 +185,17 @@ width: 15%;
 #downloadexcel:hover {
     background-color: black;
 }
+.purpose{
+    max-width: 200px; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 
 .container{
-    top: 20%;
-    height: 100%;
+    top: 16%;
+    height: 84%;
     width: 300px;
     position: absolute;
     background:#162fa0;
@@ -231,7 +232,7 @@ input{
 
  ol li a{
     color: white;
-    padding: 15px 5px 35px;
+    padding: 30px 0px 0px;
     text-decoration: none;
     display: block;
     font-size: 12px;
@@ -262,7 +263,9 @@ input{
     padding: 3px 8px;
     background: #162fa0;
   
- }
+ }  
+
+ 
 
  #bars{
     background: #162fa0;
@@ -543,7 +546,7 @@ select {
         margin-top: 5px;
     }
     span{
-        top: -0%;
+        top: 5%;
         
     }
     .filter-container{
