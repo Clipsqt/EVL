@@ -11,19 +11,9 @@
 </head>
 <body>
     <header>
-        <img src="depedblurlogo.jpg" alt="Logo">
+     VISITOR'S E-LOGSHEET
     </header>
 
-    <div class="icons-container">
-        <a href="AppointmentForm.php" class="icon">
-            <i class='bx bx-file'></i>
-            <span>Appointment Form</span>
-        </a>
 
-        <a href="AdminLogin.php" class="icon">
-        <i class='bx bx-user'></i>
-            <span>Admin Login</span>
-        </a>
-    </div>
 </body>
 </html>

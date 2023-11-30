@@ -1,0 +1,89 @@
+.purpose{
+    max-width: 200px; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.container{
+    top: 16%;
+    height: 84%;
+    width: 300px;
+    position: absolute;
+    background:#162fa0;
+    border: black;
+    z-index: 2;
+    transition: 0.5 ease;
+    transform: translate(-300px);
+    opacity: 95%;
+}
+
+   .container .head{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    }
+
+input{
+    -webkit-appearance: none;
+}
+ ol{
+    width: 100%;
+    list-style: none;
+    text-align: left;
+ }
+
+ ol li{
+    display: block;
+    width: 100%;
+    text-align: left;
+ }
+
+ ol li a{
+    color: white;
+    padding: 30px 0px 0px;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+    position: relative;
+    transition: 0.2s;
+    overflow: hidden;
+    text-transform: capitalize;
+ } 
+
+ ol li a i{
+    width: 45px;
+    font-size: 30px;
+    padding-left: 5px;
+ }
+
+ ol li:hover a{
+    background:#162fa0;;
+    color: white;
+    letter-spacing: 1px;
+ }
+ 
+ span{
+    position: absolute;
+    right: -46px;
+    font-size: 28px;
+    border-radius: 3px;
+    color: white;
+    padding: 3px 8px;
+    background: #162fa0;
+  
+ }
+
+ #bars{
+    background: #162fa0;
+ }
+ #check:checked ~ .container{
+    transform: translate(0);
+ }
+ #check:checked ~ .container #bars{
+  display: none;
+ }
