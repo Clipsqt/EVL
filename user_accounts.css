@@ -179,11 +179,11 @@ ul li{
 }
 ul li a{
     display: block;
-    padding: 15px 25px;
+    padding: 10px 15px;
     color: white;
     text-decoration: none;
     text-align: center;
-    font-size: 20px;
+    font-size: 12px;
     outline: 2px solid black;
     box-shadow: 2px darkblue;
     border-radius: 15px;
@@ -193,7 +193,10 @@ ul li ul.dropdown li{
      display: block;
 }
 ul li ul.dropdown{
-    width: 100%;
+    font-size: 12px;
+    padding: 10px, 15px;
+    margin-left: 26px;
+    width: 80%;
     background:#162fa0;
     position: absolute;
     z-index: 999;
@@ -613,6 +616,14 @@ ul li:hover ul.dropdown{
 
 .dropdowndelete *{
     box-sizing: border-box;
+}
+
+.account{
+    margin-left: 30px;
+    margin-top: 12px;
+    font-size: 15px;
+    height: 10px;
+  
 }
 
 /* Delete Dropdownlist*/
