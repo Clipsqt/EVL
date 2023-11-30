@@ -558,7 +558,7 @@ select {
         position: absolute;
     }
     .pagination{
-        top: 85%;
+        top: 82%;
     }
 }
 @media screen and (max-width: 1360px){
