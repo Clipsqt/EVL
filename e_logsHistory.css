@@ -495,6 +495,39 @@ select {
     }
     
 }
+@media screen and (max-width: 1536px){
+    header{
+        width: 100%;
+    }
+    #monitoringTable{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #searchInput{
+        margin-left: 35%;
+        top: 21%;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+    }
+    span{
+        top: 5%;
+        
+    }
+    .filter-container{
+        position: relative;
+        margin-left: 75%;
+    }
+    #downloadexcel{
+        margin-right: -12%;
+        position: absolute;
+    }
+    .pagination{
+        top: 85%;
+    }
+}
 @media screen and (max-width: 1440px){
     header{
         width: 100%;
@@ -528,6 +561,7 @@ select {
         top: 85%;
     }
 }
+
 @media screen and (max-width: 1366px) {
     header{
         width: 100%;
