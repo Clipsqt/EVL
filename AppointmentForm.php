@@ -75,7 +75,7 @@
                     </script>
                  <div class="PurposeBox">  
                     <div class="inner-box">
-                    <input type="text" class="inputPurpose" name="Purpose" placeholder="The purpose should be clearly stated." required autocomplete="off">  
+                    <input type="text" class="inputPurpose" name="Purpose" placeholder="Purpose should be clearly stated." required autocomplete="off">  
  
                  <div class="selecOffice">
 
