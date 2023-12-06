@@ -525,6 +525,15 @@ margin-left: -3%;
 margin-right: auto;
 width: 54%;
 }
+li a {
+  left: 87%;
+  position: relative;
+  display: none;
+  display: none;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 80%;
+}
 }
 @media screen and (max-width: 768px) {
   body {
@@ -553,6 +562,15 @@ margin-left: -3%;
 margin-right: auto;
 width: 54%
 }
+li a {
+  left: 87%;
+  position: relative;
+  display: none;
+  display: none;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 80%;
+}
 }
 @media screen and (max-width: 426px){
   body {
@@ -561,7 +579,8 @@ width: 54%
 }
 .container {
   margin-top: 70%;
-  margin-left: auto;
+  margin-left: -3%;
+  width: 100%;
   margin-right: auto;
 }
 
@@ -581,6 +600,27 @@ margin-left: -3%;
 margin-right: auto;
 width: 54%
 }
+li{
+  text-decoration: none;
+  display: flex;
+}
+li a {
+  left: 87%;
+  position: relative;
+  display: none;
+  display: none;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 80%;
+}
+
+li a i {
+  font-size: 3rem;
+  position: absolute;
+  top: -300%;
+  left: 50%; /* Adjust the left position as needed */
+  transform: translateX(-50%); /* Center the icon horizontally */
+}
 }
 @media screen and (max-width: 376px){
   body {
@@ -588,8 +628,9 @@ width: 54%
     margin-top: -45%;
 }
 .container {
-  margin-top: 75%;
-  margin-left: auto;
+  margin-top: 65%;
+  margin-left: -4%;
+  width: 100%;
   margin-right: auto;
 }
 
@@ -609,6 +650,79 @@ margin-left: -3%;
 margin-right: auto;
 width: 54%
 }
+
+li{
+  text-decoration: none;
+  display: flex;
+}
+li a {
+  left: 87%;
+  position: relative;
+  display: none;
+  display: none;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 50%;
+}
+
+li a i {
+  font-size: 3rem;
+  position: absolute;
+  top: -300%;
+  left: 50%; /* Adjust the left position as needed */
+  transform: translateX(-50%); /* Center the icon horizontally */
+}
+}
+@media screen and (max-width: 360px){
+  body {
+    background-size: 100%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 65%;
+  margin-left: -4%;
+  width: 100%;
+  margin-right: auto;
+}
+
+.card {
+  width: 80%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%
+}
+
+li{
+  text-decoration: none;
+  display: flex;
+}
+li a {
+  left: 87%;
+  position: relative;
+  display: none;
+  display: none;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 150%;
+}
+
+li a i {
+  font-size: 3rem;
+  position: absolute;
+  top: -300%;
+  left: 50%; /* Adjust the left position as needed */
+  transform: translateX(-50%); /* Center the icon horizontally */
+}
 }
 @media screen and (max-width: 320px){
   body {
@@ -616,11 +730,31 @@ width: 54%
     margin-top: -45%;
 }
 .container {
-  margin-top: 78%;
+  margin-top: 60%;
   margin-left: auto;
   margin-right: auto;
 }
+li{
+  text-decoration: none;
+  display: flex;
+}
+li a {
+  left: 87%;
+  position: relative;
+  display: none;
+  display: none;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 80%;
+}
 
+li a i {
+  font-size: 3rem;
+  position: absolute;
+  top: -300%;
+  left: 50%; /* Adjust the left position as needed */
+  transform: translateX(-50%); /* Center the icon horizontally */
+}
 .card {
   width: 100%;
 }
