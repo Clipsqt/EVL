@@ -1,4 +1,11 @@
-history.pushState(null, null, location.href);
-          window.onpopstate = function () {
-              history.go(1);
-          };
+function DisableBackButton(){
+    window.history.forward()
+}
+DisableBackButton();
+window.onload = DisableBackButton;
+window.onpageshow = function(evt) {
+    if (evt.persisted) DisableBackButton()
+}
+window.onunload = function(){
+    void(0)
+}
