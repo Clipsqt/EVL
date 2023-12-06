@@ -155,4 +155,5 @@ if (!$conn) {
     </div>
 </body>
 <script src="e_logsHistory.js"></script>
+<script src="disablebackbutton.js"></script>
 </html>

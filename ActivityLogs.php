@@ -115,4 +115,5 @@ $assistedBy = (isset($_SESSION['accountName']) ? $_SESSION['accountName'] : '');
     </div>
 </body>
 <script src="ActivityLog.js"></script>
+<script src="disablebackbutton.js"></script>
 </html>

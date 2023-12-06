@@ -97,5 +97,5 @@ if (!$conn) {
         </form>
     </div>
 </body>
-
+<script src="disablebackbutton.js"></script>
 </html>

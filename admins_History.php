@@ -82,4 +82,5 @@ $rowNumber = 1;
     
 </div>
 </body>
+<script src="disablebackbutton.js"></script>
 </html>

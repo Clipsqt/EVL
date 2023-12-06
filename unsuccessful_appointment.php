@@ -374,6 +374,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // ...
 });
 </script>
+<script src="disablebackbutton.js"></script>
     </div>
     </body>
     </html>

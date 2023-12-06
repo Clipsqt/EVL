@@ -70,7 +70,7 @@ function breakDownWords($text) {
     <button id="generatePDF"  onclick="generatePDF()">PRINT</button>
     </footer>
     <script src="certificateHistory.js"></script>
-
+    <script src="disablebackbutton.js"></script>
     
 </body>
 </html>
