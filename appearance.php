@@ -60,7 +60,7 @@ if (!$conn) {
             <table id="monitoringTable" border="1">
                 <thead>
                     <tr>
-                        <th id="colNo">No.</th>
+                        <th id="colNo">Date Issued</th>
                         <th id="colFullName">Full Name</th>
                         <th id="colcertificate">Certificate</th>
                     </tr>
@@ -71,21 +71,16 @@ if (!$conn) {
                 $result = mysqli_query($conn, $query);
 
                 if ($result && mysqli_num_rows($result) > 0) {
-                    $totalRows = mysqli_num_rows($result);
-                    $rowNumber = $totalRows;
-
                     while ($row = mysqli_fetch_assoc($result)) {
                         $referencecode = $row["seriesNumber"];
-
+                        $dateIssued = date('F d, Y', strtotime($row['timeStamp']));
                         echo "<tr class='highlight-row'>";
-                        echo "<td>" . $rowNumber . "</td>";
+                        echo "<td>" . $dateIssued . "</td>";
                         echo "<td class='fullname'>" . htmlspecialchars($row['fullname']) . "</td>";
                         ?>
                        <td> <a href="certificate_history.php?seriesNumber=<?php echo $referencecode; ?>" class="certificate" data-referencecode="<?php echo $referencecode; ?>">Certificate</a> </td>
                         <?php
                         echo "</tr>";
-
-                        $rowNumber--;
                     }
                 } else {
                     echo "No transferred row data found.";

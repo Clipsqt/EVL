@@ -64,7 +64,7 @@ function breakDownWords($text) {
      
         <img src="e_sign.png" alt="" class="sign"> <br>
         </div>
-        <p class="issued">Date Issued: <?php echo date('F d, Y'); ?></p>
+       <p class="issued">Date Issued: <?php echo $dateIssued; ?></p>    
 
         <input type="submit" value="Generate PDF" id="btnPrint" name="btnPrint">
         </form>

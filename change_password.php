@@ -29,12 +29,11 @@
               <i class="fas fa-lock"></i>
               <input type="password" id="confirmNewAccountPass" placeholder="Confirm New Password" name="confirmNewAccountPass" required>
           </div>
-          <div class="row button">
-            <input type="submit" class="change-password-button" value="Change Password" name="submit">
-          </div>
-          <div class="row button">
-            <input type="button" class="cancel-button" value="Cancel" href="javascript:void(0);" onclick="window.history.back();">
-          </div>
+          <div class="button-container">
+          <input type="submit" class="change-password-button" value="Change Password" name="submit">
+          <input type="button" class="cancel-button" value="Cancel" onclick="window.history.back();">
+        </div>
+
         </form>
       </div>
     </div>

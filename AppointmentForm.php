@@ -130,7 +130,9 @@
 
                  <input type="hidden" class="reference_no" name="reference_no" readonly>
                  </div>
- 
+ <div class="developer">
+    <label for="a">Developer: <a href="https://www.facebook.com/ivan.policarpio.01/">Ivan Policarpio</a> , <a href="https://www.facebook.com/Aenghelo">Angelo Capa</a> , <a href="https://www.facebook.com/Resasak">Reymi Dela Cruz</a></label>
+ </div>
  <script>
         document.addEventListener("DOMContentLoaded", function() {
     const customSelect = document.querySelector('.custom-select');
@@ -359,5 +361,4 @@ form.addEventListener('submit', async function (e) {
 </script>
 <li> <a href="adminLogin.php"><i class="fa-solid fa-user-tie"></i>ADMIN LOG-IN</a></li>
 </body>
-<script src="disablebackbutton.js"></script>
 </html>
