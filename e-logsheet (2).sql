@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Nov 23, 2023 at 09:48 AM
+-- Host: 127.0.0.1
+-- Generation Time: Dec 05, 2023 at 01:45 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -30,6 +30,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `control_number` (
   `risNoDate` text NOT NULL,
   `fullname` varchar(255) NOT NULL,
+  `position_designation` varchar(50) NOT NULL,
+  `agency_school_office` varchar(50) NOT NULL,
+  `scheduledate` varchar(200) NOT NULL,
+  `purpose_of_visit` varchar(200) NOT NULL,
   `yearRequested` int(4) NOT NULL,
   `seriesNumber` int(255) NOT NULL,
   `timeStamp` datetime NOT NULL DEFAULT current_timestamp()
@@ -39,10 +43,9 @@ CREATE TABLE `control_number` (
 -- Dumping data for table `control_number`
 --
 
-INSERT INTO `control_number` (`risNoDate`, `fullname`, `yearRequested`, `seriesNumber`, `timeStamp`) VALUES
-('CA-2023-11-000001', 'Policarpio', 2023, 1, '2023-11-23 16:38:40'),
-('CA-2023-11-000002', 'ivan', 2023, 2, '2023-11-23 16:44:43'),
-('CA-2023-11-000003', 'Ivan', 2023, 3, '2023-11-23 16:45:02');
+INSERT INTO `control_number` (`risNoDate`, `fullname`, `position_designation`, `agency_school_office`, `scheduledate`, `purpose_of_visit`, `yearRequested`, `seriesNumber`, `timeStamp`) VALUES
+('CA-2023-11-000001', 'Lenny Deogracia', 'TEACHER VII', 'DEPED CSJDM', '11/29/2023', 'Take the hassle out of icons in your project. Font Awesome is the Internet\'s icon library and toolkit, used by millions of designers, developers.', 2023, 1, '2023-11-29 15:49:10'),
+('CA-2023-12-000002', 'Kenny Wise', 'Teacher V', 'DEPED CSJDM ', '12/04/2023', 'for purposes ', 2023, 2, '2023-12-04 08:31:39');
 
 -- --------------------------------------------------------
 
@@ -103,7 +106,7 @@ INSERT INTO `e_logsheetaccounts` (`accountType`, `accountName`, `userPosition`, 
 ('Admin', 'Merlita D. Ynciong', 'Sgod', 'School Governance Operations Division', 'merlita.ynciong@deped.gov.ph', 'deped123'),
 ('Admin', 'Adelynne Joie B. Sandiego', 'Sgod', 'School Governance Operations Division', 'adylnnejoie.sandiego@deped.gov.ph', 'deped123'),
 ('Admin', 'Randhell C. Ruzgal', 'Sgod', 'School Governance Operations Division', 'randhell.ruzgal@deped.gov.ph', 'deped123'),
-('Admin', 'Angelo Capa', 'OJT', 'Information Communication Technology', 'rurilhayne@gmail.com', 'deped123');
+('Super Admin', 'Super Admin', 'Super Admin', '', 'Superadmin@deped.gov.ph', 'superadmin');
 
 -- --------------------------------------------------------
 
@@ -136,12 +139,8 @@ CREATE TABLE `e_logshistory` (
 --
 
 INSERT INTO `e_logshistory` (`id`, `yearRequested`, `fullname`, `sex`, `priority`, `phonenumber`, `scheduledate`, `position_designation`, `agency_school_office`, `appointment`, `purpose_of_visit`, `department`, `reference_no`, `time_in`, `time_out`, `assisted_by`, `timeStamp`) VALUES
-(0, 2023, 'ASD', 'Male', '', '12312312312', '11/23/2023', 'ASD', 'ASD', 'Walk-in', 'In this modified code, I added a new variable $lastSeriesNumberWithCA that includes the \\\"CA\\\" text concatenated with the original seriesNumber. This new variable is then included in the $data array. ', 'Information Communication Technology', 'DQ8CZFF3', '03:33 PM', '03:33 PM', 'Arthur Francisco', '2023-11-23 07:33:31'),
-(0, 2023, 'ivan', 'Male', '', '09120391209', '11/23/2023', 'asd', 'asd', 'Walk-in', 'When applying for admission to a higher education institution, your reference letters and academic transcripts provide the admissions committee with crucial information about your academic achievement', 'Information Communication Technology', '8GT0L4MR', '03:35 PM', '03:35 PM', 'Arthur Francisco', '2023-11-23 07:35:12'),
-(0, 2023, 'Ivan', 'Male', 'Senior Citizen', '01923019230', '11/23/2023', 'asd', 'asd', 'Walk-in', 'as', 'Information Communication Technology', 'RXCGNSNJ', '04:37 PM', '04:37 PM', 'Arthur Francisco', '2023-11-23 08:37:01'),
-(0, 2023, 'Angelo', 'Male', '', '01923012930', '11/23/2023', 'asd', 'asd', 'Walk-in', 'asd', 'Information Communication Technology', '676GBOI9', '04:37 PM', '04:37 PM', 'Arthur Francisco', '2023-11-23 08:37:03'),
-(0, 2023, 'Reymi', 'Male', '', '01923019203', '11/23/2023', 'asd', 'asd', 'Walk-in', 'asd', 'Information Communication Technology', '5QO3ISYO', '04:36 PM', '04:37 PM', 'Arthur Francisco', '2023-11-23 08:37:05'),
-(0, 2023, 'Policarpio', 'Male', '', '01923091293', '11/23/2023', 'asd', 'asd', 'Walk-in', 'asd', 'Information Communication Technology', 'SA2HC1XF', '04:36 PM', '04:37 PM', 'Arthur Francisco', '2023-11-23 08:37:06');
+(0, 2023, 'Lenny Deogracia', 'Male', 'Senior Citizen', '02193123123', '11/29/2023', 'TEACHER VII', 'DEPED CSJDM', 'Walk-in', 'Take the hassle out of icons in your project. Font Awesome is the Internet\\\'s icon library and toolkit, used by millions of designers, developers.', 'Information Communication Technology', '4BVGXGWU', '02:49 PM', '02:49 PM', 'Arthur Francisco', '2023-11-29 06:49:15'),
+(0, 2023, 'Kenny Wise', 'Female', 'Senior Citizen', '09123732137', '12/04/2023', 'Teacher V', 'DEPED CSJDM ', 'Walk-in', 'for purposes ', 'Information Communication Technology', '4XNI4T3D', '08:31 AM', '08:31 AM', 'Arthur Francisco', '2023-12-04 00:31:21');
 
 -- --------------------------------------------------------
 
@@ -175,10 +174,7 @@ CREATE TABLE `e_monitoringlogsheet` (
 --
 
 INSERT INTO `e_monitoringlogsheet` (`id`, `yearRequested`, `fullname`, `sex`, `priority`, `phonenumber`, `scheduledate`, `appointment`, `purpose_of_visit`, `position_designation`, `agency_school_office`, `department`, `reference_no`, `time_in`, `time_out`, `action`, `cancel`, `timeStamp`) VALUES
-(0, 2023, 'CApa', 'Male', '', '12312312312', '11/23/2023', 'Walk-in', 'asd', 'asd', 'asd', 'Curriculum Implementation Division', 'ZTQ0088L', NULL, '', NULL, NULL, '2023-11-23 08:29:53'),
-(0, 2023, 'Dela Cruz', 'Male', '', '01923091203', '11/23/2023', 'Walk-in', 'asd', 'asd', 'asd', 'Curriculum Implementation Division', 'KBNCB53E', NULL, '', NULL, NULL, '2023-11-23 08:30:04'),
-(0, 2023, 'TRY', 'Male', '', '01923091203', '11/23/2023', 'Walk-in', 'asd ', 'ad', 'asd', 'School Governance Operations Division', '4LX4GASN', NULL, '', NULL, NULL, '2023-11-23 08:31:33'),
-(0, 2023, 'ASD', 'Male', '', '12312312312', '11/23/2023', 'Walk-in', 'asd', 'asd', 'asd', 'Budget Section', 'NG4PBPNU', NULL, '', NULL, NULL, '2023-11-23 08:31:45');
+(0, 2023, 'Anglasdoa', 'Male', 'Senior Citizen', '09312032131', '12/04/2023', 'Online', 'sadasdsada', 'asdsa', 'sad', 'School Governance Operations Division', 'V4ZTPYBW', NULL, '', NULL, NULL, '2023-12-04 00:55:01');
 
 -- --------------------------------------------------------
 
@@ -234,7 +230,12 @@ INSERT INTO `unsuccessful_appointment` (`id`, `fullname`, `sex`, `priority`, `ph
 (0, 'POLIKAT', 'Male', '', '01290193012', '11/21/2023', 'Online', 'asd', 'asd', 'asd', 'Information Communication Technology', 'L7OMLDTW', '12:01 PM', NULL, '2023-11-22 04:01:19'),
 (0, 'POLI', 'Male', '', '01293019230', '11/21/2023', 'Online', 'asd', 'asd', 'asd', 'Information Communication Technology', '9Q0ID3RL', '', NULL, '2023-11-22 04:05:06'),
 (0, 'IVAN', 'Male', '', '01293010293', '11/21/2023', 'Online', 'asd', 'qsd', 'asd', 'Curriculum Implementation Division', 'JJ6H7ENU', '', NULL, '2023-11-22 04:39:22'),
-(0, 'ivan', 'Male', '', '01920391203', '11/22/2023', 'Online', 'asd', 'asd', 'asd', 'Information Communication Technology', 'RTO0E2B0', '', NULL, '2023-11-23 08:37:37');
+(0, 'ivan', 'Male', '', '01920391203', '11/22/2023', 'Online', 'asd', 'asd', 'asd', 'Information Communication Technology', 'RTO0E2B0', '', NULL, '2023-11-23 08:37:37'),
+(0, 'CApa', 'Male', '', '12312312312', '11/23/2023', 'Walk-in', 'asd', 'asd', 'asd', 'Curriculum Implementation Division', 'ZTQ0088L', '', NULL, '2023-11-24 06:43:33'),
+(0, 'TRY', 'Male', '', '01923091203', '11/23/2023', 'Walk-in', 'asd ', 'ad', 'asd', 'School Governance Operations Division', '4LX4GASN', '', NULL, '2023-11-24 06:43:33'),
+(0, 'ASD', 'Male', '', '12312312312', '11/23/2023', 'Walk-in', 'asd', 'asd', 'asd', 'Budget Section', 'NG4PBPNU', '', NULL, '2023-11-24 06:43:33'),
+(0, 'Dela Cruz', 'Male', '', '01923091203', '11/23/2023', 'Walk-in', 'asd', 'asd', 'asd', 'Curriculum Implementation Division', 'KBNCB53E', '', NULL, '2023-11-24 06:43:33'),
+(0, 'sadsadsadaas', 'Female', '', '92131212938', '11/28/2023', 'Walk-in', 'nsdkamdmsa', 'sakdas', 'msaklmdksad', 'Information Communication Technology', 'SQVVHFOP', '', NULL, '2023-11-29 05:31:43');
 
 -- --------------------------------------------------------
 
@@ -293,10 +294,7 @@ CREATE TABLE `visitor_data` (
 --
 
 INSERT INTO `visitor_data` (`id`, `visitor_name`, `department`, `time_stamp`) VALUES
-(7, 'Ivan', 'Information Communication Technology', '2023-11-23 08:36:56'),
-(8, 'Angelo', 'Information Communication Technology', '2023-11-23 08:36:57'),
-(9, 'Reymi', 'Information Communication Technology', '2023-11-23 08:36:57'),
-(10, 'Policarpio', 'Information Communication Technology', '2023-11-23 08:36:58');
+(15, 'Kenny Wise', 'Information Communication Technology', '2023-12-04 00:31:18');
 
 --
 -- Indexes for dumped tables
@@ -340,7 +338,7 @@ ALTER TABLE `videos_displayer`
 -- AUTO_INCREMENT for table `visitor_data`
 --
 ALTER TABLE `visitor_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
