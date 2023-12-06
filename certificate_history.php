@@ -59,7 +59,7 @@ function breakDownWords($text) {
     <input readonly type="text" name="risNoDate" class="risNoDate" value="<?php echo isset($risNoDate) ? $risNoDate : ''; ?>" readonly>
     <img src="e_sign.png" alt="" class="sign"> <br>
         </div>
-        <p class="issued">Date Issued: <?php echo date('F d, Y'); ?></p>
+        <p class="issued">Date Issued: <?php echo isset($issue) ? date('F d, Y', strtotime($issue)) : date('F d, Y'); ?></p>
 
         <input type="submit" value="Generate PDF" id="btnPrint" name="btnPrint">
         </form>

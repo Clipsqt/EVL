@@ -264,5 +264,5 @@ $result = $conn->query($sql);
  
 </body>
 <script src="add,edit,delete.js"></script>
-<script src="disablebackbutton.js"></script>
+
 </html>
