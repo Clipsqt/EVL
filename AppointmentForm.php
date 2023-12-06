@@ -359,4 +359,5 @@ form.addEventListener('submit', async function (e) {
 </script>
 <li> <a href="adminLogin.php"><i class="fa-solid fa-user-tie"></i>ADMIN LOG-IN</a></li>
 </body>
+<script src="disablebackbutton.js"></script>
 </html>

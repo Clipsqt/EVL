@@ -92,4 +92,5 @@
 </div>
 </body>
 <script src="queuing_system_videouploader.js"></script>
+<script src="disablebackbutton.js"></script>
 </html>

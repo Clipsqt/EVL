@@ -39,4 +39,5 @@
       </div>
     </div>
   </body>
+  <script src="disablebackbutton.js"></script>
 </html>
