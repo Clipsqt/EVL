@@ -624,7 +624,17 @@ ul li:hover ul.dropdown{
     height: 10px;
   
 }
+body {
+    overflow: hidden;
+}
 
-/* Delete Dropdownlist*/
+body::-webkit-scrollbar {
+    display: none;
+}
 
-/* Delete Drescription*/
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+.scroll {
+    scrollbar-width: none;
+}

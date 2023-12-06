@@ -27,7 +27,7 @@ body {
 }
 .card{
   width: 350px;
-  height: 550px;
+  height: 570px;
   
   
 }
@@ -535,6 +535,90 @@ li a {
   margin-top: 80%;
 }
 }
+@media only screen and (min-width: 235px) and (max-width: 1024px) and (orientation: portrait) {
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  width: 71%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%;
+}
+li a {
+  left: 87%;
+  position: relative;
+  display: none;
+  display: none;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 80%;
+}
+}
+@media only screen and (min-width: 235px) and (max-width: 1024px) and (orientation: landscape) {
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  width: 38%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%;
+}
+li a {
+  left: 87%;
+  position: relative;
+  display: none;
+  display: none;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 80%;
+}
+  body {
+    transform: rotate(90deg);
+    transform-origin: left top;
+    width: 100vh;
+    height: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
 @media screen and (max-width: 768px) {
   body {
     background-size: 50%; /* Adjust the value to control the zoom effect */
@@ -548,6 +632,117 @@ li a {
 
 .card {
   width: 40%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%
+}
+li a {
+  left: 87%;
+  position: relative;
+  display: none;
+  display: none;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 80%;
+}
+}
+@media screen and (max-width: 580px) {
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 60%;
+  width: 100%;
+  margin-right: auto;
+}
+
+.card {
+  width: 50%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%
+}
+li a {
+  left: 87%;
+  position: relative;
+  display: none;
+  display: none;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 80%;
+}
+}
+@media screen and (max-width: 500px) {
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 60%;
+  width: 100%;
+  margin-right: auto;
+}
+
+.card {
+  width: 50%;
+}
+
+.card-front {
+  padding: 40px;
+  
+}
+body{
+background-size: 150%;
+}
+.submit-btn{
+margin-left: -3%;
+margin-right: auto;
+width: 54%
+}
+li a {
+  left: 87%;
+  position: relative;
+  display: none;
+  display: none;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 80%;
+}
+}
+@media screen and (max-width: 460px) {
+  body {
+    background-size: 50%; /* Adjust the value to control the zoom effect */
+    margin-top: -45%;
+}
+.container {
+  margin-top: 60%;
+  width: 100%;
+  margin-right: auto;
+}
+
+.card {
+  width: 65%;
 }
 
 .card-front {
