@@ -17,19 +17,13 @@ body {
   display: grid;
   margin-top: 75%;
   place-items: center;
-
   font-family: 'Bookman Old Style, serif'; 
   color: rgb(255, 255, 255);
-  
-  
-   
-  
 }
+
 .card{
-  width: 350px;
-  height: 550px;
-  
-  
+  width: 500px;
+  height: 590px;
 }
 .inner-box{
   position: relative;
@@ -38,7 +32,7 @@ body {
 }
 .card-front{
   position: absolute;
-  width: 110%;
+  width: 130%;
   height: 115%;
   background-position: center;
   background-size: cover;
@@ -168,7 +162,22 @@ top: 10px;
 .currentDate{
   width: 35%;
 }
-
+li a:hover{
+  color: black;
+  text-decoration: underline;
+}
+.developer{
+  display: flex;
+  margin-top: 30%;
+  margin-left: -30px;
+  font-size: 15px;
+  justify-content: space-between;
+  width: 100%;
+  white-space: nowrap;
+}
+.developer a:hover{
+  color: black;
+}
 /*For 4k-2560px BigScreen*/
 @media screen and (max-width: 2560px) {
   body {
@@ -772,4 +781,5 @@ margin-right: auto;
 width: 54%
 }
 
-}}
+}
+}
