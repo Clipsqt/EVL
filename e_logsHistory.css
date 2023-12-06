@@ -506,14 +506,14 @@ select {
     }
     #searchInput{
         margin-left: 35%;
-        top: 21%;
+        top: 19%;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
     span{
-        top: 5%;
+        top: 23px;
         
     }
     .filter-container{
@@ -521,6 +521,7 @@ select {
         margin-left: 75%;
     }
     #downloadexcel{
+        top: 1800%;
         margin-right: -12%;
         position: absolute;
     }

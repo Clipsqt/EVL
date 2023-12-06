@@ -64,7 +64,7 @@ $rowNumber = 1;
         ?>
         <br>
         <div class="adminBox">
-                <i class='bx bx-user-check'></i>
+      
             </div>
             <div class="adminText">
                 <span>Admin:</span> <?php echo $_SESSION['accountName']; ?>

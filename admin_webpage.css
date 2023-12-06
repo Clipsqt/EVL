@@ -456,7 +456,7 @@ td {
         top: 38%;
     }
 }
-@media screen and (max-width: 1360px){
+@media screen and (max-width: 1360px){      
     header{
         width: 100%;
     }
