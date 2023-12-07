@@ -335,26 +335,26 @@ input{
         width: 100%;
     }
     #monitoringTable{
-        width: 2400px;
-        margin-left: 80px;
+        width: 100%;
+
     }
     #searchInput{
-        margin-left: 38%;
-        top: 20%;
+        margin-left: 41%;
+        top: 11%;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
     span{
-        top: -1%;
+        top: -9%;
     }
     .filter-container{
         position: relative;
-        margin-left: 82%;
+        margin-left: 85%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        margin-right: -10%;
         position: absolute;
     }
     .pagination{
@@ -366,28 +366,59 @@ input{
         width: 100%;
     }
     #monitoringTable{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
+        width: 100%;
+
     }
     #searchInput{
-        margin-left: 33%;
-        top: 20%;
+        margin-left: 38%;
+        top: 15%;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
     span{
-        top: -1%;
+        top: -5%;
         
     }
     .filter-container{
         position: relative;
-        margin-left: 75%;
+        margin-left: 80%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        margin-right: -11%;
+        position: absolute;
+    }
+    .pagination{
+        top: 80%;
+    }
+}
+@media screen and (max-width: 1706.67px){
+    header{
+        width: 100%;
+    }
+    #monitoringTable{
+        width: 100%;
+
+    }
+    #searchInput{
+        margin-left: 36%;
+        top: 17%;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+    }
+    span{
+        top: -4%;
+        
+    }
+    .filter-container{
+        position: relative;
+        margin-left: 77%;
+    }
+    #downloadexcel{
+        margin-right: -11%;
         position: absolute;
     }
     .pagination{
@@ -399,12 +430,109 @@ input{
         width: 100%;
     }
     #monitoringTable{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
+        width: 100%;
+
     }
     #searchInput{
-        margin-left: 32%;
+        margin-left: 36%;
+        top: 22;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+    }
+    span{
+        top: 0%;
+        
+    }
+    .filter-container{
+        position: relative;
+        margin-left: 77%;
+    }
+    #downloadexcel{
+        margin-right: -12%;
+        position: absolute;
+    }
+    .pagination{
+        top: 80%;
+    }
+}
+@media screen and (max-width: 1600px){
+    header{
+        width: 100%;
+    }
+    #searchInput{
+        margin-left: 34%;
+        top: 18%;
+    }
+    #monitoringTable{
+        width: 100%;
+
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+    }
+    span{
+        top: -3%;
+        
+    }
+    .filter-container{
+        position: relative;
+        margin-left: 74%;
+    }
+    #downloadexcel{
+        margin-right: -6%;
+        position: absolute;
+    }
+    .pagination{
+        top: 80%;
+    }
+    
+}
+@media screen and (max-width: 1536px){
+    header{
+        width: 100%;
+    }
+    #monitoringTable{
+        width: 100%;
+
+    }
+    #searchInput{
+        margin-left: 35%;
+        top: 19%;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+    }
+    span{
+        top: 9%;
+        
+    }
+    .filter-container{
+        position: relative;
+        margin-left: 75%;
+    }
+    #downloadexcel{
+        top: 1700%;
+        margin-right: -12%;
+        position: absolute;
+    }
+    .pagination{
+        top: 85%;
+    }
+}
+@media screen and (max-width: 1422.22px){
+    header{
+        width: 100%;
+    }
+    #monitoringTable{
+        width: 100%;
+
+    }
+    #searchInput{
+        margin-left: 34%;
         top: 20%;
     }
     header img {
@@ -420,66 +548,7 @@ input{
         margin-left: 73%;
     }
     #downloadexcel{
-        margin-right: 5%;
-        position: absolute;
-    }
-    .pagination{
-        top: 80%;
-    }
-}
-@media screen and (max-width: 1600px){
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 24%;
-        top: 19%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: -3%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 65%;
-    }
-    #downloadexcel{
-        margin-right: 24%;
-        position: absolute;
-    }
-    .pagination{
-        top: 80%;
-    }
-    
-}
-@media screen and (max-width: 1536px){
-    
-    #searchInput{
-        margin-left: 35%;
-        top: 20%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: -1%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 75%;
-    }
-    #downloadexcel{
+        top: 1600%;
         margin-right: -12%;
         position: absolute;
     }
@@ -487,50 +556,18 @@ input{
         top: 85%;
     }
 }
-@media screen and (max-width: 1440px){
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 29%;
-        top: 20%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: -1%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 69%;
-    }
-    #downloadexcel{
-        margin-right: 5%;
-        position: absolute;
-    }
-    .pagination{
-        top: 85%;
-    }
-}
+
 @media screen and (max-width: 1366px) {
     header{
         width: 100%;
     }
     #monitoringTable{
-        width: 90%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
     #searchInput{
-        margin-left: 27%;
+        margin-left: 33%;
         top: 21%;
     }
     header img {
@@ -538,19 +575,20 @@ input{
         margin-top: 5px;
     }
     span{
-        top: 0%;
+        top: 9%;
         
     }
     .filter-container{
         position: relative;
-        margin-left: 66%;
+        margin-left: 72%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        top: 1600%;
+        margin-right: -12%;
         position: absolute;
     }
     .pagination{
-        top: 90%;
+        top: 82%;
     }
 }
 @media screen and (max-width: 1360px){
@@ -558,45 +596,41 @@ input{
         width: 100%;
     }
     #monitoringTable{
-        width: 90%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
     #searchInput{
-        margin-left: 27%;
-        top: 20%;
+        margin-left: 33%;
+        top: 21%;
     }
     header img {
         width: 100px;
         margin-top: 5px;
     }
     span{
-        top: -1%;
+        top: 9%;
         
     }
     .filter-container{
         position: relative;
-        margin-left: 66%;
+        margin-left: 72%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        top: 1600%;
+        margin-right: -13%;
         position: absolute;
     }
     .pagination{
-        top: 85%;
+        top: 83%;
     }
 }
 @media screen and (max-width: 1280px) {
     header{
         width: 100%;
     }
-    #monitoringTable{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
     #searchInput{
-        margin-left: 27%;
+        margin-left: 32%;
         top: 23%;
     }
     header img {
@@ -608,14 +642,50 @@ input{
     }
     .filter-container{
         position: relative;
-        margin-left: 66%;
+        margin-left: 70%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        top: 1400%;
+        margin-right: -12%;
         position: absolute;
     }
     .pagination{
-        top: 90%;
+        position: absolute;
+        top: 82%;
+    }
+}
+@media screen and (max-width: 1163.64px){
+    header{
+        width: 100%;
+    }
+    #monitoringTable{
+        width: 100%;
+
+    }
+    #searchInput{
+        margin-left: 30%;
+        top: 25%;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+    }
+    span{
+        top: 4%;
+        
+    }
+    .filter-container{
+        position: relative;
+        margin-left: 67%;
+    }
+    #downloadexcel{
+        top: 1200%;
+        margin-right: -11%;
+        position: absolute;
+    }
+    .pagination{
+        top: 80%;
+        position: absolute;
     }
 }
 @media screen and (max-width: 1152px) {
@@ -623,13 +693,13 @@ input{
         width: 100%;
     }
     #monitoringTable{
-        width: 90%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
     #searchInput{
-        margin-left: 27%;
-        top: 20%;
+        margin-left: 10%;
+        top: 21%;
     }
     header img {
         width: 100px;
@@ -637,19 +707,20 @@ input{
         
     }
     span{
-        top: -1%;
+        top: 10%;
         
     }
     .filter-container{
         position: relative;
-        margin-left: 64%;
+        margin-left: 67%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        top: 1600%;
+        margin-right: -14%;
         position: absolute;
     }
     .pagination{
-        top: 85%;
+        top: 83%;
     }
     
 }
@@ -658,13 +729,13 @@ input{
         width: 100%;
     }
     #monitoringTable{
-        width: 90%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
     #searchInput{
-        margin-left: 27%;
-        top: 20%;
+        margin-left: 32%;
+        top: 29%;
         width: 15%;
     }
     header img {
@@ -673,34 +744,36 @@ input{
         
     }
     span{
-        top: -1%;
+        top: 7%;
         
     }
     .filter-container{
         position: relative;
-        margin-left: 58%;
+        margin-left: 63%;
     }
     #downloadexcel{
-        margin-right: 5%;
+        top: 1000%;
+        margin-right: -12%;
         position: absolute;
     }
     .pagination{
-        top: 85%;
+        top: 80%;
+        position: absolute;
     }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 934px) {
     header{
         width: 100%;
     }
     #monitoringTable{
-        width: 90%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
     #searchInput{
-        margin-left: 32%;
-        top: 20%;
-        width: 16%
+        margin-left: 0%;
+        top: 21%;
+        width: 80%
     }
     header img {
         width: 100px;
@@ -708,12 +781,79 @@ input{
         
     }
     span{
-        top: -1%;
+        top: 11%;
         
     }
     .filter-container{
         position: relative;
-        margin-left: 48%;
+        margin-left: 59%;
+    }
+    #downloadexcel{
+        top: 1680%;
+        margin-right: -14%;
+        position: absolute;
+    }
+    .pagination{
+        top: 85%;
+    }    
+}
+@media screen and (max-width: 853.33px){
+    header{
+        width: 100%;
+    }
+  
+    #searchInput{
+        margin-left: 30%;
+        top: 35%;
+        width: 15%;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+    }
+    span{
+        top: 12%;
+        
+    }
+    .filter-container{
+        position: relative;
+        margin-left: 55%;
+    }
+    #downloadexcel{
+        top: 600%;
+        margin-right: -11%;
+        position: absolute;
+    }
+    .pagination{
+        top: 75%;
+    }
+}
+@media screen and (max-width: 800px) {
+    header{
+        width: 105%;
+    }
+    #monitoringTable{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #searchInput{
+        margin-left: -25%;
+        top: 21%;
+        width: 50%
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+        
+    }
+    span{
+        top: 11%;
+        
+    }
+    .filter-container{
+        position: relative;
+        margin-left: 53%;
     }
     #downloadexcel{
         margin-right: 5%;
@@ -748,6 +888,78 @@ input{
     .filter-container{
         position: relative;
         margin-left: 47%;
+    }
+    #downloadexcel{
+        margin-right: 5%;
+        position: absolute;
+        top: 470px;
+    }
+    .pagination{
+        top: 84%;
+    }
+}
+@media screen and (max-width: 731.43px) {
+    header{
+        width: 100%;
+    }
+    #monitoringTable{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #searchInput{
+        margin-left: 25%;
+        top: 38%;
+        width: 20%;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+        
+    }
+    span{
+        top: 14%;
+        
+    }
+    .filter-container{
+        position: relative;
+        margin-left: 47%;
+    }
+    #downloadexcel{
+        margin-right: 5%;
+        position: absolute;
+        top: 470px;
+    }
+    .pagination{
+        top: 84%;
+    }
+}
+@media screen and (max-width: 640px) {
+    header{
+        width: 100%;
+    }
+    #monitoringTable{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #searchInput{
+        margin-left: 27%;
+        top: 43%;
+        width: 18%;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+        
+    }
+    span{
+        top: 19%;
+        
+    }
+    .filter-container{
+        position: relative;
+        margin-left: 40%;
     }
     #downloadexcel{
         margin-right: 5%;
