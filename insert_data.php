@@ -60,8 +60,9 @@ if (isset($_POST['btnPrint'])) {
             $agency_school_office = $row['agency_school_office'];
             $purpose_of_visit = $row['purpose_of_visit'];
             $scheduledate = $row['scheduledate'];
+            $reference_no = $row['reference_no'];
             // Construct the INSERT query for request_logs with interpolated values
-            $insertSql = "INSERT INTO control_number (risNoDate, seriesNumber, yearRequested, fullname, position_designation, agency_school_office, purpose_of_visit, scheduledate) VALUES (
+            $insertSql = "INSERT INTO control_number (risNoDate, seriesNumber, yearRequested, fullname, position_designation, agency_school_office, purpose_of_visit, scheduledate, reference_no) VALUES (
                 '$risNoDate',
                 '$formattedSeriesNumber',
                 '$yearRequested',
@@ -69,7 +70,8 @@ if (isset($_POST['btnPrint'])) {
                 '$position_designation',
                 '$agency_school_office',
                 '$purpose_of_visit',
-                '$scheduledate'
+                '$scheduledate',
+                '$reference_no'
                 
             )";
 

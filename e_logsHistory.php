@@ -44,9 +44,10 @@ if (!$conn) {
     <label for="priorityFilter">Priority:</label>
     <select id="priorityFilter" onchange="filterData()">
         <option value="all">All</option>
+        <option value="None"></option>
         <option value="Senior Citizen">Senior Citizen</option>
         <option value="Pregnant">Pregnant</option>
-        <option value="Disability">Disability</option>
+        <option value="Disability"> with Disability</option>
     </select>
 </div>
     <div class="walkin_online_filter">

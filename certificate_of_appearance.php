@@ -22,6 +22,7 @@ function breakDownWords($text) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="website icon" type="png" href="monitoring logbook logo.jpeg.png">
     <title>CERTIFICATE OF APPEARANCE</title>
 </head>
@@ -43,7 +44,7 @@ function breakDownWords($text) {
         <hr>
         <h2>CERTIFICATE OF APPEARANCE</h2>
         <p class="certify">This is to certify that <span class="name"><?php echo isset($fullname) ? $fullname : ''; ?></span> </p>
-
+        <span class="reference_no" style="display:none;"><?php echo isset($referencecode) ? $referencecode : ''; ?></span>
         <br> <br>
         <div class="position_office">
         <p class="position_designation"> <span class="bold-text"><?php echo isset($position_designation) ? $position_designation : ''; ?></span> <br>Position/Designation</p>
@@ -64,7 +65,7 @@ function breakDownWords($text) {
      
         <img src="e_sign.png" alt="" class="sign"> <br>
         </div>
-       <p class="issued">Date Issued: <?php echo $dateIssued; ?></p>    
+        <p class="issued">Date Issued: <?php echo date('F d, Y'); ?></p>
 
         <input type="submit" value="Generate PDF" id="btnPrint" name="btnPrint">
         </form>
