@@ -31,109 +31,93 @@
 </head>
 <body> 
 <div class="container">
-    <div class="card">
-        <div class="inner-box">
-            <div class="card-front">
-                <h1>DEPED CSJDM FRONT DESK</h1>
-        <form action="Appointment.php" method="post">
+    <h1>DEPED CSJDM FRONT DESK</h1>
+    <form action="Appointment.php" method="post">
         <input type="hidden" name="yearRequested" class="yearRequested">
         <script src="getYearRequested.js"></script>
         <input type="hidden" name="risNoDate" class="risNoDate" readonly>
-        <div class="spinner"></div>
+      
+        <div class="appointment-type"> 
+            <label><input type="radio" class="radioOnline" name="appointment_type" value="Online"  required> Online</label>
+            <label><input type="radio" class="radioWalkIn" name="appointment_type" value="Walk-in" required> Walk-in</label>
+            <label><input type="radio" class="radiowWithappointment" name="appointment_type" value="with Appointment" required> w/ Appointment</label>
+        </div>
+        <div id="dateBoxContainer">
+            <h2>Prefer Date</h2>
+            <input type="text" class="currentDate" name="currentDate" id="currentDate" placeholder="Select a date" readonly required autocomplete="OFF">
+        </div>
+        <input type="text" class="input-box" id="fullname" name="Fullname" placeholder="Fullname" required autocomplete="off" pattern="[A-Za-z.\s]+">
+        <input type="tel" class="input-box" name="phonenumber" placeholder="Contact Number" required autocomplete="OFF" pattern="[0-9]{11}" maxlength="11">
+        <input type="text" class="input-box" name="position_designation" placeholder="Position / Designation" required autocomplete="off" pattern="[A-Za-z.0-9\s]+">
+        <input type="text" class="input-box" name="agency_school_office" placeholder="Agency / School / Office" required autocomplete="off" pattern="[A-Za-z.0-9\s]+">
+        <script>
+            var quantityInput = document.querySelector('.qu');
+            var quantityInputs = document.querySelectorAll('.quantityInputUser');
+            quantityInputs.forEach(function (quantityInput) {
+                quantityInput.addEventListener('keydown', function (e) {
+                    // Allow the backspace key (keyCode 😎 and delete key (keyCode 46)
+                    if (e.key !== 'Backspace' && e.key !== 'Delete' && e.keyCode !== 8 && e.keyCode !== 46) {
+                        e.preventDefault();
+                    }
+                });
+            });
+        </script>
+        <div class="PurposeBox">  
+            <div class="inner-box">
+                <input type="text" class="inputPurpose" name="Purpose" placeholder="Purpose of Visit: (Complete this for Certificate of Appearance)" required autocomplete="off"> 
+                <div class="Selectoffice">
+                    <select name="selectOffice" id="selectOffice" required>
+                        <option value="">Office Visit</option>
+                        <option value="Office of the School Division Superintendent">SDS</option>
+                        <option value="Office of AO5">General Services AO5</option>
+                        <option value="School Governance Operations Division">SGOD</option>
+                        <option value="Curriculum Implementation Division">CID</option>
+                        <option value="Information Communication Technology">ICT Services</option>
+                        <option value="The Commission on Audit">COA</option>
+                        <option value="Office of the Assistant Schools Division Superintendent">ASDS</option>
+                        <option value="Personnel Section">Personnel Section</option>
+                        <option value="Records Section">Record Section</option>
+                        <option value="Property and Supply">Property and Supply</option>
+                        <option value="Payroll Section">Payroll Section</option>
+                        <option value="Accounting Section">Accounting Section</option>
+                        <option value="Budget Section">Budget Section</option>
+                        <option value="Cash Section">Cash Section</option>
+                        <option value="General Services">General Services</option>
+                        <option value="Legal Services">Legal Services</option>
+                        <option value="SDO Clinic & Nursing room">SDO Clinic & Nursing room</option>
+                    </select>
+                </div>
+                       
 
-<div class="appointment-type">
-    <label>
-        <input type="radio" class="radioOnline" name="appointment_type" value="Online" required> Online
-    </label>
-    <label>
-        <input type="radio" class="radioWalkIn" name="appointment_type" value="Walk-in" required> Walk-in
-    </label>
-    <br>
-    <label>
-        <input type="radio" class="radiowWithappointment" name="appointment_type" value="with Appointment" required> w/ Appointment
-    </label>
-</div>
-<div id="dateBoxContainer">
-    <h2>Prefer Date</h2>
-    <input type="text" class="currentDate" name="currentDate" id="currentDate" placeholder="Select a date" readonly required autocomplete="OFF">
-</div>
- <input type="text" class="input-box" name="Fullname" placeholder="Fullname" required autocomplete="off" pattern="[A-Za-z.\s]+">
- <input type="tel" class="input-box" name="phonenumber" placeholder="Contact Number" required autocomplete="OFF" pattern="[0-9]{11}" maxlength="11">
- <input type="text" class="input-box" name="position_designation" placeholder="Position / Designation" required autocomplete="off" pattern="[A-Za-z.0-9\s]+">
- <input type="text" class="input-box" name="agency_school_office" placeholder="Agency / School / Office" required autocomplete="off" pattern="[A-Za-z.0-9\s]+">
-                    <script>
-                       var quantityInput = document.querySelector('.qu');
-                        var quantityInputs = document.querySelectorAll('.quantityInputUser');
-                        quantityInputs.forEach(function (quantityInput) {
-                            quantityInput.addEventListener('keydown', function (e) {
-                                // Allow the backspace key (keyCode 😎 and delete key (keyCode 46)
-                                if (e.key !== 'Backspace' && e.key !== 'Delete' && e.keyCode !== 8 && e.keyCode !== 46) {
-                                    e.preventDefault();
-                                }
-                            });
-                        });
-                    </script>
-                 <div class="PurposeBox">  
-                    <div class="inner-box">
-                    <input type="text" class="inputPurpose" name="Purpose" placeholder="Purpose should be clearly stated." required autocomplete="off">  
- 
-                 <div class="selecOffice">
-
-            <div class="Selectoffice">
-                <select name="selectOffice" id="selectOffice" required>
-                    <option value="">Office Visit</option>
-                    <option value="Office of the School Division Superintendent">SDS</option>
-                    <option value="Office of AO5">General Services AO5</option>
-                    <option value="School Governance Operations Division">SGOD</option>
-                    <option value="Curriculum Implementation Division">CID</option>
-                    <option value="Information Communication Technology">ICT Services</option>
-                    <option value="The Commission on Audit">COA</option>
-                    <option value="Office of the Assistant Schools Division Superintendent">ASDS</option>
-                    <option value="Personnel Section">Personnel Section</option>
-                    <option value="Records Section">Record Section</option>
-                    <option value="Property and Supply">Property and Supply</option>
-                    <option value="Payroll Section">Payroll Section</option>
-                    <option value="Accounting Section">Accounting Section</option>
-                    <option value="Budget Section">Budget Section</option>
-                    <option value="Cash Section">Cash Section</option>
-                    <option value="General Services">General Services</option>
-                    <option value="Legal Services">Legal Services</option>
-                    <option value="SDO Clinic & Nursing room">SDO Clinic & Nursing room</option>
+                <select name="gender" id="gender" required>
+                    <option value="">Sex</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
                 </select>
-                <label for="gender"> </label>
-    <select name="gender" id="gender" required>
-        <option value="">Sex</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-
-    </select>
         
-
-    <label for="priorityLane"></label>
-    <select name="priorityLane" id="priorityLane">
-        <option value=""Defaultvalue>Priority Lane</option>
-        <option value="Senior Citizen">Senior Citizen</option>
-        <option value="Pregnant">Pregnant</option>
-        <option value="Disability">Person with Disability</option>
-    </select>
- </div>
-  </div>  
-  </div>
- </div>           
-  
-
-    <input type="hidden" name="timeIn" id="timeIn" value="">
-       
- 
+                <select name="priorityLane" id="priorityLane">
+                    <option value=""Defaultvalue>Priority Lane</option>
+                    <option value="Senior Citizen">Senior Citizen</option>
+                    <option value="Pregnant">Pregnant</option>
+                    <option value="Disability">Person with Disability</option>
+                </select>
+                <input type="hidden" name="timeIn" id="timeIn" value="">
                  <div class="submit-btn">
-                 <button type="submit" class="submit-btn">SUBMIT</button>
+                    <button type="submit" class="submit-btn">SUBMIT</button>
+                    <input type="hidden" class="reference_no" name="reference_no" readonly>
+                </div>
+                <div class="developer">
+                    <label for="a">Developer: <a href="https://www.facebook.com/ivan.policarpio.01/">Ivan Policarpio</a> , <a href="https://www.facebook.com/Aenghelo">Angelo Capa</a> , <a href="https://www.facebook.com/Resasak">Reymi Dela Cruz</a></label>
+                </div>
+  
+            </div>
+        </div>
+    </form>
+</div>
+<li> <a href="adminLogin.php"><i class="fa-solid fa-user-tie"></i>ADMIN LOG-IN</a></li>
+ 
 
-                 <input type="hidden" class="reference_no" name="reference_no" readonly>
-                 </div>
- <div class="developer">
-    <label for="a">Developer: <a href="https://www.facebook.com/ivan.policarpio.01/">Ivan Policarpio</a> , <a href="https://www.facebook.com/Aenghelo">Angelo Capa</a> , <a href="https://www.facebook.com/Resasak">Reymi Dela Cruz</a></label>
- </div>
- <script>
+<script>
         document.addEventListener("DOMContentLoaded", function() {
     const customSelect = document.querySelector('.custom-select');
 
@@ -252,24 +236,8 @@ currentDateInput.addEventListener('input', function (e) {
 
     this.value = cleanedValue;
 });
-
-    
 </script>
-    </script>
-
-    </form>
-
-    
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-</script>
+   
 <script>
     // Get the input element by its name
     const phoneNumberInput = document.querySelector('input[name="phonenumber"]');
@@ -287,9 +255,7 @@ currentDateInput.addEventListener('input', function (e) {
         }
     });
 </script>
-<script>
-    
-</script>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
@@ -359,6 +325,17 @@ form.addEventListener('submit', async function (e) {
 
     
 </script>
-<li> <a href="adminLogin.php"><i class="fa-solid fa-user-tie"></i>ADMIN LOG-IN</a></li>
+<script>
+    document.getElementById('fullname').addEventListener('input', function () {
+        var inputValue = this.value;
+        var words = inputValue.toLowerCase().split(' ');
+
+        for (var i = 0; i < words.length; i++) {
+            words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        }
+
+        this.value = words.join(' ');
+    });
+</script>
 </body>
 </html>
