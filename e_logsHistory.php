@@ -41,7 +41,8 @@ if (!$conn) {
 <div class="priority_filter">
     <label for="priorityFilter">Priority:</label>
     <select id="priorityFilter" onchange="filterData()">
-        <option value="all">None</option>
+        <option value="all">All</option>
+        <option value="None"></option>
         <option value="Senior Citizen">Senior Citizen</option>
         <option value="Pregnant">Pregnant</option>
         <option value="Disability"> with Disability</option>

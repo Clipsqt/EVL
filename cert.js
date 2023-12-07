@@ -1,4 +1,4 @@
-//BREAKDOWN LINE FOR PURPOSE//
+// Existing code
 function breakDownWords(text) {
     const words = text.split(' ');
     const maxWordsPerLine = 8;
@@ -10,21 +10,41 @@ function breakDownWords(text) {
 }
 
 function generatePDF() {
-    var formContent = document.getElementById("certificateBody");
-    var options = {
-        margin: 0,
-        filename: 'Certificate of Appearance.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
+    var reference_no = document.querySelector('.reference_no').innerText.trim();
 
-    html2pdf(formContent, options);
-    setTimeout(function () {
-        document.getElementById("btnPrint").click();
-    }, 1000); 
-}
+    // Add an AJAX request to check if the reference_no already exists
+    $.ajax({
+        type: 'POST',
+        url: 'check_reference_no.php',
+        data: { reference_no: reference_no },
+        success: function (response) {
+            if (response === 'exists') {
+                // Use SweetAlert for a more user-friendly alert
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Certificate Already Printed',
+                    text: 'Check in the Certificate of Appearnce list webpage.',
+                    confirmButtonText: 'OK',
+                });
+            } else {
+                // Continue with generating PDF if the reference_no doesn't exist
+                var formContent = document.getElementById("certificateBody");
+                var options = {
+                    margin: 0,
+                    filename: 'Certificate of Appearance.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
 
-function goToLogsHistory(){
-    location.href = "e_logsHistory.php";
+                html2pdf(formContent, options);
+                setTimeout(function () {
+                    document.getElementById("btnPrint").click();
+                }, 1000);
+            }
+        },
+        error: function (error) {
+            console.error('Error checking reference_no:', error);
+        }
+    });
 }
