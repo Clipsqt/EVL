@@ -34,10 +34,12 @@ if (!$conn) {
 <header>
     <img src="monitoring logbook logo.jpeg.png" alt="">
     <h1>  E- LOG'S HISTORY</h1>
+    <div class="Search">
     <input type="text" id="searchInput" placeholder="Search" oninput="searchTable()">
+</div>
 </header>
+
 <body> 
-    
 <div class="priority_filter">
     <label for="priorityFilter">Priority:</label>
     <select id="priorityFilter" onchange="filterData()">
@@ -56,6 +58,7 @@ if (!$conn) {
             <option value="online">Online</option>
         </select>
     </div>
+    
     <div class="filter-container">
         <label for="fromDate">From:</label>
         <input type="text" id="fromDate" placeholder="MM/DD/YYYY">
@@ -63,8 +66,8 @@ if (!$conn) {
         <input type="text" id="toDate" placeholder="MM/DD/YYYY">
         <button onclick="filterData()">Find</button>
         <button id="downloadexcel" onclick="exportTableToExcel('monitoringTable')">Convert to Excel</button>
-        
     </div>
+    
     <input type="checkbox" name="" id="check">
     <div class="container">
         <label for="check">
@@ -82,13 +85,8 @@ if (!$conn) {
             <li> <a href="change_password.php"><i class='bx bx-lock-alt'></i>CHANGE PASSWORD</a></li>
             <li> <a href="log_out.php"><i class='bx bx-log-out'></i>LOGOUT</a></li>
         </ol>
+        
     </div>   
-    <div class="pagination">
-        <button id="previousButton">Previous</button>
-        <div id="paginationContainer" class="page-numbers"></div>
-        <button id="nextButton">Next</button>
-        <button id="showAllButton" onclick="showAllRows()">Show All</button>
-    </div>
     <div class="scroll">  
      <form action="" method="post">
     <table id="monitoringTable" border="1">
@@ -109,9 +107,8 @@ if (!$conn) {
             <th id="colTime out">Time Out</th>
             <th id="colCertificate">Certificate</th>
         </tr>
-        
-    </thead> 
-
+    </div>
+    </thead>
     <?php
     $query = "SELECT * FROM e_logsHistory ORDER BY timeStamp desc";
     $result = mysqli_query($conn, $query);
@@ -155,4 +152,12 @@ if (!$conn) {
         </form>  
     </div>
 </body>
+  <div class="pagination">
+        <button id="previousButton">Previous</button>
+        <div id="paginationContainer" class="page-numbers"></div>
+        <button id="nextButton">Next</button>
+        <button id="showAllButton" onclick="showAllRows()">Show All</button>
+</div>
 <script src="e_logsHistory.js"></script>
+<script src="disablebackbutton.js"></script>
+</html>
