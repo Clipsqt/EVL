@@ -22,29 +22,15 @@ header h1 {
     margin-top: 10px;
 }
 
-/* Add a media query for screens with a maximum width of 768px */
-@media (max-width: 768px) {
-    header img {
-        width: 80px; /* Adjust the size as needed for smaller screens */
-    }
 
-    header h1 {
-        font-size: 24px; /* Adjust the font size for smaller screens */
-    }
-}
-
-
-/* Table */
 table {
-
     width: 95%;
-    margin: 6px auto; /* Center the table horizontally */
+    margin-left: 5%;
     max-height: 10px;
-    border-collapse: collapse; /* Combine border spacing into one */
+    border-collapse: collapse; 
     border: 2px solid black;
 }
 
-/* Individual column widths */
 .fullname {
     width: 20%;
 }
@@ -58,9 +44,7 @@ table {
     width: 11%;    
 }
 
-/* Table header */
 th {
-
     text-align: center;
     background-color: #162fa0;
     color: white;
@@ -68,7 +52,7 @@ th {
     font-size: 12px;
     position: sticky;
     top: 0;
-    z-index: 1; /* Ensure the header appears above the table content */
+    z-index: 1;
     border: 2px solid black;
 }
 
@@ -83,12 +67,12 @@ td {
 
 /* Scrollable content */
 .scroll {
-
     margin-top: -12px;
     max-height: 365px;
-    overflow-y: scroll;
-    
+    margin-right: 5%;
+    overflow-y: scroll; 
 }
+
 #monitoringTable thead {
     position: sticky;
     top: 0;
@@ -99,33 +83,33 @@ td {
     position: absolute;
     padding: 5px;
     border: 1px solid #ccc;
-    top: 20%;
+    top: 18%;
     border-radius: 4px;
-    margin-left: 31%; /* Remove the margin-left property */
+    margin-left: 31%; 
     font-size: 12px;
-    width: 200px; /* Adjust the width as needed */
+    width: 200px; 
 }
 
-/* Style the placeholder text */
+
 #search::placeholder {
-    color: #999; /* Set the color of the placeholder text */
+    color: #999; 
 }
 
-/* Style the search bar when it's focused (clicked on) */
+
 #search:focus {
-    outline: none; /* Remove the default outline */
-    border-color: #162fa0; /* Change the border color when focused */
-    box-shadow: 0 0 5px rgba(22, 47, 160, 0.5); /* Add a subtle shadow when focused */
+    outline: none; 
+    border-color: #162fa0; 
+    box-shadow: 0 0 5px rgba(22, 47, 160, 0.5);
 }
-/* Container for filter elements */
+
 .filter-container {
     position: sticky;
     z-index: 2;
     margin-top: 10px;
-    margin-left: 69%; /* Adjust the right position as needed */
+    margin-left: 69%; 
     font-size: 12px;
 }
-/* Style for the date input fields */
+
 .filter-container label {
     margin-right: 10px;
     font-weight: bold;
@@ -141,7 +125,7 @@ td {
     font-size: 10px;
 }
 
-/* Style for the filter button */
+
 .filter-container button {
     background-color: #007bff;
     color: #fff;
@@ -151,7 +135,7 @@ td {
     cursor: pointer;
 }
 
-/* Style for the filter button on hover */
+
 .filter-container button:hover {
     background-color: black;
 
@@ -160,30 +144,31 @@ td {
     margin-top: 8px;
     max-height: 200px;
     overflow-y: scroll;
-    position: relative; /* Position container relative for absolute positioning of the button */
+    position: relative; 
 }
 
-/* Position the "Convert to Excel" button at the bottom right */
-#downloadexcel {
-    position: absolute; /* Adjust the distance from the bottom as needed */
-    top: 1600%;
-    right: 50px; /* Adjust the distance from the right as needed */
+
+.downloadexcel {
+    position: fixed;
+    margin-left: 87%;
+    margin-top: 55vh;
     padding: 10px 10px;
+    border-radius: 5px;
     background-color: #3498db;
     color: #fff;
     border: none;
     cursor: pointer;
 }
 
-#downloadexcel:hover {
+.downloadexcel:hover {
     background-color: black;
 }
 
 .container{
-    top: 16%;
-    height: 84%;
+    position: fixed;
+    margin-top: -6%;
+    height: 82%;
     width: 300px;
-    position: absolute;
     background:#162fa0;
     border: black;
     z-index: 2;
@@ -265,7 +250,7 @@ input{
  .pagination {
     position: absolute;
     text-align: center;
-    bottom: 2px; /* Adjust the bottom margin as needed */
+    margin-top: 50vh; 
     left: 0;
     right: 0;
  }
@@ -274,7 +259,7 @@ input{
     background-color: whitesmoke;
     color: black;
     border: none;
-    padding: 2px 10px; /* Adjust padding as needed */
+    padding: 2px 10px; 
     margin: 2px 2px;
     cursor: pointer;
     border-radius: 5px;
@@ -286,7 +271,7 @@ input{
 
 #paginationContainer {
     display: inline-block;
-    margin-top: 20px; /* Adjust the top margin as needed */
+    margin-top: 20px; 
 }
 
 .page-numbers button {
@@ -305,7 +290,7 @@ input{
 
 #showAllButton {
     display: block;
-    margin: 20px   auto; /* Adjust the margin as needed */
+    margin: 20px   auto; 
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -322,669 +307,33 @@ input{
     color: white;
 }
  
-@media screen and (max-width: 2560px){
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-    }
-    #searchInput{
-        margin-left: 41%;
-        top: 13%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: -4%;
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 85%;
-    }
-    #downloadexcel{
-        margin-right: -10%;
-        position: absolute;
-    }
-    .pagination{
-        top: 85%;
+@media only screen and (min-width:748px) {
+    .container{
+        margin-top: -14%;
     }
 }
-@media screen and (max-width: 1920px){
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-
-    }
-    #searchInput{
-        margin-left: 38%;
-        top: 13%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: -4%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 80%;
-    }
-    #downloadexcel{
-        margin-right: -11%;
-        position: absolute;
-    }
-    .pagination{
-        top: 80%;
+@media only screen and (min-width:768px) {
+    .container{
+        margin-top: -14%;
     }
 }
-@media screen and (max-width: 1706.67px){
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-
-    }
-    #searchInput{
-        margin-left: 37%;
-        top: 13%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: -4%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 78%;
-    }
-    #downloadexcel{
-        margin-right: -11%;
-        position: absolute;
-    }
-    .pagination{
-        top: 80%;
+@media only screen and (min-width:1024px) {
+    .container{
+        margin-top: -11%;
     }
 }
-@media screen and (max-width: 1680px){
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 36%;
-        top: 22;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top:-4%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 77%;
-    }
-    #downloadexcel{
-        margin-right: -12%;
-        position: absolute;
-    }
-    .pagination{
-        top: 80%;
+@media only screen and (min-width:1200px) {
+    .container{
+        margin-top: -7%;
     }
 }
-@media screen and (max-width: 1600px){
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 36%;
-        top: 13%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: -4%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 76%;
-    }
-    #downloadexcel{
-        margin-right: -12%;
-        position: absolute;
-    }
-    .pagination{
-        top: 70%;
-    }
-    
-}
-@media screen and (max-width: 1536px){
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 35%;
-        top: 13%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: -4%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 75%;
-    }
-    #downloadexcel{
-        top: 1700%;
-        margin-right: -12%;
-        position: absolute;
-    }
-    .pagination{
-        top: 75%;
+@media only screen and (min-width:1400px) {
+    .container{
+        margin-top: -7%;
     }
 }
-@media screen and (max-width: 1440px){
-    header{
-        width: 100%;
+@media only screen and (min-width:1500px) {
+    .container{
+        margin-top: -6%;
     }
-    #monitoringTable{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 34%;
-        top: 24%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: 9%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 73%;
-    }
-    #downloadexcel{
-        top: 1300%;
-        margin-right: -12%;
-        position: absolute;
-    }
-    .pagination{
-        top: 85%;
-    }
-}
-@media screen and (max-width: 1422.22px){
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 34%;
-        top: 25%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: 9%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 73%;
-    }
-    #downloadexcel{
-        top: 1600%;
-        margin-right: -12%;
-        position: absolute;
-    }
-    .pagination{
-        top: 85%;
-    }
-}
-
-@media screen and (max-width: 1366px) {
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 33%;
-        top: 25%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: 9%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 72%;
-    }
-    #downloadexcel{
-        top: 1600%;
-        margin-right: -12%;
-        position: absolute;
-    }
-    .pagination{
-        top: 82%;
-    }
-}
-@media screen and (max-width: 1360px){
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 33%;
-        top: 25%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: 9%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 72%;
-    }
-    #downloadexcel{
-        top: 1600%;
-        margin-right: -13%;
-        position: absolute;
-    }
-    .pagination{
-        top: 83%;
-    }
-}
-@media screen and (max-width: 1280px) {
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 32%;
-        top: 23%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: 7%;
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 70%;
-    }
-    #downloadexcel{
-        top: 1400%;
-        margin-right: -12%;
-        position: absolute;
-    }
-    .pagination{
-        position: absolute;
-        top: 82%;
-    }
-}
-@media screen and (max-width: 1163.64px){
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-        max-height: 10%;
-
-    }
-    #searchInput{
-        margin-left: 30%;
-        top: 25%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: 9%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 67%;
-    }
-    #downloadexcel{
-        top: 1600%;
-        margin-right: -11%;
-        position: absolute;
-    }
-    .pagination{
-        top: 100%;
-        position: absolute;
-    }
-}
-@media screen and (max-width: 1152px) {
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 30%;
-        top: 25%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-        
-    }
-    span{
-        top: 9%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 67%;
-    }
-    #downloadexcel{
-        top: 1600%;
-        margin-right: -14%;
-        position: absolute;
-    }
-    .pagination{
-        top: 100%;
-    }
-    
-}
-@media screen and (max-width: 1024px) {
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 32%;
-        top: 29%;
-        width: 15%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-        
-    }
-    span{
-        top: 14%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 63%;
-    }
-    #downloadexcel{
-        top: 1600%;
-        margin-right: -12%;
-        position: absolute;
-    }
-    .pagination{
-        top: 118%;
-        position: absolute;
-    }
-}
-@media screen and (max-width: 934px) {
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 31%;
-        top: 29%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-        
-    }
-    span{
-        top: 14%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 59%;
-    }
-    #downloadexcel{
-        top: 1680%;
-        margin-right: -14%;
-        position: absolute;
-    }
-    .pagination{
-        top: 120%;
-    }    
-}
-@media screen and (max-width: 853.33px){
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 100%;
-
-    }
-    #searchInput{
-        margin-left: 31%;
-        top: 29%;
-        width: 15%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    span{
-        top: 14%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 55%;
-    }
-    #downloadexcel{
-        top: 1500%;
-        margin-right: -11%;
-        position: absolute;
-    }
-    .pagination{
-        top: 100%;
-    }
-}
-@media screen and (max-width: 768px) {
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 30%;
-        top: 28%
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-        
-    }
-    span{
-        top: 13%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 49%;
-    }
-    #downloadexcel{
-        margin-right: 5%;
-        position: absolute;
-        top: 470px;
-    }
-    .pagination{
-        top: 84%;
-    }
-}
-@media screen and (max-width: 731.43px) {
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 29%;
-        top: 38%;
-        width: 16%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-        
-    }
-    span{
-        top: 24%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 47%;
-    }
-    #downloadexcel{
-        margin-right: -8%;
-        position: absolute;
-        top: 400%;
-    }
-    .pagination{
-        top: 70%;
-    }
-}
-@media screen and (max-width: 640px) {
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 34%;
-        top: 43%;
-        width: 10%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-        
-    }
-    span{
-        top: 30%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 40%;
-    }
-    #downloadexcel{
-        margin-right: 5%;
-        position: absolute;
-        top: 470px;
-    }
-    .pagination{
-        top: 84%;
-    }
-}
-body {
-    overflow: hidden;
-}
-
-body::-webkit-scrollbar {
-    display: none;
-}
-
-.scroll::-webkit-scrollbar {
-    display: none;
-}
-
-
-.scroll {
-    scrollbar-width: none;
 }
