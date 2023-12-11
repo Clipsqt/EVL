@@ -311,6 +311,6 @@ $rowNumber = 1;
 
 
  <script src="admin_webpage.js"></script>
- <script src="disablebackbutton.js"></script>
+ 
 </body>
 </html>
