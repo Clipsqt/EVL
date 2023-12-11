@@ -48,3 +48,7 @@ function generatePDF() {
         }
     });
 }
+
+function goToLogsHistory() {
+    window.location.href = 'e_logsHistory.php';
+}

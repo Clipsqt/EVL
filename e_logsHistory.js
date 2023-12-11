@@ -64,12 +64,12 @@ function searchTable() {
             const formattedToDate = formatDateToMMDDYYYY(toDate);
             const selectedAppointmentType = appointmentFilter.value;
             const selectedPriority = priorityFilter.value;
-    
+        
             visibleRows = []; // Clear the list of visible rows
-    
-            rows.forEach(function(row) {
+        
+            rows.forEach(function (row) {
                 let rowMatch = true;
-    
+        
                 // Check if the row matches the filters
                 const scheduleDateCell = row.cells[5];
                 const scheduleDate = scheduleDateCell.textContent.trim();
@@ -77,32 +77,37 @@ function searchTable() {
                 const appointmentType = appointmentTypeCell.textContent.trim().toLowerCase();
                 const priorityCell = row.cells[3];
                 const priority = priorityCell.textContent.trim().toLowerCase();
-    
+        
                 if ((fromDate !== "" && toDate !== "") && (scheduleDate < formattedFromDate || scheduleDate > formattedToDate)) {
                     rowMatch = false;
                 }
-    
+        
                 if (selectedAppointmentType === "walk-in" && appointmentType !== "walk-in") {
                     rowMatch = false;
                 } else if (selectedAppointmentType === "online" && appointmentType !== "online") {
                     rowMatch = false;
                 }
-    
-                if (selectedPriority !== "all" && priority !== selectedPriority.toLowerCase()) {
+        
+                // Check for empty or "None" priority
+                if (selectedPriority === "none") {
+                    // Filter rows with empty or "None" priority
+                    if (priority !== "" && priority.toLowerCase() !== "none") {
+                        rowMatch = false;
+                    }
+                } else if (selectedPriority !== "all" && priority !== selectedPriority.toLowerCase()) {
                     rowMatch = false;
                 }
-    
+        
                 if (rowMatch) {
                     visibleRows.push(row);
-                    row.style.display = ""; // Display the row if it's within the range and matches the appointment type and priority
+                    row.style.display = ""; // Display the row if it matches the filters
                 } else {
-                    row.style.display = "none"; // Hide the row if it's outside the range or doesn't match the appointment type or priority
+                    row.style.display = "none"; // Hide the row if it doesn't match the filters
                 }
             });
-    
+        
             applyAlternatingRowColors();
         }
-    
         function applyAlternatingRowColors() {
             visibleRows.forEach(function(row, index) {
                 row.classList.toggle("odd-row", index % 2 === 0);
@@ -299,6 +304,5 @@ function searchTable() {
         window.location.href = 'certificate_of_appearance.php';
     }
    
-    
     
     
