@@ -807,11 +807,3 @@ td {
         top: 3%;
     }
 }
-.scroll::-webkit-scrollbar {
-    display: none;
-}
-
-
-.scroll {
-    scrollbar-width: none;
-}

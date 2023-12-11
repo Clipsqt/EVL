@@ -42,7 +42,7 @@
         <label for="toDate">To:</label>
         <input type="text" id="toDate" placeholder="MM/DD/YYYY">
         <button onclick="filterData()">Find</button>
-        <button id="downloadexcel" onclick="exportTableToExcel('monitoringTable', 'e_logshistort')">Convert to Excel</button>
+        
 </div>
 <input type="checkbox" name="" id="check">
     <div class="container">
@@ -67,7 +67,9 @@
     <div id="paginationContainer" class="page-numbers"></div>
     <button id="nextButton">Next</button>
     <button id="showAllButton" onclick="showAllRows()">Show All</button>
+
 </div>
+<button id="downloadexcel" class="downloadexcel" onclick="exportTableToExcel('monitoringTable', 'e_logshistort')">Convert to Excel</button>
     <div class="scroll">    
         <table id="monitoringTable" border="1">
         <thead> 

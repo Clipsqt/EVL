@@ -85,7 +85,7 @@ if (!$conn) {
             <li> <a href="change_password.php"><i class='bx bx-lock-alt'></i>CHANGE PASSWORD</a></li>
             <li> <a href="log_out.php"><i class='bx bx-log-out'></i>LOGOUT</a></li>
         </ol>
-        
+</div>
     </div>   
     <div class="scroll">  
      <form action="" method="post">

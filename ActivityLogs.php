@@ -20,7 +20,7 @@ $assistedBy = (isset($_SESSION['accountName']) ? $_SESSION['accountName'] : '');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> 
+<meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bookman+Old+Style">
@@ -28,14 +28,16 @@ $assistedBy = (isset($_SESSION['accountName']) ? $_SESSION['accountName'] : '');
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="table2excel.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="Activitylog.css">
+    <link rel="stylesheet" href="ActivityLog.css">
     <title>Activity Logs</title>
     <link rel="website icon" type="png" href="monitoring logbook logo.jpeg.png">
 </head>
 <header>
     <img src="monitoring logbook logo.jpeg.png" alt="">
     <h1>Activity Logs</h1>
+    <div class="Search">
     <input type="text" id="searchInput" placeholder="Search" oninput="searchTable()">
+</div>
 </header>
 <body>
     <div class="filter-container">
@@ -64,12 +66,6 @@ $assistedBy = (isset($_SESSION['accountName']) ? $_SESSION['accountName'] : '');
             <li> <a href="log_out.php"><i class='bx bx-log-out'></i>LOGOUT</a></li>
         </ol>
     </div>   
-    <div class="pagination">
-        <button id="previousButton">Previous</button>
-        <div id="paginationContainer" class="page-numbers"></div>
-        <button id="nextButton">Next</button>
-        <button id="showAllButton" onclick="showAllRows()">Show All</button>
-    </div>
     <div class="scroll">    
         <table id="monitoringTable" border="1">
             <thead> 
@@ -114,6 +110,12 @@ $assistedBy = (isset($_SESSION['accountName']) ? $_SESSION['accountName'] : '');
         </table>
     </div>
 </body>
+<div class="pagination">
+        <button id="previousButton">Previous</button>
+        <div id="paginationContainer" class="page-numbers"></div>
+        <button id="nextButton">Next</button>
+        <button id="showAllButton" onclick="showAllRows()">Show All</button>
+</div>
 <script src="ActivityLog.js"></script>
 <script src="disablebackbutton.js"></script>
 </html>
