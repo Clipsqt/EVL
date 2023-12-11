@@ -159,5 +159,5 @@ if (!$conn) {
         <button id="showAllButton" onclick="showAllRows()">Show All</button>
 </div>
 <script src="e_logsHistory.js"></script>
-<script src="disablebackbutton.js"></script>
+
 </html>

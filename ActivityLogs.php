@@ -117,5 +117,4 @@ $assistedBy = (isset($_SESSION['accountName']) ? $_SESSION['accountName'] : '');
         <button id="showAllButton" onclick="showAllRows()">Show All</button>
 </div>
 <script src="ActivityLog.js"></script>
-<script src="disablebackbutton.js"></script>
 </html>
