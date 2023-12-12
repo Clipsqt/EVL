@@ -153,7 +153,7 @@ width: 15%;
 
 /* Style for the filter button */
 .filter-container button {
-    background-color: #007bff;
+    background-color: #162fa0;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -179,7 +179,7 @@ width: 15%;
     top: 1600%;
     right: 50px; /* Adjust the distance from the right as needed */
     padding: 10px 10px;
-    background-color: #3498db;
+    background-color: #162fa0;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -328,7 +328,7 @@ span {
 #showAllButton {
     display: block;
     margin: 20px   auto; /* Adjust the margin as needed */
-    background-color: #007bff;
+    background-color: #162fa0;
     color: #fff;
     border: none;
     border-radius: 4px;

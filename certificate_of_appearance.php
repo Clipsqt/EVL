@@ -43,7 +43,7 @@ function breakDownWords($text) {
         </header>
         <hr>
         <h2>CERTIFICATE OF APPEARANCE</h2>
-        <p class="certify">This is to certify that <span class="name"><?php echo isset($fullname) ? $fullname : ''; ?></span> </p>
+        <p class="certify">This is to certify that <span class="name"><?php echo isset($fullname) ? strtoupper($fullname) : ''; ?></span> </p>
         <span class="reference_no" style="display:none;"><?php echo isset($referencecode) ? $referencecode : ''; ?></span>
         <br> <br>
         <div class="position_office">
@@ -58,14 +58,18 @@ function breakDownWords($text) {
             ?>
             <br> <br> <span class="best">This certification is being issued for whatever legal purposes it may serve her/him best.</span>
         </p>
-        <div class="seriesnumber">
-            Contro No: ECA-
+        <div class="control_no">
+           <label for="risNoDate"> Contro No: ECA-</label>
             <input readonly type="text" name="risNoDate" class="risNoDate" readonly >
+            <p class="issued">Date Issued: <?php echo date('F d, Y'); ?></p>
+        </div>
+           
+        <div class="seriesnumber">
             <script src="getControlNo.js"></script>
      
         <img src="e_sign.png" alt="" class="sign"> <br>
         </div>
-        <p class="issued">Date Issued: <?php echo date('F d, Y'); ?></p>
+      
 
         <input type="submit" value="Generate PDF" id="btnPrint" name="btnPrint">
         </form>

@@ -1,44 +1,51 @@
 function searchTable() {
-    var input, filter, table, tr, td1, td2, td3, td4, td5, td6, td7, td8, td9, txtValue1, txtValue2, txtValue3 ,txtValue4 ,txtValue5, txtValue6, txtValue7, txtValue8, txtValue9;
+    var input, filter, table, tr, td1, td2, td3, td4, td5, td6, td7, td8, td9, td10, txtValue1, txtValue2, txtValue3, txtValue4, txtValue5, txtValue6, txtValue7, txtValue8, txtValue9, txtValue10;
     input = document.getElementById("searchInput");
     filter = input.value.toLowerCase();
     table = document.querySelector("table");
     tr = table.getElementsByTagName("tr");
-    
+
     for (i = 0; i < tr.length; i++) {
-    td1 = tr[i].getElementsByTagName("td")[0];
-    td2 = tr[i].getElementsByTagName("td")[1]; 
-    td3 = tr[i].getElementsByTagName("td")[2]; 
-    td4 = tr[i].getElementsByTagName("td")[3]; 
-    td5 = tr[i].getElementsByTagName("td")[4]; 
-    td7 = tr[i].getElementsByTagName("td")[5]; 
-    td8 = tr[i].getElementsByTagName("td")[8]; 
-    td6 = tr[i].getElementsByTagName("td")[6]; 
-    td9 = tr[i].getElementsByTagName("td")[9]; 
-    
-    
-    if (td1 && td2 && td3 && td4 && td5 && td6 && td7 && td8 && td9) {
-    txtValue1 = td1.textContent || td1.innerText;
-         txtValue2 = td2.textContent || td2.innerText;
-         txtValue3 = td3.textContent || td3.innerText;
-         txtValue4 = td4.textContent || td4.innerText;
-         txtValue5 = td5.textContent || td5.innerText;
-         txtValue6 = td6.textContent || td6.innerText;
-         txtValue7 = td7.textContent || td7.innerText;
-         txtValue8 = td8.textContent || td8.innerText;
-         txtValue9 = td9.textContent || td9.innerText;
-    
-    if (txtValue1.toLowerCase().indexOf(filter) > -1 || txtValue2.toLowerCase().indexOf(filter) > -1 || txtValue3.toLowerCase().indexOf(filter) > -1 || txtValue4.toLowerCase().indexOf(filter) > -1 || txtValue5.toLowerCase().indexOf(filter) > -1 || txtValue6.toLowerCase().indexOf(filter) > -1 || txtValue7.toLowerCase().indexOf(filter) > -1 || txtValue8.toLowerCase().indexOf(filter) > -1|| txtValue9.toLowerCase().indexOf(filter) > -1) {
-     tr[i].style.display = "";
-    } else {
-     tr[i].style.display = "none";
+        td1 = tr[i].getElementsByTagName("td")[0];
+        td2 = tr[i].getElementsByTagName("td")[1];
+        td3 = tr[i].getElementsByTagName("td")[2];
+        td4 = tr[i].getElementsByTagName("td")[3];
+        td5 = tr[i].getElementsByTagName("td")[4];
+        td6 = tr[i].getElementsByTagName("td")[5];
+        td7 = tr[i].getElementsByTagName("td")[6];
+        td8 = tr[i].getElementsByTagName("td")[8];
+        td9 = tr[i].getElementsByTagName("td")[9];
+        td10 = tr[i].getElementsByTagName("td")[10];
+
+        if (td1 && td2 && td3 && td4 && td5 && td6 && td7 && td8 && td9 && td10) {
+            txtValue1 = td1.textContent || td1.innerText;
+            txtValue2 = td2.textContent || td2.innerText;
+            txtValue3 = td3.textContent || td3.innerText;
+            txtValue4 = td4.textContent || td4.innerText;
+            txtValue5 = td5.textContent || td5.innerText;
+            txtValue6 = td6.textContent || td6.innerText;
+            txtValue7 = td7.textContent || td7.innerText;
+            txtValue8 = td8.textContent || td8.innerText;
+            txtValue9 = td9.textContent || td9.innerText;
+            txtValue10 = td10.textContent || td10.innerText;
+
+            if (txtValue1.toLowerCase().indexOf(filter) > -1 ||
+                txtValue2.toLowerCase().indexOf(filter) > -1 ||
+                txtValue3.toLowerCase().indexOf(filter) > -1 ||
+                txtValue4.toLowerCase().indexOf(filter) > -1 ||
+                txtValue5.toLowerCase().indexOf(filter) > -1 ||
+                txtValue6.toLowerCase().indexOf(filter) > -1 ||
+                txtValue7.toLowerCase().indexOf(filter) > -1 ||
+                txtValue8.toLowerCase().indexOf(filter) > -1 ||
+                txtValue9.toLowerCase().indexOf(filter) > -1 ||
+                txtValue10.toLowerCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
     }
-    }
-     
-    }
-    }
-    
-    
+}
     //FUNCTION FOR FROM AND TO FILTER DATE:
     document.addEventListener("DOMContentLoaded", function() {
         const fromDateInput = document.getElementById("fromDate");
@@ -86,8 +93,9 @@ function searchTable() {
                     rowMatch = false;
                 } else if (selectedAppointmentType === "online" && appointmentType !== "online") {
                     rowMatch = false;
+                } else if (selectedAppointmentType === "with appointment" && appointmentType !== "with appointment") {
+                    rowMatch = false;
                 }
-        
                 // Check for empty or "None" priority
                 if (selectedPriority === "none") {
                     // Filter rows with empty or "None" priority

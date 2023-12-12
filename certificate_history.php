@@ -22,12 +22,16 @@ function breakDownWords($text) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="website icon" type="png" href="monitoring logbook logo.jpeg.png">
     <title>CERTIFICATE OF APPEARANCE</title>
 </head>
 <body>
 
     <div id="certificateBody">
+        <form action="insert_data.php" method="post" class="controlForm">
+            <input type="hidden" name="reference_no"value="<?php echo isset($referencecode) ? $referencecode : ''; ?>">
+            <input type="hidden" name="yearRequested" value="<?php echo $yearRequested ?>">
         <header>
             <img src="monitoring logbook logo.jpeg.png" alt="">
         </header>
@@ -39,8 +43,8 @@ function breakDownWords($text) {
         </header>
         <hr>
         <h2>CERTIFICATE OF APPEARANCE</h2>
-        <p class="certify">This is to certify that <span class="name"><?php echo isset($fullname) ? $fullname : ''; ?></span> </p>
-
+        <p class="certify">This is to certify that <span class="name"><?php echo isset($fullname) ? strtoupper($fullname) : ''; ?></span> </p>
+        <span class="reference_no" style="display:none;"><?php echo isset($referencecode) ? $referencecode : ''; ?></span>
         <br> <br>
         <div class="position_office">
         <p class="position_designation"> <span class="bold-text"><?php echo isset($position_designation) ? $position_designation : ''; ?></span> <br>Position/Designation</p>
@@ -54,16 +58,21 @@ function breakDownWords($text) {
             ?>
             <br> <br> <span class="best">This certification is being issued for whatever legal purposes it may serve her/him best.</span>
         </p>
-        <div class="seriesnumber">
-    Contro No: ECA-
-    <input readonly type="text" name="risNoDate" class="risNoDate" value="<?php echo isset($risNoDate) ? $risNoDate : ''; ?>" readonly>
-    <img src="e_sign.png" alt="" class="sign"> <br>
+        <div class="control_no">
+           <label for="risNoDate"> Contro No: ECA-</label>
+            <input readonly type="text" name="risNoDate" class="risNoDate" readonly >
+            <p class="issued">Date Issued: <?php echo date('F d, Y'); ?></p>
         </div>
-        <p class="issued">Date Issued: <?php echo isset($issue) ? date('F d, Y', strtotime($issue)) : date('F d, Y'); ?></p>
+           
+        <div class="seriesnumber">
+            <script src="getControlNo.js"></script>
+     
+        <img src="e_sign.png" alt="" class="sign"> <br>
+        </div>
+      
 
         <input type="submit" value="Generate PDF" id="btnPrint" name="btnPrint">
         </form>
-       
     </div>
     <footer>
     <button id="backButton" onclick="goToLogsHistory()">BACK</button>

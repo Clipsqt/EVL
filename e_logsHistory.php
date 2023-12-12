@@ -50,14 +50,15 @@ if (!$conn) {
         <option value="Disability"> with Disability</option>
     </select>
 </div>
-    <div class="walkin_online_filter">
-        <label for="appointmentFilter">Appointment</label>
-        <select id="appointmentFilter" onchange="filterData()">
-            <option value="all">All</option>
-            <option value="walk-in">Walk-In</option>
-            <option value="online">Online</option>
-        </select>
-    </div>
+<div class="walkin_online_filter">
+    <label for="appointmentFilter">Appointment</label>
+    <select id="appointmentFilter" onchange="filterData()">
+        <option value="all">All</option>
+        <option value="walk-in">Walk-In</option>
+        <option value="online">Online</option>
+        <option value="with appointment">with Appointment</option>
+    </select>
+</div>
     
     <div class="filter-container">
         <label for="fromDate">From:</label>

@@ -34,7 +34,7 @@ p:last-child {
     margin-top: 20px;
 }
 .name{
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bolder;
 }
 .certify{
@@ -48,13 +48,13 @@ p:last-child {
 }
 .purpose{
     font-weight: lighter;
-    font-size: 15px;
+    font-size: 14px;
     margin-top: -2%;
     margin-left: 2.5%;
 }
 
 .appear{
-    font-size: 15px;
+    font-size: 14px;
     margin-left: 2.5%;
     margin-top: -22%;
     
@@ -65,17 +65,24 @@ p:last-child {
     font-weight: bolder;
 
 }
+.control_no{
+    margin-left: 2.5%;
+    font-size: 14px;
+}
 .seriesnumber{
-    margin-left: 2%;
-    font-size: 15px;
+    margin-top: -15%;
+    width: 30%;
+    margin-left: 68%;
+    font-size: 14px;
 }
 .risNoDate{
     border: none;
     font-size: 15px;
 }
 .issued{
-    font-size: 15px;
-    margin-left: 2.1%;
+
+    font-size: 14px;
+    
 }
 .position_office{
     display: inline-flex;
@@ -112,10 +119,9 @@ header img {
 }
 
 .sign{
-    width: 220px;
+    width: 200px;
     margin-left: 8%;
     top: 50%;
-    position: absolute;
 }
 
 

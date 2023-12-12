@@ -127,7 +127,7 @@ td {
 
 
 .filter-container button {
-    background-color: #007bff;
+    background-color: #162fa0;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -154,7 +154,7 @@ td {
     margin-top: 55vh;
     padding: 10px 10px;
     border-radius: 5px;
-    background-color: #3498db;
+    background-color: #162fa0;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -291,7 +291,7 @@ input{
 #showAllButton {
     display: block;
     margin: 20px   auto; 
-    background-color: #007bff;
+    background-color:  #162fa0;
     color: #fff;
     border: none;
     border-radius: 4px;

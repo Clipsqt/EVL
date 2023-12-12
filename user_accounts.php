@@ -157,7 +157,7 @@ $result = $conn->query($sql);
             </div>
            <div class="depedemail">
     <label for="depedEmailInput">Deped Email:</label>
-    <input type="email" placeholder="example@deped.gov.ph" name="deped_Email[]" id="depedEmailInput" required pattern=".+@deped\.gov\.ph$">
+    <input type="email" placeholder="example@deped.gov.ph" name="deped_Email[]" id="depedEmailInput" required pattern=".+@gmail\.gov\.ph$">
 </div>
 <div class="accountpass">
     <label for="accountPassInput">Password:</label>

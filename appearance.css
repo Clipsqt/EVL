@@ -32,7 +32,7 @@ table {
 
     width: 100%;
     margin: 6px auto; /* Center the table horizontally */
-    max-height: 10px;
+    height: 10%;
     border-collapse: collapse; /* Combine border spacing into one */
     border: 2px solid black;
 }
@@ -67,7 +67,7 @@ td {
     margin-top: 30px;
     margin-left: 340px;
     width: 50%;
-    height: auto; 
+    max-height: 410px;
 }
 
 .purpose{
