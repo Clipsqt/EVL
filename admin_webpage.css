@@ -78,7 +78,7 @@ td {
     overflow-y: scroll;
     margin-top: 60px;
     margin-left: 20px;
-    width: 98%; 
+    width: 1423px; 
     height: 350px;
     
 }
@@ -191,15 +191,12 @@ td {
     }
     .historylogs{
         position: absolute;
-        left: 90%;
+        left: 93%;
         width: 5%;
-        top: 40%;
+        top: 24%;
     }
-    .adminBox i {
-        position: absolute;
-        right: 95%;
-        top: 31%;
-        font-size: 70%;
+    .scroll{
+        width: 2520px;       
     }
     .adminText {
         margin-left: 90%;
@@ -209,7 +206,8 @@ td {
     .settings{
         position: absolute;
         text-decoration: none;
-        margin-left: 85%;
+        margin-left: 87%;
+        width: 50%;
         margin-top: 500px;
     }
 }
@@ -219,7 +217,7 @@ td {
     }
     #monitoringTable{
         position: absolute;
-        width: 88%;
+        width: 92%;
         margin-left: 55px;
     }
     header img {
@@ -228,15 +226,12 @@ td {
     }
     .historylogs{
         position: absolute;
-        right: 2%;
-        margin-top: -4%;
+        margin-left: 4%;
+        margin-top: -8%;
         
     }
-    .adminBox i {
-        position: absolute;
-        right: 96%;
-        top: 31%;
-        font-size: 70%;
+    .scroll{
+        width: 1847px;       
     }
     .adminText {
         margin-left: 100%;
@@ -246,7 +241,47 @@ td {
     .settings{
         position: absolute;
         text-decoration: none;
-        margin-left: 75%;
+        margin-left: 81%;
+        margin-top: 500px;
+    }
+    .historylogs{
+        position: absolute;
+        left: 85%;
+        width: 7%;
+        top: 39%;
+    }
+}
+@media screen and (max-width: 1706.67px){
+    header{
+        width: 100%;
+    }
+    #monitoringTable{
+        position: absolute;
+        width: 92%;
+        margin-left: 55px;
+    }
+    header img {
+        width: 100px;
+        margin-top: 5px;
+    }
+    .historylogs{
+        position: absolute;
+        right: 2%;
+        margin-top: -7%;
+        
+    }
+    .scroll{
+        width: 1650px;       
+    }
+    .adminText {
+        margin-left: 100%;
+        font-size: 50%;
+    }
+  
+    .settings{
+        position: absolute;
+        text-decoration: none;
+        margin-left: 80%;
         margin-top: 500px;
     }
     .historylogs{
@@ -272,7 +307,7 @@ td {
     .historylogs{
         position: absolute;
         right: 2%;
-        margin-top: -4%;
+        margin-top: -11%;
         
     }
     .adminBox i {
@@ -311,14 +346,11 @@ td {
     .historylogs{
         position: absolute;
         right: 2%;
-        margin-top: -4%;
+        margin-top: -6%;
         
     }
-    .adminBox i {
-        position: absolute;
-        right: 97%;
-        top: 31%;
-        font-size: 70%;
+    .scroll{
+        width: 1468px;       
     }
     .adminText {
         margin-left: 100%;
@@ -350,7 +382,7 @@ td {
         position: absolute;
         left: 85%;
         width: 8%;
-        top: 36%;
+        top: 45%;
     }
     header img {
         width: 100px;
@@ -437,7 +469,7 @@ td {
     .historylogs{
         position: absolute;
         right: 2%;
-        margin-top: -4%;
+        margin-top: -13%;
         
     }
     .adminBox i {
@@ -523,7 +555,7 @@ td {
     .historylogs{
         position: absolute;
         right: 2%;
-        margin-top: -4%;
+        margin-top: -13%;
         
     }
     .adminBox i {
@@ -561,15 +593,12 @@ td {
     }
     .historylogs{
         position: absolute;
-        right: 2%;
-        margin-top: -4%;
+        margin-left: -1%;
+        margin-top: -2%;
         
     }
-    .adminBox i {
-        position: absolute;
-        right: 98%;
-        top: 31%;
-        font-size: 70%;
+    .scroll{
+        width: 94%;       
     }
     .adminText {
         margin-left: 100%;
@@ -579,6 +608,7 @@ td {
     .settings{
         position: absolute;
         text-decoration: none;
+        top: 30%;
         margin-left: 70%;
         margin-top: 500px;
     }
@@ -674,7 +704,7 @@ td {
         left: 85%;
         width: 12%;
         top: 36%;
-    }
+    }   
 }
 @media screen and (max-width: 801px) {
     header{
