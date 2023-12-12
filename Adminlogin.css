@@ -1,4 +1,4 @@
- 
+@import url(https://db.onlinewebfonts.com/c/4267d8aa8711bb8c72cbefb26066c9e0?family=Bookman+Old+Style+V2);
 *{
 margin: 0;
 padding: 0;
@@ -74,10 +74,9 @@ font-family: 'Bookman Old Style', serif;
 /*Login button*/
 .login_form button{
 margin: 40px 0 30px 0;
-height: 45px;
-width: 200px;
-font-size: 20px;
-font-family: 'Bookman Old Style', serif;
+height: 40px;
+width: 120px;
+font-size: 15px;
 color: white;
 outline: none;
 cursor: pointer;  
@@ -86,7 +85,9 @@ background: #162fa0;
 border-radius: 3px;
 border: 1px solid #3949AB;
 }
-
+button:hover{
+  background: black;
+}
 .forgotpassword {
   font-size: 15px;
   color: black;

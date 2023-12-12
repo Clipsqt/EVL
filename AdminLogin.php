@@ -22,7 +22,7 @@
             <input autocomplete="on" type="text" name="email" id="email" placeholder="Enter your email" required>
             <div class="passfont">Password</div>
             <input type="password" name="password" placeholder="Enter your password" required>
-            <button type="submit" name="login" id="loginButton">Login</button> <!-- Change "type" attribute to "submit" -->
+            <button type="submit" name="login" id="loginButton">LOGIN</button> <!-- Change "type" attribute to "submit" -->
             <a href="ForgotPassword.php"class="forgotpassword">Forgot Password</a>
         </form>
     </div>
