@@ -376,7 +376,7 @@ document.addEventListener("DOMContentLoaded", function () {
             button.classList.remove("active");
         });
 
-        // Add the "active" class to the current page number button
+        // Add the "active" class to the current page number 
         const currentPageButton = pageButtons[currentPage - 1];
         currentPageButton.classList.add("active");
 
