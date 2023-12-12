@@ -31,7 +31,7 @@
 </head>
 <body> 
 <div class="container">
-    <h1>DEPED CSJDM FRONT DESK</h1>
+    <h1>DEPED CSJDM <br>FRONT DESK</h1>
     <form action="Appointment.php" method="post">
         <input type="hidden" name="yearRequested" class="yearRequested">
         <script src="getYearRequested.js"></script>
@@ -48,8 +48,8 @@
         </div>
         <input type="text" class="input-box" id="fullname" name="Fullname" placeholder="Fullname" required autocomplete="off" pattern="[A-Za-z.\s]+">
         <input type="tel" class="input-box" name="phonenumber" placeholder="Contact Number" required autocomplete="OFF" pattern="[0-9]{11}" maxlength="11">
-        <input type="text" class="input-box" name="position_designation" placeholder="Position / Designation" required autocomplete="off" pattern="[A-Za-z.0-9\s]+">
-        <input type="text" class="input-box" name="agency_school_office" placeholder="Agency / School / Office" required autocomplete="off" pattern="[A-Za-z.0-9\s]+">
+        <input type="text" class="input-box" name="position_designation" placeholder="Position / Designation (Type 'NA' if not Applicable)" required autocomplete="off" pattern="[A-Za-z.0-9\s]+">
+        <input type="text" class="input-box" name="agency_school_office" placeholder="Agency / School / Office (Type 'NA' if not Applicable)" required autocomplete="off" pattern="[A-Za-z.0-9\s]+">
         <script>
             var quantityInput = document.querySelector('.qu');
             var quantityInputs = document.querySelectorAll('.quantityInputUser');
