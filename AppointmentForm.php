@@ -64,7 +64,7 @@
         </script>
         <div class="PurposeBox">  
             <div class="inner-box">
-                <input type="text" class="inputPurpose" name="Purpose" placeholder="Purpose of Visit: (Complete this for Certificate of Appearance)" required autocomplete="off"> 
+                <input type="text" class="inputPurpose" name="Purpose" placeholder="Purpose: maximum of 200 characters (For Certificate of Appearance)" required autocomplete="off" maxlength="250"> 
                 <div class="Selectoffice">
                     <select name="selectOffice" id="selectOffice" required>
                         <option value="">Office Visit</option>
@@ -107,9 +107,8 @@
                     <input type="hidden" class="reference_no" name="reference_no" readonly>
                 </div>
                 <div class="developer">
-                    <label for="a">Developer: <a href="https://www.facebook.com/ivan.policarpio.01/">Ivan Policarpio</a> , <a href="https://www.facebook.com/Aenghelo">Angelo Capa</a> , <a href="https://www.facebook.com/Resasak">Reymi Dela Cruz</a></label>
+                    <label for="a" class="develops">Developer: <br> <span> <a href="https://www.facebook.com/ivan.policarpio.01/">Ivan Policarpio</a> , <a href="https://www.facebook.com/Aenghelo">Angelo Capa</a> , <a href="https://www.facebook.com/Resasak">Reymi Dela Cruz</a></span></label>
                 </div>
-  
             </div>
         </div>
     </form>

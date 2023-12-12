@@ -5,10 +5,9 @@ padding: 0;
 }
 body {
   font-family: 'Bookman Old Style', serif;
-  background-image: url(depedblurlogo.jpg);
+  background-image: url(deped.logo.jpg);
   margin: 0;
   padding: 0;
-  background-size: 150%;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -30,7 +29,7 @@ body {
   text-align: center;
   background: linear-gradient(89deg, #9aaaea 0%, #cbd9ff 50%, #f6f7ff 100%);
   border-radius: 20px;
-  opacity: 93%;
+  opacity: 95%;
 }
 
 .appointment-type{
@@ -65,7 +64,7 @@ body {
 
 .inputPurpose::placeholder {
   color: black;
-  font-size: 12px;
+  font-size: 11px;
   opacity: 0.7;
 }
 .input-box{
@@ -89,7 +88,7 @@ button{
   border: 1px solid #fff;
   margin: 0px 0;
   height: 32px;
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 0 20px;
   box-sizing: border-box;
   outline: none;
@@ -98,9 +97,7 @@ button{
   cursor: pointer;
 }
 button:hover{
-  box-shadow: 0 0 5px cyan,
-  0 0 25px cyan, 0 0 50px cyan,
-  0 0 100px cyan, 0 0 200px cyan;
+  background: black;
 }
 #selectOffice {
   margin-top: 5px;
@@ -128,7 +125,8 @@ button:hover{
   align-items: center;
   text-align: center;
   font-size: 1;
-  background-color: rgb(178, 173, 199);
+  background-color: #162fa0;
+  color: white;
 }
 
 h1{
@@ -174,17 +172,14 @@ li a:hover{
 }
 
 .developer{
-  display: flex;
-  margin-top: 15%;
-  margin-left: 25px;
-  font-size: 14px;
-  justify-content: space-between;
-  white-space: nowrap;
+  margin-top: 40px;
+}
+.develops{
+  margin-left: -40vh;
 }
 .developer a:hover{
   color: black;
 }
-
 @media only screen and (max-width:431px){
   li{
     display: none;
@@ -192,10 +187,48 @@ li a:hover{
 
   .container{
     width: 370px;
+
   }
   .developer{
     font-size: 12px;
-    margin-left: 10px;
+    margin-top: 6vh;
+    margin-left: 13px;
+  }
+  .inputPurpose::placeholder{
+      font-size: 10px;
+  }
+}
+@media only screen and (max-width:600px){
+  li{
+    display: none;
+  }
+
+  .container{
+    width: 370px;
+
+  }
+  .developer{
+    font-size: 12px;
+    margin-top: 6vh;
+    margin-left: 13px;
+  }
+  .inputPurpose::placeholder{
+      font-size: 10px;
+  }
+}
+@media only screen and (max-width:768px){
+  li{
+    display: none;
+  }
+
+  .container{
+    width: 370px;
+
+  }
+  .developer{
+    font-size: 12px;
+    margin-top: 6vh;
+    margin-left: 13px;
   }
   .inputPurpose::placeholder{
       font-size: 10px;
