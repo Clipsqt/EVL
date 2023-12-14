@@ -656,10 +656,18 @@ body::-webkit-scrollbar {
     scrollbar-width: none;
 }
 
-@media only screen and (min-width:992px){
+
+@media only screen and (min-width:1200px){
+    .buttons{
+        margin-top: 25vh;
+    }
+}
+
+@media only screen and (min-width:1400px){
     .buttons{
         margin-top: 23vh;
     }
 }
+
 
 

@@ -451,17 +451,35 @@ strong .size{
     font-size: 15px;
     display: none;
 }
-
 @media (max-width:991px){
     .container{
         grid-template-columns: 1.5fr 1fr;
         padding: 10px;
     }
 }
-
 @media (max-width:768px){
     .container{
         grid-template-columns: 1fr;
 
     }
 }
+
+@media only screen and (min-width:1200px){
+    .container1{
+        top: 19%;
+    }
+    .upload-file{
+        width: 25%;
+    }
+
+}
+
+@media only screen and (min-width:1400px){
+    .container1{
+        top: 17%;
+    }
+    .upload-file{
+        width: 22%;
+    }
+}
+
