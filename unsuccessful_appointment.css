@@ -307,33 +307,86 @@ input{
     color: white;
 }
  
-@media only screen and (min-width:748px) {
-    .container{
-        margin-top: -14%;
-    }
-}
-@media only screen and (min-width:768px) {
-    .container{
-        margin-top: -14%;
-    }
-}
-@media only screen and (min-width:1024px) {
-    .container{
-        margin-top: -11%;
-    }
-}
-@media only screen and (min-width:1200px) {
+@media only screen and (min-width:1200px){
     .container{
         margin-top: -7%;
+        height: 80%;
+    }
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 25px;
+     }
+    .scroll{
+        max-height: 300px;
+    }
+    .pagination{
+        margin-top: 22%;
+    }
+    #downloadexcel{
+        margin-left: 85%;
+        top: 25vh;
+    }
+    #searchInput{
+        margin-left: 33%;
+    }
+    .filter-container{
+        margin-left: 71%;
     }
 }
-@media only screen and (min-width:1400px) {
-    .container{
-        margin-top: -7%;
-    }
-}
-@media only screen and (min-width:1500px) {
+
+@media only screen and (min-width:1400px){
     .container{
         margin-top: -6%;
+        height: 82%;
+    }
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 30px;
+     }
+    .scroll{
+        max-height: 365px;
+    }
+    .pagination{
+        margin-top: 25%;
+    }
+    #downloadexcel{
+        top: 30vh;
+    }
+    #searchInput{
+        margin-left: 35%;
+    }
+    .filter-container{
+        margin-left: 75%;
+    }
+}
+
+@media only screen and (min-width:1600px){
+    .container{
+        margin-top: -5%;
+        width: 350px;
+        transform: translate(-350px);
+    }
+    ol li a{
+        font-size: 15px;
+     } 
+    
+     ol li a i{
+        font-size: 33px;
+     }
+    .filter-container{
+        margin-left: 78.5%;
+    }
+    #searchInput{
+        margin-left: 37%;
+        top: 14%;
+    }
+    #downloadexcel{
+        top: 68vh;
     }
 }
