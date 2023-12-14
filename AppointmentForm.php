@@ -1,8 +1,7 @@
 <?php
     session_start();
-
     require_once("connect.php");
-    $query = "select * from e_monitoringlogsheet";
+    $query = "select userOffice from e_logsheetaccounts ORDER BY userOffice ASC";
     $result = mysqli_query($conn,$query);
 ?>
 
@@ -67,28 +66,33 @@
                 <input type="text" class="inputPurpose" name="Purpose" placeholder="Purpose: maximum of 200 characters (For Certificate of Appearance)" required autocomplete="off" maxlength="250"> 
                 <div class="Selectoffice">
                     <select name="selectOffice" id="selectOffice" required>
-                        <option value="">Office Visit</option>
-                        <option value="Office of the School Division Superintendent">SDS</option>
-                        <option value="Office of AO5">General Services AO5</option>
-                        <option value="School Governance Operations Division">SGOD</option>
-                        <option value="Curriculum Implementation Division">CID</option>
-                        <option value="Information Communication Technology">ICT Services</option>
-                        <option value="The Commission on Audit">COA</option>
-                        <option value="Office of the Assistant Schools Division Superintendent">ASDS</option>
-                        <option value="Personnel Section">Personnel Section</option>
-                        <option value="Records Section">Record Section</option>
-                        <option value="Property and Supply">Property and Supply</option>
-                        <option value="Payroll Section">Payroll Section</option>
-                        <option value="Accounting Section">Accounting Section</option>
-                        <option value="Budget Section">Budget Section</option>
-                        <option value="Cash Section">Cash Section</option>
-                        <option value="General Services">General Services</option>
-                        <option value="Legal Services">Legal Services</option>
-                        <option value="SDO Clinic & Nursing room">SDO Clinic & Nursing room</option>
+                        <option value="">Select Office</option>
+                        <?php
+                            // Dropdownlist
+                            $officeNames = []; // Array to store unique office names
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    $officeName = $row['userOffice'];
+
+                                    // Convert office name to lowercase to ensure case-insensitivity
+                                    $officeNameLowercase = strtolower($officeName);
+
+                                    // Check if the lowercase office name is not already in the array
+                                    if (!in_array($officeNameLowercase, $officeNames)) {
+                                        // Add the lowercase office name to the array
+                                        $officeNames[] = $officeNameLowercase;
+
+                                        // Output the option with the original case
+                                        echo "<option value='" . $officeName . "'>" . $officeName . "</option>";
+                                    }
+                                }
+                            } else {
+                                echo "<option value=''>No items available</option>";
+                            }
+                        ?>
                     </select>
                 </div>
                        
-
                 <select name="gender" id="gender" required>
                     <option value="">Sex</option>
                     <option value="Male">Male</option>
