@@ -27,13 +27,9 @@ header h1 {
 /* Table */
 #monitoringTable {
     width: 100%;
-    margin: 6px auto; /* Center the table horizontally */
-    max-height: 10px;
     border-collapse: collapse; /* Combine border spacing into one */
     border: 2px solid black;
 }
-
-
 
 .fullname {
     width: 10%;
@@ -60,7 +56,6 @@ header h1 {
 
 /* Table header */
 th {
-
     text-align: center;
     background-color: #162fa0;
     color: white;
@@ -84,7 +79,6 @@ td {
 
 /* Scrollable content */
 .scroll {
-
     margin-top: -12px;
     max-height: 365px;
     overflow-y: scroll;
@@ -106,12 +100,11 @@ width: 15%;
     width: 200px; /* Adjust the width as needed */
 }
 #searchInput{
-    
     padding: 5px;
     border: 1px solid #ccc;
     top: 20%;
     border-radius: 4px;
-    margin-left: 31%; /* Remove the margin-left property */
+    margin-left: 50%; /* Remove the margin-left property */
     font-size: 12px;
     width: 200px; /* Adjust the width as needed */
 }
@@ -129,10 +122,9 @@ width: 15%;
 }
 /* Container for filter elements */
 .filter-container {
-    
     z-index: 2;
     margin-top: 10px;
-    margin-left: 69%; /* Adjust the right position as needed */
+    margin-left: 75%; /* Adjust the right position as needed */
     font-size: 12px;
 }
 /* Style for the date input fields */
@@ -151,7 +143,7 @@ width: 15%;
     font-size: 10px;
 }
 
-/* Style for the filter button */
+
 .filter-container button {
     background-color: #162fa0;
     color: #fff;
@@ -161,22 +153,15 @@ width: 15%;
     cursor: pointer;
 }
 
-/* Style for the filter button on hover */
+
 .filter-container button:hover {
     background-color: black;
 
 }
-.scroll-container {
-    margin-top: 8px;
-    max-height: 200px;
-    overflow-y: hidden;
-    position: relative; /* Position container relative for absolute positioning of the button */
-}
 
-/* Position the "Convert to Excel" button at the bottom right */
 #downloadexcel {
     position: absolute; /* Adjust the distance from the bottom as needed */
-    top: 1600%;
+    top: 83vh;
     right: 50px; /* Adjust the distance from the right as needed */
     padding: 10px 10px;
     background-color: #162fa0;
@@ -197,10 +182,10 @@ width: 15%;
 
 
 .container{
-    top: 16%;
-    height: 84%;
+    position: fixed;
+    margin-top: -6%;
+    height: 82%;
     width: 300px;
-    position: absolute;
     background:#162fa0;
     border: black;
     z-index: 2;
@@ -257,7 +242,7 @@ input{
     letter-spacing: 1px;
  }
  
- span {
+ span{
     position: absolute;
     right: -46px;
     font-size: 28px;
@@ -265,15 +250,8 @@ input{
     color: white;
     padding: 3px 8px;
     background: #162fa0;
-    margin-top: -21%;
-}
-
-/* Updated CSS for Fixed Positioning */
-
-span {
-    right: -45px; /* Adjust the right position using fixed pixel value */
-}
-
+  
+ }  
 
  #bars{
     background: #162fa0;
@@ -286,9 +264,8 @@ span {
  }
 
  .pagination {
-
     text-align: center;
-   margin-top: 16%;
+    margin-top: 5%;
     left: 0;
     right: 0;
  }
@@ -372,243 +349,88 @@ select {
     margin-left: 5%;
 }
 
-@media screen and (min-width: 640px) {
-    header{
-        width: 90%;
+@media only screen and (min-width:1200px){
+    .container{
+        margin-top: -7%;
+        height: 80%;
     }
-    #monitoringTable{
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: -45%;
-        top: 30%;
-        width: 50%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-        
-    }
-    span{
-        top: 40%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 40%;
-    }
-    #downloadexcel{
-        margin-right: 30%;
-        position: absolute;
-        top: 470px;
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 25px;
+     }
+    .scroll{
+        max-height: 300px;
     }
     .pagination{
-        top: 84%;
-    }
-}
-@media screen and (min-width: 768px) {
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        width: 80%;
-        margin-left: -15%;
-        top: 19%
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-        
-    }
-    span{
-        top: 40%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 47%;
+        margin-top: 1%;
     }
     #downloadexcel{
-        margin-right: 5%;
-        position: absolute;
-        top: 470px;
-    }
-    .pagination{
-        top: 84%;
-    }
-}
-@media screen and (min-width: 1024px) {
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
+        top: 86vh;
     }
     #searchInput{
-        margin-left: 0%;
-        top: 21%;
-        width: 100%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-        
-    }
-    span{
-        top: 27%;
-        
+        margin-left: 32%;
     }
     .filter-container{
-        position: relative;
-        margin-left: 63%;
+        margin-left: 71%;
     }
-    #downloadexcel{
-        top: 1400%;
-        margin-right: -12%;
-        position: absolute;
-    }
-    .pagination{
-        top:  60%;
-        position: absolute;
-    }
-}
-@media screen and (min-width: 1280px) {
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 20%;
-        top: 21%;
-        width: 100%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-        
-    }
-    span{
-        top: 24%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 70%;
-        width: 50%;
-    }
-    #downloadexcel{
-        top: 1400%;
-        margin-right: 35%;
-        position: absolute;
-    }
-    .pagination{
-        top:  50%;
-        position: absolute;
-    }
-}
-@media screen and (min-width: 1366px) {
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 30%;
-        top: 21%;
-        width: 100%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-        
-    }
-    span{
-        top: 20%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 72%;
-        width: 50%;
-    }
-    #downloadexcel{
-        top: 1500%;
-        margin-right: 38%;
-        position: absolute;
-    }
-    .pagination{
-        top:  50%;
-        position: absolute;
-    }
-}
-@media screen and (min-width: 1440px) {
-    header{
-        width: 100%;
-    }
-    #monitoringTable{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #searchInput{
-        margin-left: 35%;
-        top: 21%;
-        width: 100%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-        
-    }
-    span{
-        top: 24%;
-        
-    }
-    .filter-container{
-        position: relative;
-        margin-left: 73%;
-        width: 50%;
-    }
-    #downloadexcel{
-        top: 1400%;
-        margin-right: 40%;
-        position: absolute;
-    }
-    .pagination{
-        top:  50%;
-        position: absolute;
-    }
-}
-@media screen and (min-width: 1536px) { header{ width: 100%; } #monitoringTable{ width: 90%; margin-left: auto; margin-right: auto; } #searchInput{ margin-left: 50%; top: 21%; width: 100%; } header img { width: 100px; margin-top: 5px; } span{ top: 17%; } .filter-container{ position: relative; margin-left: 75%; } #downloadexcel{ top: 1650%; margin-right: 65%; position: absolute; } .pagination{ top: 50%; position: absolute; } }
-body {
-    overflow: hidden;
 }
 
-body::-webkit-scrollbar {
-    display: none;
+@media only screen and (min-width:1400px){
+    .container{
+        margin-top: -6%;
+        height: 82%;
+    }
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 30px;
+     }
+    .scroll{
+        max-height: 365px;
+    }
+    .pagination{
+        margin-top: 5%;
+    }
+    #downloadexcel{
+        top: 83vh;
+    }
+    #searchInput{
+        margin-left: 50%;
+    }
+    .filter-container{
+        margin-left: 75%;
+    }
 }
 
-.scroll::-webkit-scrollbar {
-    display: none;
+@media only screen and (min-width:1600px){
+    .container{
+        margin-top: -5%;
+        width: 350px;
+        transform: translate(-350px);
+    }
+    ol li a{
+        font-size: 15px;
+     } 
+    
+     ol li a i{
+        font-size: 33px;
+     }
+    .filter-container{
+        margin-left: 79%;
+    }
+    #searchInput{
+        margin-left: 85%;
+    }
+    #downloadexcel{
+        top: 68vh;
+    }
 }
 
 
-.scroll {
-    scrollbar-width: none;
-}
+
+
