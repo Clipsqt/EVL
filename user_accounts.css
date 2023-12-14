@@ -341,7 +341,7 @@ ul li:hover ul.dropdown{
 .buttons{
     display: flex;
     justify-content: space-evenly;
-    margin-top: 22vh;
+    margin-top: 23vh;
 }
 
 .Register{
