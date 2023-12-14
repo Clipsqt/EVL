@@ -128,24 +128,35 @@ $result = $conn->query($sql);
             </div>
             <div class="useroffice">
             <label for="userOfficeSelect">Office:</label>
+            <?php
+                $query = "select userOffice from e_logsheetaccounts ORDER BY userOffice ASC";
+                $result = mysqli_query($conn,$query);
+            ?>
             <select name="user_Office[]" class="dropdownuserOffice" id="userOfficeSelect">
                 <option value="">Select Office</option>
-                <option value="School Governance Operations Division">SGOD</option>
-                <option value="Information Communication Technology">ICT Services</option>
-                <option value="Office of the Schools Division Superintendent">OSDS</option>
-                <option value="Office of the Schools Division Superintendent Proper">OSDS PROPER</option>
-                <option value="The  Commission on Audit">COA</option>
-                <option value="Office of the Assistant Schools Division Superintendent">ASDS</option>
-                <option value="Personnel Section">Personnel Section</option>
-                <option value="Records Section">Record Section</option>
-                <option value="Property and Supply">Property and Supply</option>
-                <option value="Payroll Section">Payroll Section</option>
-                <option value="Accounting Section">Accounting Section</option>
-                <option value="Budget Section">Budget Section</option>
-                <option value="Cash Section">Cash Section</option>
-                <option value="Support Staff">Support Staff</option>
-                <option value="Cash Section">Cash Section</option>
-                <option value="General Services">General Services</option>
+                <?php
+                    // Dropdownlist
+                    $officeNames = []; // Array to store unique office names
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $officeName = $row['userOffice'];
+
+                            // Convert office name to lowercase to ensure case-insensitivity
+                            $officeNameLowercase = strtolower($officeName);
+
+                            // Check if the lowercase office name is not already in the array
+                            if (!in_array($officeNameLowercase, $officeNames)) {
+                                // Add the lowercase office name to the array
+                                $officeNames[] = $officeNameLowercase;
+
+                                // Output the option with the original case
+                                echo "<option value='" . $officeName . "'>" . $officeName . "</option>";
+                            }
+                        }
+                    } else {
+                        echo "<option value=''>No items available</option>";
+                    }
+                ?>
                 <option value="custom" id="custom">Custom</option>
             </select>
             </div>
@@ -188,24 +199,35 @@ $result = $conn->query($sql);
             </select>
             <div class="User_Office">
                 <label for="OfficeInput">Office:</label>
+                <?php
+                    $query = "select userOffice from e_logsheetaccounts ORDER BY userOffice ASC";
+                    $result = mysqli_query($conn,$query);
+                ?>
                 <select name="Office[]" class="dropdownOffice" id="OfficeSelect">
                     <option value=""Default Value>Select Office</option>
-                    <option value="School Governance Operations Division">SGOD</option>
-                    <option value="Information Communication Technology">ICT Services</option>
-                    <option value="Office of the Schools Division Superintendent">OSDS</option>
-                    <option value="Office of the Schools Division Superintendent Proper">OSDS PROPER</option>
-                    <option value="The  Commission on Audit">COA</option>
-                    <option value="Office of the Assistant Schools Division Superintendent">ASDS</option>
-                    <option value="Personnel Section">Personnel Section</option>
-                    <option value="Records Section">Record Section</option>
-                    <option value="Property and Supply">Property and Supply</option>
-                    <option value="Payroll Section">Payroll Section</option>
-                    <option value="Accounting Section">Accounting Section</option>
-                    <option value="Budget Section">Budget Section</option>
-                    <option value="Cash Section">Cash Section</option>
-                    <option value="Support Staff">Support Staff</option>
-                    <option value="Cash Section">Cash Section</option>
-                    <option value="General Services">General Services</option>
+                    <?php
+                    // Dropdownlist
+                    $officeNames = []; // Array to store unique office names
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $officeName = $row['userOffice'];
+
+                            // Convert office name to lowercase to ensure case-insensitivity
+                            $officeNameLowercase = strtolower($officeName);
+
+                            // Check if the lowercase office name is not already in the array
+                            if (!in_array($officeNameLowercase, $officeNames)) {
+                                // Add the lowercase office name to the array
+                                $officeNames[] = $officeNameLowercase;
+
+                                // Output the option with the original case
+                                echo "<option value='" . $officeName . "'>" . $officeName . "</option>";
+                            }
+                        }
+                    } else {
+                        echo "<option value=''>No items available</option>";
+                    }
+                ?>
                 </select>
             </div>
             <div class="User_Position">
