@@ -77,7 +77,7 @@ td {
 .scroll{
     overflow-y: scroll;
     margin-top: 30px;
-    margin-left: 35px;
+    margin-left: 0px;
     width: 92%;
     height: 450px; 
 }
@@ -86,7 +86,8 @@ td {
 
 /* Ensure the table takes 100% width */
 #monitoringTable {
-    width: 95%;
+    width: 90%;
+    margin-left: 135px;
 }
 
 
@@ -118,107 +119,43 @@ td {
 .back-button:hover {
     background-color: black; /* Change the background color on hover */
 }
-@media screen and (min-width: 2560px){
-    header{
-        width: 2548px;
+
+@media only screen and (min-width:1200px){
+    .back-button{
+        top: 24%;
     }
     #monitoringTable{
-        width: 2400px;
-        margin-left: 80px;
+        width: 89%;
     }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
-    .back-button{
-        top: 21%;
+    .scroll{
+        width: 90%;
+        overflow-x: hidden;
+        height: 350px;
     }
 }
 
-@media screen and (max-width: 1440px) {
-    header {
-        width: 99%;
-    }
-
-    header img {
-        width: 110px;
-        margin-top: 20px;
-    }
-
-    .back-button{
-        margin-left: 1%;
-        top: 30%;
-    } 
-}
-@media screen and (max-width: 1024px){
-    header{
-        width: 113%;
-    }
-    header img {
-        width: 100px;
-        margin-top: 0px;
-    }
-    #monitoringTable{
-        width: 50%;
-        margin-left: 5%;
-    }
-    .back-button{
-        width: 14%;
-        top: 30%;
-        left: 65%;
-    } 
-}
-@media screen and (max-width: 768px){
-     header{
-        width: 145%;
-    }
-    header img {
-        width: 100px;
-        margin-bottom: -10px;
-    }
-    #monitoringTable{
-        width: 120%;
-        margin-left: 3%;
-    }
-    .back-button{
-        width: 16%;
-        top: 28%;
-        left: 97%;
-    } 
-}
-@media screen and (max-width: 1600px){
-    header{
-        width: 99%;
-    }
-    #monitoringTable{
-        width: 98%;
-        margin-left: 25px;
-    }
-    header img {
-        width: 100px;
-        margin-top: 5px;
-    }
+@media only screen and (min-width:1400px){
     .back-button{
         top: 22%;
-        left: 88%;
-        width: 5%;
-    }
-}
-@media screen and (max-width: 1366px){
-    header{
-        width: 99%;
     }
     #monitoringTable{
-        width: 98%;
-        margin-left: 25px;
+        width: 90%;
     }
-    header img {
-        width: 100px;
-        margin-top: 5px;
+    .scroll{
+        width: 90%;
+        overflow-x: hidden;
+        height: 450px;
     }
+}
+
+@media only screen and (min-width:1600px){
     .back-button{
-        top: 22%;
-        left: 88%;
-        width: 5%;
+        top: 17%;
+    }
+    #monitoringTable{
+        width: 92%;
+    }
+    .scroll{
+        margin-left: 3vh;
     }
 }

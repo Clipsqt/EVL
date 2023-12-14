@@ -109,7 +109,6 @@ td {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    
 }
 
 .historylogs:hover{
@@ -188,4 +187,9 @@ td {
     .scroll{
         height: 350px;
     }
+}
+@media only screen and (min-width:1600px){
+   .historylogs{
+        margin-top: -2.5%;
+   }
 }
