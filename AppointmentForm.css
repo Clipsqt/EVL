@@ -232,3 +232,30 @@ li a:hover{
       font-size: 10px;
   }
 }
+
+@media only screen and (min-width:1200px){
+  .developer label{
+    margin-left: -75%;
+ }
+  li a{
+    left: 70%;
+ }
+}
+@media only screen and (min-width:1300px){
+  li a{
+    left: 70%;
+  }
+}
+@media only screen and (min-width:1400px){
+  li a{
+    left: 87%;
+  }
+}
+@media only screen and (min-width:1600px){
+  .developer{
+    margin-left: 10%;
+  }
+  li a{
+    left: 87%;
+  }
+}
