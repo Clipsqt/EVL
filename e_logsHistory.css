@@ -352,6 +352,31 @@ select {
 @media only screen and (min-width:1200px){
     .container{
         margin-top: -7%;
+        height: 75%;
+    }
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 20px;
+     }
+     .scroll{
+        max-height: 250px;
+    }
+    .pagination{
+        margin-top: 1%;
+    }
+    .filter-container{
+        margin-left: 70%;
+    }
+    #searchInput{
+        margin-left: 25%;
+    }
+}
+@media only screen and (min-width:1300px){
+    .container{
+        margin-top: -7%;
         height: 80%;
     }
     ol li a{
