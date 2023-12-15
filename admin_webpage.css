@@ -117,7 +117,7 @@ td {
 .settings{
     position: absolute;
     text-decoration: none;
-    margin-left: 79%;
+    margin-left: 80%;
     margin-top: 3%;
     
 }
@@ -176,16 +176,32 @@ td {
         margin-top: 2%;
     }
     .scroll{
+        height: 250px;
+    }
+    .historylogs{
+        margin-top: -4%;
+    }
+
+}
+
+@media only screen and (min-width:1300px){
+    .settings{
+        margin-left: 77%;
+    }
+    .scroll{
         height: 300px;
     }
 }
 @media only screen and (min-width:1400px){
     .settings{
-        margin-left: 79%;
+        margin-left: 80%;
         margin-top: 3%;
     }
     .scroll{
         height: 350px;
+    }
+    .historylogs{
+        margin-top: -3%;
     }
 }
 @media only screen and (min-width:1600px){
