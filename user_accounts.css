@@ -58,7 +58,6 @@ td {
     
 }
 .scroll{
-    
     overflow-y: scroll;
     margin-top: 40px;
     margin-left: 100px;
@@ -656,17 +655,61 @@ body::-webkit-scrollbar {
     scrollbar-width: none;
 }
 
-
 @media only screen and (min-width:1200px){
+    .container{
+        top: 19%;
+    }
     .buttons{
         margin-top: 25vh;
     }
+    .scroll{
+        height: 380px;
+    }
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 25px;
+     }
+}
+
+@media only screen and (min-width:1300px){
+    .container{
+        top: 17%;
+    }
+    .buttons{
+        margin-top: 25vh;
+    }
+    .scroll{
+        height: 390px;
+    }
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 30px;
+     }
 }
 
 @media only screen and (min-width:1400px){
+    .container{
+        top: 16%;
+    }
     .buttons{
         margin-top: 23vh;
     }
+    .scroll{
+        height: 400px;
+    }
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 30px;
+     }
 }
 
 
