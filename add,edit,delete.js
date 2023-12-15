@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 allowOutsideClick: false,
                 inputValidator: (value) => {
                     if (!value) {
-                        return 'Please enter a custom office';
+                        return 'Please enter a new Office';
                     }
                 }
             }).then((result) => {
