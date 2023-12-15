@@ -329,6 +329,13 @@ input{
         margin-left: 32%;
         top: 20%;
     }
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 25px;
+     }
 }
 @media only screen and (min-width:1300px){
     .container{
