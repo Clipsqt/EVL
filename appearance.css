@@ -151,8 +151,6 @@ input{
   
  }  
 
- 
-
  #bars{
     background: #162fa0;
  }
@@ -161,4 +159,41 @@ input{
  }
  #check:checked ~ .container #bars{
   display: none;
+ }
+
+ @media only screen and (min-width:1200px){
+    .container{
+        top: 19%;
+    }
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 25px;
+     }
+ }
+ @media only screen and (min-width:1300px){
+    .container{
+        top: 17%;
+    }
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 30px;
+     }
+ }
+ @media only screen and (min-width:1400px){
+    .container{
+        top: 16%;
+    }
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 30px;
+     }
  }
