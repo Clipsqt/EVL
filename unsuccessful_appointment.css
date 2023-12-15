@@ -416,9 +416,9 @@ input{
     }
     #searchInput{
         margin-left: 37%;
-        top: 16%;
+        top: 14%;
     }
     #downloadexcel{
-        top: 68vh;
+        top:21vh;
     }
 }

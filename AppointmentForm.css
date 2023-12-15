@@ -253,8 +253,11 @@ li a:hover{
 }
 @media only screen and (min-width:1600px){
   .developer{
-    margin-left: 10%;
+    margin-left: 2%;
   }
+  .developer label{
+    margin-left: -70%;
+ }
   li a{
     left: 87%;
   }

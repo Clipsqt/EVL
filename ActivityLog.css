@@ -438,3 +438,17 @@ select {
         font-size: 30px;
      }
 }
+@media only screen and (min-width:1600px){
+    .container{
+        margin-top: -5%;
+    }
+    .filter-container{
+        margin-left: 80%;
+    }
+    .Search{
+        margin-left: 89%;
+    }
+    #downloadexcel{
+        top: 70vh;
+    }
+}
