@@ -27,7 +27,7 @@ header h1 {
 }
 .container1 {
     top: 17%;
-    height: 91%;
+    height: 92%;
     width: 300px;
     position: absolute;
     background: #162fa0;
@@ -467,19 +467,60 @@ strong .size{
 @media only screen and (min-width:1200px){
     .container1{
         top: 19%;
+        height: 100%;
     }
     .upload-file{
         width: 25%;
     }
+    .files .selectfiles{
+        width: 410px;
+    }
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 25px;
+     }
 
+}
+@media only screen and (min-width:1300px){
+    .container1{
+        top: 19%;
+        height: 92%;
+    }
+    .upload-file{
+        width: 25%;
+    }
+    .files .selectfiles{
+        width: 450px;
+    }
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 25px;
+     }
 }
 
 @media only screen and (min-width:1400px){
     .container1{
         top: 17%;
+        height: 92%;
     }
     .upload-file{
         width: 22%;
     }
+    .files .selectfiles{
+        width: 500px;
+    }
+    ol li a{
+        font-size: 12px;
+     } 
+    
+     ol li a i{
+        font-size: 30px;
+     }
 }
 
