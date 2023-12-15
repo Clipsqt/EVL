@@ -312,6 +312,29 @@ input{
         margin-top: -7%;
         height: 80%;
     }
+    .filter-container{
+        margin-left: 70%;
+    }
+    .scroll{
+        max-height: 300px;
+    }
+    .pagination{
+        margin-top: 23%;
+    }
+    #downloadexcel{
+        margin-left: 85%;
+        top: 30vh;
+    }
+    #searchInput{
+        margin-left: 32%;
+        top: 20%;
+    }
+}
+@media only screen and (min-width:1300px){
+    .container{
+        margin-top: -7%;
+        height: 80%;
+    }
     ol li a{
         font-size: 12px;
      } 
@@ -331,6 +354,7 @@ input{
     }
     #searchInput{
         margin-left: 33%;
+        top: 19%;
     }
     .filter-container{
         margin-left: 71%;
@@ -360,6 +384,7 @@ input{
     }
     #searchInput{
         margin-left: 35%;
+        top: 18%;
     }
     .filter-container{
         margin-left: 75%;
@@ -384,7 +409,7 @@ input{
     }
     #searchInput{
         margin-left: 37%;
-        top: 14%;
+        top: 16%;
     }
     #downloadexcel{
         top: 68vh;
