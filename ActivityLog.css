@@ -371,7 +371,7 @@ select {
         margin-left: 83%;
     }
     .scroll{
-        height: 260px;
+        max-height: 300px;
     }
     .pagination{
         margin-top: 1%;
@@ -398,7 +398,7 @@ select {
         margin-left: 83%;
     }
     .scroll{
-        height: 300px;
+        max-height: 300px;
     }
     .pagination{
         margin-top: 1%;
