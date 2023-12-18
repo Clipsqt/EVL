@@ -115,6 +115,7 @@ $result = $conn->query($sql);
                     <option value="">Select Account Type</option>
                     <option value="Admin">Admin</option>
                     <option value="Super Admin">Super Admin</option>
+                    <option value="Queuing System">Queuing System</option>
                     <option value="Security Guard">Security Guard</option>
                 </select>
             </div>

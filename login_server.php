@@ -31,14 +31,16 @@
             // check account type so user will access webpage based on their account type
             $accountType = $row['accountType'];
             if ($accountType == 'Admin') {
-                header("Location: admin_webpage.php"); //page for enduser
+                header("Location: admin_webpage.php"); 
             } elseif ($accountType == 'User Manager') {
-                header("Location: e_monitoring.php"); //change location page, sample.php only for testing
+                header("Location: e_monitoring.php"); 
             } elseif ($accountType == 'Security') {
-                header("Location: e_monitoringLogsheet.php"); //change location page, sample.php only for testing
+                header("Location: e_monitoringLogsheet.php"); 
             } elseif ($accountType == 'Super Admin') {
-                header("Location: e_logsHistory.php");// Handle superAdmin redirection here, change location page
-            } else {
+                header("Location: e_logsHistory.php");
+            } elseif ($accountType == 'Queuing System') {
+                header("Location: queuing_system.php");
+            }else {
                 echo '<script>
                 alert("Login failed. Invalid DepEd E-mail or password.")
                 window.location.href = "AdminLogin.php";

@@ -117,7 +117,7 @@
         </div>
     </form>
 </div>
-<li> <a href="adminLogin.php"><i class="fa-solid fa-user-tie"></i>ADMIN LOG-IN</a></li>
+<li><a href="adminLogin.php"><i class="fa-solid fa-user-tie"></i>ADMIN LOG-IN</a></li>
  
 
 <script>
@@ -329,15 +329,26 @@ form.addEventListener('submit', async function (e) {
     
 </script>
 <script>
-    document.getElementById('fullname').addEventListener('input', function () {
-        var inputValue = this.value;
-        var words = inputValue.toLowerCase().split(' ');
+    document.addEventListener("DOMContentLoaded", function() {
+        var currentDateInput = document.getElementById("currentDate");
 
-        for (var i = 0; i < words.length; i++) {
-            words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        currentDateInput.addEventListener("input", function() {
+            var enteredDate = currentDateInput.value;
+            var currentDate = new Date();
+
+            if (!isValidDate(enteredDate, currentDate)) {
+                currentDateInput.setCustomValidity("Please enter a future date.");
+            } else {
+                currentDateInput.setCustomValidity("");
+            }
+        });
+
+        function isValidDate(dateString, currentDate) {
+            var enteredDateObject = new Date(dateString);
+
+            // Check if the entered date is a valid date and not in the past
+            return (!isNaN(enteredDateObject.getTime()) && enteredDateObject >= currentDate);
         }
-
-        this.value = words.join(' ');
     });
 </script>
 </body>
