@@ -63,7 +63,7 @@
         </script>
         <div class="PurposeBox">  
             <div class="inner-box">
-                <input type="text" class="inputPurpose" name="Purpose" placeholder="Purpose: maximum of 200 characters (For Certificate of Appearance)" required autocomplete="off" maxlength="250"> 
+                <input type="text" class="inputPurpose" name="Purpose" placeholder="Purpose: maximum of 200 characters (For Certificate of Appearance)" required autocomplete="off" maxlength="200"> 
                 <div class="Selectoffice">
                     <select name="selectOffice" id="selectOffice" required>
                         <option value="">Select Office</option>
@@ -327,6 +327,18 @@ form.addEventListener('submit', async function (e) {
 });
 
     
+</script>
+<script>
+    document.getElementById('fullname').addEventListener('input', function () {
+        var inputValue = this.value;
+        var words = inputValue.toLowerCase().split(' ');
+
+        for (var i = 0; i < words.length; i++) {
+            words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        }
+
+        this.value = words.join(' ');
+    });
 </script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
