@@ -85,26 +85,25 @@ $assistedBy = (isset($_SESSION['accountName']) ? $_SESSION['accountName'] : '');
                 $query = "SELECT * FROM e_logshistory ORDER BY timeStamp desc";
                 $result = mysqli_query($conn, $query);
 
-                if ($result && mysqli_num_rows($result) > 0) {
-                $totalRows = mysqli_num_rows($result); // Get the total number of rows
-                $rowNumber = $totalRows; // Initialize row number to the total number of rows
-
                 while ($row = mysqli_fetch_assoc($result)) {
-                    // Start a new table row for each record
-                    echo "<tr class='highlight-row'>"; // Apply the CSS class
-                    echo "<td class='fullname'>" . $row['fullname'] . "</td>";
-                    echo "<td class='sched'>" . $row['scheduledate'] . "</td>";
-                    echo "<td>" . $row['appointment'] . "</td>";
-                    echo "<td>" . $row['department'] . "</td>";
-                    echo "<td>" . $row['time_in'] . "</td>";
-                    echo "<td>" . $row['time_out'] . "</td>";
-                    echo "<td>" . $row['assisted_by'] . "</td>";
-                    echo "</tr>";
-                    $rowNumber--; // Decrease row number for the next row
+            ?>
+            <tr class='highlight-row'>
+                <td><?php echo $row['fullname']?></td>
+                <td><?php echo $row['scheduledate']?></td>
+                <td><?php echo $row['appointment']?></td>
+                <td><?php echo $row['department']?></td>
+                <td><?php echo $row['time_in']?></td>
+                <td><?php echo $row['time_out']?></td>
+                <td><?php echo $row['assisted_by']?></td>
+                  
+            </tr>
+             
+                
+            
+
+            <?php
                 }
-                } else {
-                    echo "No transferred row data found.";
-                }
+            
             ?>
         
         </table>

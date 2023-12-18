@@ -1,10 +1,10 @@
 // SEARCH BAR FUNCTIOn
 
 function searchTable() {
-    var input, filter, table, tr, td1, td2, td3, td4, td5, td6, td7, td8, i, txtValue1, txtValue2, txtValue3, txtValue4, txtValue5, txtValue6, txtValue7, txtValue8;
+    var input, filter, table, tr, td1, td2, td3, td4, td5, td6,td7, i, txtValue1, txtValue2, txtValue3, txtValue4, txtValue5, txtValue6,txtValue7;
     input = document.getElementById("searchInput");
     filter = input.value.toLowerCase();
-    table = document.querySelector("table");
+    table = document.getElementById("monitoringTable");
     tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
@@ -13,11 +13,11 @@ function searchTable() {
         td3 = tr[i].getElementsByTagName("td")[2];
         td4 = tr[i].getElementsByTagName("td")[3];
         td5 = tr[i].getElementsByTagName("td")[4];
-        td7 = tr[i].getElementsByTagName("td")[5];
-        td8 = tr[i].getElementsByTagName("td")[6];
-        td6 = tr[i].getElementsByTagName("td")[7];
+        td6 = tr[i].getElementsByTagName("td")[5];
+        td7 = tr[i].getElementsByTagName("td")[6];
+    
 
-        if (td1 && td2 && td3 && td4 && td5 && td6 && td7 && td8) {
+        if (td1 && td2 && td3 && td4 && td5 && td6 && td7) {
             txtValue1 = td1.textContent.toLowerCase() || td1.innerText.toLowerCase();
             txtValue2 = td2.textContent.toLowerCase() || td2.innerText.toLowerCase();
             txtValue3 = td3.textContent.toLowerCase() || td3.innerText.toLowerCase();
@@ -25,9 +25,8 @@ function searchTable() {
             txtValue5 = td5.textContent.toLowerCase() || td5.innerText.toLowerCase();
             txtValue6 = td6.textContent.toLowerCase() || td6.innerText.toLowerCase();
             txtValue7 = td7.textContent.toLowerCase() || td7.innerText.toLowerCase();
-            txtValue8 = td8.textContent.toLowerCase() || td8.innerText.toLowerCase();
 
-            if (txtValue1.indexOf(filter) > -1 || txtValue2.indexOf(filter) > -1 || txtValue3.indexOf(filter) > -1 || txtValue4.indexOf(filter) > -1 || txtValue5.indexOf(filter) > -1 || txtValue6.indexOf(filter) > -1 || txtValue7.indexOf(filter) > -1 || txtValue8.indexOf(filter) > -1) {
+            if (txtValue1.indexOf(filter) > -1 || txtValue2.indexOf(filter) > -1 || txtValue3.indexOf(filter) > -1 || txtValue4.indexOf(filter) > -1 || txtValue5.indexOf(filter) > -1 || txtValue6.indexOf(filter) > -1 || txtValue7.indexOf(filter) > -1) {
                 tr[i].style.display = "";
             } else {
                 tr[i].style.display = "none";
@@ -63,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let rowMatch = true;
 
             // Check if the row matches the date range filter or if no dates are selected
-            const scheduleDateCell = row.cells[5]; // Assuming the scheduledate is in the 6th cell
+            const scheduleDateCell = row.cells[1]; // Assuming the scheduledate is in the 6th cell
             const scheduleDate = scheduleDateCell.textContent.trim();
 
             if (fromDate !== "" && toDate !== "") {
@@ -95,7 +94,7 @@ function exportTableToExcel(tableID, filename = ''){
     var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
     
     // Specify file name
-    filename = filename?filename+'e-logshistory':'.e-logshistory';
+    filename = filename?filename+'activity logs':'.activity logs';
     
     // Create download link element
     downloadLink = document.createElement("a");
