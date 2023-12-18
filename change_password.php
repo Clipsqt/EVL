@@ -31,11 +31,16 @@
           </div>
           <div class="button-container">
           <input type="submit" class="change-password-button" value="Change Password" name="submit">
-          <input type="button" class="cancel-button" value="Cancel" onclick="window.history.back();">
+          <input type="button" class="cancel-button" value="Cancel" onclick="back()">
         </div>
 
         </form>
       </div>
     </div>
+    <script>
+      function back(){
+        location.href = "e_logsHistory.php"
+      }
+    </script>
   </body>
 </html>
