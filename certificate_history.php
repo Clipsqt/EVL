@@ -29,7 +29,7 @@ function breakDownWords($text) {
 <body>
 
     <div id="certificateBody">
-        <form action="insert_data.php" method="post" class="controlForm">
+        <form action="" method="post" class="controlForm">
             <input type="hidden" name="reference_no"value="<?php echo isset($referencecode) ? $referencecode : ''; ?>">
             <input type="hidden" name="yearRequested" value="<?php echo $yearRequested ?>">
         <header>
