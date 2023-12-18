@@ -174,59 +174,52 @@
 }
     </script>
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const searchInput = document.getElementById("search");
-        const fromDateInput = document.getElementById("fromDate");
-        const toDateInput = document.getElementById("toDate");
-        const table = document.getElementById("monitoringTable");
-        const rows = Array.from(table.querySelectorAll("tbody tr"));
+    //FUNCTION FOR FROM AND TO FILTER DATE:
 
-        function formatDateToMMDDYYYY(dateString) {
-            const parts = dateString.split('/'); // Split MM/DD/YYYY into an array
-            const month = parts[0];
-            const day = parts[1];
-            const year = parts[2];
-            return `${month}/${day}/${year}`; // Convert to MM/DD/YYYY
-        }
+document.addEventListener("DOMContentLoaded", function() {
+    const fromDateInput = document.getElementById("fromDate");
+    const toDateInput = document.getElementById("toDate");
+    const table = document.getElementById("monitoringTable");
+    const rows = Array.from(table.querySelectorAll("tbody tr"));
 
-        function filterRows() {
-            const searchTerm = searchInput.value.trim().toLowerCase();
-            const fromDate = fromDateInput.value.trim();
-            const toDate = toDateInput.value.trim();
-            const formattedFromDate = formatDateToMMDDYYYY(fromDate);
-            const formattedToDate = formatDateToMMDDYYYY(toDate);
+    function formatDateToMMDDYYYY(dateString) {
+        const parts = dateString.split('/'); // Split MM/DD/YYYY into an array
+        const month = parts[0];
+        const day = parts[1];
+        const year = parts[2];
+        return `${month}/${day}/${year}`; // Convert to MM/DD/YYYY
+    }
 
-            rows.forEach(function(row) {
-                let rowMatch = false;
+    function filterRows() {
+        const fromDate = fromDateInput.value.trim();
+        const toDate = toDateInput.value.trim();
+        const formattedFromDate = formatDateToMMDDYYYY(fromDate);
+        const formattedToDate = formatDateToMMDDYYYY(toDate);
 
-                row.querySelectorAll("td").forEach(function(cell) {
-                    const cellValue = cell.textContent.trim().toLowerCase();
-                    if (cellValue.includes(searchTerm)) {
-                        rowMatch = true;
-                    }
-                });
+        rows.forEach(function(row) {
+            let rowMatch = true;
 
-                // Check if the row matches the search term or if no search term is provided (show all rows)
-                if (searchTerm === "" || rowMatch) {
-                    // Check if the row matches the date range filter or if no dates are selected
-                    const scheduleDateCell = row.cells[5]; // Assuming the scheduledate is in the 6th cell
-                    const scheduleDate = scheduleDateCell.textContent.trim();
-                    
-                    if (fromDate === "" || toDate === "" || (scheduleDate >= formattedFromDate && scheduleDate <= formattedToDate)) {
-                        row.style.display = ""; // Display the row if it's within the range or no dates selected
-                    } else {
-                        row.style.display = "none"; // Hide the row if it's outside the range
-                    }
-                } else {
-                    row.style.display = "none"; // Hide the row if it doesn't match the search term
+            // Check if the row matches the date range filter or if no dates are selected
+            const scheduleDateCell = row.cells[5]; // Assuming the scheduledate is in the 6th cell
+            const scheduleDate = scheduleDateCell.textContent.trim();
+
+            if (fromDate !== "" && toDate !== "") {
+                if (scheduleDate < formattedFromDate || scheduleDate > formattedToDate) {
+                    rowMatch = false;
                 }
-            });
-        }
+            }
 
-        searchInput.addEventListener("input", filterRows);
-        fromDateInput.addEventListener("input", filterRows);
-        toDateInput.addEventListener("input", filterRows);
-    });
+            if (rowMatch) {
+                row.style.display = ""; // Display the row if it's within the range or no dates selected
+            } else {
+                row.style.display = "none"; // Hide the row if it's outside the range
+            }
+        });
+    }
+
+    fromDateInput.addEventListener("input", filterRows);
+    toDateInput.addEventListener("input", filterRows);
+});
     </script>
     <script>
         function exportTableToExcel(tableID, filename = ''){
@@ -236,7 +229,7 @@
     var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
     
     // Specify file name
-    filename = filename?filename+'.xls':'e_logshistory.xls';
+    filename = filename?filename+'.xls':'unsuccessful appointment.xls';
     
     // Create download link element
     downloadLink = document.createElement("a");
