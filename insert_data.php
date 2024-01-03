@@ -44,7 +44,7 @@ if (isset($_POST['btnPrint'])) {
     // Increment the seriesNumber only once per request
     $lastSeriesNumber = getLastSeriesNumber($conn);
     $formattedSeriesNumber = str_pad($lastSeriesNumber, 6, '0', STR_PAD_LEFT);
-    $additionalText = "CA-";
+    $additionalText = "ECA-";
 
     // Retrieve data from the queue_logs table for the specific reference code
     $selectSql = "SELECT * FROM e_logshistory WHERE reference_no = '$referencecode'";

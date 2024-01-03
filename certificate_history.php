@@ -16,7 +16,7 @@ function breakDownWords($text) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="certificate_of_appearance.css">
+    <link rel="stylesheet" href="certificate_history.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -50,7 +50,7 @@ function breakDownWords($text) {
         <p class="position_designation"> <span class="bold-text"><?php echo isset($position_designation) ? $position_designation : ''; ?></span> <br>Position/Designation</p>
         <p class="school_office"> <span class="bold-text"><?php echo isset($agency_school_office) ? $agency_school_office : ''; ?></span> <br>Agency/School/Office</p>
         </div>
-        <p class="appear">Appeared on <span class="scheduledate"><?php echo isset($scheduledate) ? $scheduledate : ''; ?></span>  at EcoPark Barangay Muzon City of San Jose Del Monte Bulacan. </p>
+        <p class="appear">Appeared on <span class="scheduledate"><?php echo date('F d, Y', strtotime($row['scheduledate'])); ?></span>  at EcoPark Barangay Muzon City of San Jose Del Monte Bulacan. </p>
         <p class="purpose">Purpose: <br>
             <?php
             $purposeText = isset($purpose) ? $purpose : '';
@@ -59,13 +59,12 @@ function breakDownWords($text) {
             <br> <br> <span class="best">This certification is being issued for whatever legal purposes it may serve her/him best.</span>
         </p>
         <div class="control_no">
-           <label for="risNoDate"> Contro No: ECA-</label>
-            <input readonly type="text" name="risNoDate" class="risNoDate" readonly >
-            <p class="issued">Date Issued: <?php echo date('F d, Y'); ?></p>
+           <label for="risNoDate"> Contro No:</label>
+            <input readonly type="text" name="risNoDate" class="risNoDate" value="<?php echo $row['risNoDate']; ?>" readonly >
+            <p class="issued">Date Issued: <?php echo date('F d, Y', strtotime($row['timeStamp'])); ?></p>
         </div>
            
         <div class="seriesnumber">
-            <script src="getControlNo.js"></script>
      
         <img src="e_sign.png" alt="" class="sign"> <br>
         </div>

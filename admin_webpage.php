@@ -74,10 +74,6 @@ $rowNumber = 1;
   
     </header>
 <button id="history_logs_button" class ="historylogs" onclick="location.href='admins_History.php';">History Logs</button>
-<div class="settings">
-    <a href="change_password.php">CHANGE PASSWORD</a>
-    <a href="log_out.php">LOGOUT</a>
-</div>
 <body>
 <div class="scroll">
     <table id="monitoringTable">
@@ -126,6 +122,10 @@ $rowNumber = 1;
             }
         ?>
     </table>
+</div>
+<div class="settings">
+    <a href="change_password.php">CHANGE PASSWORD</a>
+    <a href="log_out.php">LOGOUT</a>
 </div>
 <style>
        .adminBox {
